@@ -87,5 +87,11 @@ function renderChanges(changes: ScanChange[]): string[] {
 
 function renderIssues(issues: ScanIssue[]): string[] {
   if (issues.length === 0) return ["Nessun problema rilevato."];
-  return issues.map((issue) => `- ${issue.fatal ? "FATALE" : "Avviso"}: ${issue.url} - ${issue.message}`);
+  return orderIssuesBySeverity(issues).map((issue) => `- ${issue.fatal ? "FATALE" : "Avviso"}: ${issue.url} - ${issue.message}`);
+}
+
+function orderIssuesBySeverity(issues: ScanIssue[]): ScanIssue[] {
+  const fatalIssues = issues.filter((issue) => issue.fatal);
+  const nonFatalIssues = issues.filter((issue) => !issue.fatal);
+  return [...fatalIssues, ...nonFatalIssues];
 }
