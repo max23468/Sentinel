@@ -75,3 +75,7 @@ Il deploy operativo MVP passa da GitHub Actions:
 - fallimento se c'è un errore tecnico o se un'email necessaria non parte.
 
 Non creare tag o GitHub Release finché non viene definita una policy dedicata.
+
+La issue GitHub `Codex feedback inbox` è il canale operativo per i commenti
+Codex sulle PR ed è aggiornata dal workflow `Codex PR comments`. Controllala
+prima di PR ready, merge o pubblicazione non banale.
