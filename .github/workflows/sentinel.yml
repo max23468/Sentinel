@@ -1,0 +1,72 @@
+name: Sentinel
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 7,8 * * 6"
+
+permissions:
+  contents: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Europe/Rome schedule
+        id: schedule
+        if: github.event_name == 'schedule'
+        run: |
+          if [ "$(TZ=Europe/Rome date +%H)" = "09" ]; then
+            echo "should_run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Fuori dalla finestra 09:00 Europe/Rome, skip."
+            echo "should_run=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Checkout
+        if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install
+        if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
+        run: npm ci
+
+      - name: Test
+        if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
+        run: npm test
+
+      - name: Build
+        if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
+        run: npm run build
+
+      - name: Scan
+        if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
+        env:
+          SENTINEL_EMAIL_TO: ${{ secrets.SENTINEL_EMAIL_TO }}
+          SENTINEL_EMAIL_FROM: ${{ secrets.SENTINEL_EMAIL_FROM }}
+          SENTINEL_GMAIL_USER: ${{ secrets.SENTINEL_GMAIL_USER }}
+          SENTINEL_GMAIL_APP_PASSWORD: ${{ secrets.SENTINEL_GMAIL_APP_PASSWORD }}
+          SENTINEL_ICLOUD_USER: ${{ secrets.SENTINEL_ICLOUD_USER }}
+          SENTINEL_ICLOUD_APP_PASSWORD: ${{ secrets.SENTINEL_ICLOUD_APP_PASSWORD }}
+        run: npm run sentinel -- scan
+
+      - name: Commit application outputs
+        if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          mkdir -p data snapshots reports
+          git add data snapshots reports
+          if git diff --cached --quiet; then
+            echo "Nessun output da committare."
+            exit 0
+          fi
+          git commit -m "chore: update sentinel outputs"
+          git push

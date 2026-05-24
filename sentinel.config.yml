@@ -1,0 +1,67 @@
+version: 1
+
+storage:
+  dataDir: data
+  snapshotsDir: snapshots
+  reportsDir: reports
+
+email:
+  enabled: true
+  defaultProfile: gmail
+  fromEnv: SENTINEL_EMAIL_FROM
+  toEnv: SENTINEL_EMAIL_TO
+  subjectPrefix: "[Sentinel]"
+  profiles:
+    gmail:
+      host: smtp.gmail.com
+      port: 465
+      secure: true
+      userEnv: SENTINEL_GMAIL_USER
+      passEnv: SENTINEL_GMAIL_APP_PASSWORD
+      passKeychainService: sentinel-gmail
+    icloud:
+      host: smtp.mail.me.com
+      port: 587
+      secure: false
+      userEnv: SENTINEL_ICLOUD_USER
+      passEnv: SENTINEL_ICLOUD_APP_PASSWORD
+      passKeychainService: sentinel-icloud
+
+sites:
+  - id: ortix
+    name: Ortix
+    enabled: true
+    sitemapUrls:
+      - https://www.ortix.it/sitemap_index.xml
+    roots:
+      - https://www.ortix.it/
+    emailProfile: gmail
+    crawl:
+      maxDepth: 3
+      maxUrls: 500
+      timeoutMs: 30000
+      userAgent: "Sentinel/0.1 (+https://github.com/max23468/Sentinel)"
+    includeFileExtensions:
+      - pdf
+      - doc
+      - docx
+      - xls
+      - xlsx
+      - csv
+      - zip
+      - jpg
+      - jpeg
+      - png
+      - gif
+      - webp
+      - avif
+      - svg
+    trackingParams:
+      - fbclid
+      - gclid
+      - msclkid
+      - yclid
+      - mc_cid
+      - mc_eid
+      - ref
+      - source

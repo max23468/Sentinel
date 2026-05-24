@@ -1,0 +1,2610 @@
+{
+  "version": 1,
+  "sites": {
+    "ortix": {
+      "id": "ortix",
+      "name": "Ortix",
+      "urls": {
+        "https://www.ortix.it/": {
+          "url": "https://www.ortix.it/",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:33:33.488Z",
+          "lastSeenAt": "2026-05-24T16:33:33.488Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "bf8da6debfa330b84f7dbd62944db8b5a301210510c50a4f24ff302d1289436b",
+          "title": "Home - Ortix - Milano - Ortica",
+          "snapshotIds": [
+            "ortix/4e3b54adabd1f005/20260524T163333Z.json"
+          ]
+        },
+        "https://www.ortix.it/2021/08/26/the-big-design-wall-likes-pictures": {
+          "url": "https://www.ortix.it/2021/08/26/the-big-design-wall-likes-pictures",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:33:34.540Z",
+          "lastSeenAt": "2026-05-24T16:33:34.540Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "cf9c955312f3491657a7415d7dd92333dd1548f78cb724628b8761bb03c00792",
+          "title": "The big design: Wall likes pictures - Ortix - Milano - Ortica",
+          "snapshotIds": [
+            "ortix/5e6d4adb7a46df5c/20260524T163334Z.json"
+          ]
+        },
+        "https://www.ortix.it/2021/08/26/new-home-decor-from-john-doerson": {
+          "url": "https://www.ortix.it/2021/08/26/new-home-decor-from-john-doerson",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:33:35.543Z",
+          "lastSeenAt": "2026-05-24T16:33:35.543Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "6dcd074f94bf7e744b23d8b2858f7a213f509c08bf227ab492103366460d44d2",
+          "title": "New home decor from John Doerson - Ortix - Milano - Ortica",
+          "snapshotIds": [
+            "ortix/c4698a54412e18c5/20260524T163335Z.json"
+          ]
+        },
+        "https://www.ortix.it/2021/08/26/minimalist-japanese-inspired-furniture": {
+          "url": "https://www.ortix.it/2021/08/26/minimalist-japanese-inspired-furniture",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:33:36.679Z",
+          "lastSeenAt": "2026-05-24T16:33:36.679Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "96309e847118c0feab7b770e3d299fc61709054c2bfba2415837eaf5a7eee224",
+          "title": "Minimalist Japanese-inspired furniture - Ortix - Milano - Ortica",
+          "snapshotIds": [
+            "ortix/c0a1f7ce698dfd4c/20260524T163336Z.json"
+          ]
+        },
+        "https://www.ortix.it/2021/08/27/creative-water-features-and-exterior": {
+          "url": "https://www.ortix.it/2021/08/27/creative-water-features-and-exterior",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:33:37.597Z",
+          "lastSeenAt": "2026-05-24T16:33:37.597Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "f56e8a12e944b257ffcb0316109a8d646f4f82e5fd2de7d045fa94a5b90b6660",
+          "title": "Creative water features and exterior - Ortix - Milano - Ortica",
+          "snapshotIds": [
+            "ortix/ce71d360c048f909/20260524T163337Z.json"
+          ]
+        },
+        "https://www.ortix.it/2021/08/27/reinterprets-the-classic-bookshelf": {
+          "url": "https://www.ortix.it/2021/08/27/reinterprets-the-classic-bookshelf",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:33:38.492Z",
+          "lastSeenAt": "2026-05-24T16:33:38.492Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "6f79fbb40d08e932cb7bbd40751d570db1e3cdaf0ec33696283dee167e7e0621",
+          "title": "Reinterprets the classic bookshelf - Ortix - Milano - Ortica",
+          "snapshotIds": [
+            "ortix/e85c04dbdaddb778/20260524T163338Z.json"
+          ]
+        },
+        "https://www.ortix.it/2021/08/27/collar-brings-back-coffee-brewing-ritual": {
+          "url": "https://www.ortix.it/2021/08/27/collar-brings-back-coffee-brewing-ritual",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:33:39.608Z",
+          "lastSeenAt": "2026-05-24T16:33:39.608Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "2484767b55c2a417b0edd72bea32478b27f256d341f0684b9e824fc9236bba2d",
+          "title": "Collar brings back coffee brewing ritual - Ortix - Milano - Ortica",
+          "snapshotIds": [
+            "ortix/5e470cf343a1d7cd/20260524T163339Z.json"
+          ]
+        },
+        "https://www.ortix.it/2021/08/27/green-interior-design-inspiration": {
+          "url": "https://www.ortix.it/2021/08/27/green-interior-design-inspiration",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:33:40.764Z",
+          "lastSeenAt": "2026-05-24T16:33:40.764Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "0a12cc91de5995dfec06de733cd0a68aa0adda01678a802dbfaf74954db03244",
+          "title": "Green interior design inspiration - Ortix - Milano - Ortica",
+          "snapshotIds": [
+            "ortix/36a39dbb1de446a5/20260524T163340Z.json"
+          ]
+        },
+        "https://www.ortix.it/2021/08/27/exploring-atlantas-modern-homes": {
+          "url": "https://www.ortix.it/2021/08/27/exploring-atlantas-modern-homes",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:33:41.758Z",
+          "lastSeenAt": "2026-05-24T16:33:41.758Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "117cd128604adfeb39b226195937c0b5e0252912e4d6baefa0f2dca27cd9585a",
+          "title": "Exploring Atlanta’s modern homes - Ortix - Milano - Ortica",
+          "snapshotIds": [
+            "ortix/11de70807ee57c40/20260524T163341Z.json"
+          ]
+        },
+        "https://www.ortix.it/contatti": {
+          "url": "https://www.ortix.it/contatti",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:33:42.711Z",
+          "lastSeenAt": "2026-05-24T16:33:42.711Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "8092360642b97113d19d0df7e4219cd3b3ae7d4e2b10e042a9f0061549f33f40",
+          "title": "Contatti - Ortix - Milano - Ortica",
+          "snapshotIds": [
+            "ortix/7a0a0c32645c625e/20260524T163342Z.json"
+          ]
+        },
+        "https://www.ortix.it/thankyou": {
+          "url": "https://www.ortix.it/thankyou",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:33:43.734Z",
+          "lastSeenAt": "2026-05-24T16:33:43.734Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "a19dcca3a3da41e3b5b4cdbdd56e3aeea6860688dc1506a26bc98e06c13ce739",
+          "title": "Thankyou - Ortix - Milano - Ortica",
+          "snapshotIds": [
+            "ortix/5c42a30075ad3c33/20260524T163343Z.json"
+          ]
+        },
+        "https://www.ortix.it/location": {
+          "url": "https://www.ortix.it/location",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:33:44.861Z",
+          "lastSeenAt": "2026-05-24T16:33:44.861Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "5bf58a9d843153234d81fbdba1ce6ae31dbe0f05c8a4021869b8a3d819aaa170",
+          "title": "Location - Ortix - Milano - Ortica",
+          "snapshotIds": [
+            "ortix/ad8d2398c3d60092/20260524T163344Z.json"
+          ]
+        },
+        "https://www.ortix.it/progetto": {
+          "url": "https://www.ortix.it/progetto",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:33:45.671Z",
+          "lastSeenAt": "2026-05-24T16:33:45.671Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "eb0891256aea593f50fbc8fee6800d5ec4b80f8fa11ff90a1be2cf6bb2aae6cd",
+          "title": "Progetto - Ortix - Milano - Ortica",
+          "snapshotIds": [
+            "ortix/1793d5d5fdcbd3ef/20260524T163345Z.json"
+          ]
+        },
+        "https://www.ortix.it/investitori": {
+          "url": "https://www.ortix.it/investitori",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:33:47.422Z",
+          "lastSeenAt": "2026-05-24T16:33:47.422Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "1991cee16fd0cc585ebb97e7028196f1f04a8c213b811cfee724e6680193d650",
+          "title": "Investitori - Ortix - Milano - Ortica",
+          "snapshotIds": [
+            "ortix/28c6015e5fe535b7/20260524T163347Z.json"
+          ]
+        },
+        "https://www.ortix.it/plus-e-dotazioni": {
+          "url": "https://www.ortix.it/plus-e-dotazioni",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:33:48.978Z",
+          "lastSeenAt": "2026-05-24T16:33:48.978Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "163be69224be8738bf078981c24cd637a961a4d8cb17a693ad5f8a47b749273b",
+          "title": "Plus e Dotazioni - Ortix - Milano - Ortica",
+          "snapshotIds": [
+            "ortix/30bf358ba4ccd539/20260524T163348Z.json"
+          ]
+        },
+        "https://www.ortix.it/residenze": {
+          "url": "https://www.ortix.it/residenze",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:33:50.272Z",
+          "lastSeenAt": "2026-05-24T16:33:50.272Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "37144d81b3b1f50b0d789285593f8c5936b8e1645f2d545a4ce907093f6096c4",
+          "title": "Residenze - Ortix - Milano - Ortica",
+          "snapshotIds": [
+            "ortix/283f22817db7c15d/20260524T163350Z.json"
+          ]
+        },
+        "https://www.ortix.it/portfolio": {
+          "url": "https://www.ortix.it/portfolio",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:33:51.126Z",
+          "lastSeenAt": "2026-05-24T16:33:51.126Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "ded5fe4b329017c0b26dd9e450019314cc9aa3d21fd1465bbb52b4fed2f7ac38",
+          "title": "Archivi Portfolio - Ortix - Milano - Ortica",
+          "snapshotIds": [
+            "ortix/ef9a92a6f34b4588/20260524T163351Z.json"
+          ]
+        },
+        "https://www.ortix.it/portfolio/potenti-parturient-parturie": {
+          "url": "https://www.ortix.it/portfolio/potenti-parturient-parturie",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:33:52.030Z",
+          "lastSeenAt": "2026-05-24T16:33:52.030Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "e737bf32b8e0b561c6cfe1abf069168d216ea7f09df284f1b5c65bd797da2180",
+          "title": "Potenti parturient parturie - Ortix - Milano - Ortica",
+          "snapshotIds": [
+            "ortix/b805461ba7db0d20/20260524T163352Z.json"
+          ]
+        },
+        "https://www.ortix.it/portfolio/rhoncus-quisque-sollicitudin": {
+          "url": "https://www.ortix.it/portfolio/rhoncus-quisque-sollicitudin",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:33:52.954Z",
+          "lastSeenAt": "2026-05-24T16:33:52.954Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "4be5a9d27a5b6b099b245a7d6c835890470e641ad2b99c71c787ca0df7845583",
+          "title": "Rhoncus quisque sollicitudin - Ortix - Milano - Ortica",
+          "snapshotIds": [
+            "ortix/8e4f4714bc0cd1c7/20260524T163352Z.json"
+          ]
+        },
+        "https://www.ortix.it/portfolio/a-lacus-bibendum-pulvinar": {
+          "url": "https://www.ortix.it/portfolio/a-lacus-bibendum-pulvinar",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:33:53.774Z",
+          "lastSeenAt": "2026-05-24T16:33:53.774Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "69af255a97119a965b09f02722e59335daa066fcb6755607a246800f4c3378a3",
+          "title": "A lacus bibendum pulvinar - Ortix - Milano - Ortica",
+          "snapshotIds": [
+            "ortix/e1ac18c3400859ee/20260524T163353Z.json"
+          ]
+        },
+        "https://www.ortix.it/portfolio/leo-uteu-ullamcorper": {
+          "url": "https://www.ortix.it/portfolio/leo-uteu-ullamcorper",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:33:54.745Z",
+          "lastSeenAt": "2026-05-24T16:33:54.745Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "2eecd2a68cfe6e26dc44d6efa144c5f5332e97fff15d82201e54ecd9e70556c7",
+          "title": "Leo uteu ullamcorper - Ortix - Milano - Ortica",
+          "snapshotIds": [
+            "ortix/a4ec6e80926f0b36/20260524T163354Z.json"
+          ]
+        },
+        "https://www.ortix.it/portfolio/venenatis-nam-phasellus": {
+          "url": "https://www.ortix.it/portfolio/venenatis-nam-phasellus",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:33:55.645Z",
+          "lastSeenAt": "2026-05-24T16:33:55.645Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "1f5e8c5b48f396ace9529923899a762e60419ef0f8810ca59fbb107cd35b05b6",
+          "title": "Venenatis nam phasellus - Ortix - Milano - Ortica",
+          "snapshotIds": [
+            "ortix/d6d6880dece7a5f5/20260524T163355Z.json"
+          ]
+        },
+        "https://www.ortix.it/portfolio/imperdiet-mauris-a-nontin": {
+          "url": "https://www.ortix.it/portfolio/imperdiet-mauris-a-nontin",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:33:56.496Z",
+          "lastSeenAt": "2026-05-24T16:33:56.496Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "bb1259ee3cdcce9dec83a0b6cdca8a9e4c7e9b68eba8e5bb4b69ea9050148991",
+          "title": "Imperdiet mauris a nontin - Ortix - Milano - Ortica",
+          "snapshotIds": [
+            "ortix/5da9261f27789c7c/20260524T163356Z.json"
+          ]
+        },
+        "https://www.ortix.it/portfolio/et-vestibulum-quis-a-suspendisse": {
+          "url": "https://www.ortix.it/portfolio/et-vestibulum-quis-a-suspendisse",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:33:57.901Z",
+          "lastSeenAt": "2026-05-24T16:33:57.901Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "1670be0061d50da28980ce812c14d1c86c6b397a6ab0d3e8caf8c7cbe9725a6f",
+          "title": "Et vestibulum quis a suspendisse - Ortix - Milano - Ortica",
+          "snapshotIds": [
+            "ortix/591fd564b84bb55a/20260524T163357Z.json"
+          ]
+        },
+        "https://www.ortix.it/portfolio/netus-eu-mollis-hac-dignis": {
+          "url": "https://www.ortix.it/portfolio/netus-eu-mollis-hac-dignis",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:33:59.035Z",
+          "lastSeenAt": "2026-05-24T16:33:59.035Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "a47c411e51eec1809d5e102c4e883c98c6ffaf8f8212b38acbe48cea97638760",
+          "title": "Netus eu mollis hac dignis - Ortix - Milano - Ortica",
+          "snapshotIds": [
+            "ortix/f3c1f28d30314b51/20260524T163359Z.json"
+          ]
+        },
+        "https://www.ortix.it/portfolio/suspendisse-quam-at-vestibulum": {
+          "url": "https://www.ortix.it/portfolio/suspendisse-quam-at-vestibulum",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:33:59.788Z",
+          "lastSeenAt": "2026-05-24T16:33:59.788Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "904ceace66ea84f4d2ff2f725bb7ad84ba95f832c31bb77b50f28931483d32cc",
+          "title": "Suspendisse quam at vestibulum - Ortix - Milano - Ortica",
+          "snapshotIds": [
+            "ortix/07f08dc93f152ca6/20260524T163359Z.json"
+          ]
+        },
+        "https://www.ortix.it/category/decoration": {
+          "url": "https://www.ortix.it/category/decoration",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:34:00.529Z",
+          "lastSeenAt": "2026-05-24T16:34:00.529Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "8f4a1d9f012d08b9a703707bfdf7d5c241c4d61982cfe3b46072cf553c426787",
+          "title": "Decoration Archivi - Ortix - Milano - Ortica",
+          "snapshotIds": [
+            "ortix/469a9a39966199d6/20260524T163400Z.json"
+          ]
+        },
+        "https://www.ortix.it/category/design-trends": {
+          "url": "https://www.ortix.it/category/design-trends",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:34:01.233Z",
+          "lastSeenAt": "2026-05-24T16:34:01.233Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "2b19c6f1b9356112f7b2102a8548dc31a2dd897d3e57184fb4b26caa5e503230",
+          "title": "Design trends Archivi - Ortix - Milano - Ortica",
+          "snapshotIds": [
+            "ortix/9a01922b0c83fa51/20260524T163401Z.json"
+          ]
+        },
+        "https://www.ortix.it/category/furniture": {
+          "url": "https://www.ortix.it/category/furniture",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:34:01.981Z",
+          "lastSeenAt": "2026-05-24T16:34:01.981Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "6e3554e87acd66368c6491e0614eafadcf3e91f361a2b2fd449da244896744db",
+          "title": "Furniture Archivi - Ortix - Milano - Ortica",
+          "snapshotIds": [
+            "ortix/0b0011dbf3e9695a/20260524T163401Z.json"
+          ]
+        },
+        "https://www.ortix.it/category/inspiration": {
+          "url": "https://www.ortix.it/category/inspiration",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:34:02.883Z",
+          "lastSeenAt": "2026-05-24T16:34:02.883Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "3e05963e42df3f8a764d33fab5c8585bce5c80bf51e273e0f31a828498941fca",
+          "title": "Inspiration Archivi - Ortix - Milano - Ortica",
+          "snapshotIds": [
+            "ortix/ca9112d6ebcef5bd/20260524T163402Z.json"
+          ]
+        },
+        "https://www.ortix.it/tag/chair": {
+          "url": "https://www.ortix.it/tag/chair",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:34:03.657Z",
+          "lastSeenAt": "2026-05-24T16:34:03.657Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "29ee699b6fadf11f11f9196d18a336ac2bd91f084d485f6f4dfaa43a2fd7c107",
+          "title": "Chair Archivi - Ortix - Milano - Ortica",
+          "snapshotIds": [
+            "ortix/b2e5ba17f6e7ccb1/20260524T163403Z.json"
+          ]
+        },
+        "https://www.ortix.it/tag/furniture": {
+          "url": "https://www.ortix.it/tag/furniture",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:34:04.328Z",
+          "lastSeenAt": "2026-05-24T16:34:04.328Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "6cec886ef6d6b467527bcc6acd2a967d44919e303d62b297a65be329b1093bb2",
+          "title": "Furniture Archivi - Ortix - Milano - Ortica",
+          "snapshotIds": [
+            "ortix/be3c578e9e15dcff/20260524T163404Z.json"
+          ]
+        },
+        "https://www.ortix.it/tag/guide": {
+          "url": "https://www.ortix.it/tag/guide",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:34:05.228Z",
+          "lastSeenAt": "2026-05-24T16:34:05.228Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "6e547205ab5fe1aa8e78e7724370a519d41047c454c515a8341527fdb5b3d4da",
+          "title": "Guide Archivi - Ortix - Milano - Ortica",
+          "snapshotIds": [
+            "ortix/e2b14abb5d215d76/20260524T163405Z.json"
+          ]
+        },
+        "https://www.ortix.it/tag/inspiratio": {
+          "url": "https://www.ortix.it/tag/inspiratio",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:34:06.057Z",
+          "lastSeenAt": "2026-05-24T16:34:06.057Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "5ef73bf7fb280bc103ab9bcb7d6424d1b149e1df72ab9243c7a9d2212e0aa685",
+          "title": "Inspiratio Archivi - Ortix - Milano - Ortica",
+          "snapshotIds": [
+            "ortix/e340dcb9b9e13a3d/20260524T163406Z.json"
+          ]
+        },
+        "https://www.ortix.it/tag/news": {
+          "url": "https://www.ortix.it/tag/news",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:34:06.899Z",
+          "lastSeenAt": "2026-05-24T16:34:06.899Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "3cfddc88572e5a94cb6fe83c5d8a519f66cbe275ed8b6820158baa46d2ebca88",
+          "title": "News Archivi - Ortix - Milano - Ortica",
+          "snapshotIds": [
+            "ortix/20a4be54f785e10e/20260524T163406Z.json"
+          ]
+        },
+        "https://www.ortix.it/tag/sofa": {
+          "url": "https://www.ortix.it/tag/sofa",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:34:07.619Z",
+          "lastSeenAt": "2026-05-24T16:34:07.619Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "d77dc3af8e5bac50632d199976c22bb25686c2c4a884d1ae42e8c0dc28e4046c",
+          "title": "Sofa Archivi - Ortix - Milano - Ortica",
+          "snapshotIds": [
+            "ortix/59ee735f537b2277/20260524T163407Z.json"
+          ]
+        },
+        "https://www.ortix.it/tag/style": {
+          "url": "https://www.ortix.it/tag/style",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:34:08.377Z",
+          "lastSeenAt": "2026-05-24T16:34:08.377Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "3eb6e86d3e5641dad254e5b682c5483f44e0c30c72023e78986172a283379c00",
+          "title": "Style Archivi - Ortix - Milano - Ortica",
+          "snapshotIds": [
+            "ortix/e3eb7a99470ff459/20260524T163408Z.json"
+          ]
+        },
+        "https://www.ortix.it/tag/table": {
+          "url": "https://www.ortix.it/tag/table",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:34:09.043Z",
+          "lastSeenAt": "2026-05-24T16:34:09.043Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "f85a86b236aa4ba9a9f141828a1adcfb8437c978ec5de2682f953ab25fb7a83a",
+          "title": "Table Archivi - Ortix - Milano - Ortica",
+          "snapshotIds": [
+            "ortix/1a18c92a6afa1f9a/20260524T163409Z.json"
+          ]
+        },
+        "https://www.ortix.it/tag/trends": {
+          "url": "https://www.ortix.it/tag/trends",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:34:09.949Z",
+          "lastSeenAt": "2026-05-24T16:34:09.949Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "2aa97578d41dae1dd122c7160c9627d2b830a926a0b136c14f1ee8145e7d1feb",
+          "title": "Trends Archivi - Ortix - Milano - Ortica",
+          "snapshotIds": [
+            "ortix/5d97303cceda0bc1/20260524T163409Z.json"
+          ]
+        },
+        "https://www.ortix.it/woodmart_slider/books-slider": {
+          "url": "https://www.ortix.it/woodmart_slider/books-slider",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:34:10.793Z",
+          "lastSeenAt": "2026-05-24T16:34:10.793Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "0ec8444e89b01dc40439130ff76b926e2f9789946a1b2c735c2aa4e3e7980b7b",
+          "title": "Books slider Archivi - Ortix - Milano - Ortica",
+          "snapshotIds": [
+            "ortix/2e9963afb3b42668/20260524T163410Z.json"
+          ]
+        },
+        "https://www.ortix.it/project-cat/accessories": {
+          "url": "https://www.ortix.it/project-cat/accessories",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:34:11.701Z",
+          "lastSeenAt": "2026-05-24T16:34:11.701Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "f019868be28c7597e7c7a8a86553bf25183889c3c5403511a1b9563da0a9544a",
+          "title": "Accessories Archivi - Ortix - Milano - Ortica",
+          "snapshotIds": [
+            "ortix/a729b8ac243e5b6e/20260524T163411Z.json"
+          ]
+        },
+        "https://www.ortix.it/project-cat/decor": {
+          "url": "https://www.ortix.it/project-cat/decor",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:34:12.797Z",
+          "lastSeenAt": "2026-05-24T16:34:12.797Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "01eb97eb2ccacf0357cc69f5b4635caa4eb994a7f623594decbc0c849ed3eb17",
+          "title": "Decor Archivi - Ortix - Milano - Ortica",
+          "snapshotIds": [
+            "ortix/d5711c2ead8b027f/20260524T163412Z.json"
+          ]
+        },
+        "https://www.ortix.it/project-cat/furniture": {
+          "url": "https://www.ortix.it/project-cat/furniture",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:34:13.620Z",
+          "lastSeenAt": "2026-05-24T16:34:13.620Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "af853be1ee1ae09a01c55e5cb407830a786da9736a6dfac8b3113816f6bd3c09",
+          "title": "Furniture Archivi - Ortix - Milano - Ortica",
+          "snapshotIds": [
+            "ortix/c77e17581d880117/20260524T163413Z.json"
+          ]
+        },
+        "https://www.ortix.it/project-cat/kitchen": {
+          "url": "https://www.ortix.it/project-cat/kitchen",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:34:14.303Z",
+          "lastSeenAt": "2026-05-24T16:34:14.303Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "0c05c043be1e0dbbf262ac7366ee0894c5ed8de3becfc7cf6f3d82a11ec16700",
+          "title": "Kitchen Archivi - Ortix - Milano - Ortica",
+          "snapshotIds": [
+            "ortix/69fa0651c16dd26a/20260524T163414Z.json"
+          ]
+        },
+        "https://www.ortix.it/project-cat/lighting": {
+          "url": "https://www.ortix.it/project-cat/lighting",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:34:15.197Z",
+          "lastSeenAt": "2026-05-24T16:34:15.197Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "203c6b535f601595bc26bba34149e0faf91497090074e7d07ca211a81371ddc3",
+          "title": "Lighting Archivi - Ortix - Milano - Ortica",
+          "snapshotIds": [
+            "ortix/52396336f11cafbf/20260524T163415Z.json"
+          ]
+        },
+        "https://www.ortix.it/author/wp_4850431": {
+          "url": "https://www.ortix.it/author/wp_4850431",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:34:16.113Z",
+          "lastSeenAt": "2026-05-24T16:34:16.113Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "9bc63274b7342af7c6c4064c612548a83b0b1d9b72d5ceeacb93b577dd2f194f",
+          "title": "wp_4850431, Autore presso Ortix - Milano - Ortica",
+          "snapshotIds": [
+            "ortix/72dd210b07ca8821/20260524T163416Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2024/11/Abitareco_Privacy-Policy-2024_siti-cantiere-Co-titolarita.pdf": {
+          "url": "https://www.ortix.it/wp-content/uploads/2024/11/Abitareco_Privacy-Policy-2024_siti-cantiere-Co-titolarita.pdf",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:16.269Z",
+          "lastSeenAt": "2026-05-24T16:34:16.269Z",
+          "lastStatus": 200,
+          "contentType": "application/pdf",
+          "contentLength": 48853,
+          "lastModified": "Fri, 10 Jan 2025 17:48:19 GMT",
+          "hash": "bfd8f26f6bc004585e583fe0ad5762195ae81390a8f9fae8472d91db311e1dde",
+          "snapshotIds": [
+            "ortix/6a1f5b884b59b598/20260524T163416Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2024/11/Abitareco_Informativa-2024_siti-cantiere-Contitolarita.pdf": {
+          "url": "https://www.ortix.it/wp-content/uploads/2024/11/Abitareco_Informativa-2024_siti-cantiere-Contitolarita.pdf",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:16.333Z",
+          "lastSeenAt": "2026-05-24T16:34:16.333Z",
+          "lastStatus": 200,
+          "contentType": "application/pdf",
+          "contentLength": 640137,
+          "lastModified": "Fri, 10 Jan 2025 17:48:19 GMT",
+          "hash": "26d0ca3657bf0bd42ed32e0425c70bf4ac8274c636520ca2a910f2a2667880b1",
+          "snapshotIds": [
+            "ortix/91c14db6f67d85f8/20260524T163416Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/ortixlogow.png": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/ortixlogow.png",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:16.481Z",
+          "lastSeenAt": "2026-05-24T16:34:16.481Z",
+          "lastStatus": 200,
+          "contentType": "image/png",
+          "contentLength": 74982,
+          "lastModified": "Fri, 10 Jan 2025 18:38:18 GMT",
+          "hash": "bb5a3dcc1874df46c7c3cf5dc0b35abb8a8c7b24dd1867fccc14867cbc957883",
+          "snapshotIds": [
+            "ortix/1d507749f2834295/20260524T163416Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/Koine_Trentacoste_Vista-10_Frontale_rev00-1-680x800.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/Koine_Trentacoste_Vista-10_Frontale_rev00-1-680x800.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:16.516Z",
+          "lastSeenAt": "2026-05-24T16:34:16.516Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 148128,
+          "lastModified": "Wed, 29 Jan 2025 17:26:02 GMT",
+          "hash": "d423bacf4fcc5b8dc5f22db1f0e4cb8014a5d23230f8810f1db609ea7de57811",
+          "snapshotIds": [
+            "ortix/5599b6101caac890/20260524T163416Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/10/02-scaled.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/10/02-scaled.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:16.619Z",
+          "lastSeenAt": "2026-05-24T16:34:16.619Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 863439,
+          "lastModified": "Thu, 02 Oct 2025 08:54:02 GMT",
+          "hash": "f2a0c8e07e5b11bf30f6c449b92e61d0107e5e69202354687be0e3cd88564f22",
+          "snapshotIds": [
+            "ortix/dc8acaf8e8c50a12/20260524T163416Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/10/01-scaled.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/10/01-scaled.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:16.847Z",
+          "lastSeenAt": "2026-05-24T16:34:16.847Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 764166,
+          "lastModified": "Thu, 02 Oct 2025 08:53:57 GMT",
+          "hash": "e6d75e97959bfb0c864ad2a910e3e8f80f43b24e23145683fd2bba119cd155cf",
+          "snapshotIds": [
+            "ortix/6da48c7331728874/20260524T163416Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/AdobeStock_499890148-500x400.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/AdobeStock_499890148-500x400.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:16.960Z",
+          "lastSeenAt": "2026-05-24T16:34:16.960Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 43233,
+          "lastModified": "Wed, 22 Jan 2025 15:59:07 GMT",
+          "hash": "a5ae1da180ab703d5be283539258156b6d08ccf45dbbb66ff24ddad4e4ff8c73",
+          "snapshotIds": [
+            "ortix/fb43e4ca16b8719e/20260524T163416Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/portrait-young-attractive-couple-500x400.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/portrait-young-attractive-couple-500x400.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:16.992Z",
+          "lastSeenAt": "2026-05-24T16:34:16.992Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 71617,
+          "lastModified": "Fri, 17 Jan 2025 10:46:14 GMT",
+          "hash": "59939e34aa75524946460e3df7a9d6132b49d954dafb4216a697aac59f4af2c8",
+          "snapshotIds": [
+            "ortix/240ed386cdd31137/20260524T163416Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/logototalwhite-1.png": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/logototalwhite-1.png",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:17.030Z",
+          "lastSeenAt": "2026-05-24T16:34:17.030Z",
+          "lastStatus": 200,
+          "contentType": "image/png",
+          "contentLength": 19900,
+          "lastModified": "Mon, 20 Jan 2025 17:58:04 GMT",
+          "hash": "ac8d5193073f1aec2d95a734660be79b7efe6b5e7eff36d68b75a161ef35cf82",
+          "snapshotIds": [
+            "ortix/abb4bd923516b1b0/20260524T163417Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/12/35-4loc-var.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/12/35-4loc-var.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:17.065Z",
+          "lastSeenAt": "2026-05-24T16:34:17.065Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 356838,
+          "lastModified": "Tue, 02 Dec 2025 08:35:43 GMT",
+          "hash": "ca1c194980e9e68da6fd838a2578cb451dc93db20e3ccd75678d88d3ecf71f2b",
+          "snapshotIds": [
+            "ortix/8cddbb6b0445eb7b/20260524T163417Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/09/84-4loc.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/09/84-4loc.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:17.133Z",
+          "lastSeenAt": "2026-05-24T16:34:17.133Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 435605,
+          "lastModified": "Mon, 15 Sep 2025 13:06:39 GMT",
+          "hash": "d7ebe4dd0780446ff0c67b1d2c5e3bc5d14f9911ad5e73d5304b9bb52057805f",
+          "snapshotIds": [
+            "ortix/88b8c39ae2a1b25d/20260524T163417Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/09/7-3loc.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/09/7-3loc.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:17.291Z",
+          "lastSeenAt": "2026-05-24T16:34:17.291Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 384154,
+          "lastModified": "Mon, 15 Sep 2025 13:05:57 GMT",
+          "hash": "33ebdce2dc9177ab81ed6fab9fac001cf931377e4c3d50e0b04b9f29921b7b55",
+          "snapshotIds": [
+            "ortix/0decaefc9cdbbda0/20260524T163417Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2026/04/30V-3loc.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2026/04/30V-3loc.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:17.359Z",
+          "lastSeenAt": "2026-05-24T16:34:17.359Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 234178,
+          "lastModified": "Wed, 22 Apr 2026 09:03:33 GMT",
+          "hash": "64be9ba7fa9fdb8535ec8392b50f99d44d27d6a5683f7adbbc82c42495dc506d",
+          "snapshotIds": [
+            "ortix/ce512b64f2cf56c9/20260524T163417Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/09/19-2loc.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/09/19-2loc.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:17.398Z",
+          "lastSeenAt": "2026-05-24T16:34:17.398Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 378970,
+          "lastModified": "Mon, 15 Sep 2025 13:03:26 GMT",
+          "hash": "183a4567e1cb323ad22dd581056d6126fa780fc8ccb4c86a089e69e9e718bf9b",
+          "snapshotIds": [
+            "ortix/90de21a8f96e784f/20260524T163417Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/09/1-2loc.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/09/1-2loc.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:17.471Z",
+          "lastSeenAt": "2026-05-24T16:34:17.471Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 290693,
+          "lastModified": "Mon, 15 Sep 2025 13:03:24 GMT",
+          "hash": "6ff5c8e3628e74e466fd7fdda47e0a3d9e417540164913d6c68befa15a99cf40",
+          "snapshotIds": [
+            "ortix/22fb80a76d698de9/20260524T163417Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/ortix_logo_white_DEF-1024x808.png": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/ortix_logo_white_DEF-1024x808.png",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:17.536Z",
+          "lastSeenAt": "2026-05-24T16:34:17.536Z",
+          "lastStatus": 200,
+          "contentType": "image/png",
+          "contentLength": 45035,
+          "lastModified": "Fri, 10 Jan 2025 17:48:19 GMT",
+          "hash": "b393f4f245243700f1ed5a61f4fc243b4feedf43fd1c53954527427123cc90cc",
+          "snapshotIds": [
+            "ortix/d049adc566abc022/20260524T163417Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2024/11/Logo_AbitareCo_advisor-broker_negativo.svg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2024/11/Logo_AbitareCo_advisor-broker_negativo.svg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:17.576Z",
+          "lastSeenAt": "2026-05-24T16:34:17.576Z",
+          "lastStatus": 200,
+          "contentType": "image/svg+xml",
+          "contentLength": 3798,
+          "lastModified": "Fri, 10 Jan 2025 17:48:19 GMT",
+          "hash": "5856e1905e4357c4285f7c0c8ad3c87d285514bac8523496d7f131466fac1e7f",
+          "snapshotIds": [
+            "ortix/cc912e77034e4690/20260524T163417Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/Koine_Trentacoste_Vista-10_Frontale_rev00-1-255x300.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/Koine_Trentacoste_Vista-10_Frontale_rev00-1-255x300.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:17.609Z",
+          "lastSeenAt": "2026-05-24T16:34:17.609Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 28138,
+          "lastModified": "Wed, 29 Jan 2025 17:26:02 GMT",
+          "hash": "f12cf8d6fa5767e0bd01f64f5ddb9ebbacd31f7ff421088ec3f81a28b593a22a",
+          "snapshotIds": [
+            "ortix/3863a4efb97af83b/20260524T163417Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/Koine_Trentacoste_Vista-10_Frontale_rev00-1-768x904.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/Koine_Trentacoste_Vista-10_Frontale_rev00-1-768x904.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:17.641Z",
+          "lastSeenAt": "2026-05-24T16:34:17.641Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 179426,
+          "lastModified": "Wed, 29 Jan 2025 17:26:02 GMT",
+          "hash": "67c5e3eb9f248ca8781c8d6c1382b3d4c67d110ff2f14f8edf02878746290a5f",
+          "snapshotIds": [
+            "ortix/87cf65eb6c7d34e7/20260524T163417Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/Koine_Trentacoste_Vista-10_Frontale_rev00-1-1305x1536.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/Koine_Trentacoste_Vista-10_Frontale_rev00-1-1305x1536.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:17.681Z",
+          "lastSeenAt": "2026-05-24T16:34:17.681Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 451887,
+          "lastModified": "Wed, 29 Jan 2025 17:26:03 GMT",
+          "hash": "a1d5bb0de6b20d2e4abd7f94338214c6b24bcbc542351d584e81c6c13773e4fb",
+          "snapshotIds": [
+            "ortix/fa85e708570f8f65/20260524T163417Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/Koine_Trentacoste_Vista-10_Frontale_rev00-1-1741x2048.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/Koine_Trentacoste_Vista-10_Frontale_rev00-1-1741x2048.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:17.842Z",
+          "lastSeenAt": "2026-05-24T16:34:17.842Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 732176,
+          "lastModified": "Wed, 29 Jan 2025 17:26:03 GMT",
+          "hash": "d96f9906aab4bee2ff1d896c31794f1a6881170f1920b93b138f78cd71c9ba54",
+          "snapshotIds": [
+            "ortix/6656b2b550fb11e3/20260524T163417Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/Koine_Trentacoste_Vista-10_Frontale_rev00-1.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/Koine_Trentacoste_Vista-10_Frontale_rev00-1.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:17.956Z",
+          "lastSeenAt": "2026-05-24T16:34:17.956Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 914924,
+          "lastModified": "Wed, 29 Jan 2025 17:26:01 GMT",
+          "hash": "42b021676d93c753c35a30508fc8059550a02a100732db70a976a893c5b280a9",
+          "snapshotIds": [
+            "ortix/64abb2efb1259327/20260524T163417Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/logototalwhite-1-400x98.png": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/logototalwhite-1-400x98.png",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:18.112Z",
+          "lastSeenAt": "2026-05-24T16:34:18.112Z",
+          "lastStatus": 200,
+          "contentType": "image/png",
+          "contentLength": 10615,
+          "lastModified": "Mon, 20 Jan 2025 17:58:04 GMT",
+          "hash": "7d3558cac5f68fa2148342891abe44d1773a64899496eae4cc2578be911813d8",
+          "snapshotIds": [
+            "ortix/c9347f7e79a3a122/20260524T163418Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/logototalwhite-1-768x188.png": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/logototalwhite-1-768x188.png",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:18.144Z",
+          "lastSeenAt": "2026-05-24T16:34:18.144Z",
+          "lastStatus": 200,
+          "contentType": "image/png",
+          "contentLength": 23214,
+          "lastModified": "Mon, 20 Jan 2025 17:58:04 GMT",
+          "hash": "a65a13f3891f9b7ea9ebf5ceb5ed2cb2d4069fcf05c78ff92cd3c4c5ac1a2a71",
+          "snapshotIds": [
+            "ortix/76ee3e99634d3b1d/20260524T163418Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/ortix_logo_white_DEF-300x237.png": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/ortix_logo_white_DEF-300x237.png",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:18.178Z",
+          "lastSeenAt": "2026-05-24T16:34:18.178Z",
+          "lastStatus": 200,
+          "contentType": "image/png",
+          "contentLength": 10713,
+          "lastModified": "Fri, 10 Jan 2025 17:48:19 GMT",
+          "hash": "001e1d6716cc6fce3901a4cdd0cee2caf2402cb2c9fbd182a148cbba5ddff6a8",
+          "snapshotIds": [
+            "ortix/22f6328e1fd27086/20260524T163418Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/ortix_logo_white_DEF-768x606.png": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/ortix_logo_white_DEF-768x606.png",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:18.209Z",
+          "lastSeenAt": "2026-05-24T16:34:18.209Z",
+          "lastStatus": 200,
+          "contentType": "image/png",
+          "contentLength": 32160,
+          "lastModified": "Fri, 10 Jan 2025 17:48:19 GMT",
+          "hash": "777722fdb6086cc519824d309171b1c031b2cb9a43a88a8c37e42485076c14d2",
+          "snapshotIds": [
+            "ortix/7551a3de2a14b4ea/20260524T163418Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/ortix_logo_white_DEF-1536x1212.png": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/ortix_logo_white_DEF-1536x1212.png",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:18.244Z",
+          "lastSeenAt": "2026-05-24T16:34:18.244Z",
+          "lastStatus": 200,
+          "contentType": "image/png",
+          "contentLength": 70993,
+          "lastModified": "Fri, 10 Jan 2025 17:48:19 GMT",
+          "hash": "a83ac7a709baa128ccd4ffc6b27d86b4ed789dc55b0b2aeb727b70780744d744",
+          "snapshotIds": [
+            "ortix/c35e651fb52cad89/20260524T163418Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/ortix_logo_white_DEF-2048x1617.png": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/ortix_logo_white_DEF-2048x1617.png",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:18.360Z",
+          "lastSeenAt": "2026-05-24T16:34:18.360Z",
+          "lastStatus": 200,
+          "contentType": "image/png",
+          "contentLength": 98343,
+          "lastModified": "Fri, 10 Jan 2025 17:48:19 GMT",
+          "hash": "0f16c712a372f105d8c9ddfaf2c4391d0a4689d1bcf33e7627628cacda73c550",
+          "snapshotIds": [
+            "ortix/613392f7617e8e0e/20260524T163418Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/logo-adviser.png": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/logo-adviser.png",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:35.243Z",
+          "lastSeenAt": "2026-05-24T16:34:35.243Z",
+          "lastStatus": 200,
+          "contentType": "image/png",
+          "contentLength": 36016,
+          "lastModified": "Mon, 20 Jan 2025 17:40:58 GMT",
+          "hash": "ca8f1ff1fe0c4ab2ebde08299de113fa2155f6b8f337401087cfa0b2a3bdf4f7",
+          "snapshotIds": [
+            "ortix/cc8ebc1b9823cbf6/20260524T163435Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/logo-adviser-400x92.png": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/logo-adviser-400x92.png",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:35.300Z",
+          "lastSeenAt": "2026-05-24T16:34:35.300Z",
+          "lastStatus": 200,
+          "contentType": "image/png",
+          "contentLength": 16969,
+          "lastModified": "Mon, 20 Jan 2025 17:40:58 GMT",
+          "hash": "ec81c63c62493c0953f622d1f0820c465907e21c5135420def05bc16e7c59735",
+          "snapshotIds": [
+            "ortix/3ba0cf625085541f/20260524T163435Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/logo-adviser-768x177.png": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/logo-adviser-768x177.png",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:35.332Z",
+          "lastSeenAt": "2026-05-24T16:34:35.332Z",
+          "lastStatus": 200,
+          "contentType": "image/png",
+          "contentLength": 37828,
+          "lastModified": "Mon, 20 Jan 2025 17:40:58 GMT",
+          "hash": "04deabc7fbc371357682fea701554245cc76bdce9c00a10152b4f2c4a11b9edb",
+          "snapshotIds": [
+            "ortix/fbc82f5e2620987a/20260524T163435Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/trasporti.svg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/trasporti.svg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:35.363Z",
+          "lastSeenAt": "2026-05-24T16:34:35.363Z",
+          "lastStatus": 200,
+          "contentType": "image/svg+xml",
+          "contentLength": 1522,
+          "lastModified": "Wed, 15 Jan 2025 09:50:47 GMT",
+          "hash": "b4016df7dee0c8e6284ef9c52b6bd08d19503e34871fbbd9f6e6ca5f536ba184",
+          "snapshotIds": [
+            "ortix/aef40f8a87e8fad2/20260524T163435Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/scuole.svg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/scuole.svg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:35.396Z",
+          "lastSeenAt": "2026-05-24T16:34:35.396Z",
+          "lastStatus": 200,
+          "contentType": "image/svg+xml",
+          "contentLength": 596,
+          "lastModified": "Wed, 15 Jan 2025 09:50:50 GMT",
+          "hash": "4a71eb27769028538ce5b94609e8c4ced59bfc2b6fa32c842f0b9fc78d452506",
+          "snapshotIds": [
+            "ortix/0d77dccce47683f2/20260524T163435Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/farmacie.svg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/farmacie.svg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:35.429Z",
+          "lastSeenAt": "2026-05-24T16:34:35.429Z",
+          "lastStatus": 200,
+          "contentType": "image/svg+xml",
+          "contentLength": 497,
+          "lastModified": "Wed, 15 Jan 2025 09:50:48 GMT",
+          "hash": "eb0cb539413879437384995b3683b5122c469e5cbc2ac4250fce174f7d382998",
+          "snapshotIds": [
+            "ortix/87562a8d5186ba4f/20260524T163435Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/supermarket.svg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/supermarket.svg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:35.462Z",
+          "lastSeenAt": "2026-05-24T16:34:35.462Z",
+          "lastStatus": 200,
+          "contentType": "image/svg+xml",
+          "contentLength": 737,
+          "lastModified": "Wed, 15 Jan 2025 09:50:51 GMT",
+          "hash": "5feeafad956f169af814d27cb4a07cb04178c0d8cdfafa336b2248e08da3dc26",
+          "snapshotIds": [
+            "ortix/a2334db5d0d78d8c/20260524T163435Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/ristoranti.svg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/ristoranti.svg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:35.495Z",
+          "lastSeenAt": "2026-05-24T16:34:35.495Z",
+          "lastStatus": 200,
+          "contentType": "image/svg+xml",
+          "contentLength": 724,
+          "lastModified": "Wed, 15 Jan 2025 09:50:49 GMT",
+          "hash": "cb7adc31b2be7b70d564abdebd9fb0a9d08962cb1e28e2d0309b3973962d1e74",
+          "snapshotIds": [
+            "ortix/2842a1d81ab2dfed/20260524T163435Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/trasporti22.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/trasporti22.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:35.528Z",
+          "lastSeenAt": "2026-05-24T16:34:35.528Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 277874,
+          "lastModified": "Wed, 22 Jan 2025 15:50:14 GMT",
+          "hash": "1999548cce6f0495f3ac96ef4fd76a4a97968d15ba0ac4bf3e7103d771ae5804",
+          "snapshotIds": [
+            "ortix/8b32d8b7627cabb5/20260524T163435Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/scuole-e-sport.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/scuole-e-sport.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:35.701Z",
+          "lastSeenAt": "2026-05-24T16:34:35.701Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 261152,
+          "lastModified": "Wed, 15 Jan 2025 11:51:47 GMT",
+          "hash": "42d16cb7db0765f3f1d517d27d2c6e8f8a07fb231aacc8ae39a085419bf508ac",
+          "snapshotIds": [
+            "ortix/b5de1a70c9cfde89/20260524T163435Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/farmacie-e-ospedali.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/farmacie-e-ospedali.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:35.746Z",
+          "lastSeenAt": "2026-05-24T16:34:35.746Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 244269,
+          "lastModified": "Tue, 21 Jan 2025 17:56:38 GMT",
+          "hash": "87d1decd00f85b7f8f505b49c8b8dbc53a04879068c94bd298d103a810bb98f1",
+          "snapshotIds": [
+            "ortix/d046571a27c66f3c/20260524T163435Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/supermarket.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/supermarket.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:35.784Z",
+          "lastSeenAt": "2026-05-24T16:34:35.784Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 198177,
+          "lastModified": "Wed, 15 Jan 2025 09:40:36 GMT",
+          "hash": "c2551f0bd8f69de781551b9a22f625a2c5529093660a7b02a4f67bbc1a54272f",
+          "snapshotIds": [
+            "ortix/01b94a77e66dd0ee/20260524T163435Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/ristoranti.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/ristoranti.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:35.823Z",
+          "lastSeenAt": "2026-05-24T16:34:35.823Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 230918,
+          "lastModified": "Wed, 15 Jan 2025 09:40:20 GMT",
+          "hash": "2f02f7e5ab0090ff5f0a9fc402ccbe63a3abfcf44bcaf4e6cffec9d95eaafd4b",
+          "snapshotIds": [
+            "ortix/08abfe6f4cb31c6b/20260524T163435Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/AdobeStock_218496887.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/AdobeStock_218496887.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:35.861Z",
+          "lastSeenAt": "2026-05-24T16:34:35.861Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 1361904,
+          "lastModified": "Wed, 22 Jan 2025 15:52:31 GMT",
+          "hash": "5cbd5cc97f296dd808506df0d5dce1853665bfb8b74efdaa1ea36caabee6407e",
+          "snapshotIds": [
+            "ortix/315bb9e49dcf867b/20260524T163435Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/01.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/01.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:36.056Z",
+          "lastSeenAt": "2026-05-24T16:34:36.056Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 230713,
+          "lastModified": "Thu, 30 Jan 2025 08:30:01 GMT",
+          "hash": "5f60ae2f385fa1f448055e53f861f3544bb38707bc6f9a3d496baf09deed6fbd",
+          "snapshotIds": [
+            "ortix/c6538539aee7b165/20260524T163436Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/11/01.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/11/01.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:36.161Z",
+          "lastSeenAt": "2026-05-24T16:34:36.161Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 864802,
+          "lastModified": "Fri, 28 Nov 2025 16:01:45 GMT",
+          "hash": "1fa1d0dbe102bb743840525edb0c92436d48d4e7beed24bd5d1b3456bdad049c",
+          "snapshotIds": [
+            "ortix/a3e79ab1b111ef36/20260524T163436Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/Koine_Trentacoste_Vista-10_Frontale_rev00-500x500.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/Koine_Trentacoste_Vista-10_Frontale_rev00-500x500.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:36.289Z",
+          "lastSeenAt": "2026-05-24T16:34:36.289Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 74649,
+          "lastModified": "Fri, 17 Jan 2025 18:55:06 GMT",
+          "hash": "b60dd3bac4d55cc917e98ee59cbf70ef9dd3b1b33e80513e9e660887d2fc7969",
+          "snapshotIds": [
+            "ortix/12f5c8159f7de018/20260524T163436Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/trasporti22-400x214.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/trasporti22-400x214.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:36.321Z",
+          "lastSeenAt": "2026-05-24T16:34:36.321Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 26458,
+          "lastModified": "Wed, 22 Jan 2025 15:50:14 GMT",
+          "hash": "f41647a585cb1bac17c07227f464074a6f184267f92641bfc311e2d86fddb740",
+          "snapshotIds": [
+            "ortix/b899d8b3f98474de/20260524T163436Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/trasporti22-1300x695.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/trasporti22-1300x695.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:36.352Z",
+          "lastSeenAt": "2026-05-24T16:34:36.352Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 148686,
+          "lastModified": "Wed, 22 Jan 2025 15:50:14 GMT",
+          "hash": "d05eda7fb50587690331cc36a79cb57211a28886fb0859465efc275bb6e97cd7",
+          "snapshotIds": [
+            "ortix/60e105d7b0e91cf5/20260524T163436Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/trasporti22-768x410.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/trasporti22-768x410.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:36.391Z",
+          "lastSeenAt": "2026-05-24T16:34:36.391Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 68874,
+          "lastModified": "Wed, 22 Jan 2025 15:50:14 GMT",
+          "hash": "3520e20ed38b91213ab7d8fb6f68f6193d57dc8ad8ab64c0b7168b5a373fda92",
+          "snapshotIds": [
+            "ortix/e57d4cc0a509b351/20260524T163436Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/trasporti22-1536x821.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/trasporti22-1536x821.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:36.426Z",
+          "lastSeenAt": "2026-05-24T16:34:36.426Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 186736,
+          "lastModified": "Wed, 22 Jan 2025 15:50:15 GMT",
+          "hash": "11d6399ba1c514c3bef139aa8392bf4960be6f179914659e80eebd0c9e4f9966",
+          "snapshotIds": [
+            "ortix/a9dd0e223406b49e/20260524T163436Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/trasporti22-100x53.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/trasporti22-100x53.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:36.688Z",
+          "lastSeenAt": "2026-05-24T16:34:36.688Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 6921,
+          "lastModified": "Wed, 30 Apr 2025 09:34:41 GMT",
+          "hash": "2e893746f887714976149812586495a366c27d6e7a77e71cd44a810ce15b02bc",
+          "snapshotIds": [
+            "ortix/1f11c8744d0898bc/20260524T163436Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/trasporti22-1000x534.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/trasporti22-1000x534.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:36.718Z",
+          "lastSeenAt": "2026-05-24T16:34:36.718Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 102735,
+          "lastModified": "Wed, 30 Apr 2025 09:36:21 GMT",
+          "hash": "074f0b66e90124726e5bbeeb16f164758b3f6998b99cd90de746bb63f984b5d4",
+          "snapshotIds": [
+            "ortix/e56009188ee46b71/20260524T163436Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/scuole-e-sport-400x214.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/scuole-e-sport-400x214.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:36.752Z",
+          "lastSeenAt": "2026-05-24T16:34:36.752Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 22505,
+          "lastModified": "Wed, 15 Jan 2025 11:51:47 GMT",
+          "hash": "215964d6e7ab7189af815edf4befe62ebcbd7d2b9dcaa628f3a6b2d0a5c7ee66",
+          "snapshotIds": [
+            "ortix/f7f9fc9126f5b80e/20260524T163436Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/scuole-e-sport-1300x695.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/scuole-e-sport-1300x695.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:36.784Z",
+          "lastSeenAt": "2026-05-24T16:34:36.784Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 150942,
+          "lastModified": "Wed, 15 Jan 2025 11:51:47 GMT",
+          "hash": "0f6e626b0e15c48ddc77728b9d45d7739ee8613ac39f9d3417da057c951626d2",
+          "snapshotIds": [
+            "ortix/983569e55e5a144e/20260524T163436Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/scuole-e-sport-768x410.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/scuole-e-sport-768x410.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:36.821Z",
+          "lastSeenAt": "2026-05-24T16:34:36.821Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 67377,
+          "lastModified": "Wed, 15 Jan 2025 11:51:47 GMT",
+          "hash": "6beae4f516c66c25cc6c7ce3543fdd0ed94dd526f82c1f88d887a753b5440b02",
+          "snapshotIds": [
+            "ortix/877227146951cdff/20260524T163436Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/scuole-e-sport-1536x821.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/scuole-e-sport-1536x821.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:36.870Z",
+          "lastSeenAt": "2026-05-24T16:34:36.870Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 189599,
+          "lastModified": "Wed, 15 Jan 2025 11:51:48 GMT",
+          "hash": "a46bb16205719362ccbb9908a434460c9cab67fc2d69fb36b95a36fcdf3311bc",
+          "snapshotIds": [
+            "ortix/e5d96f3d8f4a3e0d/20260524T163436Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/scuole-e-sport-100x53.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/scuole-e-sport-100x53.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:36.909Z",
+          "lastSeenAt": "2026-05-24T16:34:36.909Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 2172,
+          "lastModified": "Wed, 30 Apr 2025 09:34:41 GMT",
+          "hash": "5d8c5b79b04861031d333d1cd71a29164e3d1d8f415706019962bad1627a0c52",
+          "snapshotIds": [
+            "ortix/cdc2cbed94dfcd8e/20260524T163436Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/scuole-e-sport-1000x534.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/scuole-e-sport-1000x534.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:36.941Z",
+          "lastSeenAt": "2026-05-24T16:34:36.941Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 102857,
+          "lastModified": "Wed, 30 Apr 2025 09:36:21 GMT",
+          "hash": "738f70841868d35ada0b68abfde41418c2c2f137c2cf4c06c74d083751971e70",
+          "snapshotIds": [
+            "ortix/471e29292bf746fc/20260524T163436Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/farmacie-e-ospedali-400x214.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/farmacie-e-ospedali-400x214.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:36.975Z",
+          "lastSeenAt": "2026-05-24T16:34:36.975Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 24514,
+          "lastModified": "Tue, 21 Jan 2025 17:56:39 GMT",
+          "hash": "56af9f5d0a6460ab7fa62523e7e4100ff68bc6dbe738ac8ad9486ea2d7390dfa",
+          "snapshotIds": [
+            "ortix/fe4e367e8e0bf23a/20260524T163436Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/farmacie-e-ospedali-1300x695.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/farmacie-e-ospedali-1300x695.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:37.018Z",
+          "lastSeenAt": "2026-05-24T16:34:37.018Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 133106,
+          "lastModified": "Tue, 21 Jan 2025 17:56:39 GMT",
+          "hash": "7c28291bf4ede64455d2a9479fd1aa170e02a8d7382df41435d44e5e36894c34",
+          "snapshotIds": [
+            "ortix/fb13cbcb6d22183d/20260524T163437Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/farmacie-e-ospedali-768x410.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/farmacie-e-ospedali-768x410.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:37.053Z",
+          "lastSeenAt": "2026-05-24T16:34:37.053Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 62466,
+          "lastModified": "Tue, 21 Jan 2025 17:56:39 GMT",
+          "hash": "36e1b3ac91aa8e8174afc7411fcc8385bd976b90a0de1d23c62f100bcec9ea04",
+          "snapshotIds": [
+            "ortix/9da510dc942bb68d/20260524T163437Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/farmacie-e-ospedali-1536x821.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/farmacie-e-ospedali-1536x821.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:37.091Z",
+          "lastSeenAt": "2026-05-24T16:34:37.091Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 167050,
+          "lastModified": "Tue, 21 Jan 2025 17:56:39 GMT",
+          "hash": "7515194d7bd15a414d773f688c5f8ed5be53c69bceefecbeea0419e756c75caf",
+          "snapshotIds": [
+            "ortix/b44c387bfd454c23/20260524T163437Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/supermarket-400x214.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/supermarket-400x214.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:37.212Z",
+          "lastSeenAt": "2026-05-24T16:34:37.212Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 21277,
+          "lastModified": "Wed, 15 Jan 2025 09:40:36 GMT",
+          "hash": "762efbe8b4a880c072646648342dfb3678b9812da328049a2cb7124a97ac1b84",
+          "snapshotIds": [
+            "ortix/d99ab7d4f59bf3dd/20260524T163437Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/supermarket-1300x695.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/supermarket-1300x695.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:37.244Z",
+          "lastSeenAt": "2026-05-24T16:34:37.244Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 142834,
+          "lastModified": "Wed, 15 Jan 2025 09:40:36 GMT",
+          "hash": "226f76a5dba494c8a3138861604bb82cd413a376324c21912e0a24e1ad0b2465",
+          "snapshotIds": [
+            "ortix/b8611cbea1c3abc4/20260524T163437Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/supermarket-768x410.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/supermarket-768x410.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:37.279Z",
+          "lastSeenAt": "2026-05-24T16:34:37.279Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 63759,
+          "lastModified": "Wed, 15 Jan 2025 09:40:37 GMT",
+          "hash": "373473902f86fc5e823d828a2b4666515fbffd86ad231089211553b3146d7ead",
+          "snapshotIds": [
+            "ortix/14364e525bb72660/20260524T163437Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/supermarket-1536x821.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/supermarket-1536x821.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:37.314Z",
+          "lastSeenAt": "2026-05-24T16:34:37.314Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 179928,
+          "lastModified": "Wed, 15 Jan 2025 09:40:37 GMT",
+          "hash": "16f42e1fa2b8f2b5dec05102cb0ba93b1fe77a8e97b21617aa4fc728bbde77b6",
+          "snapshotIds": [
+            "ortix/4484c66b7feaad94/20260524T163437Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/ristoranti-400x214.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/ristoranti-400x214.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:37.349Z",
+          "lastSeenAt": "2026-05-24T16:34:37.349Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 25562,
+          "lastModified": "Wed, 15 Jan 2025 09:40:21 GMT",
+          "hash": "1ca25d3f4e9da6c2b82caf65379ef4bfbfcd98e8c5637a2f5d08ff420ed7b11e",
+          "snapshotIds": [
+            "ortix/630c7e54094719c5/20260524T163437Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/ristoranti-1300x695.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/ristoranti-1300x695.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:37.381Z",
+          "lastSeenAt": "2026-05-24T16:34:37.381Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 163587,
+          "lastModified": "Wed, 15 Jan 2025 09:40:21 GMT",
+          "hash": "0b136bc11fa984f9b64aeec51f029bf88612902bbe1d0dbaa8e0466d3bba01d6",
+          "snapshotIds": [
+            "ortix/8d817f80df3ff345/20260524T163437Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/ristoranti-768x410.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/ristoranti-768x410.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:37.419Z",
+          "lastSeenAt": "2026-05-24T16:34:37.419Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 73606,
+          "lastModified": "Wed, 15 Jan 2025 09:40:21 GMT",
+          "hash": "3cc5983bdbf4c28c4189d1b3a6f14721b587aa2f0723192e004f8d8f735090d8",
+          "snapshotIds": [
+            "ortix/9c0f99b46a3f6bbf/20260524T163437Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/ristoranti-1536x821.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/ristoranti-1536x821.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:37.452Z",
+          "lastSeenAt": "2026-05-24T16:34:37.452Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 206307,
+          "lastModified": "Wed, 15 Jan 2025 09:40:21 GMT",
+          "hash": "be1f4523f6a422267c136825686c935dcec5eb9804dd433c319af1bfc40d296b",
+          "snapshotIds": [
+            "ortix/708c6d80f43dfdb2/20260524T163437Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/AdobeStock_218496887-400x267.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/AdobeStock_218496887-400x267.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:37.491Z",
+          "lastSeenAt": "2026-05-24T16:34:37.491Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 52304,
+          "lastModified": "Wed, 22 Jan 2025 15:52:31 GMT",
+          "hash": "cfb32aa25d394f4e4014e7b3baedff7e9f530fe3ed1b22854986deb60146a33f",
+          "snapshotIds": [
+            "ortix/85b0410fc3c8e112/20260524T163437Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/AdobeStock_218496887-1199x800.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/AdobeStock_218496887-1199x800.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:37.526Z",
+          "lastSeenAt": "2026-05-24T16:34:37.526Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 481523,
+          "lastModified": "Wed, 22 Jan 2025 15:52:32 GMT",
+          "hash": "ace630d7c4eab4d5d8daeddfc86a0e5f161defaf0314f7e52ad5670c94b7da20",
+          "snapshotIds": [
+            "ortix/997891de7627bc38/20260524T163437Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/AdobeStock_218496887-768x512.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/AdobeStock_218496887-768x512.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:37.596Z",
+          "lastSeenAt": "2026-05-24T16:34:37.596Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 196732,
+          "lastModified": "Wed, 22 Jan 2025 15:52:32 GMT",
+          "hash": "285f299a2f4f9ef09a86a7ad0c81981dab3c3c720370179b3e68a8639ea91b44",
+          "snapshotIds": [
+            "ortix/c0b0c53c60103d86/20260524T163437Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/AdobeStock_218496887-1536x1025.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/AdobeStock_218496887-1536x1025.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:37.636Z",
+          "lastSeenAt": "2026-05-24T16:34:37.636Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 770657,
+          "lastModified": "Wed, 22 Jan 2025 15:52:32 GMT",
+          "hash": "980efecc0cb22765dc6521670312a513b2ca0c63ee1345b3810054c63ebf968b",
+          "snapshotIds": [
+            "ortix/9d5e2063e932a180/20260524T163437Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/01-400x258.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/01-400x258.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:37.831Z",
+          "lastSeenAt": "2026-05-24T16:34:37.831Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 49806,
+          "lastModified": "Thu, 30 Jan 2025 08:30:01 GMT",
+          "hash": "9b131dea2508402bf8518d5e69c1db000cd3c72bd03ba79aa0327d7c6104bfd1",
+          "snapshotIds": [
+            "ortix/e38f31ba51e53552/20260524T163437Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/01-768x496.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/01-768x496.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:37.865Z",
+          "lastSeenAt": "2026-05-24T16:34:37.865Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 121735,
+          "lastModified": "Thu, 30 Jan 2025 08:30:01 GMT",
+          "hash": "5cafd5d5f79a3ef4f1a6825f3b7e7e3aefac1a76afc07f5fc98a5b8ae3c610fb",
+          "snapshotIds": [
+            "ortix/c10b51ced7d3d6f4/20260524T163437Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/11/01-255x300.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/11/01-255x300.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:37.897Z",
+          "lastSeenAt": "2026-05-24T16:34:37.897Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 24590,
+          "lastModified": "Fri, 28 Nov 2025 16:01:45 GMT",
+          "hash": "c90a9458dfbd1a1865b8f68899b511c4e776fd6c282f0cd25f9254b54ca9ae04",
+          "snapshotIds": [
+            "ortix/78e56d4e7a22256d/20260524T163437Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/11/01-680x800.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/11/01-680x800.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:37.934Z",
+          "lastSeenAt": "2026-05-24T16:34:37.934Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 135223,
+          "lastModified": "Fri, 28 Nov 2025 16:01:45 GMT",
+          "hash": "c2d5cc7b61c830f6cd9c5a444f83bfaf7d096d813d3896012f52adc938d38fa3",
+          "snapshotIds": [
+            "ortix/6944d17f81d7c4d1/20260524T163437Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/11/01-768x904.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/11/01-768x904.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:37.973Z",
+          "lastSeenAt": "2026-05-24T16:34:37.973Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 167594,
+          "lastModified": "Fri, 28 Nov 2025 16:01:45 GMT",
+          "hash": "62707dff73e5b4995aa14a73068f763be6bb2f2bf5350e2c51270663cfa4a585",
+          "snapshotIds": [
+            "ortix/8739c92832fa841e/20260524T163437Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/11/01-1305x1536.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/11/01-1305x1536.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:38.012Z",
+          "lastSeenAt": "2026-05-24T16:34:38.012Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 427518,
+          "lastModified": "Fri, 28 Nov 2025 16:01:46 GMT",
+          "hash": "86eaca9e7d529deeb1bf0b4bd5dd333f67b9cb88dfa8c1966870a6a4f1bbff36",
+          "snapshotIds": [
+            "ortix/a5d002683013810e/20260524T163438Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/11/01-1741x2048.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/11/01-1741x2048.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:38.088Z",
+          "lastSeenAt": "2026-05-24T16:34:38.088Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 696401,
+          "lastModified": "Fri, 28 Nov 2025 16:01:47 GMT",
+          "hash": "2f4617324526ccde4ed867335213a390c16e0ddd654406e42551059f0da4970a",
+          "snapshotIds": [
+            "ortix/02b1529dd7fbb58c/20260524T163438Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/Koine_Trentacoste_Vista-10_Frontale_rev00-150x150.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/Koine_Trentacoste_Vista-10_Frontale_rev00-150x150.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:38.261Z",
+          "lastSeenAt": "2026-05-24T16:34:38.261Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 10236,
+          "lastModified": "Mon, 13 Jan 2025 10:58:18 GMT",
+          "hash": "74735b162ce51385b27d3a9420f1260d22e95cb40b10184603719bc0e980508d",
+          "snapshotIds": [
+            "ortix/96fdace1d4be630a/20260524T163438Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/11/02.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/11/02.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:38.296Z",
+          "lastSeenAt": "2026-05-24T16:34:38.296Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 1272350,
+          "lastModified": "Fri, 28 Nov 2025 16:01:42 GMT",
+          "hash": "ac80500991891b9ebe73b77696709d489853f639bfcfc4dc29ead56f4b5878a8",
+          "snapshotIds": [
+            "ortix/0d623550f4b1ce0a/20260524T163438Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Bedroom-appartamento-9_02_madia-magnolia-800x800.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Bedroom-appartamento-9_02_madia-magnolia-800x800.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:38.470Z",
+          "lastSeenAt": "2026-05-24T16:34:38.470Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 111939,
+          "lastModified": "Wed, 29 Jan 2025 17:28:49 GMT",
+          "hash": "567206551f597ae40ee2a40540b9fa688be3df2fa70089a5869560fa7feb115f",
+          "snapshotIds": [
+            "ortix/e75e1bebf9ffea7f/20260524T163438Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Cameretta_250123_zaino-800x800.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Cameretta_250123_zaino-800x800.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:38.504Z",
+          "lastSeenAt": "2026-05-24T16:34:38.504Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 109360,
+          "lastModified": "Wed, 29 Jan 2025 17:28:56 GMT",
+          "hash": "ee0a36370363dab052e3e0d1e504ba2145f40b374791fd41a763aefd648529ec",
+          "snapshotIds": [
+            "ortix/d77bbc05198819be/20260524T163438Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/11/02-255x300.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/11/02-255x300.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:38.538Z",
+          "lastSeenAt": "2026-05-24T16:34:38.538Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 31079,
+          "lastModified": "Fri, 28 Nov 2025 16:01:42 GMT",
+          "hash": "75aef6cfe8f2d6aa52439432057e0ee91303ce648e2ccf5fadaddfcc8ec78c3a",
+          "snapshotIds": [
+            "ortix/362324a8f018e45b/20260524T163438Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/11/02-680x800.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/11/02-680x800.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:38.571Z",
+          "lastSeenAt": "2026-05-24T16:34:38.571Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 184418,
+          "lastModified": "Fri, 28 Nov 2025 16:01:42 GMT",
+          "hash": "5c676c2f3225e1264070b9177cf4304c5d15914888d03fffab34458114b23086",
+          "snapshotIds": [
+            "ortix/2aaa0929b0c299cf/20260524T163438Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/11/02-768x904.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/11/02-768x904.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:38.608Z",
+          "lastSeenAt": "2026-05-24T16:34:38.608Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 230035,
+          "lastModified": "Fri, 28 Nov 2025 16:01:42 GMT",
+          "hash": "8d92a394ac12dadf96cd81762c1936260e89da82ec406610db3a3979c8f6988b",
+          "snapshotIds": [
+            "ortix/7fb36ee45a483061/20260524T163438Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/11/02-1305x1536.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/11/02-1305x1536.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:38.651Z",
+          "lastSeenAt": "2026-05-24T16:34:38.651Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 605220,
+          "lastModified": "Fri, 28 Nov 2025 16:01:43 GMT",
+          "hash": "b9e256bdf65d103c950cb5814801c9253bd9ab7315539e7c73792bb206b39b51",
+          "snapshotIds": [
+            "ortix/149b6a0a27f2c6b5/20260524T163438Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/11/02-1741x2048.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/11/02-1741x2048.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:38.820Z",
+          "lastSeenAt": "2026-05-24T16:34:38.820Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 989161,
+          "lastModified": "Fri, 28 Nov 2025 16:01:44 GMT",
+          "hash": "dffcc747d85bf4d36b29303b626108352f6129521db6d24ac54836a4d5d3cff6",
+          "snapshotIds": [
+            "ortix/90eb9918b5ac9898/20260524T163438Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Bedroom-appartamento-9_02_madia-magnolia-150x150.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Bedroom-appartamento-9_02_madia-magnolia-150x150.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:38.958Z",
+          "lastSeenAt": "2026-05-24T16:34:38.958Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 6540,
+          "lastModified": "Wed, 29 Jan 2025 17:26:14 GMT",
+          "hash": "6e07b6e1c159bc204b5b4c75198453f0799f69d6bfb180573c4fbfd109506063",
+          "snapshotIds": [
+            "ortix/3eb110b2dec65db5/20260524T163438Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Cameretta_250123_zaino-150x150.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Cameretta_250123_zaino-150x150.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:38.990Z",
+          "lastSeenAt": "2026-05-24T16:34:38.990Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 5773,
+          "lastModified": "Wed, 29 Jan 2025 17:26:20 GMT",
+          "hash": "a2d82f6c7584b48cc4e6638791da33b40d86e974231478a6b66187cf5686c6f9",
+          "snapshotIds": [
+            "ortix/416cf4e38118a3cc/20260524T163438Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/04/noun-metro-7442026.svg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/04/noun-metro-7442026.svg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:39.021Z",
+          "lastSeenAt": "2026-05-24T16:34:39.021Z",
+          "lastStatus": 200,
+          "contentType": "image/svg+xml",
+          "contentLength": 444,
+          "lastModified": "Wed, 30 Apr 2025 09:01:12 GMT",
+          "hash": "33b7e44dcc32042b2512c65aeee8d78bc0d90f1f1ff913b5bcb34ae6aebd4855",
+          "snapshotIds": [
+            "ortix/096ede2e5f4fbfcb/20260524T163439Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/04/highway.svg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/04/highway.svg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:39.057Z",
+          "lastSeenAt": "2026-05-24T16:34:39.057Z",
+          "lastStatus": 200,
+          "contentType": "image/svg+xml",
+          "contentLength": 313,
+          "lastModified": "Wed, 30 Apr 2025 09:01:11 GMT",
+          "hash": "09dc8d497b706765e7f4b439a85b436cedd54b7539305f834cc653df6fa49ef6",
+          "snapshotIds": [
+            "ortix/8c65ed96005231b3/20260524T163439Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/04/plane.svg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/04/plane.svg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:39.086Z",
+          "lastSeenAt": "2026-05-24T16:34:39.086Z",
+          "lastStatus": 200,
+          "contentType": "image/svg+xml",
+          "contentLength": 330,
+          "lastModified": "Wed, 30 Apr 2025 09:01:12 GMT",
+          "hash": "2eaa34e8cccb5f6a1a67690b95d99f4ebb784c8cff091605db93916188c5a247",
+          "snapshotIds": [
+            "ortix/673b4061966925d8/20260524T163439Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/04/universita.svg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/04/universita.svg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:39.118Z",
+          "lastSeenAt": "2026-05-24T16:34:39.118Z",
+          "lastStatus": 200,
+          "contentType": "image/svg+xml",
+          "contentLength": 491,
+          "lastModified": "Wed, 30 Apr 2025 09:01:11 GMT",
+          "hash": "3c0b52d1f0b81998fb5859709fd8acf0622837df321c32dbcd33e78af0e3e560",
+          "snapshotIds": [
+            "ortix/e68b3f6fcd95327e/20260524T163439Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/04/heart.svg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/04/heart.svg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:39.146Z",
+          "lastSeenAt": "2026-05-24T16:34:39.146Z",
+          "lastStatus": 200,
+          "contentType": "image/svg+xml",
+          "contentLength": 343,
+          "lastModified": "Wed, 30 Apr 2025 09:01:12 GMT",
+          "hash": "4ec9849c8bf0e8ec35b38ce93afe06209a3e2306b23276be787ba619854ab660",
+          "snapshotIds": [
+            "ortix/767ae9fdf9b2b2a2/20260524T163439Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/04/noun-sale-223671.svg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/04/noun-sale-223671.svg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:39.177Z",
+          "lastSeenAt": "2026-05-24T16:34:39.177Z",
+          "lastStatus": 200,
+          "contentType": "image/svg+xml",
+          "contentLength": 712,
+          "lastModified": "Wed, 30 Apr 2025 08:25:00 GMT",
+          "hash": "e635654f58bcb7abdebfde205aae4bd8dd818bfaa0b4f01b37fba4b58e159f79",
+          "snapshotIds": [
+            "ortix/66ef8b295240e96c/20260524T163439Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/04/noun-hand-shake-7584668.svg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/04/noun-hand-shake-7584668.svg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:39.209Z",
+          "lastSeenAt": "2026-05-24T16:34:39.209Z",
+          "lastStatus": 200,
+          "contentType": "image/svg+xml",
+          "contentLength": 892,
+          "lastModified": "Wed, 30 Apr 2025 08:25:00 GMT",
+          "hash": "c9cece9c6b04cd577464a93038a78d955ad1a9c446ba3503c7d4b02fa07951ed",
+          "snapshotIds": [
+            "ortix/efc21a37ef400130/20260524T163439Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/04/pallino.svg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/04/pallino.svg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:39.308Z",
+          "lastSeenAt": "2026-05-24T16:34:39.308Z",
+          "lastStatus": 200,
+          "contentType": "image/svg+xml",
+          "contentLength": 171,
+          "lastModified": "Wed, 30 Apr 2025 10:34:25 GMT",
+          "hash": "4bafe03450f6921fd88f776df0ae7144300ae9e977e598cdaed749d12317d88d",
+          "snapshotIds": [
+            "ortix/5ab3bc5d7673fca3/20260524T163439Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/AdobeStock_638346730-500x450.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/AdobeStock_638346730-500x450.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:39.340Z",
+          "lastSeenAt": "2026-05-24T16:34:39.340Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 27178,
+          "lastModified": "Mon, 05 May 2025 08:49:54 GMT",
+          "hash": "6b05d00456b5770aec6f8a92a14398744010362e93a17ed8bbe94e79cf27fb20",
+          "snapshotIds": [
+            "ortix/9b4f078ae6643bdc/20260524T163439Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/AdobeStock_140221951-500x450.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/AdobeStock_140221951-500x450.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:39.372Z",
+          "lastSeenAt": "2026-05-24T16:34:39.372Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 33709,
+          "lastModified": "Mon, 05 May 2025 08:49:58 GMT",
+          "hash": "661020b384fc23236e46e1ff229390fa1fb5c166d3870e7924f4636870ddf25a",
+          "snapshotIds": [
+            "ortix/a2d98796ca766b2f/20260524T163439Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/AdobeStock_638346730-768x512.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/AdobeStock_638346730-768x512.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:39.402Z",
+          "lastSeenAt": "2026-05-24T16:34:39.402Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 39921,
+          "lastModified": "Wed, 22 Jan 2025 15:54:10 GMT",
+          "hash": "fce65ccd2f103dc2af58baf578f6f7ec818a0338198c9e1da9c5e4bb0e779fc5",
+          "snapshotIds": [
+            "ortix/d4b0aa1dac20a5bb/20260524T163439Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/AdobeStock_216466951-768x512.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/AdobeStock_216466951-768x512.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:39.432Z",
+          "lastSeenAt": "2026-05-24T16:34:39.432Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 41846,
+          "lastModified": "Wed, 22 Jan 2025 15:54:18 GMT",
+          "hash": "8cf717252f5756da8ca935c0bf98f13a305568c43117ddf95bd8c0b87c5ad520",
+          "snapshotIds": [
+            "ortix/32a4e335929fdf67/20260524T163439Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/man-with-keys-new-car-with-blurred-car-background-buying-new-car-credit-acquisition-new-modern-car-768x512.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/man-with-keys-new-car-with-blurred-car-background-buying-new-car-credit-acquisition-new-modern-car-768x512.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:39.467Z",
+          "lastSeenAt": "2026-05-24T16:34:39.467Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 44211,
+          "lastModified": "Mon, 13 Jan 2025 18:00:16 GMT",
+          "hash": "e3cbf0a76efac1fae0f463dfc1c66273d588f55c8a0a849cb9e439de8eaa2d20",
+          "snapshotIds": [
+            "ortix/d8a16336975fdfa0/20260524T163439Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/AdobeStock_133149645-768x512.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/AdobeStock_133149645-768x512.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:39.501Z",
+          "lastSeenAt": "2026-05-24T16:34:39.501Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 52992,
+          "lastModified": "Wed, 22 Jan 2025 15:53:58 GMT",
+          "hash": "e6e0d5e03e87d305bbb744be104dd902a73f942a826b2e79289a2d4079687fbc",
+          "snapshotIds": [
+            "ortix/5147db377693a884/20260524T163439Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/smiling-classmates-sitting-row-playground-768x512.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/smiling-classmates-sitting-row-playground-768x512.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:39.532Z",
+          "lastSeenAt": "2026-05-24T16:34:39.532Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 119377,
+          "lastModified": "Mon, 13 Jan 2025 18:00:24 GMT",
+          "hash": "a23ce5bad184c2615666857c52dd2348e6c378657b9dcdec3690fd6bee6ead84",
+          "snapshotIds": [
+            "ortix/b0f1d8a3e133ab73/20260524T163439Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/view-from-business-startup-teamwork-concept-startup-partners-sitting-coworking-space-talking-about-future-project-looking-through-examples-work-laptop-digital-tablet-768x512.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/view-from-business-startup-teamwork-concept-startup-partners-sitting-coworking-space-talking-about-future-project-looking-through-examples-work-laptop-digital-tablet-768x512.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:39.568Z",
+          "lastSeenAt": "2026-05-24T16:34:39.568Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 66685,
+          "lastModified": "Mon, 13 Jan 2025 18:00:32 GMT",
+          "hash": "41f562177a17d554c2c6c86aec215e75e706b90c17ffe9170d0b5eb2205bb35c",
+          "snapshotIds": [
+            "ortix/7f8064a85077a254/20260524T163439Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/close-up-man-holding-his-white-bicycle-768x512.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/close-up-man-holding-his-white-bicycle-768x512.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:39.604Z",
+          "lastSeenAt": "2026-05-24T16:34:39.604Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 94405,
+          "lastModified": "Fri, 17 Jan 2025 15:36:33 GMT",
+          "hash": "85a3cf54deee5a646051b63c9594983d367c969b72da2e9bfeeac529514ed33f",
+          "snapshotIds": [
+            "ortix/79b0629ab731974a/20260524T163439Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/12/Biblioteca-degli-attrezzi-1-768x512.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/12/Biblioteca-degli-attrezzi-1-768x512.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:39.637Z",
+          "lastSeenAt": "2026-05-24T16:34:39.637Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 55103,
+          "lastModified": "Thu, 04 Dec 2025 16:34:39 GMT",
+          "hash": "1f07948f46d06286468af190aff7c5ec4f846eca40aaa62f3d5c9cac63802f0d",
+          "snapshotIds": [
+            "ortix/43c452771762bc9f/20260524T163439Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/12/area-book-crossing-768x512.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/12/area-book-crossing-768x512.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:39.671Z",
+          "lastSeenAt": "2026-05-24T16:34:39.671Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 52746,
+          "lastModified": "Thu, 04 Dec 2025 16:05:30 GMT",
+          "hash": "d7078e233f674e9b4b3f8de41c0092f0c1737afdf4aecd59980a7e0f99fe14e4",
+          "snapshotIds": [
+            "ortix/f5cccd1e5d1b9541/20260524T163439Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/AdobeStock_223531792-768x512.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/AdobeStock_223531792-768x512.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:39.702Z",
+          "lastSeenAt": "2026-05-24T16:34:39.702Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 54493,
+          "lastModified": "Wed, 22 Jan 2025 15:53:29 GMT",
+          "hash": "187d89306279671d017688d1e1e4ff25b3ae3811f07935cedc038aaa8f63c1ee",
+          "snapshotIds": [
+            "ortix/a2518eb11abaf19c/20260524T163439Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/tablet-pc-with-smart-home-settings-screen-768x531.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/tablet-pc-with-smart-home-settings-screen-768x531.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:39.734Z",
+          "lastSeenAt": "2026-05-24T16:34:39.734Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 42563,
+          "lastModified": "Mon, 13 Jan 2025 18:00:29 GMT",
+          "hash": "568d428bcc432230cc3cd917be9420011929912d68c0da0a78cd573b28f3df4f",
+          "snapshotIds": [
+            "ortix/e2f56d4ea257d27a/20260524T163439Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Living-ultimo-piano_07-copia-2-520x680.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Living-ultimo-piano_07-copia-2-520x680.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:39.833Z",
+          "lastSeenAt": "2026-05-24T16:34:39.833Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 59007,
+          "lastModified": "Wed, 29 Jan 2025 17:30:46 GMT",
+          "hash": "455cdb53cca73592fccd617a63e93e391f51a1e46171fb8632426b590303e148",
+          "snapshotIds": [
+            "ortix/0047baaee5f45ac0/20260524T163439Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_vista8_giardino-privato_REV03-520x680.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_vista8_giardino-privato_REV03-520x680.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:39.866Z",
+          "lastSeenAt": "2026-05-24T16:34:39.866Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 82099,
+          "lastModified": "Wed, 29 Jan 2025 17:30:53 GMT",
+          "hash": "aca3b6fe6919f1665ecd0af84de4014d0cda952714e16b88f1054f6b3551349f",
+          "snapshotIds": [
+            "ortix/7dd6000a7dc9fdf1/20260524T163439Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Terrace_02_hanging-520x680.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Terrace_02_hanging-520x680.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:39.898Z",
+          "lastSeenAt": "2026-05-24T16:34:39.898Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 72020,
+          "lastModified": "Wed, 29 Jan 2025 17:31:03 GMT",
+          "hash": "85e6c881de8d499e292578d6c1af24ca0e5408851c290aee7ab35dbc347f521f",
+          "snapshotIds": [
+            "ortix/d810ccf6f0a4a27d/20260524T163439Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/10/04a.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/10/04a.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:39.933Z",
+          "lastSeenAt": "2026-05-24T16:34:39.933Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 350987,
+          "lastModified": "Thu, 02 Oct 2025 09:04:06 GMT",
+          "hash": "f3131d3c8aeff1522d8226882eb0a171d12118d5e4fd973bbbe91793b5a74d0c",
+          "snapshotIds": [
+            "ortix/eda506c6e391dc74/20260524T163439Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_living_PT.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_living_PT.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:40.002Z",
+          "lastSeenAt": "2026-05-24T16:34:40.002Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 375573,
+          "lastModified": "Wed, 29 Jan 2025 17:26:30 GMT",
+          "hash": "373ba3189ba5e72921e1dc359087b52569fb87b84f15ce7f191f90284bce0d84",
+          "snapshotIds": [
+            "ortix/000f80c24ac10859/20260524T163440Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/3098-9-3loc-page-00002.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/3098-9-3loc-page-00002.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:40.071Z",
+          "lastSeenAt": "2026-05-24T16:34:40.071Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 179657,
+          "lastModified": "Fri, 17 Jan 2025 15:35:46 GMT",
+          "hash": "9b4f0f8c87aa0adaf3fc03240dc1872e3c10d2794bb090bd8f3d5432ab73ea4b",
+          "snapshotIds": [
+            "ortix/0d8c6d4cdf929f16/20260524T163440Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/vt-icon_active-1.svg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/vt-icon_active-1.svg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:40.108Z",
+          "lastSeenAt": "2026-05-24T16:34:40.108Z",
+          "lastStatus": 200,
+          "contentType": "image/svg+xml",
+          "contentLength": 568,
+          "lastModified": "Fri, 17 Jan 2025 11:20:26 GMT",
+          "hash": "437ea91e6c25ed1195b615529594776944659671d3fc45171ab33838ca42a49a",
+          "snapshotIds": [
+            "ortix/f81d21e8c881fca6/20260524T163440Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Bedroom-appartamento-9_02_madia-magnolia.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Bedroom-appartamento-9_02_madia-magnolia.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:40.141Z",
+          "lastSeenAt": "2026-05-24T16:34:40.141Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 368134,
+          "lastModified": "Wed, 29 Jan 2025 17:26:13 GMT",
+          "hash": "b8114f1334fe3c3bd5b4f2881936a9581a2a7725db145cfd2dd39e2bacd72d99",
+          "snapshotIds": [
+            "ortix/b1b394973021759d/20260524T163440Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_vista8_giardino-privato_REV03.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_vista8_giardino-privato_REV03.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:40.211Z",
+          "lastSeenAt": "2026-05-24T16:34:40.211Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 496491,
+          "lastModified": "Wed, 29 Jan 2025 17:25:25 GMT",
+          "hash": "65389e151a00250fee89cec0fb9fea68fb2e557ad3d8f4eac6bf88bb6a0185b6",
+          "snapshotIds": [
+            "ortix/2222ad96ced4d2d7/20260524T163440Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Cameretta_250123_zaino.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Cameretta_250123_zaino.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:40.355Z",
+          "lastSeenAt": "2026-05-24T16:34:40.355Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 434182,
+          "lastModified": "Wed, 29 Jan 2025 17:26:19 GMT",
+          "hash": "3131db55e70cc3e9561a162e35aabeb007ce3428a472de201c9f42c81d70a6e0",
+          "snapshotIds": [
+            "ortix/9b1b71da78717606/20260524T163440Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/Living-Now.gif": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/Living-Now.gif",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:40.421Z",
+          "lastSeenAt": "2026-05-24T16:34:40.421Z",
+          "lastStatus": 200,
+          "contentType": "image/gif",
+          "contentLength": 455868,
+          "lastModified": "Fri, 17 Jan 2025 11:33:03 GMT",
+          "hash": "a89adf7468987b419d47dc76f85d05bd7ed5fd81b9ac85a4cc040c0a8767899d",
+          "snapshotIds": [
+            "ortix/c299251042d9d146/20260524T163440Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/AdobeStock_140221951-600x600.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/AdobeStock_140221951-600x600.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:40.498Z",
+          "lastSeenAt": "2026-05-24T16:34:40.498Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 46019,
+          "lastModified": "Wed, 22 Jan 2025 16:05:10 GMT",
+          "hash": "58a6b3a2761a5dbbf0c1a3f9615162dfad178cc41f1f60c1b9cdc5c8fa01fb6f",
+          "snapshotIds": [
+            "ortix/2cc2da98e166e589/20260524T163440Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Bedroom-appartamento-9_02_madia-magnolia-400x267.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Bedroom-appartamento-9_02_madia-magnolia-400x267.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:40.534Z",
+          "lastSeenAt": "2026-05-24T16:34:40.534Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 24333,
+          "lastModified": "Wed, 29 Jan 2025 17:26:14 GMT",
+          "hash": "568f18f96e0c348d24446b904b9805117a9cc4ad7251d2ff4668967616eb7185",
+          "snapshotIds": [
+            "ortix/541d57f51809b010/20260524T163440Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Bedroom-appartamento-9_02_madia-magnolia-1200x800.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Bedroom-appartamento-9_02_madia-magnolia-1200x800.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:40.566Z",
+          "lastSeenAt": "2026-05-24T16:34:40.566Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 156069,
+          "lastModified": "Wed, 29 Jan 2025 17:26:14 GMT",
+          "hash": "4894270198710add4e09dc4b95e61deb76a9564ffc028b5752fbe75601661662",
+          "snapshotIds": [
+            "ortix/85c0772a3810d13a/20260524T163440Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Bedroom-appartamento-9_02_madia-magnolia-768x512.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Bedroom-appartamento-9_02_madia-magnolia-768x512.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:40.606Z",
+          "lastSeenAt": "2026-05-24T16:34:40.606Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 72700,
+          "lastModified": "Wed, 29 Jan 2025 17:26:14 GMT",
+          "hash": "b74d58ea825f19b3c990ff5b56659930eff865d45f48c07e0b55c8f9143b9e35",
+          "snapshotIds": [
+            "ortix/808b95c5c2779045/20260524T163440Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Bedroom-appartamento-9_02_madia-magnolia-1536x1024.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Bedroom-appartamento-9_02_madia-magnolia-1536x1024.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:40.637Z",
+          "lastSeenAt": "2026-05-24T16:34:40.637Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 235506,
+          "lastModified": "Wed, 29 Jan 2025 17:26:14 GMT",
+          "hash": "bbab480fd691a2dd9b604f297ff82d314fee875616e4eea295f6ace3ba703317",
+          "snapshotIds": [
+            "ortix/d4dfe073151d6803/20260524T163440Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_living_PT-400x267.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_living_PT-400x267.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:40.678Z",
+          "lastSeenAt": "2026-05-24T16:34:40.678Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 24570,
+          "lastModified": "Wed, 29 Jan 2025 17:26:30 GMT",
+          "hash": "85cb2fd03563c57f105194d0eb3e85fee7f00e3d0aab8c591d2b7cfcacb2375e",
+          "snapshotIds": [
+            "ortix/8c52ddd4f0545462/20260524T163440Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_living_PT-1200x800.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_living_PT-1200x800.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:40.709Z",
+          "lastSeenAt": "2026-05-24T16:34:40.709Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 158048,
+          "lastModified": "Wed, 29 Jan 2025 17:26:30 GMT",
+          "hash": "6a4492d90910ac69883dad65e064b1db1a3b24fb5e1ccbb88b9cdc5a542b89d3",
+          "snapshotIds": [
+            "ortix/c61dc144e2a3455a/20260524T163440Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_living_PT-768x512.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_living_PT-768x512.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:40.747Z",
+          "lastSeenAt": "2026-05-24T16:34:40.747Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 72679,
+          "lastModified": "Wed, 29 Jan 2025 17:26:30 GMT",
+          "hash": "0839bc0b37de86a0c37a7578ae99c98f71668088a4a6732dbba317072b10539b",
+          "snapshotIds": [
+            "ortix/d693d2411951b2c1/20260524T163440Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_living_PT-1536x1024.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_living_PT-1536x1024.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:40.786Z",
+          "lastSeenAt": "2026-05-24T16:34:40.786Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 240211,
+          "lastModified": "Wed, 29 Jan 2025 17:26:31 GMT",
+          "hash": "fa97550838bea4fce2c7478f975f6f7889d2f510876e6c90450b5d83dd37c4c0",
+          "snapshotIds": [
+            "ortix/ca2b0a1e251e6ea1/20260524T163440Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_vista8_giardino-privato_REV03-400x267.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_vista8_giardino-privato_REV03-400x267.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:40.913Z",
+          "lastSeenAt": "2026-05-24T16:34:40.913Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 27618,
+          "lastModified": "Wed, 29 Jan 2025 17:25:25 GMT",
+          "hash": "09554fead100cd5862e247d008c1fb345ce7e82f85cb156177ef358b0822b856",
+          "snapshotIds": [
+            "ortix/51f8883fa510a27c/20260524T163440Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_vista8_giardino-privato_REV03-1200x800.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_vista8_giardino-privato_REV03-1200x800.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:40.945Z",
+          "lastSeenAt": "2026-05-24T16:34:40.945Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 202267,
+          "lastModified": "Wed, 29 Jan 2025 17:25:25 GMT",
+          "hash": "2de9cbbd80c90b62650cda40819575ef89c3a15b8f530cd17e0525f975d912b6",
+          "snapshotIds": [
+            "ortix/273254a728255acf/20260524T163440Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_vista8_giardino-privato_REV03-768x512.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_vista8_giardino-privato_REV03-768x512.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:40.984Z",
+          "lastSeenAt": "2026-05-24T16:34:40.984Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 88679,
+          "lastModified": "Wed, 29 Jan 2025 17:25:26 GMT",
+          "hash": "ff2d3125a02a5a817d04fd220fa09c7a43795b891afc20c0ebdc71f08bd36cf5",
+          "snapshotIds": [
+            "ortix/aeae49c3085f1f71/20260524T163440Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_vista8_giardino-privato_REV03-1536x1024.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_vista8_giardino-privato_REV03-1536x1024.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:41.022Z",
+          "lastSeenAt": "2026-05-24T16:34:41.022Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 313091,
+          "lastModified": "Wed, 29 Jan 2025 17:25:26 GMT",
+          "hash": "35df395b567d52dd62af7081623b393d80db2a3e2c2362b05c28cdeff46b0f81",
+          "snapshotIds": [
+            "ortix/ea986eca3064da2c/20260524T163441Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Cameretta_250123_zaino-400x267.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Cameretta_250123_zaino-400x267.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:41.091Z",
+          "lastSeenAt": "2026-05-24T16:34:41.091Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 24228,
+          "lastModified": "Wed, 29 Jan 2025 17:26:19 GMT",
+          "hash": "879fd11aedaa336a78e6bd985099263b9380091f49f9f4e8784ccc92699fe2af",
+          "snapshotIds": [
+            "ortix/44c46d44d756a273/20260524T163441Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Cameretta_250123_zaino-1200x800.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Cameretta_250123_zaino-1200x800.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:41.122Z",
+          "lastSeenAt": "2026-05-24T16:34:41.122Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 175450,
+          "lastModified": "Wed, 29 Jan 2025 17:26:20 GMT",
+          "hash": "6e064f1697950cbf4717f3f4e3d94278e97cb3de0a517f76107e4cf00b914088",
+          "snapshotIds": [
+            "ortix/641b1ad18d5f7fa7/20260524T163441Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Cameretta_250123_zaino-768x512.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Cameretta_250123_zaino-768x512.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:41.160Z",
+          "lastSeenAt": "2026-05-24T16:34:41.160Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 77500,
+          "lastModified": "Wed, 29 Jan 2025 17:26:20 GMT",
+          "hash": "a343634bac394369068fcd554eb0f2e84138933705a715083d8c8d75093db902",
+          "snapshotIds": [
+            "ortix/dbdd73caf7eab5e3/20260524T163441Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Cameretta_250123_zaino-1536x1024.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Cameretta_250123_zaino-1536x1024.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:41.196Z",
+          "lastSeenAt": "2026-05-24T16:34:41.196Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 268917,
+          "lastModified": "Wed, 29 Jan 2025 17:26:20 GMT",
+          "hash": "18212edb033dd6d1bb2ede9c76df127556d36fcb7f94124bd77c17bc0250c9de",
+          "snapshotIds": [
+            "ortix/369698cb70dcd313/20260524T163441Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/AdobeStock_140221951-150x150.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/AdobeStock_140221951-150x150.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:41.261Z",
+          "lastSeenAt": "2026-05-24T16:34:41.261Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 6160,
+          "lastModified": "Wed, 22 Jan 2025 15:54:06 GMT",
+          "hash": "1ef6265eab8a584dc858785996f862e91f87c5944cd893aba3942f9eee4a80a8",
+          "snapshotIds": [
+            "ortix/de33acc829510be1/20260524T163441Z.json"
+          ]
+        },
+        "https://www.ortix.it/wp-content/uploads/2025/01/AdobeStock_140221951-500x500.jpg": {
+          "url": "https://www.ortix.it/wp-content/uploads/2025/01/AdobeStock_140221951-500x500.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T16:34:41.294Z",
+          "lastSeenAt": "2026-05-24T16:34:41.294Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 35618,
+          "lastModified": "Mon, 05 May 2025 08:49:24 GMT",
+          "hash": "78faa3937ce18fe326f6cdef0b5fb811a7664a636b81bcdf95e3a8b2a6ab401c",
+          "snapshotIds": [
+            "ortix/99affc0e88bf2791/20260524T163441Z.json"
+          ]
+        },
+        "https://www.ortix.it/portfolio/page/2?woo_ajax=1": {
+          "url": "https://www.ortix.it/portfolio/page/2?woo_ajax=1",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T16:34:41.940Z",
+          "lastSeenAt": "2026-05-24T16:34:41.940Z",
+          "lastStatus": 200,
+          "contentType": "application/json; charset=UTF-8",
+          "hash": "5da16f44615bbb6611ec09b3d71eea7bc6bf7cedda23af16f2a453fc134198b7",
+          "snapshotIds": [
+            "ortix/57234affa73282e1/20260524T163441Z.json"
+          ]
+        }
+      },
+      "lastScanAt": "2026-05-24T16:33:30.320Z"
+    }
+  }
+}
