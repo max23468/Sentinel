@@ -72,3 +72,6 @@ Su macOS, se la password non è in env, Sentinel prova a leggere dal Portachiavi
 La pubblicazione codice passa da GitHub. Il deploy operativo MVP passa dal
 workflow GitHub Actions su `main`: test, build, scan, commit degli output e
 fallimento solo per errori tecnici o email necessarie non inviate.
+
+La issue GitHub `Codex feedback inbox` raccoglie i commenti Codex sulle PR; il
+workflow `Codex PR comments` la mantiene sincronizzata.

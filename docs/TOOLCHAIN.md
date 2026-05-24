@@ -34,6 +34,7 @@ Questa pagina descrive runtime, comandi e guardrail effettivi di Sentinel.
 | --- | --- | --- |
 | `gh` | CLI autenticata locale | PR, run GitHub Actions e diagnostica GitHub |
 | GitHub Actions | `ubuntu-latest`, Node `22` | runtime operativo schedulato/manuale |
+| Dependabot | configurazione GitHub | aggiornamenti dipendenze npm e GitHub Actions |
 | SMTP Gmail | secret GitHub o env locale | invio email operativo |
 | Portachiavi macOS | servizi `sentinel-gmail` e `sentinel-icloud` | fallback locale per password email |
 
@@ -42,6 +43,7 @@ Questa pagina descrive runtime, comandi e guardrail effettivi di Sentinel.
 - install/setup: `npm install` o `npm ci`.
 - build: `npm run build`.
 - test: `npm test`.
+- Codex comments dry-run: workflow `Codex PR comments` con input `dry_run=true`.
 - scan: `npm run sentinel -- scan`.
 - dry-run scan: `npm run sentinel -- scan --dry-run`.
 - report: `npm run sentinel -- report`.
@@ -51,6 +53,7 @@ Questa pagina descrive runtime, comandi e guardrail effettivi di Sentinel.
 ## Pubblicazione, release e deploy
 
 - La pubblicazione codice passa da commit, push e PR/merge su GitHub.
+- La Codex feedback inbox è gestita dal workflow `Codex PR comments`.
 - Il deploy operativo MVP passa da GitHub Actions su `main`.
 - Non esiste VPS.
 - Non esiste ancora una policy di tag o GitHub Release.
