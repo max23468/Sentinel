@@ -65,3 +65,11 @@ sites:
       - mc_eid
       - ref
       - source
+  - id: sancarlo-sviluppo
+    name: San Carlo Sviluppo
+    enabled: true
+    sitemapUrls:
+      - https://sancarlosviluppo.com/sitemap_index.xml
+    roots:
+      - https://sancarlosviluppo.com/
+    emailProfile: gmail

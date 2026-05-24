@@ -1,7 +1,11 @@
 # Sentinel
 
 Sentinel è una CLI Node.js/TypeScript per monitorare cambiamenti su siti web pubblici.
-Il primo monitor configurato è Ortix.
+
+Monitor configurati:
+
+- Ortix
+- San Carlo Sviluppo
 
 ## Comandi
 

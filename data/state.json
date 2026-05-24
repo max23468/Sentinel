@@ -2622,6 +2622,574 @@
         }
       },
       "lastScanAt": "2026-05-24T17:52:08.267Z"
+    },
+    "sancarlo-sviluppo": {
+      "id": "sancarlo-sviluppo",
+      "name": "San Carlo Sviluppo",
+      "urls": {
+        "https://sancarlosviluppo.com/": {
+          "url": "https://sancarlosviluppo.com/",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T18:02:29.172Z",
+          "lastSeenAt": "2026-05-24T18:02:29.172Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "contentLength": 58933,
+          "hash": "8fda013420df06cf59e8d6a46ff4f615e4ab95a391760d7012ebb508c99ef1b0",
+          "title": "San Carlo Sviluppo Immobiliare: Cinquant’anni di esperienza al servizio dell’innovazione.",
+          "snapshotIds": [
+            "sancarlo-sviluppo/06715f154f6e3dee/20260524T180229Z.json"
+          ]
+        },
+        "https://sancarlosviluppo.com/progetti-immobiliari-milano": {
+          "url": "https://sancarlosviluppo.com/progetti-immobiliari-milano",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T18:02:31.305Z",
+          "lastSeenAt": "2026-05-24T18:02:31.305Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "967221692a0cdaea2e5618b8ab68ee01f82a7ac6b5bcd63a8dfe503fdf0dc107",
+          "title": "San Carlo Sviluppo Immobiliare: realizziamo progetti immobiliari a milano con design urbano contemporaneo.",
+          "snapshotIds": [
+            "sancarlo-sviluppo/76a9cb55b02cb122/20260524T180231Z.json"
+          ]
+        },
+        "https://sancarlosviluppo.com/sviluppo-immobiliare": {
+          "url": "https://sancarlosviluppo.com/sviluppo-immobiliare",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T18:02:33.561Z",
+          "lastSeenAt": "2026-05-24T18:02:33.561Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "d7cf381980f8dff8955482e5280fbdc933fa261046762c289abe19fbd7f3a4cd",
+          "title": "San Carlo Sviluppo Immobiliare: premium experience.",
+          "snapshotIds": [
+            "sancarlo-sviluppo/56795846076030be/20260524T180233Z.json"
+          ]
+        },
+        "https://sancarlosviluppo.com/cookie-policy": {
+          "url": "https://sancarlosviluppo.com/cookie-policy",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T18:02:35.750Z",
+          "lastSeenAt": "2026-05-24T18:02:35.750Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "9b6029396e40b438943be95cfcb7658ad5085a1d33c851f3378d07bf15dce193",
+          "title": "San Carlo Sviluppo Immobiliare: la nostra cookie policy",
+          "snapshotIds": [
+            "sancarlo-sviluppo/1a6d97acf697497f/20260524T180235Z.json"
+          ]
+        },
+        "https://sancarlosviluppo.com/privacy-policy": {
+          "url": "https://sancarlosviluppo.com/privacy-policy",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T18:02:38.016Z",
+          "lastSeenAt": "2026-05-24T18:02:38.016Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "9f5f74075b85286e414f0a5c06eeac64add844b0429b6bc5479565d2e407de30",
+          "title": "San Carlo Sviluppo Immobiliare: la nostra privacy policy",
+          "snapshotIds": [
+            "sancarlo-sviluppo/5aa572e6f5242aca/20260524T180238Z.json"
+          ]
+        },
+        "https://sancarlosviluppo.com/contatti": {
+          "url": "https://sancarlosviluppo.com/contatti",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T18:02:40.046Z",
+          "lastSeenAt": "2026-05-24T18:02:40.046Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "c0c1b04556d957047d2b371697ce7e5c124addd167c5f935f394a861613ffbad",
+          "title": "San Carlo Sviluppo Immobiliare: contattaci per richiedere informazioni.",
+          "snapshotIds": [
+            "sancarlo-sviluppo/f38ebd3945cdd6ac/20260524T180240Z.json"
+          ]
+        },
+        "https://sancarlosviluppo.com/san-carlo-sviluppo-immobiliare": {
+          "url": "https://sancarlosviluppo.com/san-carlo-sviluppo-immobiliare",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T18:02:42.065Z",
+          "lastSeenAt": "2026-05-24T18:02:42.065Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "4c64929073b30c5f69a9b580b6eb35a018e3b31ddfb415e5470c9f56b05849b9",
+          "title": "San Carlo Sviluppo Immobiliare: una moderna società di sviluppo di interventi immobiliari residenziali a Monza.",
+          "snapshotIds": [
+            "sancarlo-sviluppo/1588992fe893fa9c/20260524T180242Z.json"
+          ]
+        },
+        "https://sancarlosviluppo.com/progetti/milano-salaino": {
+          "url": "https://sancarlosviluppo.com/progetti/milano-salaino",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T18:02:44.210Z",
+          "lastSeenAt": "2026-05-24T18:02:44.210Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "15835701ed7bb94b3a38dcf4bf8b040f77332d137f7cc5efbb9b361d6f3b4e47",
+          "title": "Milano Salaino: un nuovo benessere abitativo",
+          "snapshotIds": [
+            "sancarlo-sviluppo/3987632fec75e673/20260524T180244Z.json"
+          ]
+        },
+        "https://sancarlosviluppo.com/progetti/milano-mola-nuvolone": {
+          "url": "https://sancarlosviluppo.com/progetti/milano-mola-nuvolone",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T18:02:46.413Z",
+          "lastSeenAt": "2026-05-24T18:02:46.413Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "8a021baccc14a53936278f0823c51f8c1573e133735321fec510df392c396e3b",
+          "title": "Milano Mola Nuvolone: innovazione certificata",
+          "snapshotIds": [
+            "sancarlo-sviluppo/bf3281d7932bdfac/20260524T180246Z.json"
+          ]
+        },
+        "https://sancarlosviluppo.com/progetti/residenza-leopardi": {
+          "url": "https://sancarlosviluppo.com/progetti/residenza-leopardi",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T18:02:48.472Z",
+          "lastSeenAt": "2026-05-24T18:02:48.472Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "27fb701552f24e97d341de18fec800f4305d9ab4460cc2a6d45d331a9ff68534",
+          "title": "Residenza Leopardi: una nuova direzione",
+          "snapshotIds": [
+            "sancarlo-sviluppo/7ee8eb4dd55d4c92/20260524T180248Z.json"
+          ]
+        },
+        "https://sancarlosviluppo.com/progetti/milano-vittor-pisani": {
+          "url": "https://sancarlosviluppo.com/progetti/milano-vittor-pisani",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T18:02:50.470Z",
+          "lastSeenAt": "2026-05-24T18:02:50.470Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "1f23c60b7d17ceae7f4deb71d7dd863650ad110eceee15f1206c92f3fc5fb9de",
+          "title": "Milano Vittor Pisani: nuovi spazi di verde inedito",
+          "snapshotIds": [
+            "sancarlo-sviluppo/d7c92d205c96fe83/20260524T180250Z.json"
+          ]
+        },
+        "https://sancarlosviluppo.com/progetti/milano-trentacoste": {
+          "url": "https://sancarlosviluppo.com/progetti/milano-trentacoste",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T18:02:52.422Z",
+          "lastSeenAt": "2026-05-24T18:02:52.422Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "35f199f3a8c3f191aa9a1d4f1b1847be8e4cc409e64f1510c335780d33cd6c93",
+          "title": "Milano Trentacoste: avanguardia del rinnovamento urbano",
+          "snapshotIds": [
+            "sancarlo-sviluppo/d36b25b04097fe31/20260524T180252Z.json"
+          ]
+        },
+        "https://sancarlosviluppo.com/progetti/milano-gioia": {
+          "url": "https://sancarlosviluppo.com/progetti/milano-gioia",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T18:02:54.518Z",
+          "lastSeenAt": "2026-05-24T18:02:54.518Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "4cac6c4c8e0ead255a54e7da9911195538ff5faaac33818c7ce35c8eb87cfc92",
+          "title": "MILANO GIOIA - San Carlo",
+          "snapshotIds": [
+            "sancarlo-sviluppo/aba31a702f7134f6/20260524T180254Z.json"
+          ]
+        },
+        "https://sancarlosviluppo.com/progetti/milano-bordoni": {
+          "url": "https://sancarlosviluppo.com/progetti/milano-bordoni",
+          "kind": "html",
+          "firstSeenAt": "2026-05-24T18:02:56.692Z",
+          "lastSeenAt": "2026-05-24T18:02:56.692Z",
+          "lastStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "hash": "e8de5b80272668d904ee18a2ebdc29679f92e536c5d75d502e3f3306cdd98f6c",
+          "title": "MILANO BORDONI - San Carlo",
+          "snapshotIds": [
+            "sancarlo-sviluppo/ef702d2325bbd830/20260524T180256Z.json"
+          ]
+        },
+        "https://sancarlosviluppo.com/wp-content/themes/sancarlo/dist/images/logo.svg": {
+          "url": "https://sancarlosviluppo.com/wp-content/themes/sancarlo/dist/images/logo.svg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T18:02:58.075Z",
+          "lastSeenAt": "2026-05-24T18:02:58.075Z",
+          "lastStatus": 200,
+          "contentType": "image/svg+xml",
+          "contentLength": 26627,
+          "lastModified": "Fri, 21 Feb 2020 13:53:00 GMT",
+          "hash": "09d09a3908362e4684cb017d9d4dbe5c707fc32ab41de70d49fbf84dcd18dcb9",
+          "snapshotIds": [
+            "sancarlo-sviluppo/188f7ce624658910/20260524T180258Z.json"
+          ]
+        },
+        "https://sancarlosviluppo.com/wp-content/themes/sancarlo/dist/images/icons/menu.svg": {
+          "url": "https://sancarlosviluppo.com/wp-content/themes/sancarlo/dist/images/icons/menu.svg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T18:02:58.148Z",
+          "lastSeenAt": "2026-05-24T18:02:58.148Z",
+          "lastStatus": 200,
+          "contentType": "image/svg+xml",
+          "contentLength": 908,
+          "lastModified": "Fri, 21 Feb 2020 13:53:00 GMT",
+          "hash": "f1b235e8ec4dd4022bc67dc18c8aa4f32c82e283a42223cf0cc517ede2a87c8a",
+          "snapshotIds": [
+            "sancarlo-sviluppo/beacb60f662086c3/20260524T180258Z.json"
+          ]
+        },
+        "https://sancarlosviluppo.com/wp-content/themes/sancarlo/dist/images/icons/close.svg": {
+          "url": "https://sancarlosviluppo.com/wp-content/themes/sancarlo/dist/images/icons/close.svg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T18:02:58.208Z",
+          "lastSeenAt": "2026-05-24T18:02:58.208Z",
+          "lastStatus": 200,
+          "contentType": "image/svg+xml",
+          "contentLength": 808,
+          "lastModified": "Fri, 21 Feb 2020 13:53:00 GMT",
+          "hash": "bc0823d7e8d078c8265f4b3d906b3e22c7a692b43d4fe40e4fb2b3de01303d63",
+          "snapshotIds": [
+            "sancarlo-sviluppo/040bd4ad73519737/20260524T180258Z.json"
+          ]
+        },
+        "https://sancarlosviluppo.com/wp-content/uploads/2020/02/promotion.svg": {
+          "url": "https://sancarlosviluppo.com/wp-content/uploads/2020/02/promotion.svg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T18:02:58.267Z",
+          "lastSeenAt": "2026-05-24T18:02:58.267Z",
+          "lastStatus": 200,
+          "contentType": "image/svg+xml",
+          "contentLength": 4101,
+          "lastModified": "Mon, 24 Feb 2020 17:17:34 GMT",
+          "hash": "61eafc43d13c837966454cd43dfb1cf0aa06a6242f06bdc202c4cf5b841a4127",
+          "snapshotIds": [
+            "sancarlo-sviluppo/cc5da8f89d918ff6/20260524T180258Z.json"
+          ]
+        },
+        "https://sancarlosviluppo.com/wp-content/uploads/2020/02/buildings.svg": {
+          "url": "https://sancarlosviluppo.com/wp-content/uploads/2020/02/buildings.svg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T18:02:58.343Z",
+          "lastSeenAt": "2026-05-24T18:02:58.343Z",
+          "lastStatus": 200,
+          "contentType": "image/svg+xml",
+          "contentLength": 2434,
+          "lastModified": "Mon, 24 Feb 2020 17:17:45 GMT",
+          "hash": "92eed17dd7d03ea838a21772529ae8cc43f683b61113e39c66e739aa1d0c05e7",
+          "snapshotIds": [
+            "sancarlo-sviluppo/e576f9fab4193e59/20260524T180258Z.json"
+          ]
+        },
+        "https://sancarlosviluppo.com/wp-content/uploads/2020/02/buildings-not-sold.svg": {
+          "url": "https://sancarlosviluppo.com/wp-content/uploads/2020/02/buildings-not-sold.svg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T18:02:58.406Z",
+          "lastSeenAt": "2026-05-24T18:02:58.406Z",
+          "lastStatus": 200,
+          "contentType": "image/svg+xml",
+          "contentLength": 2738,
+          "lastModified": "Mon, 24 Feb 2020 17:17:52 GMT",
+          "hash": "46e6b3768d0cdee5fb4332376019440b046b38d55d244cda212531740cd04de8",
+          "snapshotIds": [
+            "sancarlo-sviluppo/e05d29da06c8768f/20260524T180258Z.json"
+          ]
+        },
+        "https://sancarlosviluppo.com/wp-content/uploads/2020/02/law.svg": {
+          "url": "https://sancarlosviluppo.com/wp-content/uploads/2020/02/law.svg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T18:02:58.469Z",
+          "lastSeenAt": "2026-05-24T18:02:58.469Z",
+          "lastStatus": 200,
+          "contentType": "image/svg+xml",
+          "contentLength": 1725,
+          "lastModified": "Mon, 24 Feb 2020 17:17:59 GMT",
+          "hash": "fa64fc67e86c3142c1f2119e6894f8540ed8b41c6b663e94c1576020f55fc72f",
+          "snapshotIds": [
+            "sancarlo-sviluppo/8be5862e197f7613/20260524T180258Z.json"
+          ]
+        },
+        "https://sancarlosviluppo.com/wp-content/themes/sancarlo/dist/images/icons/zoom.svg": {
+          "url": "https://sancarlosviluppo.com/wp-content/themes/sancarlo/dist/images/icons/zoom.svg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T18:02:58.531Z",
+          "lastSeenAt": "2026-05-24T18:02:58.531Z",
+          "lastStatus": 200,
+          "contentType": "image/svg+xml",
+          "contentLength": 1066,
+          "lastModified": "Fri, 21 Feb 2020 13:53:00 GMT",
+          "hash": "757468bd120829fdafaea5845c46a5ff9137cffff5c524ede1211c1212e370db",
+          "snapshotIds": [
+            "sancarlo-sviluppo/8f9a3504a58b4a6e/20260524T180258Z.json"
+          ]
+        },
+        "https://sancarlosviluppo.com/wp-content/uploads/2020/02/pin-info.svg": {
+          "url": "https://sancarlosviluppo.com/wp-content/uploads/2020/02/pin-info.svg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T18:02:58.597Z",
+          "lastSeenAt": "2026-05-24T18:02:58.597Z",
+          "lastStatus": 200,
+          "contentType": "image/svg+xml",
+          "contentLength": 789,
+          "lastModified": "Mon, 24 Feb 2020 17:15:13 GMT",
+          "hash": "074ea1a958bd81fcc0791a8f218c74da41d6d69f89b992e6008529f5ff1c60eb",
+          "snapshotIds": [
+            "sancarlo-sviluppo/11f91689899c13f4/20260524T180258Z.json"
+          ]
+        },
+        "https://sancarlosviluppo.com/wp-content/uploads/2020/02/phone.svg": {
+          "url": "https://sancarlosviluppo.com/wp-content/uploads/2020/02/phone.svg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T18:02:58.653Z",
+          "lastSeenAt": "2026-05-24T18:02:58.653Z",
+          "lastStatus": 200,
+          "contentType": "image/svg+xml",
+          "contentLength": 1948,
+          "lastModified": "Mon, 24 Feb 2020 17:15:21 GMT",
+          "hash": "8d28c2a9be353c60cbb21e1cb76e90ea70def236f01123d346a03cbf2110c4ec",
+          "snapshotIds": [
+            "sancarlo-sviluppo/9f0b016196aaf718/20260524T180258Z.json"
+          ]
+        },
+        "https://sancarlosviluppo.com/wp-content/uploads/2020/02/contact.svg": {
+          "url": "https://sancarlosviluppo.com/wp-content/uploads/2020/02/contact.svg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T18:02:58.707Z",
+          "lastSeenAt": "2026-05-24T18:02:58.707Z",
+          "lastStatus": 200,
+          "contentType": "image/svg+xml",
+          "contentLength": 741,
+          "lastModified": "Mon, 24 Feb 2020 17:15:29 GMT",
+          "hash": "c4769f5bb4337a8d05ef79414508b93dd177f4044dcff7816946c909d5d88277",
+          "snapshotIds": [
+            "sancarlo-sviluppo/7909e3206044b9de/20260524T180258Z.json"
+          ]
+        },
+        "https://sancarlosviluppo.com/wp-content/uploads/2020/02/Valparaiso7_esterna01_rev02-scaled.jpg": {
+          "url": "https://sancarlosviluppo.com/wp-content/uploads/2020/02/Valparaiso7_esterna01_rev02-scaled.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T18:02:58.768Z",
+          "lastSeenAt": "2026-05-24T18:02:58.768Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 797469,
+          "lastModified": "Thu, 14 May 2020 14:41:39 GMT",
+          "hash": "ea855ba7499972510e11baa5cb4c390eddb53d2aa9f4b7f9ae087f68504f10fd",
+          "snapshotIds": [
+            "sancarlo-sviluppo/d626fa77d1dba375/20260524T180258Z.json"
+          ]
+        },
+        "https://sancarlosviluppo.com/wp-content/uploads/2020/02/Valparaiso7_esterna03_rev00_mod-scaled.jpg": {
+          "url": "https://sancarlosviluppo.com/wp-content/uploads/2020/02/Valparaiso7_esterna03_rev00_mod-scaled.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T18:02:58.898Z",
+          "lastSeenAt": "2026-05-24T18:02:58.898Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 866472,
+          "lastModified": "Thu, 14 May 2020 14:42:16 GMT",
+          "hash": "54d0120481a5f6a29eaf173d50f201b2441ad89d21e185acb506322b783fc3c2",
+          "snapshotIds": [
+            "sancarlo-sviluppo/131d2f626873993d/20260524T180258Z.json"
+          ]
+        },
+        "https://sancarlosviluppo.com/wp-content/uploads/2020/02/Valparaiso7_esterna04_rev01_mod-scaled.jpg": {
+          "url": "https://sancarlosviluppo.com/wp-content/uploads/2020/02/Valparaiso7_esterna04_rev01_mod-scaled.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T18:02:59.033Z",
+          "lastSeenAt": "2026-05-24T18:02:59.033Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 553270,
+          "lastModified": "Thu, 14 May 2020 14:42:37 GMT",
+          "hash": "570f44f4335b2f51e4083d6e5780e0e0ead9db4b8d1c17773e7cb30f483fb6ae",
+          "snapshotIds": [
+            "sancarlo-sviluppo/bd02d6fc60e19a19/20260524T180259Z.json"
+          ]
+        },
+        "https://sancarlosviluppo.com/wp-content/uploads/2020/02/Via-Mola-1-scaled.jpg": {
+          "url": "https://sancarlosviluppo.com/wp-content/uploads/2020/02/Via-Mola-1-scaled.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T18:02:59.157Z",
+          "lastSeenAt": "2026-05-24T18:02:59.157Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 477332,
+          "lastModified": "Thu, 14 May 2020 15:05:16 GMT",
+          "hash": "89742b6354f95078251c6089a78bbef5843f27edd2999a6e165de394ef504980",
+          "snapshotIds": [
+            "sancarlo-sviluppo/11d20611005a1c56/20260524T180259Z.json"
+          ]
+        },
+        "https://sancarlosviluppo.com/wp-content/uploads/2020/02/Via-Mola-3-scaled.jpg": {
+          "url": "https://sancarlosviluppo.com/wp-content/uploads/2020/02/Via-Mola-3-scaled.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T18:02:59.283Z",
+          "lastSeenAt": "2026-05-24T18:02:59.283Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 730439,
+          "lastModified": "Thu, 14 May 2020 15:05:23 GMT",
+          "hash": "52e52ce9747466184fa71b17c8baafe9deb00b7e32c21bc66d64a24b3061a3d3",
+          "snapshotIds": [
+            "sancarlo-sviluppo/b9fca260bbfeb57e/20260524T180259Z.json"
+          ]
+        },
+        "https://sancarlosviluppo.com/wp-content/uploads/2020/02/Via-Mola-7-scaled.jpg": {
+          "url": "https://sancarlosviluppo.com/wp-content/uploads/2020/02/Via-Mola-7-scaled.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T18:02:59.417Z",
+          "lastSeenAt": "2026-05-24T18:02:59.417Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 562889,
+          "lastModified": "Thu, 14 May 2020 15:05:57 GMT",
+          "hash": "015269432555eb1dca4df7f0fd39d54540a89b534ec2124881cf2cfec775eaf3",
+          "snapshotIds": [
+            "sancarlo-sviluppo/87caec8dc70aa3ef/20260524T180259Z.json"
+          ]
+        },
+        "https://sancarlosviluppo.com/wp-content/uploads/2020/04/Settimo-terminato-8.jpg": {
+          "url": "https://sancarlosviluppo.com/wp-content/uploads/2020/04/Settimo-terminato-8.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T18:02:59.539Z",
+          "lastSeenAt": "2026-05-24T18:02:59.539Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 309129,
+          "lastModified": "Thu, 14 May 2020 15:16:22 GMT",
+          "hash": "7f8bac1e8c768edddcd9b0cf87942ef19b1284180db7c7a0be1d21c4c732c071",
+          "snapshotIds": [
+            "sancarlo-sviluppo/5e9452f7d510989e/20260524T180259Z.json"
+          ]
+        },
+        "https://sancarlosviluppo.com/wp-content/uploads/2020/04/Settimo-terminato-9.jpg": {
+          "url": "https://sancarlosviluppo.com/wp-content/uploads/2020/04/Settimo-terminato-9.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T18:02:59.662Z",
+          "lastSeenAt": "2026-05-24T18:02:59.662Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 216535,
+          "lastModified": "Thu, 14 May 2020 15:16:37 GMT",
+          "hash": "b2b50400467307aaaa6efdc2932ff2b3b9f29e9a22f3822e821dc97454cd41e4",
+          "snapshotIds": [
+            "sancarlo-sviluppo/c16117fa2a8ab8b8/20260524T180259Z.json"
+          ]
+        },
+        "https://sancarlosviluppo.com/wp-content/uploads/2020/04/Settimo-terminato-6.jpg": {
+          "url": "https://sancarlosviluppo.com/wp-content/uploads/2020/04/Settimo-terminato-6.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T18:02:59.764Z",
+          "lastSeenAt": "2026-05-24T18:02:59.764Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 268242,
+          "lastModified": "Thu, 14 May 2020 15:16:54 GMT",
+          "hash": "65f247f21ffde7d420eb75d13f3204adb5a053a947622e2d60c289d57dc28afb",
+          "snapshotIds": [
+            "sancarlo-sviluppo/caa24ad71e60c05d/20260524T180259Z.json"
+          ]
+        },
+        "https://sancarlosviluppo.com/wp-content/uploads/2023/02/VITTORPISANI1.jpg": {
+          "url": "https://sancarlosviluppo.com/wp-content/uploads/2023/02/VITTORPISANI1.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T18:02:59.881Z",
+          "lastSeenAt": "2026-05-24T18:02:59.881Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 488228,
+          "lastModified": "Fri, 03 Feb 2023 09:12:02 GMT",
+          "hash": "8d0070b87dbaee465615169a62f46e43c1ddd0a70bcab85317a58e249c98785e",
+          "snapshotIds": [
+            "sancarlo-sviluppo/8158e538c9425f0c/20260524T180259Z.json"
+          ]
+        },
+        "https://sancarlosviluppo.com/wp-content/uploads/2023/02/VITTORPISANI2.jpg": {
+          "url": "https://sancarlosviluppo.com/wp-content/uploads/2023/02/VITTORPISANI2.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T18:03:00.013Z",
+          "lastSeenAt": "2026-05-24T18:03:00.013Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 389732,
+          "lastModified": "Fri, 03 Feb 2023 09:12:14 GMT",
+          "hash": "03b54ef90e0f61c4cf50a61e5b1888ddb80225bff1473ee164f3d8b42106ffa8",
+          "snapshotIds": [
+            "sancarlo-sviluppo/72a39c7b3e33dc86/20260524T180300Z.json"
+          ]
+        },
+        "https://sancarlosviluppo.com/wp-content/uploads/2023/02/Trentacoste_vista-12-diurna-3500px-scaled-1.webp": {
+          "url": "https://sancarlosviluppo.com/wp-content/uploads/2023/02/Trentacoste_vista-12-diurna-3500px-scaled-1.webp",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T18:03:00.128Z",
+          "lastSeenAt": "2026-05-24T18:03:00.128Z",
+          "lastStatus": 200,
+          "contentType": "image/webp",
+          "contentLength": 350762,
+          "lastModified": "Fri, 22 May 2026 13:44:05 GMT",
+          "hash": "3f8550ecc0fc30df3ab0493226c21bac473b4a20ceecedb05c1a9b44674db39d",
+          "snapshotIds": [
+            "sancarlo-sviluppo/47e198cfa6da731c/20260524T180300Z.json"
+          ]
+        },
+        "https://sancarlosviluppo.com/wp-content/uploads/2023/02/TRENTA5.jpg": {
+          "url": "https://sancarlosviluppo.com/wp-content/uploads/2023/02/TRENTA5.jpg",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T18:03:00.245Z",
+          "lastSeenAt": "2026-05-24T18:03:00.245Z",
+          "lastStatus": 200,
+          "contentType": "image/jpeg",
+          "contentLength": 136363,
+          "lastModified": "Fri, 03 Feb 2023 09:05:35 GMT",
+          "hash": "646280669584ce8b1d4309b1f2ebbfc409a8925113f1346ec67e0ed5a073b834",
+          "snapshotIds": [
+            "sancarlo-sviluppo/86566d26068f225c/20260524T180300Z.json"
+          ]
+        },
+        "https://sancarlosviluppo.com/wp-content/uploads/2023/02/vista_03-scaled-1.webp": {
+          "url": "https://sancarlosviluppo.com/wp-content/uploads/2023/02/vista_03-scaled-1.webp",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T18:03:00.344Z",
+          "lastSeenAt": "2026-05-24T18:03:00.344Z",
+          "lastStatus": 200,
+          "contentType": "image/webp",
+          "contentLength": 278354,
+          "lastModified": "Fri, 22 May 2026 13:45:43 GMT",
+          "hash": "1a1d98ed2f19a9b319023e2a58a87d24fc3f49d37bd93dcc9e5deec1eaa18b6e",
+          "snapshotIds": [
+            "sancarlo-sviluppo/02cca421a665714e/20260524T180300Z.json"
+          ]
+        },
+        "https://sancarlosviluppo.com/wp-content/uploads/2026/05/2026_02_20-Vista-Gioia-sud_MUZ.webp": {
+          "url": "https://sancarlosviluppo.com/wp-content/uploads/2026/05/2026_02_20-Vista-Gioia-sud_MUZ.webp",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T18:03:00.457Z",
+          "lastSeenAt": "2026-05-24T18:03:00.457Z",
+          "lastStatus": 200,
+          "contentType": "image/webp",
+          "contentLength": 70154,
+          "lastModified": "Fri, 22 May 2026 13:47:08 GMT",
+          "hash": "b48151708a7bd98188da4f67124052083e3a3576532438caf64b79873392ad40",
+          "snapshotIds": [
+            "sancarlo-sviluppo/f2715f77a8ed66d0/20260524T180300Z.json"
+          ]
+        },
+        "https://sancarlosviluppo.com/wp-content/uploads/2026/05/2025_12_08-Vista_01_Via-Bordoni_BRD.webp": {
+          "url": "https://sancarlosviluppo.com/wp-content/uploads/2026/05/2025_12_08-Vista_01_Via-Bordoni_BRD.webp",
+          "kind": "file",
+          "firstSeenAt": "2026-05-24T18:03:00.541Z",
+          "lastSeenAt": "2026-05-24T18:03:00.541Z",
+          "lastStatus": 200,
+          "contentType": "image/webp",
+          "contentLength": 93912,
+          "lastModified": "Fri, 22 May 2026 13:53:15 GMT",
+          "hash": "a22ef26b758ef9dcdfb736077fd5b79bbe9e512ce62d8691b225c670c343f371",
+          "snapshotIds": [
+            "sancarlo-sviluppo/7bf3babb2d72bd15/20260524T180300Z.json"
+          ]
+        }
+      },
+      "lastScanAt": "2026-05-24T18:02:23.661Z"
     }
   }
 }
