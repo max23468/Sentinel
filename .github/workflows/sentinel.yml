@@ -47,6 +47,7 @@ jobs:
         run: npm run build
 
       - name: Scan
+        id: scan
         if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
         env:
           SENTINEL_EMAIL_TO: ${{ secrets.SENTINEL_EMAIL_TO }}
@@ -55,7 +56,12 @@ jobs:
           SENTINEL_GMAIL_APP_PASSWORD: ${{ secrets.SENTINEL_GMAIL_APP_PASSWORD }}
           SENTINEL_ICLOUD_USER: ${{ secrets.SENTINEL_ICLOUD_USER }}
           SENTINEL_ICLOUD_APP_PASSWORD: ${{ secrets.SENTINEL_ICLOUD_APP_PASSWORD }}
-        run: npm run sentinel -- scan
+        run: |
+          set +e
+          npm run sentinel -- scan
+          status=$?
+          echo "exit_code=$status" >> "$GITHUB_OUTPUT"
+          exit 0
 
       - name: Commit application outputs
         if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
@@ -70,3 +76,11 @@ jobs:
           fi
           git commit -m "chore: update sentinel outputs"
           git push
+
+      - name: Fail on scan errors
+        if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
+        run: |
+          if [ "${{ steps.scan.outputs.exit_code }}" != "0" ]; then
+            echo "Scan conclusa con exit code ${{ steps.scan.outputs.exit_code }}."
+            exit "${{ steps.scan.outputs.exit_code }}"
+          fi

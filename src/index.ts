@@ -5,6 +5,7 @@ import { sendTestEmail } from "./email.js";
 import { writeInventoryReport } from "./report.js";
 import { scanSite } from "./scan.js";
 import { loadState } from "./storage.js";
+import { formatScanSummary } from "./summary.js";
 
 const program = new Command();
 
@@ -72,14 +73,5 @@ async function run(callback: () => Promise<void>): Promise<void> {
 }
 
 function printScanSummary(result: Awaited<ReturnType<typeof scanSite>>): void {
-  const fatalCount = result.issues.filter((issue) => issue.fatal).length;
-  console.log(
-    `${result.siteName}: ${result.scannedCount} URL scansionati, ${result.changes.length} cambiamenti, ${result.issues.length} problemi (${fatalCount} fatali).`
-  );
-  if (result.baseline) console.log("Baseline iniziale: email non inviata.");
-  if (result.reportPath) console.log(`Report: ${result.reportPath}`);
-  for (const issue of result.issues.slice(0, 10)) {
-    console.log(`- ${issue.fatal ? "FATALE" : "Avviso"} ${issue.url}: ${issue.message}`);
-  }
-  if (result.issues.length > 10) console.log(`- Altri problemi: ${result.issues.length - 10}`);
+  for (const line of formatScanSummary(result)) console.log(line);
 }
