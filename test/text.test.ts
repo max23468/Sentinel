@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { extractNormalizedText } from "../src/text.js";
+import { extractNormalizedText, removeVolatileText } from "../src/text.js";
 
 describe("HTML text extraction", () => {
   it("estrae titolo, testo normalizzato, link e asset senza script", () => {
@@ -19,5 +19,13 @@ describe("HTML text extraction", () => {
     expect(result.text).toBe("Titolo Testo con spazi pagina");
     expect(result.links).toEqual(["/pagina"]);
     expect(result.assets).toEqual(["/immagine.png"]);
+  });
+
+  it("rimuove i conteggi dinamici del widget Instagram Ortix", () => {
+    expect(
+      removeVolatileText(
+        "Testo OUR INSTAGRAM 1046 406 8725 717 6127 506 6756 6 3674 715 2246 176 9731 111 1036 824 1613 917 Recent Comments"
+      )
+    ).toBe("Testo OUR INSTAGRAM Recent Comments");
   });
 });

@@ -44,4 +44,20 @@ describe("scan report", () => {
     expect(report).toContain("- Email richiesta: sì");
     expect(report).toContain("- Email inviata: sì");
   });
+
+  it("compatta gli avvisi non fatali ripetitivi", () => {
+    const report = renderScanReport(
+      baseResult({
+        issues: Array.from({ length: 12 }, (_, index) => ({
+          url: `https://example.com/${index}.jpg`,
+          message: "HTTP 404",
+          fatal: false
+        }))
+      })
+    );
+
+    expect(report).toContain("- Avviso: https://example.com/9.jpg - HTTP 404");
+    expect(report).not.toContain("- Avviso: https://example.com/10.jpg - HTTP 404");
+    expect(report).toContain("- Altri avvisi HTTP 404: 2");
+  });
 });

@@ -4,6 +4,8 @@ import type { ScanChange, ScanIssue, ScanResult, SentinelConfig, SentinelState, 
 import { ensureDir, resolveFromCwd } from "./fs.js";
 import { formatItalianDateTime, timestampForFile } from "./time.js";
 
+const MAX_NON_FATAL_ISSUES = 10;
+
 export async function writeScanReport(config: SentinelConfig, site: SiteConfig, result: ScanResult): Promise<string> {
   const reportId = `${site.id}-${timestampForFile(new Date(result.scannedAt))}.md`;
   const reportPath = resolveFromCwd(path.join(config.storage.reportsDir, reportId));
@@ -87,11 +89,22 @@ function renderChanges(changes: ScanChange[]): string[] {
 
 function renderIssues(issues: ScanIssue[]): string[] {
   if (issues.length === 0) return ["Nessun problema rilevato."];
-  return orderIssuesBySeverity(issues).map((issue) => `- ${issue.fatal ? "FATALE" : "Avviso"}: ${issue.url} - ${issue.message}`);
-}
 
-function orderIssuesBySeverity(issues: ScanIssue[]): ScanIssue[] {
   const fatalIssues = issues.filter((issue) => issue.fatal);
   const nonFatalIssues = issues.filter((issue) => !issue.fatal);
-  return [...fatalIssues, ...nonFatalIssues];
+  const lines = fatalIssues.map((issue) => renderIssue(issue));
+  lines.push(...nonFatalIssues.slice(0, MAX_NON_FATAL_ISSUES).map((issue) => renderIssue(issue)));
+
+  const omittedIssues = nonFatalIssues.slice(MAX_NON_FATAL_ISSUES);
+  if (omittedIssues.length > 0) {
+    const groupedMessages = new Set(omittedIssues.map((issue) => issue.message));
+    const suffix = groupedMessages.size === 1 ? ` ${omittedIssues[0]?.message}` : "";
+    lines.push(`- Altri avvisi${suffix}: ${omittedIssues.length}`);
+  }
+
+  return lines;
+}
+
+function renderIssue(issue: ScanIssue): string {
+  return `- ${issue.fatal ? "FATALE" : "Avviso"}: ${issue.url} - ${issue.message}`;
 }
