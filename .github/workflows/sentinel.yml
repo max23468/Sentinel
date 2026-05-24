@@ -23,6 +23,31 @@ jobs:
             echo "should_run=false" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Check email secrets
+        if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
+        env:
+          SENTINEL_EMAIL_TO: ${{ secrets.SENTINEL_EMAIL_TO }}
+          SENTINEL_EMAIL_FROM: ${{ secrets.SENTINEL_EMAIL_FROM }}
+          SENTINEL_GMAIL_USER: ${{ secrets.SENTINEL_GMAIL_USER }}
+          SENTINEL_GMAIL_APP_PASSWORD: ${{ secrets.SENTINEL_GMAIL_APP_PASSWORD }}
+        run: |
+          missing=0
+          for name in \
+            SENTINEL_EMAIL_TO \
+            SENTINEL_EMAIL_FROM \
+            SENTINEL_GMAIL_USER \
+            SENTINEL_GMAIL_APP_PASSWORD
+          do
+            if [ -z "${!name}" ]; then
+              echo "::error::Secret mancante: $name"
+              missing=1
+            fi
+          done
+          if [ "$missing" -ne 0 ]; then
+            echo "Configura i secret Gmail prima di avviare la scansione Sentinel."
+            exit 1
+          fi
+
       - name: Checkout
         if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
         uses: actions/checkout@v4
