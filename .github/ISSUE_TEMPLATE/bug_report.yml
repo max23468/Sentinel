@@ -1,0 +1,27 @@
+name: Bug operativo
+description: Segnala un errore di scan, workflow, report o email.
+title: "[Bug] "
+labels:
+  - bug
+body:
+  - type: textarea
+    id: problema
+    attributes:
+      label: Problema
+      description: Descrivi cosa non ha funzionato.
+    validations:
+      required: true
+  - type: textarea
+    id: evidenza
+    attributes:
+      label: Evidenza
+      description: Link a run GitHub Actions, report, log o comando locale.
+    validations:
+      required: false
+  - type: textarea
+    id: impatto
+    attributes:
+      label: Impatto
+      description: Indica se il problema blocca scan, email, commit output o lettura report.
+    validations:
+      required: false

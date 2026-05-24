@@ -16,6 +16,8 @@ Il primo monitor configurato è Ortix.
 ## Regole operative
 
 - Prima di modifiche non banali controlla sempre `git status --short`.
+- Prima di modifiche documentali o operative leggi anche `README.md`,
+  `docs/INDEX.md`, `docs/CONTEXT.md` e `docs/TOOLCHAIN.md`.
 - Mantieni scope piccolo e coerente con la richiesta.
 - Non sovrascrivere modifiche non tue.
 - Non usare comandi distruttivi senza conferma.
@@ -64,9 +66,12 @@ Se un controllo fallisce o non è eseguibile, dichiaralo esplicitamente con impa
 ## Release e deploy
 
 Non c'è VPS e non ci sono domini a pagamento.
+La pubblicazione codice passa da commit, push e PR/merge su GitHub.
 Il deploy operativo MVP passa da GitHub Actions:
 
 - `schedule` + `workflow_dispatch`;
 - commit di `data/`, `snapshots/` e `reports/`;
 - successo anche se vengono trovati cambiamenti;
-- fallimento se c'e' un errore tecnico o se un'email necessaria non parte.
+- fallimento se c'è un errore tecnico o se un'email necessaria non parte.
+
+Non creare tag o GitHub Release finché non viene definita una policy dedicata.
