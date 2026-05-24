@@ -32,4 +32,16 @@ describe("scan report", () => {
 
     expect(report.indexOf("- FATALE: email")).toBeLessThan(report.indexOf("- Avviso: https://example.com/a"));
   });
+
+  it("riporta quando un'email richiesta è stata inviata", () => {
+    const report = renderScanReport(
+      baseResult({
+        emailRequired: true,
+        emailSent: true
+      })
+    );
+
+    expect(report).toContain("- Email richiesta: sì");
+    expect(report).toContain("- Email inviata: sì");
+  });
 });

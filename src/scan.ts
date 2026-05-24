@@ -122,24 +122,28 @@ export async function scanSite(config: SentinelConfig, site: SiteConfig, options
     emailRequired
   };
 
-  if (!options.dryRun) {
-    result.reportPath = await writeScanReport(config, site, result);
-  }
-
-  if (emailRequired && config.email.enabled) {
-    try {
-      await sendScanEmail(config.email, site, result);
-      result.emailSent = true;
-    } catch (error) {
+  if (emailRequired) {
+    if (!config.email.enabled) {
       result.issues.push({
         url: "email",
-        message: error instanceof Error ? error.message : String(error),
+        message: "Email richiesta ma invio disabilitato nella configurazione.",
         fatal: true
       });
+    } else {
+      try {
+        await sendScanEmail(config.email, site, { ...result, emailSent: true });
+        result.emailSent = true;
+      } catch (error) {
+        result.issues.push({
+          url: "email",
+          message: error instanceof Error ? error.message : String(error),
+          fatal: true
+        });
+      }
     }
   }
 
-  if (!options.dryRun && result.reportPath && result.issues.some((issue) => issue.url === "email")) {
+  if (!options.dryRun) {
     result.reportPath = await writeScanReport(config, site, result);
   }
 
