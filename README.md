@@ -57,3 +57,18 @@ SENTINEL_GMAIL_APP_PASSWORD
 Se uno di questi secrets manca, il workflow fallisce subito prima di installare dipendenze, eseguire test, build o scan.
 
 Su macOS, se la password non è in env, Sentinel prova a leggere dal Portachiavi i servizi `sentinel-gmail` o `sentinel-icloud`.
+
+## Documentazione
+
+- [docs/INDEX.md](/Users/Matteo/Progetti/Sentinel/docs/INDEX.md): indice documentale unico.
+- [docs/ROADMAP.md](/Users/Matteo/Progetti/Sentinel/docs/ROADMAP.md): priorità e prossimi passi.
+- [docs/BACKLOG.md](/Users/Matteo/Progetti/Sentinel/docs/BACKLOG.md): idee, debiti e decisioni non ancora promosse.
+- [docs/CONTEXT.md](/Users/Matteo/Progetti/Sentinel/docs/CONTEXT.md): handoff operativo.
+- [docs/TOOLCHAIN.md](/Users/Matteo/Progetti/Sentinel/docs/TOOLCHAIN.md): runtime, workflow e verifiche.
+- [docs/decisions/README.md](/Users/Matteo/Progetti/Sentinel/docs/decisions/README.md): decisioni stabili.
+
+## Pubblicazione
+
+La pubblicazione codice passa da GitHub. Il deploy operativo MVP passa dal
+workflow GitHub Actions su `main`: test, build, scan, commit degli output e
+fallimento solo per errori tecnici o email necessarie non inviate.
