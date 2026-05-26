@@ -6,6 +6,7 @@ Questo indice raccoglie le decisioni stabili della repo.
 
 - [0001 - GitHub Actions come runtime operativo MVP](decisions/0001-github-actions-runtime-operativo.md): accettata.
 - [0002 - Dashboard dinamica su Vercel](decisions/0002-dashboard-vercel-dinamica.md): accettata.
+- [0003 - Tag e GitHub Release](decisions/0003-tag-e-github-release.md): accettata.
 
 ## Decisioni sostituite o superate
 

@@ -3,7 +3,8 @@
 ## Stato progetto
 
 - Fase: runtime operativo MVP.
-- Ultima versione/release: `0.1.0` in `package.json`; nessuna release GitHub.
+- Ultima versione/release: `0.1.0` in `package.json`; nessuna release GitHub
+  pubblicata.
 - Ultimo deploy operativo: GitHub Actions su branch `main`.
 - Dashboard web: app Next.js pubblicabile su Vercel da CLI, con dati dinamici su
   Vercel Blob privato.
@@ -21,6 +22,8 @@
 - Workflow operativo: `.github/workflows/sentinel.yml`.
 - Dashboard online: app Next.js in `app/`, proxy Basic Auth in `proxy.ts`,
   payload Blob pubblicato con `sentinel publish-dashboard`.
+- Release versionate: tag `vX.Y.Z` e GitHub Release solo per release del tool o
+  della dashboard, secondo ADR `docs/decisions/0003-tag-e-github-release.md`.
 
 ## Ultimo contesto utile
 
