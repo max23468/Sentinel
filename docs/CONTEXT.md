@@ -16,7 +16,8 @@
 - Roadmap: `docs/ROADMAP.md`.
 - Backlog: `docs/BACKLOG.md`.
 - Toolchain: `docs/TOOLCHAIN.md`.
-- Decisioni: `docs/decisions/`.
+- Decisioni: `docs/DECISIONS.md`, `docs/DECISIONS_PENDING.md` e ADR in
+  `docs/decisions/`.
 - Workflow operativo: `.github/workflows/sentinel.yml`.
 - Dashboard online: app Next.js in `app/`, proxy Basic Auth in `proxy.ts`,
   payload Blob pubblicato con `sentinel publish-dashboard`.
@@ -37,6 +38,9 @@ ultimi run manuali GitHub Actions risultano verdi.
 - Non salvare HTML completo: solo hash, metadati e testo normalizzato.
 - `data/`, `snapshots/` e `reports/` sono output applicativi tracciabili e
   possono essere committati dal workflow.
+- Eccezione repo-specifica: GitHub Actions è runtime operativo MVP di Sentinel,
+  ma resta sospeso fino al `2026-06-01` compreso per il vincolo globale sui
+  minuti Actions.
 - Le password email devono arrivare solo da variabili d'ambiente, GitHub Secrets
   o Portachiavi macOS.
 - Le credenziali dashboard e `BLOB_READ_WRITE_TOKEN` devono stare solo in env
