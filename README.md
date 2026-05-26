@@ -17,6 +17,7 @@ npm run sentinel -- scan
 npm run sentinel -- scan --dry-run
 npm run sentinel -- report
 npm run sentinel -- dashboard
+npm run sentinel -- publish-dashboard
 npm run sentinel -- test-email --profile gmail
 ```
 
@@ -40,6 +41,25 @@ pagine HTML o file monitorati. Si genera con:
 ```bash
 npm run sentinel -- dashboard
 ```
+
+La dashboard web dinamica gira su Vercel come app Next.js protetta da Basic Auth
+applicativa. Legge a runtime un payload JSON da Vercel Blob privato, quindi i
+dati possono essere aggiornati senza redeploy e senza GitHub Actions:
+
+```bash
+npm run sentinel -- publish-dashboard
+```
+
+Variabili richieste su Vercel per la dashboard online:
+
+```bash
+SENTINEL_DASHBOARD_USER
+SENTINEL_DASHBOARD_PASSWORD
+BLOB_READ_WRITE_TOKEN
+```
+
+`SENTINEL_DASHBOARD_BLOB_PREFIX` è opzionale e di default vale
+`sentinel-dashboard`.
 
 I problemi noti e non azionabili possono essere classificati nella
 configurazione del sito con `ignoredIssues`. Restano visibili nei report e nella
@@ -94,6 +114,11 @@ Su macOS, se la password non è in env, Sentinel prova a leggere dal Portachiavi
 La pubblicazione codice passa da GitHub. Il deploy operativo MVP passa dal
 workflow GitHub Actions su `main`: test, build, scan, commit degli output e
 fallimento solo per errori tecnici o email necessarie non inviate.
+
+La dashboard web online è invece pubblicabile su Vercel da CLI, senza usare
+GitHub Actions. In questo scenario la scansione resta locale/manuale o affidata
+al workflow quando i minuti GitHub Actions sono disponibili; l'aggiornamento
+online dei dati passa da `publish-dashboard`.
 
 La issue GitHub `Codex feedback inbox` raccoglie i commenti Codex sulle PR; il
 workflow `Codex PR comments` la mantiene sincronizzata.

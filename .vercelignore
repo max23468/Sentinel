@@ -1,0 +1,10 @@
+.git
+.github
+.wrangler
+.next
+coverage
+dist
+node_modules
+snapshots
+reports/*.html
+npm-debug.log*

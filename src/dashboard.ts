@@ -9,7 +9,7 @@ interface DashboardOptions {
   outputPath?: string;
 }
 
-interface DashboardSite {
+export interface DashboardSite {
   id: string;
   name: string;
   enabled: boolean;
@@ -24,7 +24,7 @@ interface DashboardSite {
   latestReport?: DashboardReportSummary;
 }
 
-interface DashboardIssue {
+export interface DashboardIssue {
   siteName: string;
   severity: "fatal" | "warning" | "known" | "summary";
   url?: string;
@@ -33,14 +33,14 @@ interface DashboardIssue {
   reason?: string;
 }
 
-interface DashboardChange {
+export interface DashboardChange {
   siteName: string;
   type: string;
   url: string;
   title?: string;
 }
 
-interface RecentResource {
+export interface RecentResource {
   siteName: string;
   url: string;
   kind: string;
@@ -70,7 +70,7 @@ export interface DashboardReportSummary {
   changes: DashboardChange[];
 }
 
-interface DashboardModel {
+export interface DashboardModel {
   createdAt: string;
   sites: DashboardSite[];
   resources: RecentResource[];
@@ -820,7 +820,11 @@ export function parseScanReportSummary(siteId: string, filePath: string, linkHre
   };
 }
 
-async function readLatestReportSummaries(config: SentinelConfig, outputPath: string): Promise<DashboardReportSummary[]> {
+export async function readLatestReportSummaries(
+  config: SentinelConfig,
+  outputPath: string,
+  options: { linkHrefFor?: (fileName: string, filePath: string) => string } = {}
+): Promise<DashboardReportSummary[]> {
   const reportsDir = resolveFromCwd(config.storage.reportsDir);
   let entries: string[];
 
@@ -841,7 +845,7 @@ async function readLatestReportSummaries(config: SentinelConfig, outputPath: str
       if (!latest) return undefined;
 
       const filePath = path.join(reportsDir, latest);
-      const linkHref = toHtmlLink(path.relative(path.dirname(outputPath), filePath));
+      const linkHref = options.linkHrefFor?.(latest, filePath) ?? toHtmlLink(path.relative(path.dirname(outputPath), filePath));
       const content = await readFile(filePath, "utf8");
       return parseScanReportSummary(site.id, filePath, linkHref, content);
     })

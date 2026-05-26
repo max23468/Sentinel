@@ -5,6 +5,8 @@
 - Fase: runtime operativo MVP.
 - Ultima versione/release: `0.1.0` in `package.json`; nessuna release GitHub.
 - Ultimo deploy operativo: GitHub Actions su branch `main`.
+- Dashboard web: app Next.js pubblicabile su Vercel da CLI, con dati dinamici su
+  Vercel Blob privato.
 - GitHub: repository privata `https://github.com/max23468/Sentinel`.
 
 ## Fonte di verità
@@ -16,6 +18,8 @@
 - Toolchain: `docs/TOOLCHAIN.md`.
 - Decisioni: `docs/decisions/`.
 - Workflow operativo: `.github/workflows/sentinel.yml`.
+- Dashboard online: app Next.js in `app/`, proxy Basic Auth in `proxy.ts`,
+  payload Blob pubblicato con `sentinel publish-dashboard`.
 
 ## Ultimo contesto utile
 
@@ -35,12 +39,16 @@ ultimi run manuali GitHub Actions risultano verdi.
   possono essere committati dal workflow.
 - Le password email devono arrivare solo da variabili d'ambiente, GitHub Secrets
   o Portachiavi macOS.
+- Le credenziali dashboard e `BLOB_READ_WRITE_TOKEN` devono stare solo in env
+  locale/Vercel, mai in repo.
 
 ## Verifiche da ricordare
 
 - `git status --short --branch`.
 - `npm test`.
 - `npm run build`.
+- `npm run sentinel -- publish-dashboard` solo con `BLOB_READ_WRITE_TOKEN`
+  configurato.
 - `gh run list --limit 10`.
 - `gh run view <run-id> --log-failed` se un workflow fallisce.
 
@@ -54,6 +62,8 @@ Prima di procedere:
 4. controllare gli ultimi run GitHub Actions;
 5. identificare verifiche proporzionate;
 6. non modificare o cancellare output applicativi senza motivo esplicito.
+7. se i minuti GitHub Actions sono esauriti, non avviare run manuali e usare
+   scan/publish/deploy locali.
 
 ## Rischi aperti
 
@@ -63,6 +73,7 @@ Prima di procedere:
 - Aggiungere nuovi siti senza valutare rumore, privacy e rispetto di `robots.txt`.
 - Far crescere `snapshots/` e `reports/` senza una policy di retention se il
   numero di monitor aumenta.
+- Pubblicare la dashboard online senza Basic Auth o con Blob pubblico.
 
 ## Prossimo passo
 

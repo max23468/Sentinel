@@ -2,6 +2,7 @@
 import { Command } from "commander";
 import { loadConfig } from "./config.js";
 import { writeDashboard } from "./dashboard.js";
+import { publishDashboardData } from "./dashboard-publish.js";
 import { sendTestEmail } from "./email.js";
 import { writeInventoryReport } from "./report.js";
 import { scanSite } from "./scan.js";
@@ -60,6 +61,19 @@ program
       const state = await loadState(config);
       const dashboardPath = await writeDashboard(config, state, { outputPath: options.output });
       console.log(`Dashboard generata: ${dashboardPath}`);
+    });
+  });
+
+program
+  .command("publish-dashboard")
+  .description("Pubblica il payload dinamico della dashboard su Vercel Blob.")
+  .action(async () => {
+    await run(async () => {
+      const config = await loadConfig(program.opts<{ config: string }>().config);
+      const state = await loadState(config);
+      const result = await publishDashboardData(config, state);
+      console.log(`Dashboard pubblicata su Vercel Blob: ${result.modelPath}`);
+      console.log(`Report pubblicati: ${result.reportCount}`);
     });
   });
 

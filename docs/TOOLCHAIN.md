@@ -33,6 +33,8 @@ Questa pagina descrive runtime, comandi e guardrail effettivi di Sentinel.
 | Tool | Versione/canale | Uso |
 | --- | --- | --- |
 | `gh` | CLI autenticata locale | PR, run GitHub Actions e diagnostica GitHub |
+| Vercel CLI | locale/autenticata | deploy dashboard web senza GitHub Actions |
+| Vercel Blob | privato | payload dinamico dashboard e ultimi report |
 | GitHub Actions | `ubuntu-latest`, Node `22` | runtime operativo schedulato/manuale |
 | Dependabot | configurazione GitHub | aggiornamenti dipendenze npm e GitHub Actions |
 | SMTP Gmail | secret GitHub o env locale | invio email operativo |
@@ -48,6 +50,11 @@ Questa pagina descrive runtime, comandi e guardrail effettivi di Sentinel.
 - dry-run scan: `npm run sentinel -- scan --dry-run`.
 - report: `npm run sentinel -- report`.
 - dashboard HTML: `npm run sentinel -- dashboard`.
+- dashboard web dinamica: `npm run dev`.
+- build CLI: `npm run build:cli`.
+- build web: `npm run build:web`.
+- build completa: `npm run build`.
+- pubblicazione payload dashboard: `npm run sentinel -- publish-dashboard`.
 - test email Gmail: `npm run sentinel -- test-email --profile gmail`.
 - test email iCloud: `npm run sentinel -- test-email --profile icloud`.
 
@@ -56,12 +63,28 @@ Questa pagina descrive runtime, comandi e guardrail effettivi di Sentinel.
 - La pubblicazione codice passa da commit, push e PR/merge su GitHub.
 - La Codex feedback inbox è gestita dal workflow `Codex PR comments`.
 - Il deploy operativo MVP passa da GitHub Actions su `main`.
+- Il deploy della dashboard web passa da Vercel CLI e non richiede GitHub
+  Actions.
 - Non esiste VPS.
 - Non esiste ancora una policy di tag o GitHub Release.
 - Il workflow esegue scan, genera `reports/dashboard.html` e può committare
   `data/`, `snapshots/` e `reports/`.
 - Il workflow deve fallire se c'è un errore tecnico o se un'email necessaria non
   parte.
+- Quando i minuti GitHub Actions non sono disponibili, non avviare run manuali:
+  usare scan locale, `publish-dashboard` e deploy Vercel da CLI.
+
+## Dashboard Vercel
+
+- Framework: Next.js App Router.
+- Protezione: Basic Auth applicativa con `SENTINEL_DASHBOARD_USER` e
+  `SENTINEL_DASHBOARD_PASSWORD`.
+- Storage dinamico: Vercel Blob privato con `BLOB_READ_WRITE_TOKEN`.
+- Payload: `sentinel-dashboard/model.json` salvo override con
+  `SENTINEL_DASHBOARD_BLOB_PREFIX`.
+- Report serviti via route autenticata `/api/reports/[name]`.
+- Il build web usa `next build --webpack` perché la CLI TypeScript usa import
+  ESM con suffisso `.js`, risolti da Webpack tramite `next.config.mjs`.
 
 ## Eccezioni e guardrail
 
@@ -71,3 +94,4 @@ Questa pagina descrive runtime, comandi e guardrail effettivi di Sentinel.
   impatto su rumore, privacy e `robots.txt`.
 - Non trattare `data/`, `snapshots/` e `reports/` come file temporanei da
   cancellare automaticamente.
+- Non committare `.vercel/`, token Blob o password dashboard.

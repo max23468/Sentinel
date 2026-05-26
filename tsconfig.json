@@ -1,18 +1,34 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "lib": ["ES2022", "DOM"],
-    "types": ["node"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "lib": [
+      "ES2022",
+      "DOM"
+    ],
+    "types": [
+      "node"
+    ],
+    "jsx": "react-jsx",
     "strict": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
-    "outDir": "dist",
-    "rootDir": "src"
+    "isolatedModules": true,
+    "noEmit": true,
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "allowJs": true
   },
-  "include": ["src/**/*.ts"],
-  "exclude": ["dist", "node_modules"]
+  "include": ["next-env.d.ts", "src/**/*.ts", "app/**/*.ts", "app/**/*.tsx", "proxy.ts", ".next/types/**/*.ts", ".next/dev/types/**/*.ts"],
+  "exclude": [
+    "dist",
+    "node_modules"
+  ]
 }

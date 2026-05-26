@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { buildDashboardModel, parseScanReportSummary, renderDashboardHtml } from "../src/dashboard.js";
+import { dashboardBlobPrefix, dashboardModelBlobPath, dashboardReportBlobPath } from "../src/dashboard-publish.js";
 import type { SentinelConfig, SentinelState } from "../src/types.js";
 
 const config: SentinelConfig = {
@@ -156,5 +157,23 @@ describe("dashboard", () => {
     expect(html).toContain('data-dashboard-button="issues"');
     expect(html).toContain('data-dashboard-button="known"');
     expect(html).toContain('id="dashboard-results"');
+  });
+
+  it("normalizza i path usati per pubblicare il payload dinamico", () => {
+    const previousPrefix = process.env.SENTINEL_DASHBOARD_BLOB_PREFIX;
+
+    try {
+      process.env.SENTINEL_DASHBOARD_BLOB_PREFIX = "/sentinel/test/";
+
+      expect(dashboardBlobPrefix()).toBe("sentinel/test");
+      expect(dashboardModelBlobPath()).toBe("sentinel/test/model.json");
+      expect(dashboardReportBlobPath("../ortix-20260526T094354Z.md")).toBe("sentinel/test/reports/ortix-20260526T094354Z.md");
+    } finally {
+      if (previousPrefix === undefined) {
+        delete process.env.SENTINEL_DASHBOARD_BLOB_PREFIX;
+      } else {
+        process.env.SENTINEL_DASHBOARD_BLOB_PREFIX = previousPrefix;
+      }
+    }
   });
 });
