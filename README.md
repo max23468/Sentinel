@@ -107,7 +107,7 @@ Su macOS, se la password non è in env, Sentinel prova a leggere dal Portachiavi
 - [docs/BACKLOG.md](docs/BACKLOG.md): idee, debiti e decisioni non ancora promosse.
 - [docs/CONTEXT.md](docs/CONTEXT.md): handoff operativo.
 - [docs/TOOLCHAIN.md](docs/TOOLCHAIN.md): runtime, workflow e verifiche.
-- [docs/decisions/README.md](docs/decisions/README.md): decisioni stabili.
+- [docs/DECISIONS.md](docs/DECISIONS.md): decisioni stabili.
 
 ## Pubblicazione
 
