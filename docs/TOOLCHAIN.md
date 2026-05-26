@@ -6,10 +6,10 @@ Questa pagina descrive runtime, comandi e guardrail effettivi di Sentinel.
 
 | Area | Versione/canale | Fonte |
 | --- | --- | --- |
-| Node.js locale | compatibile con TypeScript/Vitest correnti | `package.json`, `package-lock.json` |
+| Node.js locale | compatibile con TypeScript/Vitest correnti; types allineati a Node `22` | `package.json`, `package-lock.json` |
 | Node.js GitHub Actions | `22` | `.github/workflows/sentinel.yml` |
 | npm | lockfile npm | `package-lock.json` |
-| TypeScript | `^5.9.3` | `package.json` |
+| TypeScript | `^6.0.3` | `package.json` |
 | Python | non applicabile | nessun runtime Python |
 
 ## Package manager e lockfile
