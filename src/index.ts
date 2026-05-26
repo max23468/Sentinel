@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { Command } from "commander";
 import { loadConfig } from "./config.js";
+import { writeDashboard } from "./dashboard.js";
 import { sendTestEmail } from "./email.js";
 import { writeInventoryReport } from "./report.js";
 import { scanSite } from "./scan.js";
@@ -46,6 +47,19 @@ program
       const state = await loadState(config);
       const reportPath = await writeInventoryReport(config, state);
       console.log(`Report generato: ${reportPath}`);
+    });
+  });
+
+program
+  .command("dashboard")
+  .description("Genera una dashboard HTML dallo stato locale e dagli ultimi report.")
+  .option("-o, --output <path>", "Percorso file HTML", "reports/dashboard.html")
+  .action(async (options: { output: string }) => {
+    await run(async () => {
+      const config = await loadConfig(program.opts<{ config: string }>().config);
+      const state = await loadState(config);
+      const dashboardPath = await writeDashboard(config, state, { outputPath: options.output });
+      console.log(`Dashboard generata: ${dashboardPath}`);
     });
   });
 

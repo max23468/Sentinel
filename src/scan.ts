@@ -61,7 +61,7 @@ export async function scanSite(config: SentinelConfig, site: SiteConfig, options
     scannedCount += 1;
 
     if (resource.status >= 400) {
-      issues.push({ url: resource.url, message: `HTTP ${resource.status}`, fatal: false });
+      issues.push(buildHttpIssue(site, resource));
       continue;
     }
 
@@ -222,6 +222,25 @@ function enqueueDiscovered(queue: QueuedUrl[], seenUrls: Set<string>, site: Site
     queue.push({ url, depth: resource.depth + 1, sourceUrl: resource.url });
     if (queue.length + seenUrls.size >= site.crawl.maxUrls) return;
   }
+}
+
+function buildHttpIssue(site: SiteConfig, resource: FetchedResource): ScanIssue {
+  const message = `HTTP ${resource.status}`;
+  const ignoredRule = site.ignoredIssues.find((rule) => {
+    if (rule.status !== undefined && rule.status !== resource.status) return false;
+    if (rule.message && rule.message !== message) return false;
+    if (rule.urlIncludes && !resource.url.includes(rule.urlIncludes)) return false;
+    if (rule.urlPattern && !new RegExp(rule.urlPattern).test(resource.url)) return false;
+    return true;
+  });
+
+  return {
+    url: resource.url,
+    message,
+    fatal: false,
+    ignored: Boolean(ignoredRule),
+    ignoredReason: ignoredRule?.reason
+  };
 }
 
 function errorMessage(error: unknown): string {

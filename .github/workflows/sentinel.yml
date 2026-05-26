@@ -93,6 +93,10 @@ jobs:
           echo "exit_code=$status" >> "$GITHUB_OUTPUT"
           exit 0
 
+      - name: Generate dashboard
+        if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
+        run: npm run sentinel -- dashboard
+
       - name: Commit application outputs
         if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
         run: |

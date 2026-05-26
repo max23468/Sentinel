@@ -11,7 +11,8 @@ export async function sendScanEmail(email: EmailConfig, site: SiteConfig, result
   const profile = email.profiles[profileName];
   if (!profile) throw new Error(`Profilo email non trovato: ${profileName}`);
 
-  const subject = `${email.subjectPrefix} ${site.name}: ${result.changes.length} cambiamenti, ${result.issues.length} problemi`;
+  const activeIssues = result.issues.filter((issue) => !issue.ignored);
+  const subject = `${email.subjectPrefix} ${site.name}: ${result.changes.length} cambiamenti, ${activeIssues.length} problemi`;
   await sendEmail(email, profile, subject, renderScanReport(result));
 }
 

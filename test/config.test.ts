@@ -36,5 +36,42 @@ sites:
     expect(config.email.profiles.gmail.host).toBe("smtp.gmail.com");
     expect(config.sites[0].crawl.maxDepth).toBe(3);
     expect(config.sites[0].includeFileExtensions).toContain("pdf");
+    expect(config.sites[0].ignoredIssues).toEqual([]);
+  });
+
+  it("carica le regole ignoredIssues", async () => {
+    previousCwd = process.cwd();
+    const dir = await mkdtemp(path.join(os.tmpdir(), "sentinel-config-"));
+    process.chdir(dir);
+    await writeFile(
+      "sentinel.config.yml",
+      `
+version: 1
+sites:
+  - id: test
+    name: Test
+    sitemapUrls:
+      - https://example.com/sitemap.xml
+    roots:
+      - https://example.com/
+    ignoredIssues:
+      - status: 404
+        urlPattern: "^https://example.com/legacy/"
+        reason: Asset legacy
+`,
+      "utf8"
+    );
+
+    const config = await loadConfig();
+
+    expect(config.sites[0].ignoredIssues).toEqual([
+      {
+        status: 404,
+        message: undefined,
+        urlIncludes: undefined,
+        urlPattern: "^https://example.com/legacy/",
+        reason: "Asset legacy"
+      }
+    ]);
   });
 });

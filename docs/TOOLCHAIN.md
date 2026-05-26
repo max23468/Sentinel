@@ -47,6 +47,7 @@ Questa pagina descrive runtime, comandi e guardrail effettivi di Sentinel.
 - scan: `npm run sentinel -- scan`.
 - dry-run scan: `npm run sentinel -- scan --dry-run`.
 - report: `npm run sentinel -- report`.
+- dashboard HTML: `npm run sentinel -- dashboard`.
 - test email Gmail: `npm run sentinel -- test-email --profile gmail`.
 - test email iCloud: `npm run sentinel -- test-email --profile icloud`.
 
@@ -57,7 +58,8 @@ Questa pagina descrive runtime, comandi e guardrail effettivi di Sentinel.
 - Il deploy operativo MVP passa da GitHub Actions su `main`.
 - Non esiste VPS.
 - Non esiste ancora una policy di tag o GitHub Release.
-- Il workflow può committare `data/`, `snapshots/` e `reports/`.
+- Il workflow esegue scan, genera `reports/dashboard.html` e può committare
+  `data/`, `snapshots/` e `reports/`.
 - Il workflow deve fallire se c'è un errore tecnico o se un'email necessaria non
   parte.
 

@@ -23,6 +23,8 @@ export async function writeInventoryReport(config: SentinelConfig, state: Sentin
 }
 
 export function renderScanReport(result: ScanResult): string {
+  const activeIssues = result.issues.filter((issue) => !issue.ignored);
+  const ignoredIssues = result.issues.filter((issue) => issue.ignored);
   const lines = [
     `# Report Sentinel - ${result.siteName}`,
     "",
@@ -32,7 +34,8 @@ export function renderScanReport(result: ScanResult): string {
     `- URL scansionati: ${result.scannedCount}`,
     `- URL saltati: ${result.skippedCount}`,
     `- Cambiamenti: ${result.changes.length}`,
-    `- Problemi: ${result.issues.length}`,
+    `- Problemi: ${activeIssues.length}`,
+    `- Avvisi noti: ${ignoredIssues.length}`,
     `- Email richiesta: ${result.emailRequired ? "sì" : "no"}`,
     `- Email inviata: ${result.emailSent ? "sì" : "no"}`,
     ""
@@ -40,14 +43,16 @@ export function renderScanReport(result: ScanResult): string {
 
   if (result.baseline) {
     lines.push("## Sintesi", "", "Baseline iniziale creata. Nessuna email inviata per policy.", "");
-  } else if (result.changes.length === 0 && result.issues.length === 0) {
-    lines.push("## Sintesi", "", "Nessun cambiamento o errore rilevato.", "");
+  } else if (result.changes.length === 0 && activeIssues.length === 0) {
+    lines.push("## Sintesi", "", "Nessun cambiamento o problema attivo rilevato.", "");
   }
 
   lines.push("## Cambiamenti", "");
   lines.push(...renderChanges(result.changes));
   lines.push("", "## Problemi", "");
-  lines.push(...renderIssues(result.issues));
+  lines.push(...renderIssues(activeIssues));
+  lines.push("", "## Avvisi noti", "");
+  lines.push(...renderIgnoredIssues(ignoredIssues));
   lines.push("");
 
   return `${lines.join("\n")}\n`;
@@ -103,6 +108,15 @@ function renderIssues(issues: ScanIssue[]): string[] {
   }
 
   return lines;
+}
+
+function renderIgnoredIssues(issues: ScanIssue[]): string[] {
+  if (issues.length === 0) return ["Nessun avviso noto rilevato."];
+
+  return issues.map((issue) => {
+    const reason = issue.ignoredReason ? ` - ${issue.ignoredReason}` : "";
+    return `- Noto: ${issue.url} - ${issue.message}${reason}`;
+  });
 }
 
 function renderIssue(issue: ScanIssue): string {

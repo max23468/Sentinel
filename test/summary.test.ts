@@ -25,13 +25,17 @@ describe("scan summary", () => {
       baseResult({
         issues: [
           { url: "https://example.com/a", message: "HTTP 404", fatal: false },
-          { url: "email", message: "Password SMTP assente", fatal: true }
+          { url: "email", message: "Password SMTP assente", fatal: true },
+          { url: "https://example.com/legacy.jpg", message: "HTTP 404", fatal: false, ignored: true }
         ]
       })
     );
 
+    expect(lines[0]).toContain("2 problemi attivi");
+    expect(lines[0]).toContain("1 avvisi noti");
     expect(lines[0]).toContain("1 fatali");
     expect(lines[1]).toBe("- FATALE email: Password SMTP assente");
     expect(lines[2]).toBe("- Avviso https://example.com/a: HTTP 404");
+    expect(lines[3]).toBe("- Avvisi noti ignorati dal conteggio problemi: 1");
   });
 });

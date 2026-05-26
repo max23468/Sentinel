@@ -60,4 +60,26 @@ describe("scan report", () => {
     expect(report).not.toContain("- Avviso: https://example.com/10.jpg - HTTP 404");
     expect(report).toContain("- Altri avvisi HTTP 404: 2");
   });
+
+  it("separa gli avvisi noti dai problemi attivi", () => {
+    const report = renderScanReport(
+      baseResult({
+        issues: [
+          { url: "https://example.com/a", message: "HTTP 404", fatal: false },
+          {
+            url: "https://example.com/legacy.jpg",
+            message: "HTTP 404",
+            fatal: false,
+            ignored: true,
+            ignoredReason: "Asset legacy"
+          }
+        ]
+      })
+    );
+
+    expect(report).toContain("- Problemi: 1");
+    expect(report).toContain("- Avvisi noti: 1");
+    expect(report).toContain("## Avvisi noti");
+    expect(report).toContain("- Noto: https://example.com/legacy.jpg - HTTP 404 - Asset legacy");
+  });
 });

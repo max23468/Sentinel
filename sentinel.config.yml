@@ -65,6 +65,13 @@ sites:
       - mc_eid
       - ref
       - source
+    ignoredIssues:
+      - status: 404
+        urlPattern: "^https://www\\.ortix\\.it/wp-content/uploads/2021/"
+        reason: "Asset WordPress storici non rilevanti per il monitor operativo"
+      - status: 404
+        urlPattern: "^https://www\\.ortix\\.it/\\?p="
+        reason: "URL legacy WordPress già noti"
   - id: sancarlo-sviluppo
     name: San Carlo Sviluppo
     enabled: true

@@ -16,6 +16,7 @@ npm test
 npm run sentinel -- scan
 npm run sentinel -- scan --dry-run
 npm run sentinel -- report
+npm run sentinel -- dashboard
 npm run sentinel -- test-email --profile gmail
 ```
 
@@ -27,8 +28,29 @@ Gli output applicativi sono:
 - `data/state.json`
 - `snapshots/`
 - `reports/`
+- `reports/dashboard.html`
 
 Per policy, la CLI non salva HTML completo: per le pagine salva hash, metadati e testo normalizzato; per i file pubblici salva hash binario e metadati.
+
+La dashboard HTML è una vista locale minimale e interattiva: aggrega stato,
+ultimi report, monitor configurati e URL aggiornati di recente. I riquadri di
+sintesi aprono il relativo dettaglio, ad esempio problemi, cambiamenti, URL,
+pagine HTML o file monitorati. Si genera con:
+
+```bash
+npm run sentinel -- dashboard
+```
+
+I problemi noti e non azionabili possono essere classificati nella
+configurazione del sito con `ignoredIssues`. Restano visibili nei report e nella
+dashboard come `Avvisi noti`, ma non aumentano il conteggio dei problemi attivi:
+
+```yaml
+ignoredIssues:
+  - status: 404
+    urlPattern: "^https://www\\.ortix\\.it/wp-content/uploads/2021/"
+    reason: "Asset WordPress storici non rilevanti per il monitor operativo"
+```
 
 ## Email
 

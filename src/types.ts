@@ -32,6 +32,14 @@ export interface EmailConfig {
   profiles: Record<string, SmtpProfileConfig>;
 }
 
+export interface IgnoredIssueRule {
+  status?: number;
+  message?: string;
+  urlIncludes?: string;
+  urlPattern?: string;
+  reason: string;
+}
+
 export interface SiteConfig {
   id: string;
   name: string;
@@ -42,6 +50,7 @@ export interface SiteConfig {
   crawl: CrawlConfig;
   includeFileExtensions: string[];
   trackingParams: string[];
+  ignoredIssues: IgnoredIssueRule[];
 }
 
 export interface SentinelConfig {
@@ -123,6 +132,8 @@ export interface ScanIssue {
   url: string;
   message: string;
   fatal: boolean;
+  ignored?: boolean;
+  ignoredReason?: string;
 }
 
 export interface ScanResult {

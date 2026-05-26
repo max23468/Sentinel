@@ -1,6 +1,14 @@
 import { readFile } from "node:fs/promises";
 import YAML from "yaml";
-import type { CrawlConfig, EmailConfig, SentinelConfig, SiteConfig, SmtpProfileConfig, StorageConfig } from "./types.js";
+import type {
+  CrawlConfig,
+  EmailConfig,
+  IgnoredIssueRule,
+  SentinelConfig,
+  SiteConfig,
+  SmtpProfileConfig,
+  StorageConfig
+} from "./types.js";
 import { resolveFromCwd } from "./fs.js";
 
 const DEFAULT_TRACKING_PARAMS = [
@@ -122,7 +130,25 @@ function normalizeSiteConfig(site: Partial<SiteConfig>): SiteConfig {
     emailProfile: site.emailProfile,
     crawl: { ...DEFAULT_CRAWL, ...(site.crawl ?? {}) },
     includeFileExtensions: site.includeFileExtensions ?? DEFAULT_FILE_EXTENSIONS,
-    trackingParams: site.trackingParams ?? DEFAULT_TRACKING_PARAMS
+    trackingParams: site.trackingParams ?? DEFAULT_TRACKING_PARAMS,
+    ignoredIssues: (site.ignoredIssues ?? []).map(normalizeIgnoredIssueRule)
+  };
+}
+
+function normalizeIgnoredIssueRule(rule: Partial<IgnoredIssueRule>): IgnoredIssueRule {
+  if (!rule.reason) throw new Error("Ogni ignoredIssue deve avere una reason.");
+  if (!rule.status && !rule.message && !rule.urlIncludes && !rule.urlPattern) {
+    throw new Error("Ogni ignoredIssue deve avere almeno un criterio tra status, message, urlIncludes o urlPattern.");
+  }
+  if (rule.status !== undefined && !Number.isInteger(Number(rule.status))) {
+    throw new Error("ignoredIssue.status deve essere un intero.");
+  }
+  return {
+    status: rule.status === undefined ? undefined : Number(rule.status),
+    message: rule.message,
+    urlIncludes: rule.urlIncludes,
+    urlPattern: rule.urlPattern,
+    reason: rule.reason
   };
 }
 
@@ -138,5 +164,8 @@ function validateConfig(config: SentinelConfig): void {
     if (site.sitemapUrls.length === 0) throw new Error(`Il sito ${site.id} non ha sitemapUrls configurati.`);
     for (const root of site.roots) new URL(root);
     for (const sitemapUrl of site.sitemapUrls) new URL(sitemapUrl);
+    for (const rule of site.ignoredIssues) {
+      if (rule.urlPattern) new RegExp(rule.urlPattern);
+    }
   }
 }
