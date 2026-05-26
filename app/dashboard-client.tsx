@@ -82,7 +82,7 @@ export function DashboardClient(): React.ReactElement {
         ))}
       </section>
 
-      {!model && !error ? <p className="status">Caricamento dashboard...</p> : null}
+      {!model && !error ? <p className="status">Caricamento dashboard…</p> : null}
 
       {model ? (
         <>

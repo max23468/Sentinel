@@ -64,7 +64,7 @@ export async function writeSnapshot(
 }
 
 export async function pruneSnapshots(config: SentinelConfig, snapshotIds: string[], keep = 3): Promise<string[]> {
-  const sorted = [...snapshotIds].sort();
+  const sorted = copySorted(snapshotIds);
   const kept = sorted.slice(-keep);
   const removed = sorted.slice(0, Math.max(0, sorted.length - keep));
 
@@ -92,4 +92,8 @@ export function toUrlState(resource: FetchedResource, firstSeenAt: string, snaps
     title: resource.title,
     snapshotIds
   };
+}
+
+function copySorted(values: string[]): string[] {
+  return Array.from(values).sort();
 }

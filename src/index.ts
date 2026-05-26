@@ -8,6 +8,7 @@ import { writeInventoryReport } from "./report.js";
 import { scanSite } from "./scan.js";
 import { loadState } from "./storage.js";
 import { formatScanSummary } from "./summary.js";
+import type { SiteConfig } from "./types.js";
 
 const program = new Command();
 
@@ -29,11 +30,11 @@ program
       if (sites.length === 0) throw new Error("Nessun sito abilitato corrisponde alla richiesta.");
 
       let shouldFail = false;
-      for (const site of sites) {
+      await scanSitesSequentially(sites, async (site) => {
         const result = await scanSite(config, site, { dryRun: Boolean(options.dryRun) });
         printScanSummary(result);
         if (result.issues.some((issue) => issue.fatal)) shouldFail = true;
-      }
+      });
 
       if (shouldFail) process.exitCode = 1;
     });
@@ -102,4 +103,15 @@ async function run(callback: () => Promise<void>): Promise<void> {
 
 function printScanSummary(result: Awaited<ReturnType<typeof scanSite>>): void {
   for (const line of formatScanSummary(result)) console.log(line);
+}
+
+async function scanSitesSequentially(
+  sites: SiteConfig[],
+  runSite: (site: SiteConfig) => Promise<void>,
+  index = 0
+): Promise<void> {
+  const site = sites[index];
+  if (!site) return;
+  await runSite(site);
+  await scanSitesSequentially(sites, runSite, index + 1);
 }

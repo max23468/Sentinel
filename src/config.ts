@@ -143,13 +143,28 @@ function normalizeIgnoredIssueRule(rule: Partial<IgnoredIssueRule>): IgnoredIssu
   if (rule.status !== undefined && !Number.isInteger(Number(rule.status))) {
     throw new Error("ignoredIssue.status deve essere un intero.");
   }
-  return {
+  const normalizedRule: IgnoredIssueRule = {
     status: rule.status === undefined ? undefined : Number(rule.status),
     message: rule.message,
     urlIncludes: rule.urlIncludes,
     urlPattern: rule.urlPattern,
     reason: rule.reason
   };
+
+  const urlPatternRegex = toUrlPatternRegex(rule.urlPattern);
+  if (urlPatternRegex) {
+    Object.defineProperty(normalizedRule, "urlPatternRegex", {
+      value: urlPatternRegex,
+      enumerable: false
+    });
+  }
+
+  return normalizedRule;
+}
+
+function toUrlPatternRegex(pattern: string | undefined): RegExp | undefined {
+  if (!pattern) return undefined;
+  return new RegExp(pattern);
 }
 
 function validateConfig(config: SentinelConfig): void {
@@ -164,8 +179,5 @@ function validateConfig(config: SentinelConfig): void {
     if (site.sitemapUrls.length === 0) throw new Error(`Il sito ${site.id} non ha sitemapUrls configurati.`);
     for (const root of site.roots) new URL(root);
     for (const sitemapUrl of site.sitemapUrls) new URL(sitemapUrl);
-    for (const rule of site.ignoredIssues) {
-      if (rule.urlPattern) new RegExp(rule.urlPattern);
-    }
   }
 }

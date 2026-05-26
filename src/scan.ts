@@ -27,6 +27,11 @@ export interface ScanOptions {
   dryRun: boolean;
 }
 
+interface CrawlCounters {
+  scannedCount: number;
+  skippedCount: number;
+}
+
 export async function scanSite(config: SentinelConfig, site: SiteConfig, options: ScanOptions): Promise<ScanResult> {
   const scannedAt = new Date().toISOString();
   const state = await loadState(config);
@@ -39,51 +44,8 @@ export async function scanSite(config: SentinelConfig, site: SiteConfig, options
   const guard = new RobotsGuard(site);
 
   const queue = await buildInitialQueue(site, guard, issues);
-  let scannedCount = 0;
-  let skippedCount = 0;
-
-  while (queue.length > 0 && scannedCount < site.crawl.maxUrls && !hasFatalIssues(issues)) {
-    const item = queue.shift();
-    if (!item || seenUrls.has(item.url)) continue;
-
-    if (!(await canFetch(guard, item.url, issues))) {
-      skippedCount += 1;
-      seenUrls.add(item.url);
-      continue;
-    }
-
-    seenUrls.add(item.url);
-    const resource = await fetchUrl(item, site, issues);
-    if (!resource) continue;
-    const alreadySeenFinalUrl = resource.url !== item.url && seenUrls.has(resource.url);
-    seenUrls.add(resource.url);
-    if (alreadySeenFinalUrl) continue;
-    scannedCount += 1;
-
-    if (resource.status >= 400) {
-      issues.push(buildHttpIssue(site, resource));
-      continue;
-    }
-
-    const previous = siteState.urls[resource.url];
-    if (!baseline) {
-      if (!previous) {
-        changes.push({ type: "added", url: resource.url, kind: resource.kind, currentHash: resource.hash, title: resource.title });
-      } else if (previous.hash !== resource.hash) {
-        changes.push({
-          type: "changed",
-          url: resource.url,
-          kind: resource.kind,
-          previousHash: previous.hash,
-          currentHash: resource.hash,
-          title: resource.title
-        });
-      }
-    }
-
-    resources.push(resource);
-    enqueueDiscovered(queue, seenUrls, site, resource);
-  }
+  const counters: CrawlCounters = { scannedCount: 0, skippedCount: 0 };
+  await crawlQueue(site, guard, queue, seenUrls, issues, resources, changes, siteState, baseline, counters);
 
   if (!baseline && !hasFatalIssues(issues)) {
     for (const previousUrl of Object.keys(siteState.urls)) {
@@ -114,8 +76,8 @@ export async function scanSite(config: SentinelConfig, site: SiteConfig, options
     scannedAt,
     baseline,
     dryRun: options.dryRun,
-    scannedCount,
-    skippedCount,
+    scannedCount: counters.scannedCount,
+    skippedCount: counters.skippedCount,
     changes,
     issues,
     emailSent: false,
@@ -156,7 +118,7 @@ async function persistResources(
   siteState: ReturnType<typeof getOrCreateSiteState>,
   resources: FetchedResource[]
 ): Promise<void> {
-  for (const resource of resources) {
+  await Promise.all(resources.map(async (resource) => {
     const previous = siteState.urls[resource.url];
     const snapshotIds = previous?.snapshotIds ? [...previous.snapshotIds] : [];
     if (!previous || previous.hash !== resource.hash) {
@@ -164,7 +126,7 @@ async function persistResources(
     }
     const prunedSnapshotIds = await pruneSnapshots(config, snapshotIds);
     siteState.urls[resource.url] = toUrlState(resource, previous?.firstSeenAt ?? resource.fetchedAt, prunedSnapshotIds);
-  }
+  }));
 }
 
 async function buildInitialQueue(site: SiteConfig, guard: RobotsGuard, issues: ScanIssue[]): Promise<QueuedUrl[]> {
@@ -173,13 +135,22 @@ async function buildInitialQueue(site: SiteConfig, guard: RobotsGuard, issues: S
 
   for (const root of site.roots) {
     queue.set(root, { url: root, depth: 0 });
-    try {
-      for (const sitemapUrl of await guard.sitemapsForRoot(root)) {
-        sitemapUrls.add(sitemapUrl);
+  }
+
+  const rootSitemaps = await Promise.all(
+    site.roots.map(async (root) => {
+      try {
+        return { root, sitemapUrls: await guard.sitemapsForRoot(root) };
+      } catch (error) {
+        issues.push({ url: root, message: errorMessage(error), fatal: true });
+        return undefined;
       }
-    } catch (error) {
-      issues.push({ url: root, message: errorMessage(error), fatal: true });
-    }
+    })
+  );
+
+  for (const result of rootSitemaps) {
+    if (!result) continue;
+    for (const sitemapUrl of result.sitemapUrls) sitemapUrls.add(sitemapUrl);
   }
 
   try {
@@ -230,7 +201,7 @@ function buildHttpIssue(site: SiteConfig, resource: FetchedResource): ScanIssue 
     if (rule.status !== undefined && rule.status !== resource.status) return false;
     if (rule.message && rule.message !== message) return false;
     if (rule.urlIncludes && !resource.url.includes(rule.urlIncludes)) return false;
-    if (rule.urlPattern && !new RegExp(rule.urlPattern).test(resource.url)) return false;
+    if (rule.urlPatternRegex && !rule.urlPatternRegex.test(resource.url)) return false;
     return true;
   });
 
@@ -249,4 +220,74 @@ function errorMessage(error: unknown): string {
 
 function hasFatalIssues(issues: ScanIssue[]): boolean {
   return issues.some((issue) => issue.fatal);
+}
+
+async function crawlQueue(
+  site: SiteConfig,
+  guard: RobotsGuard,
+  queue: QueuedUrl[],
+  seenUrls: Set<string>,
+  issues: ScanIssue[],
+  resources: FetchedResource[],
+  changes: ScanChange[],
+  siteState: ReturnType<typeof getOrCreateSiteState>,
+  baseline: boolean,
+  counters: CrawlCounters
+): Promise<void> {
+  if (queue.length === 0 || counters.scannedCount >= site.crawl.maxUrls || hasFatalIssues(issues)) return;
+
+  const item = queue.shift();
+  if (!item || seenUrls.has(item.url)) {
+    await crawlQueue(site, guard, queue, seenUrls, issues, resources, changes, siteState, baseline, counters);
+    return;
+  }
+
+  if (!(await canFetch(guard, item.url, issues))) {
+    counters.skippedCount += 1;
+    seenUrls.add(item.url);
+    await crawlQueue(site, guard, queue, seenUrls, issues, resources, changes, siteState, baseline, counters);
+    return;
+  }
+
+  seenUrls.add(item.url);
+  const resource = await fetchUrl(item, site, issues);
+  if (!resource) {
+    await crawlQueue(site, guard, queue, seenUrls, issues, resources, changes, siteState, baseline, counters);
+    return;
+  }
+
+  const alreadySeenFinalUrl = resource.url !== item.url && seenUrls.has(resource.url);
+  seenUrls.add(resource.url);
+  if (alreadySeenFinalUrl) {
+    await crawlQueue(site, guard, queue, seenUrls, issues, resources, changes, siteState, baseline, counters);
+    return;
+  }
+
+  counters.scannedCount += 1;
+
+  if (resource.status >= 400) {
+    issues.push(buildHttpIssue(site, resource));
+    await crawlQueue(site, guard, queue, seenUrls, issues, resources, changes, siteState, baseline, counters);
+    return;
+  }
+
+  const previous = siteState.urls[resource.url];
+  if (!baseline) {
+    if (!previous) {
+      changes.push({ type: "added", url: resource.url, kind: resource.kind, currentHash: resource.hash, title: resource.title });
+    } else if (previous.hash !== resource.hash) {
+      changes.push({
+        type: "changed",
+        url: resource.url,
+        kind: resource.kind,
+        previousHash: previous.hash,
+        currentHash: resource.hash,
+        title: resource.title
+      });
+    }
+  }
+
+  resources.push(resource);
+  enqueueDiscovered(queue, seenUrls, site, resource);
+  await crawlQueue(site, guard, queue, seenUrls, issues, resources, changes, siteState, baseline, counters);
 }

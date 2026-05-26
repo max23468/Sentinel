@@ -4,6 +4,8 @@ import type { SentinelConfig, SentinelState, SiteConfig, SiteState } from "./typ
 import { ensureDir, resolveFromCwd } from "./fs.js";
 import { formatItalianDateTime } from "./time.js";
 
+const numberFormatter = new Intl.NumberFormat("it-IT");
+
 interface DashboardOptions {
   createdAt?: string;
   outputPath?: string;
@@ -1203,7 +1205,7 @@ function percent(value: number, total: number): number {
 }
 
 function formatNumber(value: number): string {
-  return new Intl.NumberFormat("it-IT").format(value);
+  return numberFormatter.format(value);
 }
 
 function toHtmlLink(targetPath: string): string {

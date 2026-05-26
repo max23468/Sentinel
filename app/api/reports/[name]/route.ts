@@ -1,4 +1,4 @@
-import { readFile } from "node:fs/promises";
+import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
 import { get } from "@vercel/blob";
 import { dashboardReportBlobPath } from "../../../../src/dashboard-publish";
@@ -7,6 +7,8 @@ import { requireDashboardAuth } from "../../auth";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
+
+const localReportsPromise = loadLocalReports();
 
 interface RouteContext {
   params: Promise<{
@@ -27,12 +29,10 @@ export async function GET(request: Request, context: RouteContext): Promise<Resp
   const blobResponse = await tryReadReportFromBlob(fileName, request.headers.get("if-none-match"));
   if (blobResponse) return blobResponse;
 
-  try {
-    const content = await readFile(resolveFromCwd(path.join("reports", fileName)), "utf8");
-    return markdownResponse(content);
-  } catch {
-    return new Response("Report non trovato.", { status: 404 });
-  }
+  const localReports = await localReportsPromise;
+  const content = localReports.get(fileName);
+  if (!content) return new Response("Report non trovato.", { status: 404 });
+  return markdownResponse(content);
 }
 
 async function tryReadReportFromBlob(fileName: string, ifNoneMatch: string | null): Promise<Response | undefined> {
@@ -72,4 +72,27 @@ function markdownResponse(content: string): Response {
       "Content-Type": "text/markdown; charset=utf-8"
     }
   });
+}
+
+async function loadLocalReports(): Promise<Map<string, string>> {
+  const reportsDir = resolveFromCwd("reports");
+
+  try {
+    const entries = await readdir(reportsDir, { withFileTypes: true });
+    const reportReads: Promise<readonly [string, string]>[] = [];
+    for (const entry of entries) {
+      if (!entry.isFile() || !entry.name.endsWith(".md")) continue;
+      reportReads.push(readLocalReportEntry(reportsDir, entry.name));
+    }
+
+    const reports = await Promise.all(reportReads);
+
+    return new Map(reports);
+  } catch {
+    return new Map();
+  }
+}
+
+async function readLocalReportEntry(reportsDir: string, fileName: string): Promise<readonly [string, string]> {
+  return [fileName, await readFile(path.join(reportsDir, fileName), "utf8")] as const;
 }

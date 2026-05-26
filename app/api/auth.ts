@@ -19,7 +19,7 @@ export function requireDashboardAuth(request: Request): Response | undefined {
   return undefined;
 }
 
-export function unauthorized(): Response {
+function unauthorized(): Response {
   return new Response("Autenticazione richiesta.", {
     status: 401,
     headers: {

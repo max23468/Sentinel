@@ -46,10 +46,12 @@ export async function fetchResource(rawUrl: string, site: SiteConfig, depth: num
   if (isHtmlResponse(finalUrl, contentType, site)) {
     const html = await response.text();
     const extracted = extractNormalizedText(html);
-    const discoveredUrls = [...extracted.links, ...extracted.assets]
-      .map((url) => normalizeUrl(url, site, finalUrl))
-      .filter((url): url is string => Boolean(url))
-      .filter((url) => isSameSite(url, site));
+    const discoveredUrls = new Set<string>();
+    for (const candidateUrl of [...extracted.links, ...extracted.assets]) {
+      const normalizedUrl = normalizeUrl(candidateUrl, site, finalUrl);
+      if (!normalizedUrl || !isSameSite(normalizedUrl, site)) continue;
+      discoveredUrls.add(normalizedUrl);
+    }
 
     return {
       ...base,
@@ -57,7 +59,7 @@ export async function fetchResource(rawUrl: string, site: SiteConfig, depth: num
       hash: sha256(extracted.text),
       title: extracted.title,
       normalizedText: extracted.text,
-      discoveredUrls: [...new Set(discoveredUrls)]
+      discoveredUrls: [...discoveredUrls]
     };
   }
 

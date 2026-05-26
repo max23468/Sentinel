@@ -37,6 +37,7 @@ export interface IgnoredIssueRule {
   message?: string;
   urlIncludes?: string;
   urlPattern?: string;
+  urlPatternRegex?: RegExp;
   reason: string;
 }
 
