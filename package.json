@@ -28,7 +28,7 @@
     "yaml": "^2.8.2"
   },
   "devDependencies": {
-    "@types/node": "^25.9.1",
+    "@types/node": "^22.19.19",
     "@types/nodemailer": "^8.0.0",
     "@types/react": "^19.2.15",
     "@types/react-dom": "^19.2.3",
