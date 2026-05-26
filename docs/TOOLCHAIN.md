@@ -66,7 +66,8 @@ Questa pagina descrive runtime, comandi e guardrail effettivi di Sentinel.
 - Il deploy della dashboard web passa da Vercel CLI e non richiede GitHub
   Actions.
 - Non esiste VPS.
-- Non esiste ancora una policy di tag o GitHub Release.
+- Tag e GitHub Release sono ammessi solo per release del tool o della dashboard
+  secondo ADR `docs/decisions/0003-tag-e-github-release.md`.
 - Il workflow esegue scan, genera `reports/dashboard.html` e può committare
   `data/`, `snapshots/` e `reports/`.
 - Il workflow deve fallire se c'è un errore tecnico o se un'email necessaria non

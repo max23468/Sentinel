@@ -26,6 +26,7 @@ Sentinel usa la root per ingresso operativo, configurazione e codice. Usa
 - `docs/decisions/template.md`: template ADR.
 - `docs/decisions/0001-github-actions-runtime-operativo.md`: GitHub Actions come runtime operativo MVP.
 - `docs/decisions/0002-dashboard-vercel-dinamica.md`: dashboard online dinamica su Vercel.
+- `docs/decisions/0003-tag-e-github-release.md`: policy tag e GitHub Release.
 
 ## Pubblicazione e operatività
 

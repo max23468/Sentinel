@@ -74,7 +74,9 @@ Il deploy operativo MVP passa da GitHub Actions:
 - successo anche se vengono trovati cambiamenti;
 - fallimento se c'è un errore tecnico o se un'email necessaria non parte.
 
-Non creare tag o GitHub Release finché non viene definita una policy dedicata.
+Tag e GitHub Release sono ammessi solo per release del tool o della dashboard
+secondo `docs/decisions/0003-tag-e-github-release.md`. Non crearli per semplici
+scan, report, snapshot o aggiornamenti data-only.
 
 La issue GitHub `Codex feedback inbox` è il canale operativo per i commenti
 Codex sulle PR ed è aggiornata dal workflow `Codex PR comments`. Controllala

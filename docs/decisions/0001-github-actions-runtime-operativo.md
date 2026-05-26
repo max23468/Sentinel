@@ -32,7 +32,9 @@ fallisce solo per errori tecnici o email necessarie non inviate.
 - Tecnico: GitHub Actions diventa il canale di deploy operativo.
 - Dati/privacy: non si salvano HTML completi; gli output tracciati restano nel
   repository privato.
-- Deploy/release: non servono VPS, tag o release per far girare il monitor.
+- Deploy/release: non servono VPS, tag o release per far girare il monitor;
+  eventuali tag/GitHub Release riguardano solo release del tool o della
+  dashboard secondo ADR 0003.
 - Documentazione: README, AGENTS e `docs/TOOLCHAIN.md` devono descrivere questa
   semantica.
 

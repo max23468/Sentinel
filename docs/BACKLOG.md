@@ -27,8 +27,8 @@ roadmap. Una voce nel backlog non è scope approvato.
 
 ## Debiti
 
-- La policy release resta minimale: `package.json` indica `0.1.0`, ma non esiste
-  ancora un processo di tag o GitHub Release.
+- La policy release resta minimale: `package.json` indica `0.1.0`; tag e GitHub
+  Release sono definiti da ADR 0003 solo per release del tool o della dashboard.
 - Non esiste ancora un runbook esteso per diagnosi SMTP oltre ai secret GitHub e
   al Portachiavi macOS.
 
@@ -37,8 +37,6 @@ roadmap. Una voce nel backlog non è scope approvato.
 - Se e quando introdurre Codex feedback inbox.
 - Se mantenere solo Gmail come profilo operativo del workflow o promuovere iCloud
   a fallback documentato.
-- Se formalizzare release versionate o restare su runtime operativo continuo via
-  GitHub Actions.
 
 ## Attività operative ricorrenti
 
