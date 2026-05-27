@@ -58,8 +58,9 @@ creare la prima serie stabile di GitHub Release.
 - Non creare tag o GitHub Release per il solo aggiornamento di report/snapshot.
 - Prima di una release del tool, aggiornare `package.json` e preparare note di
   rilascio verificabili.
-- Mantenere sospesa la riattivazione GitHub Actions fino al termine del vincolo
-  sui minuti.
+- Mantenere una soglia di monitoraggio sul consumo minuti e usare il runbook
+  operativo documentato quando la pipeline GitHub Actions non è disponibile;
+  altrimenti il workflow GitHub Actions resta operativo come previsto.
 
 ## Verifiche
 

@@ -72,8 +72,9 @@ Questa pagina descrive runtime, comandi e guardrail effettivi di Sentinel.
   `data/`, `snapshots/` e `reports/`.
 - Il workflow deve fallire se c'è un errore tecnico o se un'email necessaria non
   parte.
-- Quando i minuti GitHub Actions non sono disponibili, non avviare run manuali:
-  usare scan locale, `publish-dashboard` e deploy Vercel da CLI.
+- Quando GitHub Actions non è disponibile o non è raggiungibile,
+  usa `scan` locale e canali operativi alternativi documentati (compreso
+  `publish-dashboard` e deploy Vercel da CLI) solo come fallback temporaneo.
 
 ## Dashboard Vercel
 
