@@ -60,7 +60,9 @@ Questa pagina descrive runtime, comandi e guardrail effettivi di Sentinel.
 
 ## Pubblicazione, release e deploy
 
-- La pubblicazione codice passa da commit, push e PR/merge su GitHub.
+- La pubblicazione codice passa da commit, push e PR/merge su GitHub; su richiesta
+  completa di `pubblica` significa anche pulire branch/worktree locali e remoti
+  assorbiti al termine.
 - La Codex feedback inbox è gestita dal workflow `Codex PR comments`.
 - Il deploy operativo MVP passa da GitHub Actions su `main`.
 - Il deploy della dashboard web passa da Vercel CLI e non richiede GitHub
