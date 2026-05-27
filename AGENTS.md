@@ -66,7 +66,7 @@ Se un controllo fallisce o non è eseguibile, dichiaralo esplicitamente con impa
 ## Release e deploy
 
 Non c'è VPS e non ci sono domini a pagamento.
-La pubblicazione codice passa da commit, push e PR/merge su GitHub.
+La pubblicazione codice passa da commit, push e PR/merge su GitHub; la chiusura operativa richiede anche cleanup del checkout (branch/worktree locali e remoti) quando creati per il flusso.
 Il deploy operativo MVP passa da GitHub Actions:
 
 - `schedule` + `workflow_dispatch`;
