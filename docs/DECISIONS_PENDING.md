@@ -4,8 +4,7 @@ Questo registro contiene decisioni strutturali non ancora approvate.
 
 Decisioni aperte:
 
-- Runtime operativo dopo la sospensione Actions: dal `2026-06-02` valutare
-  riattivazione del workflow Sentinel o alternativa fuori da GitHub Actions.
+- Nessuna decisione aperta in questo momento.
 
 Decisioni chiuse:
 
@@ -13,6 +12,9 @@ Decisioni chiuse:
   `docs/decisions/0003-tag-e-github-release.md`. Sentinel resta runtime
   operativo continuo; tag e GitHub Release valgono solo per release del tool o
   della dashboard, non per scan/report/output data-only.
+
+- Runtime operativo dopo la pausa Actions: chiusa con riavvio e verifica del
+  workflow `Sentinel` nel monitoraggio post-`2026-05-26`.
 
 Quando una decisione viene approvata:
 

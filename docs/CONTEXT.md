@@ -41,9 +41,8 @@ ultimi run manuali GitHub Actions risultano verdi.
 - Non salvare HTML completo: solo hash, metadati e testo normalizzato.
 - `data/`, `snapshots/` e `reports/` sono output applicativi tracciabili e
   possono essere committati dal workflow.
-- Eccezione repo-specifica: GitHub Actions è runtime operativo MVP di Sentinel,
-  ma resta sospeso fino al `2026-06-01` compreso per il vincolo globale sui
-  minuti Actions.
+- Eccezione repo-specifica: GitHub Actions è runtime operativo MVP di Sentinel.
+  È stato riavviato dopo verifica e monitoraggio nel riequilibrio post-pausa.
 - Le password email devono arrivare solo da variabili d'ambiente, GitHub Secrets
   o Portachiavi macOS.
 - Le credenziali dashboard e `BLOB_READ_WRITE_TOKEN` devono stare solo in env
@@ -69,8 +68,9 @@ Prima di procedere:
 4. controllare gli ultimi run GitHub Actions;
 5. identificare verifiche proporzionate;
 6. non modificare o cancellare output applicativi senza motivo esplicito.
-7. se i minuti GitHub Actions sono esauriti, non avviare run manuali e usare
-   scan/publish/deploy locali.
+7. se i run GitHub Actions risultano bloccati da errori infrastrutturali,
+   verificare priorità di ripristino con il mantenimento operativo e poi riprogrammare
+   i run; in alternativa usare strumenti locali solo per attività di diagnosi.
 
 ## Rischi aperti
 

@@ -115,10 +115,10 @@ La pubblicazione codice passa da GitHub. Il deploy operativo MVP passa dal
 workflow GitHub Actions su `main`: test, build, scan, commit degli output e
 fallimento solo per errori tecnici o email necessarie non inviate.
 
-La dashboard web online è invece pubblicabile su Vercel da CLI, senza usare
-GitHub Actions. In questo scenario la scansione resta locale/manuale o affidata
-al workflow quando i minuti GitHub Actions sono disponibili; l'aggiornamento
-online dei dati passa da `publish-dashboard`.
+La dashboard web online è pubblicabile su Vercel da CLI, senza dipendere
+unicamente da GitHub Actions. In questo scenario la scansione resta locale/manuale
+o affidata al workflow quando la pipeline è operativa; l'aggiornamento online
+dei dati passa da `publish-dashboard`.
 
 La issue GitHub `Codex feedback inbox` raccoglie i commenti Codex sulle PR; il
 workflow `Codex PR comments` la mantiene sincronizzata.

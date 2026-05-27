@@ -10,8 +10,9 @@ La dashboard locale statica in `reports/dashboard.html` è utile per consultare
 gli output, ma non basta per una pubblicazione online protetta e aggiornata senza
 rigenerare HTML o usare GitHub Actions.
 
-Inoltre i minuti GitHub Actions possono esaurirsi, quindi la pubblicazione della
-dashboard deve poter avvenire da CLI locale.
+La pubblicazione della dashboard deve poter avvenire anche da CLI locale,
+così il flusso resta operativo anche in caso di indisponibilità temporanea
+di pipeline remota.
 
 ## Decisione
 
