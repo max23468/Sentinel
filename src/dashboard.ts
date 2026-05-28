@@ -816,9 +816,9 @@ export function parseScanReportSummary(siteId: string, filePath: string, linkHre
     emailRequired: readBooleanValue(content, "Email richiesta"),
     emailSent: readBooleanValue(content, "Email inviata"),
     fatalCount: countFatalIssues(content),
-    issues: readIssues(content, siteName),
-    knownIssues: readKnownIssues(content, siteName),
-    changes: readChanges(content, siteName)
+    issues: readIssues(content, siteId),
+    knownIssues: readKnownIssues(content, siteId),
+    changes: readChanges(content, siteId)
   };
 }
 
