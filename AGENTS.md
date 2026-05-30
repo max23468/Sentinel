@@ -5,8 +5,8 @@ Rispondi sempre in italiano, in modo pratico, diretto e operativo.
 Sentinel è un tool custom generico per monitorare cambiamenti su siti web pubblici.
 Il primo monitor configurato è Ortix.
 
-Priorità: istruzioni di sistema/developer, questo `AGENTS.md`, eventuali
-`AGENTS.md` più profondi che prevalgono per il loro scope, documenti canonici
+Priorità: istruzioni di sistema/developer, eventuali `AGENTS.md` più profondi
+che prevalgono per il loro scope, questo `AGENTS.md`, documenti canonici
 della repo, richiesta utente, convenzioni reali di codice/test/configurazione e
 assunzioni solo marginali.
 
