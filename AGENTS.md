@@ -17,13 +17,18 @@ Il primo monitor configurato è Ortix.
 
 - Prima di modifiche non banali controlla sempre `git status --short`.
 - Prima di modifiche documentali o operative leggi anche `README.md`,
-  `docs/INDEX.md`, `docs/CONTEXT.md` e `docs/TOOLCHAIN.md`.
+  `docs/INDEX.md`, `docs/CONTEXT.md`, `docs/ROADMAP.md`, `docs/BACKLOG.md`,
+  `docs/TOOLCHAIN.md`, `docs/DECISIONS.md`, `docs/DECISIONS_PENDING.md` e
+  `docs/decisions/`.
 - Mantieni scope piccolo e coerente con la richiesta.
 - Non sovrascrivere modifiche non tue.
+- Per lavori non banali usa branch `codex/<tema>` e PR verso `main`; il commit diretto su `main` resta solo per micro docs-only a basso rischio.
+- Se il worktree contiene modifiche non tue, usa un branch/worktree separato o lavora solo su file non sovrapposti dichiarandolo nel riepilogo.
 - Non usare comandi distruttivi senza conferma.
 - Rispetta sempre `robots.txt`.
 - Non committare segreti, password SMTP, file `.env` o cache locali.
 - Le password email devono arrivare solo da variabili d'ambiente, GitHub Secrets o Portachiavi.
+- Valuta impatto su documentazione, changelog, versione, release e deploy prima di chiudere, anche quando il risultato è `N/A`.
 
 ## Policy dati
 
@@ -61,12 +66,15 @@ npm test
 npm run build
 ```
 
+Usa la corsia `veloce` per docs/governance a basso rischio, `standard` per codice/config ordinari e `completa` per runtime schedulato, dati/output, sicurezza, release o deploy.
+
 Se un controllo fallisce o non è eseguibile, dichiaralo esplicitamente con impatto e prossimo passo.
 
 ## Release e deploy
 
 Non c'è VPS e non ci sono domini a pagamento.
 La pubblicazione codice passa da commit, push e PR/merge su GitHub; la chiusura operativa richiede anche cleanup del checkout (branch/worktree locali e remoti) quando creati per il flusso.
+Quando dici `pubblica`, il flusso completo include PR/merge o flusso equivalente su `main`, verifica finale, controllo inbox e cleanup. Release e deploy vanno valutati insieme quando entrambi sono applicabili; se non servono, dichiarali `N/A`.
 Il deploy operativo MVP passa da GitHub Actions:
 
 - `schedule` + `workflow_dispatch`;
@@ -81,3 +89,11 @@ scan, report, snapshot o aggiornamenti data-only.
 La issue GitHub `Codex feedback inbox` è il canale operativo per i commenti
 Codex sulle PR ed è aggiornata dal workflow `Codex PR comments`. Controllala
 prima di PR ready, merge o pubblicazione non banale.
+
+## Risposta finale e completamento
+
+Chiudi con cosa è cambiato o scoperto, file principali se utili, verifiche
+eseguite o non eseguite con motivo, stato publish/release/deploy, branch/worktree
+coinvolti, rischi residui e prossimo passo reale. Un lavoro è completo solo se
+scope, verifiche proporzionate, inbox, output applicativi, publish/release/deploy
+e cleanup sono gestiti o dichiarati non applicabili.
