@@ -16,6 +16,8 @@ jobs:
   scan:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    env:
+      DOPPLER_TOKEN_PRESENT: ${{ secrets.DOPPLER_TOKEN != '' }}
     steps:
       - name: Check Europe/Rome schedule
         id: schedule
@@ -33,7 +35,6 @@ jobs:
         env:
           DOPPLER_PROJECT: ${{ vars.DOPPLER_PROJECT }}
           DOPPLER_CONFIG: ${{ vars.DOPPLER_CONFIG }}
-          DOPPLER_TOKEN_PRESENT: ${{ secrets.DOPPLER_TOKEN }}
         run: |
           if [ -z "${DOPPLER_PROJECT:-}" ]; then
             echo "::warning::DOPPLER_PROJECT non impostato"
@@ -41,17 +42,17 @@ jobs:
           if [ -z "${DOPPLER_CONFIG:-}" ]; then
             echo "::warning::DOPPLER_CONFIG non impostata"
           fi
-          if [ -z "${DOPPLER_TOKEN_PRESENT:-}" ]; then
+          if [ "${DOPPLER_TOKEN_PRESENT}" != "true" ]; then
             echo "::notice::DOPPLER_TOKEN assente: il fetch non verrà eseguito."
           fi
 
       - name: Fetch secrets from Doppler
-        if: ${{ secrets.DOPPLER_TOKEN != '' && vars.DOPPLER_PROJECT != '' && vars.DOPPLER_CONFIG != '' && (github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true') }}
+        if: ${{ env.DOPPLER_TOKEN_PRESENT == 'true' && vars.DOPPLER_PROJECT != '' && vars.DOPPLER_CONFIG != '' && (github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true') }}
         uses: dopplerhq/secrets-fetch-action@v2.0.0
         with:
           doppler-token: ${{ secrets.DOPPLER_TOKEN }}
-          project: ${{ vars.DOPPLER_PROJECT }}
-          config: ${{ vars.DOPPLER_CONFIG }}
+          doppler-project: ${{ vars.DOPPLER_PROJECT }}
+          doppler-config: ${{ vars.DOPPLER_CONFIG }}
           inject-env-vars: true
 
       - name: Check email secrets
@@ -142,5 +143,5 @@ jobs:
         run: |
           if [ "${{ steps.scan.outputs.exit_code }}" != "0" ]; then
             echo "Scan conclusa con exit code ${{ steps.scan.outputs.exit_code }}."
-            exit "${{ steps.scan.outputs.exit_code }}"
+            exit 1
           fi

@@ -828,6 +828,7 @@ export async function readLatestReportSummaries(
   options: { linkHrefFor?: (fileName: string, filePath: string) => string } = {}
 ): Promise<DashboardReportSummary[]> {
   const reportsDir = resolveFromCwd(config.storage.reportsDir);
+  const reportEntriesBySiteId = new Map<string, string[]>();
   let entries: string[];
 
   try {
@@ -837,12 +838,18 @@ export async function readLatestReportSummaries(
     throw error;
   }
 
+  for (const entry of entries) {
+    if (!entry.endsWith(".md")) continue;
+    const siteId = readReportSiteId(entry);
+    if (!siteId) continue;
+    const siteEntries = reportEntriesBySiteId.get(siteId) ?? [];
+    siteEntries.push(entry);
+    reportEntriesBySiteId.set(siteId, siteEntries);
+  }
+
   const summaries = await Promise.all(
     config.sites.map(async (site) => {
-      const latest = entries
-        .filter((entry) => entry.startsWith(`${site.id}-`) && entry.endsWith(".md"))
-        .sort()
-        .at(-1);
+      const latest = reportEntriesBySiteId.get(site.id)?.sort().at(-1);
 
       if (!latest) return undefined;
 
@@ -854,6 +861,11 @@ export async function readLatestReportSummaries(
   );
 
   return summaries.filter((summary): summary is DashboardReportSummary => Boolean(summary));
+}
+
+function readReportSiteId(fileName: string): string | undefined {
+  const match = /^(?<siteId>.+)-\d{8}T\d{6}Z\.md$/.exec(fileName);
+  return match?.groups?.siteId;
 }
 
 function buildDashboardSite(site: SiteConfig, siteState: SiteState | undefined, latestReport?: DashboardReportSummary): DashboardSite {

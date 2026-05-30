@@ -1,5 +1,8 @@
+import { mkdir, mkdtemp, writeFile } from "node:fs/promises";
+import os from "node:os";
+import path from "node:path";
 import { describe, expect, it } from "vitest";
-import { buildDashboardModel, parseScanReportSummary, renderDashboardHtml } from "../src/dashboard.js";
+import { buildDashboardModel, parseScanReportSummary, readLatestReportSummaries, renderDashboardHtml } from "../src/dashboard.js";
 import { dashboardBlobPrefix, dashboardModelBlobPath, dashboardReportBlobPath } from "../src/dashboard-publish.js";
 import type { SentinelConfig, SentinelState } from "../src/types.js";
 
@@ -175,5 +178,68 @@ describe("dashboard", () => {
         process.env.SENTINEL_DASHBOARD_BLOB_PREFIX = previousPrefix;
       }
     }
+  });
+
+  it("associa i report al site id esatto anche quando un id è prefisso di un altro", async () => {
+    const tempDir = await mkdtemp(path.join(os.tmpdir(), "sentinel-dashboard-"));
+    const reportsDir = path.join(tempDir, "reports");
+    await mkdir(reportsDir);
+
+    await writeFile(
+      path.join(reportsDir, "ortix-20260524T185555Z.md"),
+      `# Report Sentinel - Ortix
+
+- Scansione: 24 mag 2026, 20:55
+- Modalità: operativa
+- Baseline iniziale: no
+- URL scansionati: 2
+- URL saltati: 0
+- Cambiamenti: 1
+- Problemi: 0
+- Avvisi noti: 0
+- Email richiesta: no
+- Email inviata: no
+`,
+      "utf8"
+    );
+    await writeFile(
+      path.join(reportsDir, "ortix-extra-20260524T195555Z.md"),
+      `# Report Sentinel - Ortix Extra
+
+- Scansione: 24 mag 2026, 21:55
+- Modalità: operativa
+- Baseline iniziale: no
+- URL scansionati: 8
+- URL saltati: 0
+- Cambiamenti: 9
+- Problemi: 0
+- Avvisi noti: 0
+- Email richiesta: no
+- Email inviata: no
+`,
+      "utf8"
+    );
+
+    const summaries = await readLatestReportSummaries(
+      {
+        ...config,
+        storage: {
+          ...config.storage,
+          reportsDir
+        },
+        sites: [
+          config.sites[0],
+          {
+            ...config.sites[0],
+            id: "ortix-extra",
+            name: "Ortix Extra"
+          }
+        ]
+      },
+      path.join(reportsDir, "dashboard.html")
+    );
+
+    expect(summaries.find((summary) => summary.siteId === "ortix")?.changesCount).toBe(1);
+    expect(summaries.find((summary) => summary.siteId === "ortix-extra")?.changesCount).toBe(9);
   });
 });
