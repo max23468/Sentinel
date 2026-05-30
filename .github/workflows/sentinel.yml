@@ -55,13 +55,32 @@ jobs:
           doppler-config: ${{ vars.DOPPLER_CONFIG }}
           inject-env-vars: true
 
-      - name: Check email secrets
+      - name: Apply GitHub email secret fallback
         if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
         env:
-          SENTINEL_EMAIL_TO: ${{ secrets.SENTINEL_EMAIL_TO }}
-          SENTINEL_EMAIL_FROM: ${{ secrets.SENTINEL_EMAIL_FROM }}
-          SENTINEL_GMAIL_USER: ${{ secrets.SENTINEL_GMAIL_USER }}
-          SENTINEL_GMAIL_APP_PASSWORD: ${{ secrets.SENTINEL_GMAIL_APP_PASSWORD }}
+          GITHUB_SENTINEL_EMAIL_TO: ${{ secrets.SENTINEL_EMAIL_TO }}
+          GITHUB_SENTINEL_EMAIL_FROM: ${{ secrets.SENTINEL_EMAIL_FROM }}
+          GITHUB_SENTINEL_GMAIL_USER: ${{ secrets.SENTINEL_GMAIL_USER }}
+          GITHUB_SENTINEL_GMAIL_APP_PASSWORD: ${{ secrets.SENTINEL_GMAIL_APP_PASSWORD }}
+          GITHUB_SENTINEL_ICLOUD_USER: ${{ secrets.SENTINEL_ICLOUD_USER }}
+          GITHUB_SENTINEL_ICLOUD_APP_PASSWORD: ${{ secrets.SENTINEL_ICLOUD_APP_PASSWORD }}
+        run: |
+          for name in \
+            SENTINEL_EMAIL_TO \
+            SENTINEL_EMAIL_FROM \
+            SENTINEL_GMAIL_USER \
+            SENTINEL_GMAIL_APP_PASSWORD \
+            SENTINEL_ICLOUD_USER \
+            SENTINEL_ICLOUD_APP_PASSWORD
+          do
+            fallback_name="GITHUB_${name}"
+            if [ -z "${!name:-}" ] && [ -n "${!fallback_name:-}" ]; then
+              echo "${name}=${!fallback_name}" >> "$GITHUB_ENV"
+            fi
+          done
+
+      - name: Check email secrets
+        if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
         run: |
           missing=0
           for name in \
@@ -106,13 +125,6 @@ jobs:
       - name: Scan
         id: scan
         if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
-        env:
-          SENTINEL_EMAIL_TO: ${{ secrets.SENTINEL_EMAIL_TO }}
-          SENTINEL_EMAIL_FROM: ${{ secrets.SENTINEL_EMAIL_FROM }}
-          SENTINEL_GMAIL_USER: ${{ secrets.SENTINEL_GMAIL_USER }}
-          SENTINEL_GMAIL_APP_PASSWORD: ${{ secrets.SENTINEL_GMAIL_APP_PASSWORD }}
-          SENTINEL_ICLOUD_USER: ${{ secrets.SENTINEL_ICLOUD_USER }}
-          SENTINEL_ICLOUD_APP_PASSWORD: ${{ secrets.SENTINEL_ICLOUD_APP_PASSWORD }}
         run: |
           set +e
           npm run sentinel -- scan
