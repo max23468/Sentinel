@@ -28,6 +28,32 @@ jobs:
             echo "should_run=false" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Verifica variabili Doppler
+        if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
+        env:
+          DOPPLER_PROJECT: ${{ vars.DOPPLER_PROJECT }}
+          DOPPLER_CONFIG: ${{ vars.DOPPLER_CONFIG }}
+          DOPPLER_TOKEN_PRESENT: ${{ secrets.DOPPLER_TOKEN }}
+        run: |
+          if [ -z "${DOPPLER_PROJECT:-}" ]; then
+            echo "::warning::DOPPLER_PROJECT non impostato"
+          fi
+          if [ -z "${DOPPLER_CONFIG:-}" ]; then
+            echo "::warning::DOPPLER_CONFIG non impostata"
+          fi
+          if [ -z "${DOPPLER_TOKEN_PRESENT:-}" ]; then
+            echo "::notice::DOPPLER_TOKEN assente: il fetch non verrà eseguito."
+          fi
+
+      - name: Fetch secrets from Doppler
+        if: ${{ secrets.DOPPLER_TOKEN != '' && vars.DOPPLER_PROJECT != '' && vars.DOPPLER_CONFIG != '' && (github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true') }}
+        uses: dopplerhq/secrets-fetch-action@v2.0.0
+        with:
+          doppler-token: ${{ secrets.DOPPLER_TOKEN }}
+          project: ${{ vars.DOPPLER_PROJECT }}
+          config: ${{ vars.DOPPLER_CONFIG }}
+          inject-env-vars: true
+
       - name: Check email secrets
         if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
         env:
