@@ -37,7 +37,7 @@ Questa pagina descrive runtime, comandi e guardrail effettivi di Sentinel.
 | Vercel Blob | privato | payload dinamico dashboard e ultimi report |
 | GitHub Actions | `ubuntu-latest`, Node `22` | runtime operativo schedulato/manuale |
 | Dependabot | configurazione GitHub | aggiornamenti dipendenze npm e GitHub Actions |
-| SMTP Gmail | secret GitHub o env locale | invio email operativo |
+| SMTP Gmail | Doppler, secret GitHub o env locale | invio email operativo |
 | Portachiavi macOS | servizi `sentinel-gmail` e `sentinel-icloud` | fallback locale per password email |
 
 ## Comandi
@@ -72,6 +72,9 @@ Questa pagina descrive runtime, comandi e guardrail effettivi di Sentinel.
   secondo ADR `docs/decisions/0003-tag-e-github-release.md`.
 - Il workflow esegue scan, genera `reports/dashboard.html` e può committare
   `data/`, `snapshots/` e `reports/`.
+- Nel workflow operativo i valori email arrivano da Doppler quando configurato;
+  i repository secrets `SENTINEL_*` restano fallback e non devono sovrascrivere
+  variabili già iniettate.
 - Il workflow deve fallire se c'è un errore tecnico o se un'email necessaria non
   parte.
 - Quando GitHub Actions non è disponibile o non è raggiungibile,
