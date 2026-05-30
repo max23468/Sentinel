@@ -13,7 +13,8 @@
     "dev": "next dev --webpack",
     "dev:cli": "tsx src/index.ts",
     "sentinel": "tsx src/index.ts",
-    "test": "vitest run test"
+    "test": "vitest run test",
+    "doctor": "react-doctor"
   },
   "dependencies": {
     "@vercel/blob": "^2.4.0",
@@ -32,6 +33,7 @@
     "@types/nodemailer": "^8.0.0",
     "@types/react": "^19.2.15",
     "@types/react-dom": "^19.2.3",
+    "react-doctor": "^0.2.14",
     "tsx": "^4.20.6",
     "typescript": "^6.0.3",
     "vitest": "^4.0.14"
