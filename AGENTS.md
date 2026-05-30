@@ -5,6 +5,15 @@ Rispondi sempre in italiano, in modo pratico, diretto e operativo.
 Sentinel è un tool custom generico per monitorare cambiamenti su siti web pubblici.
 Il primo monitor configurato è Ortix.
 
+Priorità: istruzioni di sistema/developer, eventuali `AGENTS.md` più profondi
+che prevalgono per il loro scope, questo `AGENTS.md`, documenti canonici
+della repo, richiesta utente, convenzioni reali di codice/test/configurazione e
+assunzioni solo marginali.
+
+Sentinel non è una piattaforma di crawling generalista, non è un archivio
+integrale di siti terzi e non deve diventare una dashboard o servizio multi-user
+senza decisione esplicita.
+
 ## Stack
 
 - Runtime: Node.js + TypeScript.
@@ -29,6 +38,12 @@ Il primo monitor configurato è Ortix.
 - Non committare segreti, password SMTP, file `.env` o cache locali.
 - Le password email devono arrivare solo da variabili d'ambiente, GitHub Secrets o Portachiavi.
 - Valuta impatto su documentazione, changelog, versione, release e deploy prima di chiudere, anche quando il risultato è `N/A`.
+- Usa Conventional Commit coerenti con l'impatto reale. Non aggiungere workflow,
+  bot, release flow, deploy automation o branch protection senza decisione
+  esplicita. Usa PR template, issue template, PR title check o controllo
+  equivalente quando lavori via GitHub.
+- Dopo merge/pubblicazione controlla `git branch -vv` e `git worktree list`, poi
+  pulisci branch/worktree non più necessari o dichiara cosa resta aperto.
 
 ## Policy dati
 
@@ -37,6 +52,13 @@ Il primo monitor configurato è Ortix.
 - HTML: salva hash, metadati e testo normalizzato; non salvare HTML completo.
 - File pubblici: salva hash binario e metadati.
 - Mantieni al massimo gli ultimi 3 snapshot testuali per URL.
+- Non committare cache, log, dump, export, screenshot sensibili, `.DS_Store` o
+  altri file temporanei non previsti. Durante migrazioni, rinomini o merge
+  documentali non perdere contenuti utili: aggiorna link e indici, preserva ciò
+  che resta valido e dichiara nel riepilogo ciò che viene rimosso perché superato.
+- Per siti pubblici, provider email, API, prezzi, limiti o policy variabili,
+  verifica fonti ufficiali correnti e distingui fatto, fonte, assunzione e
+  decisione interna.
 
 ## Ortix MVP
 
@@ -86,14 +108,21 @@ Tag e GitHub Release sono ammessi solo per release del tool o della dashboard
 secondo `docs/decisions/0003-tag-e-github-release.md`. Non crearli per semplici
 scan, report, snapshot o aggiornamenti data-only.
 
+Release Please non è adottato: non delegare changelog, versioni, tag o GitHub
+Release a bot automatici senza nuova decisione esplicita.
+
 La issue GitHub `Codex feedback inbox` è il canale operativo per i commenti
 Codex sulle PR ed è aggiornata dal workflow `Codex PR comments`. Controllala
-prima di PR ready, merge o pubblicazione non banale.
+prima di PR ready, merge, pubblicazione, deploy o release non banali.
+
+Sentinel non ha UI React oggi. Se verrà introdotta una dashboard, aggiungi
+verifiche browser, responsive, accessibilità e stati vuoti/errore/loading
+proporzionati prima di considerarla completa.
 
 ## Risposta finale e completamento
 
 Chiudi con cosa è cambiato o scoperto, file principali se utili, verifiche
-eseguite o non eseguite con motivo, stato publish/release/deploy, branch/worktree
+eseguite o non eseguite con motivo, stato publish, release e deploy, branch/worktree
 coinvolti, rischi residui e prossimo passo reale. Un lavoro è completo solo se
 scope, verifiche proporzionate, inbox, output applicativi, publish/release/deploy
 e cleanup sono gestiti o dichiarati non applicabili.
