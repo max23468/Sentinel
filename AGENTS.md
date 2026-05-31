@@ -32,6 +32,9 @@ senza decisione esplicita.
 - Il catalogo documentale canonico è `docs/INDEX.md`: la root resta per
   ingresso, configurazione, codice e output applicativi dichiarati; `docs/`
   conserva governance, roadmap, backlog, contesto, toolchain, decisioni e guide.
+- `docs/ROADMAP.md` resta per direzione, priorità e prossimi passi correnti:
+  aggiornarla quando cambiano monitor, frequenza, output, canali email,
+  runtime o backlog; non usarla come changelog o archivio di run completati.
 - Mantieni scope piccolo e coerente con la richiesta.
 - Non sovrascrivere modifiche non tue.
 - Per lavori non banali usa branch `codex/<tema>` e PR verso `main`; il commit diretto su `main` resta solo per micro docs-only a basso rischio.
