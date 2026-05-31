@@ -126,3 +126,9 @@ eseguite o non eseguite con motivo, stato publish, release e deploy, branch/work
 coinvolti, rischi residui e prossimo passo reale. Un lavoro è completo solo se
 scope, verifiche proporzionate, inbox, output applicativi, publish/release/deploy
 e cleanup sono gestiti o dichiarati non applicabili.
+Publish, release e deploy devono essere completati oppure dichiarati non
+applicabili con motivo.
+
+Definizione di completamento: un lavoro è completo quando chiude la richiesta
+senza allargare inutilmente lo scope e gestisce esplicitamente verifiche,
+inbox, output applicativi, publish, release e deploy, cleanup e rischi residui.
