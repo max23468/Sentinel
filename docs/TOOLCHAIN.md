@@ -8,7 +8,7 @@ Questa pagina descrive runtime, comandi e guardrail effettivi di Sentinel.
 | --- | --- | --- |
 | Node.js locale | `24.x`; tipi allineati a Node `24` | `.nvmrc`, `package.json`, `package-lock.json` |
 | Node.js GitHub Actions | `24` | `.github/workflows/sentinel.yml` |
-| npm | lockfile npm | `package-lock.json` |
+| npm | `npm@11.14.1` | `package.json`, `package-lock.json` |
 | TypeScript | `^6.0.3` | `package.json` |
 | Python | non applicabile | nessun runtime Python |
 
