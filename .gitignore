@@ -10,5 +10,3 @@ dist/
 coverage/
 *.tsbuildinfo
 npm-debug.log*
-.vercel
-.env*
