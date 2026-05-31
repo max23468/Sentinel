@@ -5,6 +5,7 @@
 - Fase: runtime operativo MVP.
 - Ultima versione/release: `0.1.0` in `package.json`; nessuna release GitHub
   pubblicata.
+- Runtime Node.js target: `24.x`.
 - Ultimo deploy operativo: GitHub Actions su branch `main`.
 - Dashboard web: app Next.js pubblicabile su Vercel da CLI, con dati dinamici su
   Vercel Blob privato.

@@ -16,8 +16,6 @@ roadmap. Una voce nel backlog non è scope approvato.
   crescono troppo.
 - Valutare un controllo automatico di dimensione repository se gli output
   applicativi crescono oltre una soglia pratica.
-- Rendere esplicito un target Node locale se il runtime GitHub Actions non basta
-  più come riferimento operativo.
 
 ## Bug
 

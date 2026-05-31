@@ -6,8 +6,8 @@ Questa pagina descrive runtime, comandi e guardrail effettivi di Sentinel.
 
 | Area | Versione/canale | Fonte |
 | --- | --- | --- |
-| Node.js locale | compatibile con TypeScript/Vitest correnti; types allineati a Node `22` | `package.json`, `package-lock.json` |
-| Node.js GitHub Actions | `22` | `.github/workflows/sentinel.yml` |
+| Node.js locale | `24.x`; tipi allineati a Node `24` | `.nvmrc`, `package.json`, `package-lock.json` |
+| Node.js GitHub Actions | `24` | `.github/workflows/sentinel.yml` |
 | npm | lockfile npm | `package-lock.json` |
 | TypeScript | `^6.0.3` | `package.json` |
 | Python | non applicabile | nessun runtime Python |
@@ -35,7 +35,7 @@ Questa pagina descrive runtime, comandi e guardrail effettivi di Sentinel.
 | `gh` | CLI autenticata locale | PR, run GitHub Actions e diagnostica GitHub |
 | Vercel CLI | locale/autenticata | deploy dashboard web senza GitHub Actions |
 | Vercel Blob | privato | payload dinamico dashboard e ultimi report |
-| GitHub Actions | `ubuntu-latest`, Node `22` | runtime operativo schedulato/manuale |
+| GitHub Actions | `ubuntu-latest`, Node `24` | runtime operativo schedulato/manuale |
 | Dependabot | configurazione GitHub | aggiornamenti dipendenze npm e GitHub Actions |
 | SMTP Gmail | Doppler, secret GitHub o env locale | invio email operativo |
 | Portachiavi macOS | servizi `sentinel-gmail` e `sentinel-icloud` | fallback locale per password email |

@@ -42,6 +42,7 @@ non ancora scelte stanno in `docs/BACKLOG.md`.
 - Risolto il run rosso iniziale legato ai secret email mancanti; i run manuali
   successivi sono verdi.
 - Aggiunta baseline documentale Atlas e baseline GitHub minima.
+- Allineato il runtime Node.js locale e GitHub Actions a Node `24`.
 
 ## Regole
 
