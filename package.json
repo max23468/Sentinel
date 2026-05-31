@@ -4,8 +4,10 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": "24.x"
+    "node": "24.x",
+    "npm": ">=11 <12"
   },
+  "packageManager": "npm@11.14.1",
   "bin": {
     "sentinel": "./dist/index.js"
   },
