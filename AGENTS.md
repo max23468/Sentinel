@@ -114,7 +114,7 @@ Il deploy operativo MVP passa da GitHub Actions:
 - successo anche se vengono trovati cambiamenti;
 - fallimento se c'è un errore tecnico o se un'email necessaria non parte.
 
-Tag e GitHub Release sono ammessi solo per release del tool o della dashboard
+Tag Git `vX.Y.Z` e GitHub Release sono obbligatori per release del tool o della dashboard
 secondo `docs/decisions/0003-tag-e-github-release.md`. Non crearli per semplici
 scan, report, snapshot o aggiornamenti data-only.
 

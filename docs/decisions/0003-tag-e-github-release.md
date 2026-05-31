@@ -18,13 +18,13 @@ GitHub Actions.
 
 Sentinel mantiene il runtime operativo continuo come comportamento predefinito.
 
-Tag Git e GitHub Release si usano solo quando viene rilasciata una nuova
+Tag Git e GitHub Release sono obbligatori quando viene rilasciata una nuova
 versione del tool o della dashboard:
 
 - la source of truth della versione è `package.json`;
 - il tag Git deve avere formato `vX.Y.Z` e corrispondere esattamente alla
   versione in `package.json`;
-- la GitHub Release, se creata, parte da quel tag e descrive cambiamenti del
+- la GitHub Release deve essere creata da quel tag e descrivere cambiamenti del
   tool o della dashboard, non semplici output di scansione;
 - scan, report, baseline, snapshot e aggiornamenti di dashboard data-only non
   creano tag e non creano GitHub Release;
