@@ -129,9 +129,11 @@ La issue GitHub `Codex feedback inbox` è il canale operativo per i commenti
 Codex sulle PR ed è aggiornata dal workflow `Codex PR comments`. Controllala
 prima di PR ready, merge, pubblicazione, deploy o release non banali.
 
-Sentinel non ha UI React oggi. Se verrà introdotta una dashboard, aggiungi
-verifiche browser, responsive, accessibilità e stati vuoti/errore/loading
-proporzionati prima di considerarla completa.
+Sentinel ha una dashboard Next.js/React documentata in
+`docs/decisions/0002-dashboard-vercel-dinamica.md`. Se tocchi `app/page.tsx`,
+`app/dashboard-client.tsx`, `app/api/dashboard/route.ts` o superfici UI
+collegate, aggiungi verifiche browser, responsive, accessibilità e stati
+vuoti/errore/loading proporzionati prima di considerarla completa.
 
 ## Risposta finale e completamento
 
