@@ -62,6 +62,10 @@ senza decisione esplicita.
 - HTML: salva hash, metadati e testo normalizzato; non salvare HTML completo.
 - File pubblici: salva hash binario e metadati.
 - Mantieni al massimo gli ultimi 3 snapshot testuali per URL.
+- Gli snapshot possono contenere testo pubblico normalizzato, inclusi contatti
+  pubblicati dal sito monitorato; non devono includere input privati, contenuti
+  dietro autenticazione, risposte di form, segreti o dati acquisiti fuori dal
+  crawling pubblico dichiarato.
 - Non committare cache, log, dump, export, screenshot sensibili, `.DS_Store` o
   altri file temporanei non previsti. Durante migrazioni, rinomini o merge
   documentali non perdere contenuti utili: aggiorna link e indici, preserva ciò
