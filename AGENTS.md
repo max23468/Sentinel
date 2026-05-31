@@ -146,6 +146,11 @@ collegate, esegui `npm run quality:react-doctor` e aggiungi verifiche browser,
 responsive, accessibilità e stati vuoti/errore/loading proporzionati prima di
 considerarla completa.
 
+React Doctor è obbligatorio anche prima di considerare chiusa una release
+major/minor del tool o della dashboard, cioè quando cambia `X` o `Y` nello
+schema `X.Y.Z`; non è richiesto per semplici scan/report o patch senza modifiche
+React trasversali.
+
 ## Risposta finale e completamento
 
 Chiudi con cosa è cambiato o scoperto, file principali se utili, verifiche

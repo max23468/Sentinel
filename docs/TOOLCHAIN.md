@@ -53,7 +53,7 @@ Questa pagina descrive runtime, comandi e guardrail effettivi di Sentinel.
 - dashboard web dinamica: `npm run dev`.
 - build CLI: `npm run build:cli`.
 - build web: `npm run build:web`.
-- React Doctor: `npm run quality:react-doctor`.
+- React Doctor: `npm run quality:react-doctor`, basato su `npx react-doctor@latest`.
 - build completa: `npm run build`.
 - pubblicazione payload dashboard: `npm run sentinel -- publish-dashboard`.
 - test email Gmail: `npm run sentinel -- test-email --profile gmail`.
