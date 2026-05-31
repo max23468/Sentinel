@@ -122,8 +122,9 @@ Release Please non è adottato: non delegare changelog, versioni, tag o GitHub
 Release a bot automatici senza nuova decisione esplicita.
 
 La issue GitHub `Codex feedback inbox` è il canale operativo per i commenti
-Codex sulle PR ed è aggiornata dal workflow `Codex PR comments`. Controllala
-prima di PR ready, merge, pubblicazione, deploy o release non banali.
+Codex sulle PR, è marcata dalla label `codex-feedback-inbox` ed è aggiornata
+dal workflow `Codex PR comments`. Controllala prima di PR ready, merge,
+pubblicazione, deploy o release non banali.
 
 Sentinel ha una dashboard Next.js/React documentata in
 `docs/decisions/0002-dashboard-vercel-dinamica.md`. Se tocchi `app/page.tsx`,

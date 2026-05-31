@@ -125,4 +125,5 @@ o affidata al workflow quando la pipeline è operativa; l'aggiornamento online
 dei dati passa da `publish-dashboard`.
 
 La issue GitHub `Codex feedback inbox` raccoglie i commenti Codex sulle PR; il
-workflow `Codex PR comments` la mantiene sincronizzata.
+workflow `Codex PR comments` la mantiene sincronizzata e la marca con la label
+`codex-feedback-inbox`.
