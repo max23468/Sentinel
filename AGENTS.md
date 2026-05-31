@@ -100,6 +100,19 @@ npm run build
 
 Usa la corsia `veloce` per docs/governance a basso rischio, `standard` per codice/config ordinari e `completa` per runtime schedulato, dati/output, sicurezza, release o deploy.
 
+Mappa il rischio prima dei comandi:
+
+- sola analisi o nessuna modifica: nessun test applicativo, dichiarare fonti e
+  limiti;
+- docs-only: review documentale e `git diff --check` quando utile;
+- documenti operativi critici, workflow o config: review mirata del runbook o
+  workflow modificato;
+- test-only, runtime piccolo o UI localizzata: `npm test`, `npm run build` o
+  check mirati in base al diff;
+- runtime schedulato condiviso, dati/output, provider email, deploy/config,
+  release/versioning o UI dashboard sostanziale: gate completo proporzionato,
+  smoke/manual run quando serve e React Doctor nei casi previsti.
+
 Se un controllo fallisce o non è eseguibile, dichiaralo esplicitamente con impatto e prossimo passo.
 
 ## Release e deploy

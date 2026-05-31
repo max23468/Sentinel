@@ -59,6 +59,16 @@ Questa pagina descrive runtime, comandi e guardrail effettivi di Sentinel.
 - test email Gmail: `npm run sentinel -- test-email --profile gmail`.
 - test email iCloud: `npm run sentinel -- test-email --profile icloud`.
 
+## Verifiche per scope
+
+| Tipo modifica | Corsia | Verifiche minime |
+| --- | --- | --- |
+| Sola analisi | veloce | Nessun test applicativo; dichiarare fonti e limiti |
+| Docs-only | veloce | Review documentale e `git diff --check` quando utile |
+| Workflow/config o documenti operativi critici | standard | Review mirata e comando collegato al file modificato |
+| Test-only, CLI o dashboard piccola | standard | `npm test`, `npm run build` o test mirati |
+| Runtime schedulato, dati/output, provider email, deploy/config, release/versioning o UI sostanziale | completa | Gate completo proporzionato, smoke/manual run quando serve, React Doctor se applicabile |
+
 ## Pubblicazione, release e deploy
 
 - La pubblicazione codice passa da commit, push e PR/merge su GitHub; su richiesta
