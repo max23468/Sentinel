@@ -69,6 +69,10 @@ Questa pagina descrive runtime, comandi e guardrail effettivi di Sentinel.
 | Test-only, CLI o dashboard piccola | standard | `npm test`, `npm run build` o test mirati |
 | Runtime schedulato, dati/output, provider email, deploy/config, release/versioning o UI sostanziale | completa | Gate completo proporzionato, smoke/manual run quando serve, React Doctor se applicabile |
 
+Per UI sostanziale della dashboard Next.js usare anche browser locale o deploy
+pertinente, includendo Basic Auth, route dashboard, viewport desktop/mobile e
+stati vuoti/errore/loading quando il diff li può alterare.
+
 ## Pubblicazione, release e deploy
 
 - La pubblicazione codice passa da commit, push e PR/merge su GitHub; su richiesta
