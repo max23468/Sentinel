@@ -144,7 +144,9 @@ Sentinel ha una dashboard Next.js/React documentata in
 `app/dashboard-client.tsx`, `app/api/dashboard/route.ts` o superfici UI
 collegate, esegui `npm run quality:react-doctor` e aggiungi verifiche browser,
 responsive, accessibilità e stati vuoti/errore/loading proporzionati prima di
-considerarla completa.
+considerarla completa. Per cambi layout/flusso usa `npm run dev` o il deploy
+pertinente, controlla la dashboard dietro Basic Auth senza esporre credenziali e
+dichiara quali route, viewport e stati hai verificato.
 
 React Doctor è obbligatorio anche prima di considerare chiusa una release
 major/minor del tool o della dashboard, cioè quando cambia `X` o `Y` nello
