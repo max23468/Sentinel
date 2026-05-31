@@ -23,7 +23,7 @@
 - Workflow operativo: `.github/workflows/sentinel.yml`.
 - Dashboard online: app Next.js in `app/`, proxy Basic Auth in `proxy.ts`,
   payload Blob pubblicato con `sentinel publish-dashboard`.
-- Release versionate: tag `vX.Y.Z` e GitHub Release solo per release del tool o
+- Release versionate: tag `vX.Y.Z` e GitHub Release obbligatori per release del tool o
   della dashboard, secondo ADR `docs/decisions/0003-tag-e-github-release.md`.
 
 ## Ultimo contesto utile
