@@ -19,8 +19,8 @@
     "dev:cli": "tsx src/index.ts",
     "sentinel": "tsx src/index.ts",
     "test": "vitest run test",
-    "doctor": "npx react-doctor@latest --full --fail-on error .",
-    "quality:react-doctor": "npx react-doctor@latest --full --fail-on error ."
+    "doctor": "npx --yes react-doctor@latest --full --fail-on error .",
+    "quality:react-doctor": "npx --yes react-doctor@latest --full --fail-on error ."
   },
   "dependencies": {
     "@vercel/blob": "^2.4.0",
