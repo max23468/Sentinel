@@ -17,8 +17,8 @@ non ancora scelte stanno in `docs/BACKLOG.md`.
 - Osservare il prossimo run schedulato del sabato alle 09:00 Europe/Rome e
   distinguere errori tecnici, cambiamenti reali dei siti e rumore di crawling.
 - Raffinare soglie, report o filtri solo dopo evidenza nei report generati.
-- Creare una Codex feedback inbox solo se iniziano commenti PR ricorrenti o
-  review automatizzate da tracciare.
+- Mantenere la Codex feedback inbox come controllo prima di PR ready, merge,
+  pubblicazione, deploy o release.
 
 ## Più avanti
 
