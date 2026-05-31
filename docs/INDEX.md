@@ -38,6 +38,8 @@ Sentinel usa la root per ingresso operativo, configurazione e codice. Usa
 - `.github/ISSUE_TEMPLATE/`: template issue.
 - `.github/dependabot.yml`: manutenzione dipendenze npm e GitHub Actions.
 - `data/`, `snapshots/`, `reports/`: output applicativi tracciabili.
+- `skills/react-doctor/SKILL.md` e copie sotto cartelle agent/tool nascoste:
+  artefatti operativi di tooling, non documentazione governante.
 - `docs/doppler-setup.md`: configurazione Doppler e stato GitHub verificato.
 
 ## Regole di manutenzione
