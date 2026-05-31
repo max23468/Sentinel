@@ -14,8 +14,6 @@ roadmap. Una voce nel backlog non è scope approvato.
 
 - Definire una policy più esplicita di retention se `snapshots/` o `reports/`
   crescono troppo.
-- Aggiungere una Codex feedback inbox solo se la repo inizia a ricevere review
-  Codex ricorrenti.
 - Valutare un controllo automatico di dimensione repository se gli output
   applicativi crescono oltre una soglia pratica.
 - Rendere esplicito un target Node locale se il runtime GitHub Actions non basta
@@ -34,7 +32,6 @@ roadmap. Una voce nel backlog non è scope approvato.
 
 ## Decisioni sospese
 
-- Se e quando introdurre Codex feedback inbox.
 - Se mantenere solo Gmail come profilo operativo del workflow o promuovere iCloud
   a fallback documentato.
 
