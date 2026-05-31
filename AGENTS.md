@@ -58,10 +58,6 @@ senza decisione esplicita.
   progetto: sono evidenze/output del monitor. Non spostarli in `docs/` e non
   usarli come source of truth se contraddicono `AGENTS.md`, `docs/INDEX.md` o
   le decisioni.
-- Le copie `*/skills/react-doctor/SKILL.md` e `skills/react-doctor/SKILL.md`
-  sono artefatti operativi per agenti/tooling; non trattarle come catalogo
-  documentale di progetto e non modificarle durante interventi governance salvo
-  richiesta esplicita.
 - La prima scansione crea baseline silenziosa: report sempre generato, email no se non ci sono cambiamenti o errori.
 - HTML: salva hash, metadati e testo normalizzato; non salvare HTML completo.
 - File pubblici: salva hash binario e metadati.
@@ -132,8 +128,9 @@ prima di PR ready, merge, pubblicazione, deploy o release non banali.
 Sentinel ha una dashboard Next.js/React documentata in
 `docs/decisions/0002-dashboard-vercel-dinamica.md`. Se tocchi `app/page.tsx`,
 `app/dashboard-client.tsx`, `app/api/dashboard/route.ts` o superfici UI
-collegate, aggiungi verifiche browser, responsive, accessibilità e stati
-vuoti/errore/loading proporzionati prima di considerarla completa.
+collegate, esegui `npm run quality:react-doctor` e aggiungi verifiche browser,
+responsive, accessibilità e stati vuoti/errore/loading proporzionati prima di
+considerarla completa.
 
 ## Risposta finale e completamento
 
