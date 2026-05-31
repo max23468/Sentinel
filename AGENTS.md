@@ -29,6 +29,9 @@ senza decisione esplicita.
   `docs/INDEX.md`, `docs/CONTEXT.md`, `docs/ROADMAP.md`, `docs/BACKLOG.md`,
   `docs/TOOLCHAIN.md`, `docs/DECISIONS.md`, `docs/DECISIONS_PENDING.md` e
   `docs/decisions/`.
+- Il catalogo documentale canonico è `docs/INDEX.md`: la root resta per
+  ingresso, configurazione, codice e output applicativi dichiarati; `docs/`
+  conserva governance, roadmap, backlog, contesto, toolchain, decisioni e guide.
 - Mantieni scope piccolo e coerente con la richiesta.
 - Non sovrascrivere modifiche non tue.
 - Per lavori non banali usa branch `codex/<tema>` e PR verso `main`; il commit diretto su `main` resta solo per micro docs-only a basso rischio.
@@ -48,6 +51,14 @@ senza decisione esplicita.
 ## Policy dati
 
 - `data/`, `snapshots/` e `reports/` sono output applicativi e possono essere committati dal workflow.
+- I report Markdown in `reports/` e gli snapshot non sono governance di
+  progetto: sono evidenze/output del monitor. Non spostarli in `docs/` e non
+  usarli come source of truth se contraddicono `AGENTS.md`, `docs/INDEX.md` o
+  le decisioni.
+- Le copie `*/skills/react-doctor/SKILL.md` e `skills/react-doctor/SKILL.md`
+  sono artefatti operativi per agenti/tooling; non trattarle come catalogo
+  documentale di progetto e non modificarle durante interventi governance salvo
+  richiesta esplicita.
 - La prima scansione crea baseline silenziosa: report sempre generato, email no se non ci sono cambiamenti o errori.
 - HTML: salva hash, metadati e testo normalizzato; non salvare HTML completo.
 - File pubblici: salva hash binario e metadati.
