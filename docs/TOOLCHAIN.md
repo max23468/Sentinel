@@ -112,6 +112,9 @@ stati vuoti/errore/loading quando il diff li può alterare.
 
 - Non salvare HTML completo.
 - Non committare `.env`, password SMTP, token o cache locali.
+- Gli output committabili possono includere solo hash, metadati, report e testo
+  normalizzato da pagine pubbliche monitorate; non acquisire contenuti dietro
+  autenticazione, risposte di form, input privati o segreti.
 - Non modificare schedule, provider email o siti monitorati senza verificare
   impatto su rumore, privacy e `robots.txt`.
 - Non trattare `data/`, `snapshots/` e `reports/` come file temporanei da
