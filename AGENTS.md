@@ -60,6 +60,14 @@ facciano sembrare i siti monitorati partner/prodotti di Sentinel.
   equivalente quando lavori via GitHub.
 - Dopo merge/pubblicazione controlla `git branch -vv` e `git worktree list`, poi
   pulisci branch/worktree non più necessari o dichiara cosa resta aperto.
+- Usa le skill Superpowers pertinenti per lavori non banali: pianificazione,
+  debugging sistematico, worktree, esecuzione di piani, review e verifica
+  finale. Le skill non sostituiscono robots.txt, policy dati, runtime Actions,
+  release/deploy o fonti primarie di Sentinel.
+- Usa o proponi `grill-me` quando serve stressare architetture, refactor
+  trasversali, monitor/runtime, dashboard, deploy, sicurezza, roadmap o scope
+  ambiguo. Non renderla obbligatoria per refusi, docs-only a basso rischio,
+  cleanup o modifiche meccaniche già determinate.
 
 ## Policy dati
 
