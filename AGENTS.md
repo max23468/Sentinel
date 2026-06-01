@@ -48,6 +48,7 @@ facciano sembrare i siti monitorati partner/prodotti di Sentinel.
 - Non sovrascrivere modifiche non tue.
 - Per lavori non banali usa branch `codex/<tema>` e PR verso `main`; il commit diretto su `main` resta solo per micro docs-only a basso rischio.
 - Se il worktree contiene modifiche non tue, usa un branch/worktree separato o lavora solo su file non sovrapposti dichiarandolo nel riepilogo.
+- Per lavori paralleli o ripresi da una nuova chat, mantieni ownership chiara su file/moduli, evita sovrapposizioni e lascia un handoff sintetico nella PR o nella risposta finale quando serve a coordinare il seguito.
 - Non usare comandi distruttivi senza conferma.
 - Rispetta sempre `robots.txt`.
 - Non committare segreti, password SMTP, file `.env` o cache locali.
