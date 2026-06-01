@@ -14,6 +14,9 @@ Sentinel non è una piattaforma di crawling generalista, non è un archivio
 integrale di siti terzi e non deve diventare una dashboard o servizio multi-user
 senza decisione esplicita.
 
+Fase operativa: runtime MVP con scan GitHub Actions e dashboard separata; release
+tool/dashboard, deploy operativo e pubblicazione dashboard restano canali distinti.
+
 ## Stack
 
 - Runtime: Node.js + TypeScript.
@@ -169,4 +172,5 @@ applicabili con motivo.
 
 Definizione di completamento: un lavoro è completo quando chiude la richiesta
 senza allargare inutilmente lo scope e gestisce esplicitamente verifiche,
-inbox, output applicativi, publish, release e deploy, cleanup e rischi residui.
+inbox, segreti e dati, output applicativi, publish, release e deploy, cleanup e
+rischi residui.
