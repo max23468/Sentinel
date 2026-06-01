@@ -17,6 +17,12 @@ senza decisione esplicita.
 Fase operativa: runtime MVP con scan GitHub Actions e dashboard separata; release
 tool/dashboard, deploy operativo e pubblicazione dashboard restano canali distinti.
 
+Brand e glossario prodotto non hanno ancora un documento dedicato. Fino a nuova
+decisione, il naming resta descrittivo e operativo: `Sentinel` per il tool,
+nomi dei monitor come profili configurati, dashboard come superficie di
+controllo. Evita copy promozionale, claim di crawling generalista o nomi che
+facciano sembrare i siti monitorati partner/prodotti di Sentinel.
+
 ## Stack
 
 - Runtime: Node.js + TypeScript.
@@ -85,6 +91,20 @@ tool/dashboard, deploy operativo e pubblicazione dashboard restano canali distin
 - Crawling: stesso dominio, profondità 3, massimo 500 URL.
 - URL: rimuovi parametri tracking, considera equivalente lo slash finale, segui redirect e salva URL finale canonica.
 - File monitorati: `pdf`, `doc`, `docx`, `xls`, `xlsx`, `csv`, `zip`, immagini comuni.
+- Quando aggiungi o rinomini un monitor, aggiorna configurazione e
+  documentazione usando il nome reale del sito come profilo operativo, senza
+  inventare brand o categorie di prodotto non approvate.
+
+## Dashboard e tono
+
+- UI e report devono restare in italiano operativo, con stati chiari e prossimo
+  passo evidente.
+- Usa termini come `monitor`, `scan`, `dashboard`, `avviso`, `problema`,
+  `cambiamento`, `Avvisi noti` e `output applicativi` in modo coerente.
+- Evita termini che promettono archivio integrale, crawling illimitato,
+  sorveglianza generalista o partnership con i siti monitorati.
+- Se una decisione cambia naming, tono dashboard, posizionamento o lessico
+  stabile, aggiorna `docs/CONTEXT.md`, `docs/INDEX.md` o crea un ADR mirato.
 
 ## Comandi previsti
 
