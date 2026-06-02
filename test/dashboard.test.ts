@@ -73,6 +73,54 @@ const state: SentinelState = {
   }
 };
 
+function makeReport(
+  siteId: string,
+  siteName: string,
+  overrides: {
+    changes?: number;
+    issues?: number;
+    known?: number;
+    problemLines?: string[];
+    knownIssueLines?: string[];
+    changeLines?: string[];
+  } = {}
+) {
+  const problemLines = overrides.problemLines ?? ["- Nessun problema rilevato."];
+  const knownIssueLines = overrides.knownIssueLines ?? ["- Nessun avviso noto rilevato."];
+  const changeLines = overrides.changeLines ?? ["- Nessun cambiamento rilevato."];
+
+  return parseScanReportSummary(
+    siteId,
+    `/tmp/reports/${siteId}-20260524T185555Z.md`,
+    `${siteId}-20260524T185555Z.md`,
+    `# Report Sentinel - ${siteName}
+
+- Scansione: 24 mag 2026, 20:55
+- Modalità: operativa
+- Baseline iniziale: no
+- URL scansionati: 2
+- URL saltati: 0
+- Cambiamenti: ${overrides.changes ?? 0}
+- Problemi: ${overrides.issues ?? 0}
+- Avvisi noti: ${overrides.known ?? 0}
+- Email richiesta: no
+- Email inviata: no
+
+## Problemi
+
+${problemLines.join("\n")}
+
+## Avvisi noti
+
+${knownIssueLines.join("\n")}
+
+## Cambiamenti
+
+${changeLines.join("\n")}
+`
+  );
+}
+
 describe("dashboard", () => {
   it("estrae la sintesi da un report di scansione", () => {
     const summary = parseScanReportSummary(
@@ -160,6 +208,105 @@ describe("dashboard", () => {
     expect(html).toContain('data-dashboard-button="issues"');
     expect(html).toContain('data-dashboard-button="known"');
     expect(html).toContain('id="dashboard-results"');
+  });
+
+  it("renderizza gli stati dei monitor e un empty state distinto per gli avvisi noti", () => {
+    const multiConfig: SentinelConfig = {
+      ...config,
+      sites: [
+        config.sites[0],
+        { ...config.sites[0], id: "changes", name: "Changes" },
+        { ...config.sites[0], id: "warnings", name: "Warnings" },
+        { ...config.sites[0], id: "fatal", name: "Fatal" },
+        { ...config.sites[0], id: "disabled", name: "Disabled", enabled: false },
+        { ...config.sites[0], id: "noreport", name: "No Report" }
+      ]
+    };
+    const multiState: SentinelState = {
+      ...state,
+      sites: {
+        ortix: state.sites.ortix,
+        changes: state.sites.ortix,
+        warnings: state.sites.ortix,
+        fatal: state.sites.ortix,
+        disabled: state.sites.ortix,
+        noreport: {
+          id: "noreport",
+          name: "No Report",
+          urls: {}
+        }
+      }
+    };
+    const reports = [
+      makeReport("ortix", "Ortix"),
+      makeReport("changes", "Changes", {
+        changes: 2,
+        changeLines: ["- Modificato: https://example.com/change - Pagina aggiornata"]
+      }),
+      makeReport("warnings", "Warnings", {
+        issues: 2,
+        problemLines: ["- Avviso: https://example.com/warn - HTTP 404"]
+      }),
+      makeReport("fatal", "Fatal", {
+        issues: 1,
+        problemLines: ["- FATALE: email - Password SMTP assente"]
+      })
+    ];
+
+    const model = buildDashboardModel(multiConfig, multiState, reports, "2026-05-26T09:00:00.000Z");
+    const html = renderDashboardHtml(model);
+
+    expect(html).toContain(">Stabile<");
+    expect(html).toContain(">Cambiamenti<");
+    expect(html).toContain(">Avvisi<");
+    expect(html).toContain(">Errore<");
+    expect(html).toContain(">Disabilitato<");
+    expect(html).toContain(">Senza report<");
+    expect(html).toContain("Nessun avviso noto negli ultimi report disponibili.");
+  });
+
+  it("degrada righe di report non standard in riepiloghi leggibili", () => {
+    const summary = parseScanReportSummary(
+      "ortix",
+      "/tmp/reports/ortix-20260524T185555Z.md",
+      "ortix-20260524T185555Z.md",
+      `## Problemi
+
+- Altri avvisi tecnici: 7
+- Riga libera problema
+
+## Avvisi noti
+
+- Riga libera avviso noto
+
+## Cambiamenti
+
+- Nessun cambiamento rilevato.
+`
+    );
+
+    expect(summary.siteName).toBe("ortix");
+    expect(summary.issues).toEqual([
+      {
+        siteName: "ortix",
+        severity: "summary",
+        message: "Altri avvisi tecnici",
+        count: 7
+      },
+      {
+        siteName: "ortix",
+        severity: "summary",
+        message: "Riga libera problema"
+      }
+    ]);
+    expect(summary.knownIssues).toEqual([
+      {
+        siteName: "ortix",
+        severity: "summary",
+        message: "Riga libera avviso noto"
+      }
+    ]);
+    expect(summary.changes).toEqual([]);
   });
 
   it("normalizza i path usati per pubblicare il payload dinamico", () => {

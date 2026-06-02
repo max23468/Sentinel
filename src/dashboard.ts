@@ -940,10 +940,10 @@ function renderResultsPanel(model: DashboardModel): string {
     ${renderChanges(model.changes)}
   </div>
   <div class="result-view" data-result-view="issues" hidden>
-    ${renderIssues(model.issues)}
+    ${renderIssues(model.issues, "Nessun problema negli ultimi report disponibili.")}
   </div>
   <div class="result-view" data-result-view="known" hidden>
-    ${renderIssues(model.knownIssues)}
+    ${renderIssues(model.knownIssues, "Nessun avviso noto negli ultimi report disponibili.")}
   </div>
 </section>`;
 }
@@ -1039,8 +1039,8 @@ function renderChangeItem(change: DashboardChange): string {
 </article>`;
 }
 
-function renderIssues(issues: DashboardIssue[]): string {
-  if (issues.length === 0) return '<p class="empty">Nessun problema negli ultimi report disponibili.</p>';
+function renderIssues(issues: DashboardIssue[], emptyMessage: string): string {
+  if (issues.length === 0) return `<p class="empty">${escapeHtml(emptyMessage)}</p>`;
 
   return `<div class="result-list">
     ${issues.map(renderIssueItem).join("\n")}
