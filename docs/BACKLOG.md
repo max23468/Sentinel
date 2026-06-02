@@ -16,6 +16,9 @@ roadmap. Una voce nel backlog non è scope approvato.
   crescono troppo.
 - Valutare un controllo automatico di dimensione repository se gli output
   applicativi crescono oltre una soglia pratica.
+- Completare la coverage di `src/dashboard.ts` sui rami residui a basso rischio
+  ma ancora non esercitati in test, in particolare fallback I/O (`reports/`
+  assente), path output espliciti e alcuni empty state/render path secondari.
 
 ## Bug
 
