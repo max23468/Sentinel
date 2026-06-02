@@ -13,6 +13,7 @@ Monitor configurati:
 npm install
 npm run build
 npm test
+npm run test:coverage
 npm run sentinel -- scan
 npm run sentinel -- scan --dry-run
 npm run sentinel -- report
@@ -112,6 +113,17 @@ Su macOS, se la password non è in env, Sentinel prova a leggere dal Portachiavi
 - [docs/CONTEXT.md](docs/CONTEXT.md): handoff operativo.
 - [docs/TOOLCHAIN.md](docs/TOOLCHAIN.md): runtime, workflow e verifiche.
 - [docs/DECISIONS.md](docs/DECISIONS.md): decisioni stabili.
+
+## Coverage core
+
+Per l'audit Atlas la coverage Vitest ufficiale passa da:
+
+```bash
+npm run test:coverage
+```
+
+Il perimetro core attuale è dichiarato in `vitest.config.ts` e applica soglie
+minime `75%` linee e `65%` branch sui moduli core selezionati.
 
 ## Pubblicazione
 

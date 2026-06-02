@@ -28,4 +28,19 @@ describe("HTML text extraction", () => {
       )
     ).toBe("Testo OUR INSTAGRAM Recent Comments");
   });
+
+  it("estrae anche asset da srcset e gestisce pagine senza title", () => {
+    const result = extractNormalizedText(`
+      <div>
+        Testo semplice
+        <img srcset="/hero-small.jpg 1x, /hero-large.jpg 2x" />
+        <source srcset="/video.mp4 1x" />
+      </div>
+    `);
+
+    expect(result.title).toBeUndefined();
+    expect(result.text).toBe("Testo semplice");
+    expect(result.links).toEqual([]);
+    expect(result.assets).toEqual(["/hero-small.jpg", "/hero-large.jpg", "/video.mp4"]);
+  });
 });
