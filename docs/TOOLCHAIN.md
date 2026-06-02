@@ -45,6 +45,7 @@ Questa pagina descrive runtime, comandi e guardrail effettivi di Sentinel.
 - install/setup: `npm install` o `npm ci`.
 - build: `npm run build`.
 - test: `npm test`.
+- coverage core Atlas: `npm run test:coverage`.
 - Codex comments dry-run: workflow `Codex PR comments` con input `dry_run=true`.
 - scan: `npm run sentinel -- scan`.
 - dry-run scan: `npm run sentinel -- scan --dry-run`.
@@ -59,6 +60,14 @@ Questa pagina descrive runtime, comandi e guardrail effettivi di Sentinel.
 - test email Gmail: `npm run sentinel -- test-email --profile gmail`.
 - test email iCloud: `npm run sentinel -- test-email --profile icloud`.
 
+## Coverage core
+
+- La coverage Vitest ufficiale per l'audit Atlas gira con `npm run test:coverage`.
+- Il perimetro core corrente è dichiarato in `vitest.config.ts`.
+- Le soglie minime correnti sul perimetro core sono `75%` linee e `65%` branch.
+- La coverage non sostituisce `npm test` e `npm run build`: è un gate aggiuntivo
+  quando il lavoro tocca test, quality bar o moduli core.
+
 ## Verifiche per scope
 
 | Tipo modifica | Corsia | Verifiche minime |
@@ -67,6 +76,7 @@ Questa pagina descrive runtime, comandi e guardrail effettivi di Sentinel.
 | Docs-only | veloce | Review documentale e `git diff --check` quando utile |
 | Workflow/config o documenti operativi critici | standard | Review mirata e comando collegato al file modificato |
 | Test-only, CLI o dashboard piccola | standard | `npm test`, `npm run build` o test mirati |
+| Audit test/coverage o quality bar moduli core | standard | `npm test`, `npm run test:coverage`, `npm run build` |
 | Runtime schedulato, dati/output, provider email, deploy/config, release/versioning o UI sostanziale | completa | Gate completo proporzionato, smoke/manual run quando serve, React Doctor se applicabile |
 
 Per UI sostanziale della dashboard Next.js usare anche browser locale o deploy

@@ -38,4 +38,25 @@ describe("scan summary", () => {
     expect(lines[2]).toBe("- Avviso https://example.com/a: HTTP 404");
     expect(lines[3]).toBe("- Avvisi noti ignorati dal conteggio problemi: 1");
   });
+
+  it("riporta baseline, percorso report e problemi omessi oltre la soglia visibile", () => {
+    const lines = formatScanSummary(
+      baseResult({
+        baseline: true,
+        reportPath: "/tmp/reports/ortix.md",
+        issues: [
+          { url: "email", message: "Password SMTP assente", fatal: true },
+          ...Array.from({ length: 12 }, (_, index) => ({
+            url: `https://example.com/${index}`,
+            message: "HTTP 404",
+            fatal: false
+          }))
+        ]
+      })
+    );
+
+    expect(lines[1]).toBe("Baseline iniziale: email non inviata.");
+    expect(lines[2]).toBe("Report: /tmp/reports/ortix.md");
+    expect(lines.at(-1)).toBe("- Altri problemi: 3");
+  });
 });

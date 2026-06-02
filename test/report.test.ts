@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { renderScanReport } from "../src/report.js";
-import type { ScanResult } from "../src/types.js";
+import { renderInventoryReport, renderScanReport } from "../src/report.js";
+import type { ScanResult, SentinelState } from "../src/types.js";
 
 function baseResult(overrides: Partial<ScanResult>): ScanResult {
   return {
@@ -81,5 +81,68 @@ describe("scan report", () => {
     expect(report).toContain("- Avvisi noti: 1");
     expect(report).toContain("## Avvisi noti");
     expect(report).toContain("- Noto: https://example.com/legacy.jpg - HTTP 404 - Asset legacy");
+  });
+
+  it("aggiunge la sintesi baseline e rende tutti i tipi di cambiamento", () => {
+    const report = renderScanReport(
+      baseResult({
+        baseline: true,
+        changes: [
+          { type: "added", url: "https://example.com/a", title: "Nuova pagina" },
+          { type: "changed", url: "https://example.com/b" },
+          { type: "removed", url: "https://example.com/c" }
+        ]
+      })
+    );
+
+    expect(report).toContain("Baseline iniziale creata. Nessuna email inviata per policy.");
+    expect(report).toContain("- Aggiunto: https://example.com/a - Nuova pagina");
+    expect(report).toContain("- Modificato: https://example.com/b");
+    expect(report).toContain("- Rimosso: https://example.com/c");
+  });
+
+  it("riporta lo stato stabile quando non ci sono cambiamenti o problemi", () => {
+    const report = renderScanReport(baseResult({}));
+
+    expect(report).toContain("Nessun cambiamento o problema attivo rilevato.");
+    expect(report).toContain("Nessun problema rilevato.");
+    expect(report).toContain("Nessun avviso noto rilevato.");
+  });
+
+  it("genera un inventario ordinato e mostra \"mai\" senza scansioni precedenti", () => {
+    const state: SentinelState = {
+      version: 1,
+      sites: {
+        ortix: {
+          id: "ortix",
+          name: "Ortix",
+          urls: {
+            b: {
+              url: "https://example.com/b",
+              kind: "file",
+              firstSeenAt: "2026-05-24T00:00:00.000Z",
+              lastSeenAt: "2026-05-24T00:00:00.000Z",
+              lastStatus: 200,
+              hash: "b",
+              snapshotIds: []
+            },
+            a: {
+              url: "https://example.com/a",
+              kind: "html",
+              firstSeenAt: "2026-05-24T00:00:00.000Z",
+              lastSeenAt: "2026-05-24T00:00:00.000Z",
+              lastStatus: 200,
+              hash: "a",
+              snapshotIds: []
+            }
+          }
+        }
+      }
+    };
+
+    const report = renderInventoryReport(state, "2026-06-02T08:30:00.000Z");
+
+    expect(report).toContain("- Ultima scansione: mai");
+    expect(report.indexOf("- HTML https://example.com/a")).toBeLessThan(report.indexOf("- FILE https://example.com/b"));
   });
 });
