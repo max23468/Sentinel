@@ -36,7 +36,6 @@ Questa pagina descrive runtime, comandi e guardrail effettivi di Sentinel.
 | Vercel CLI | locale/autenticata | deploy dashboard web senza GitHub Actions |
 | Vercel Blob | privato | payload dinamico dashboard e ultimi report |
 | GitHub Actions | `ubuntu-latest`, Node `24` | runtime operativo schedulato/manuale |
-| GitHub Actions PR Quality | `ubuntu-latest`, Node `24` | gate PR su test, coverage core e build |
 | Dependabot | configurazione GitHub | aggiornamenti dipendenze npm e GitHub Actions |
 | SMTP Gmail | Doppler, secret GitHub o env locale | invio email operativo |
 | Portachiavi macOS | servizi `sentinel-gmail` e `sentinel-icloud` | fallback locale per password email |
@@ -47,7 +46,8 @@ Questa pagina descrive runtime, comandi e guardrail effettivi di Sentinel.
 - build: `npm run build`.
 - test: `npm test`.
 - coverage core Atlas: `npm run test:coverage`.
-- gate PR quality: workflow `.github/workflows/pr-quality.yml`.
+- gate PR quality automatico: non presente finché manca una decisione esplicita
+  per reintrodurre un workflow test/coverage/build su `pull_request`.
 - Codex comments dry-run: workflow `Codex PR comments` con input `dry_run=true`.
 - scan: `npm run sentinel -- scan`.
 - dry-run scan: `npm run sentinel -- scan --dry-run`.
