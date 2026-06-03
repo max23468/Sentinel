@@ -58,6 +58,11 @@ facciano sembrare i siti monitorati partner/prodotti di Sentinel.
   bot, release flow, deploy automation o branch protection senza decisione
   esplicita. Usa PR template, issue template, PR title check o controllo
   equivalente quando lavori via GitHub.
+- Quando Codex crea una PR, non usare il nome branch `codex/<tema>` come titolo:
+  passa sempre un titolo PR Conventional Commit esplicito, per esempio
+  `gh pr create --title "docs: update Sentinel governance"`, oppure correggi
+  subito una PR già aperta con `gh pr edit --title "docs: ..."` prima di
+  dichiararla pronta o pubblicata.
 - Dopo merge/pubblicazione controlla `git branch -vv` e `git worktree list`, poi
   pulisci branch/worktree non più necessari o dichiara cosa resta aperto.
 - Usa le skill Superpowers pertinenti per lavori non banali: pianificazione,
