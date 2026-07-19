@@ -23,12 +23,19 @@ jobs:
         id: schedule
         if: github.event_name == 'schedule'
         run: |
-          if [ "$(TZ=Europe/Rome date +%H)" = "09" ]; then
-            echo "should_run=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "Fuori dalla finestra 09:00 Europe/Rome, skip."
-            echo "should_run=false" >> "$GITHUB_OUTPUT"
+          # Non guardare l'ora a runtime: GitHub ritarda i job schedulati anche
+          # di oltre un'ora, quindi l'ora di Roma è quasi sempre gia' scivolata
+          # oltre le 09:00. Decidi in base a QUALE cron ha triggerato + fuso DST.
+          # 09:00 Europe/Rome = 07:00 UTC in estate (+0200), 08:00 UTC in inverno (+0100).
+          offset=$(TZ=Europe/Rome date +%z)
+          sched="${{ github.event.schedule }}"
+          should_run=false
+          if [ "$offset" = "+0200" ] && [ "$sched" = "0 7 * * 6" ]; then should_run=true; fi
+          if [ "$offset" = "+0100" ] && [ "$sched" = "0 8 * * 6" ]; then should_run=true; fi
+          if [ "$should_run" != "true" ]; then
+            echo "Cron $sched con offset $offset fuori dalla finestra 09:00 Europe/Rome, skip."
           fi
+          echo "should_run=$should_run" >> "$GITHUB_OUTPUT"
 
       - name: Verifica variabili Doppler
         if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
