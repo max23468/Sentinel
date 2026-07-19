@@ -596,10 +596,22 @@ function getFirstCodexComment(thread) {
   );
 }
 
+function stripTags(line) {
+  // Ripeti fino a stabilita': un solo passaggio e' aggirabile perche' la
+  // rimozione puo' ricomporre un nuovo tag (es. "<scr<script>ipt>").
+  let previous;
+  let current = line;
+  do {
+    previous = current;
+    current = current.replace(/<[^>]+>/g, "");
+  } while (current !== previous);
+  return current.trim();
+}
+
 function firstLine(value) {
   return value
     .split("\n")
-    .map((line) => line.replace(/<[^>]+>/g, "").trim())
+    .map(stripTags)
     .find(Boolean)
     ?.slice(0, 160);
 }
