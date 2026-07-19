@@ -71,6 +71,7 @@ jobs:
           GITHUB_SENTINEL_GMAIL_APP_PASSWORD: ${{ secrets.SENTINEL_GMAIL_APP_PASSWORD }}
           GITHUB_SENTINEL_ICLOUD_USER: ${{ secrets.SENTINEL_ICLOUD_USER }}
           GITHUB_SENTINEL_ICLOUD_APP_PASSWORD: ${{ secrets.SENTINEL_ICLOUD_APP_PASSWORD }}
+          GITHUB_BLOB_READ_WRITE_TOKEN: ${{ secrets.BLOB_READ_WRITE_TOKEN }}
         run: |
           for name in \
             SENTINEL_EMAIL_TO \
@@ -78,7 +79,8 @@ jobs:
             SENTINEL_GMAIL_USER \
             SENTINEL_GMAIL_APP_PASSWORD \
             SENTINEL_ICLOUD_USER \
-            SENTINEL_ICLOUD_APP_PASSWORD
+            SENTINEL_ICLOUD_APP_PASSWORD \
+            BLOB_READ_WRITE_TOKEN
           do
             fallback_name="GITHUB_${name}"
             if [ -z "${!name:-}" ] && [ -n "${!fallback_name:-}" ]; then
@@ -142,6 +144,17 @@ jobs:
       - name: Generate dashboard
         if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
         run: npm run sentinel -- dashboard
+
+      - name: Publish dashboard to Vercel Blob
+        # La dashboard live legge da Vercel Blob: senza questo step resta ferma
+        # anche se lo scan gira. Salta con notice se il token non e' disponibile.
+        if: ${{ github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true' }}
+        run: |
+          if [ -z "${BLOB_READ_WRITE_TOKEN:-}" ]; then
+            echo "::warning::BLOB_READ_WRITE_TOKEN assente: dashboard live non aggiornata."
+            exit 0
+          fi
+          npm run sentinel -- publish-dashboard
 
       - name: Commit application outputs
         if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
