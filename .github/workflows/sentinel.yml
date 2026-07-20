@@ -110,7 +110,7 @@ jobs:
 
       - name: Checkout
         if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Setup Node
         if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
