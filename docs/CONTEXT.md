@@ -7,7 +7,7 @@
   pubblicata.
 - Runtime Node.js target: `24.x`.
 - Ultimo deploy operativo: GitHub Actions su branch `main`.
-- Dashboard web: app Next.js pubblicabile su Vercel da CLI, con dati dinamici su
+- Dashboard web: app React su Vite pubblicabile su Vercel da CLI, con dati dinamici su
   Vercel Blob privato.
 - GitHub: repository privata `https://github.com/max23468/Sentinel`.
 
@@ -21,8 +21,9 @@
 - Decisioni: `docs/DECISIONS.md`, `docs/DECISIONS_PENDING.md` e ADR in
   `docs/decisions/`.
 - Workflow operativo: `.github/workflows/sentinel.yml`.
-- Dashboard online: app Next.js in `app/`, proxy Basic Auth in `proxy.ts`,
-  payload Blob pubblicato con `sentinel publish-dashboard`.
+- Dashboard online: app React/Vite (`index.html`, `web/`) con Vercel Functions in
+  `api/` e Basic Auth in `middleware.ts`, payload Blob pubblicato con
+  `sentinel publish-dashboard`.
 - Release versionate: tag `vX.Y.Z` e GitHub Release obbligatori per release del tool o
   della dashboard, secondo ADR `docs/decisions/0003-tag-e-github-release.md`.
 

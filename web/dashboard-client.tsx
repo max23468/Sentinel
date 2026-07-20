@@ -1,5 +1,3 @@
-"use client";
-
 import { useCallback, useEffect, useMemo, useState } from "react";
 import type { DashboardChange, DashboardIssue, DashboardModel, DashboardSite, RecentResource } from "../src/dashboard";
 

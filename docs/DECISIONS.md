@@ -5,12 +5,14 @@ Questo indice raccoglie le decisioni stabili della repo.
 ## Decisioni attive
 
 - [0001 - GitHub Actions come runtime operativo MVP](decisions/0001-github-actions-runtime-operativo.md): accettata.
-- [0002 - Dashboard dinamica su Vercel](decisions/0002-dashboard-vercel-dinamica.md): accettata.
+- [0002 - Dashboard dinamica su Vercel](decisions/0002-dashboard-vercel-dinamica.md): accettata (framework web aggiornato da 0004).
 - [0003 - Tag e GitHub Release](decisions/0003-tag-e-github-release.md): accettata.
+- [0004 - Dashboard su Vite invece di Next.js](decisions/0004-dashboard-vite-invece-di-next.md): accettata.
 
 ## Decisioni sostituite o superate
 
-- Nessuna.
+- La scelta di framework di 0002 (Next.js) è superata da 0004 (Vite); il resto di
+  0002 resta valido.
 
 ## Regole
 

@@ -1,26 +1,17 @@
 import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
 import { get } from "@vercel/blob";
-import { dashboardReportBlobPath } from "../../../../src/dashboard-publish";
-import { resolveFromCwd } from "../../../../src/fs";
-import { requireDashboardAuth } from "../../auth";
-
-export const dynamic = "force-dynamic";
-export const runtime = "nodejs";
+import { dashboardReportBlobPath } from "../../src/dashboard-publish";
+import { resolveFromCwd } from "../../src/fs";
+import { requireDashboardAuth } from "../../web/auth";
 
 const localReportsPromise = loadLocalReports();
 
-interface RouteContext {
-  params: Promise<{
-    name: string;
-  }>;
-}
-
-export async function GET(request: Request, context: RouteContext): Promise<Response> {
+export async function GET(request: Request): Promise<Response> {
   const authResponse = requireDashboardAuth(request);
   if (authResponse) return authResponse;
 
-  const { name } = await context.params;
+  const name = decodeURIComponent(new URL(request.url).pathname.split("/").pop() ?? "");
   const fileName = path.basename(name);
   if (fileName !== name || !fileName.endsWith(".md")) {
     return new Response("Report non valido.", { status: 400 });

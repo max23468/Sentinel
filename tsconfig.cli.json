@@ -8,5 +8,5 @@
     "rootDir": "src"
   },
   "include": ["src/**/*.ts"],
-  "exclude": ["dist", "node_modules", ".next", "app", "proxy.ts"]
+  "exclude": ["dist", "dist-web", "node_modules", "web", "api", "middleware.ts"]
 }
