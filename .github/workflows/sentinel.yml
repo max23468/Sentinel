@@ -114,7 +114,7 @@ jobs:
 
       - name: Setup Node
         if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version: 24
           cache: npm
