@@ -2,7 +2,9 @@
 
 Data: 2026-05-26
 
-Stato: Accettata
+Stato: Accettata. La scelta del framework web (Next.js) è superata da
+[0004](0004-dashboard-vite-invece-di-next.md), che passa a Vite; Vercel, Blob
+privato, Basic Auth e dati dinamici a runtime restano validi.
 
 ## Contesto
 

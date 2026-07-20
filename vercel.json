@@ -1,5 +1,11 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "framework": "nextjs",
-  "buildCommand": "npm run build:web"
+  "framework": "vite",
+  "buildCommand": "npm run build:web",
+  "outputDirectory": "dist-web",
+  "functions": {
+    "api/reports/[name].ts": {
+      "includeFiles": "reports/**"
+    }
+  }
 }

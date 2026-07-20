@@ -180,9 +180,11 @@ Codex sulle PR, è marcata dalla label `codex-feedback-inbox` ed è aggiornata
 dal workflow `Codex PR comments`. Controllala prima di PR ready, merge,
 pubblicazione, deploy o release non banali.
 
-Sentinel ha una dashboard Next.js/React documentata in
-`docs/decisions/0002-dashboard-vercel-dinamica.md`. Se tocchi `app/page.tsx`,
-`app/dashboard-client.tsx`, `app/api/dashboard/route.ts` o superfici UI
+Sentinel ha una dashboard React su Vite documentata in
+`docs/decisions/0002-dashboard-vercel-dinamica.md` e
+`docs/decisions/0004-dashboard-vite-invece-di-next.md`. Se tocchi `index.html`,
+`web/main.tsx`, `web/dashboard-client.tsx`, `api/dashboard.ts`,
+`api/reports/[name].ts`, `middleware.ts` o superfici UI
 collegate, esegui `npm run quality:react-doctor` e aggiungi verifiche browser,
 responsive, accessibilità e stati vuoti/errore/loading proporzionati prima di
 considerarla completa. Per cambi layout/flusso usa `npm run dev` o il deploy

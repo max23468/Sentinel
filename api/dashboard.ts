@@ -1,8 +1,5 @@
-import { loadDashboardModel } from "../../../src/dashboard-publish";
-import { requireDashboardAuth } from "../auth";
-
-export const dynamic = "force-dynamic";
-export const runtime = "nodejs";
+import { loadDashboardModel } from "../src/dashboard-publish";
+import { requireDashboardAuth } from "../web/auth";
 
 export async function GET(request: Request): Promise<Response> {
   const authResponse = requireDashboardAuth(request);

@@ -5,7 +5,8 @@
     "moduleResolution": "Bundler",
     "lib": [
       "ES2022",
-      "DOM"
+      "DOM",
+      "DOM.Iterable"
     ],
     "types": [
       "node"
@@ -18,17 +19,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
-    "allowJs": true
+    "incremental": true
   },
-  "include": ["next-env.d.ts", "src/**/*.ts", "app/**/*.ts", "app/**/*.tsx", "proxy.ts", ".next/types/**/*.ts", ".next/dev/types/**/*.ts"],
-  "exclude": [
-    "dist",
-    "node_modules"
-  ]
+  "include": ["web/**/*.ts", "web/**/*.tsx", "api/**/*.ts", "middleware.ts", "src/**/*.ts"],
+  "exclude": ["dist", "dist-web", "node_modules"]
 }

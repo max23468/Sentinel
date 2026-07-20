@@ -81,7 +81,7 @@ Questa pagina descrive runtime, comandi e guardrail effettivi di Sentinel.
 | Audit test/coverage o quality bar moduli core | standard | `npm test`, `npm run test:coverage`, `npm run build` |
 | Runtime schedulato, dati/output, provider email, deploy/config, release/versioning o UI sostanziale | completa | Gate completo proporzionato, smoke/manual run quando serve, React Doctor se applicabile |
 
-Per UI sostanziale della dashboard Next.js usare anche browser locale o deploy
+Per UI sostanziale della dashboard React/Vite usare anche browser locale o deploy
 pertinente, includendo Basic Auth, route dashboard, viewport desktop/mobile e
 stati vuoti/errore/loading quando il diff li può alterare.
 
@@ -110,15 +110,20 @@ stati vuoti/errore/loading quando il diff li può alterare.
 
 ## Dashboard Vercel
 
-- Framework: Next.js App Router.
+- Framework: React su Vite (`vite build` in `dist-web`); vedi ADR 0004.
+- UI: `index.html` + `web/main.tsx` montano `web/dashboard-client.tsx`.
+- Server: Vercel Functions standalone `api/dashboard.ts` e
+  `api/reports/[name].ts` (firma web `export function GET(request: Request)`).
 - Protezione: Basic Auth applicativa con `SENTINEL_DASHBOARD_USER` e
-  `SENTINEL_DASHBOARD_PASSWORD`.
+  `SENTINEL_DASHBOARD_PASSWORD`, applicata a tutto il sito da `middleware.ts`
+  (Vercel Edge Middleware) e ricontrollata nelle Functions.
 - Storage dinamico: Vercel Blob privato con `BLOB_READ_WRITE_TOKEN`.
 - Payload: `sentinel-dashboard/model.json` salvo override con
   `SENTINEL_DASHBOARD_BLOB_PREFIX`.
-- Report serviti via route autenticata `/api/reports/[name]`.
-- Il build web usa `next build --webpack` perché la CLI TypeScript usa import
-  ESM con suffisso `.js`, risolti da Webpack tramite `next.config.mjs`.
+- Report serviti via Function autenticata `/api/reports/[name]`.
+- `vercel.json` usa `framework: "vite"` e `outputDirectory: "dist-web"`; per lo
+  sviluppo full-stack locale (UI + Functions + middleware) usare `vercel dev`,
+  mentre `npm run dev` (Vite) serve la sola UI.
 
 ## Eccezioni e guardrail
 
