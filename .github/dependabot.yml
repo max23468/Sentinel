@@ -1,3 +1,7 @@
+# Dependabot — aggiornamenti settimanali per dipendenze npm e automazioni GitHub.
+# Minor/patch raggruppati in un unico PR (auto-merge se la CI passa); i major
+# restano singoli e vanno valutati a mano.
+# Doc: https://docs.github.com/code-security/dependabot/dependabot-version-updates
 version: 2
 updates:
   - package-ecosystem: npm
@@ -7,6 +11,48 @@ updates:
       day: monday
       time: "08:00"
       timezone: Europe/Rome
+    open-pull-requests-limit: 5
+    labels:
+      - dependencies
+    commit-message:
+      prefix: chore
+      include: scope
+    groups:
+      npm-minor-and-patch:
+        applies-to: version-updates
+        update-types:
+          - minor
+          - patch
+    # Major bloccati da vincoli reali, non da pigrizia:
+    # - typescript 7.0 ha rimosso l'API programmatica JS (lib/typescript.js);
+    #   il builder delle Vercel Functions (@vercel/node) la carica e crasha.
+    #   L'API torna con TS 7.1 (vercel/next.js discussion #95633). Fino ad
+    #   allora il deploy Vercel fallisce. Vedi ADR 0004.
+    # - @types/node resta allineato al runtime Node 24 (engines.node: 24.x).
+    ignore:
+      - dependency-name: typescript
+        update-types:
+          - version-update:semver-major
+      - dependency-name: "@types/node"
+        update-types:
+          - version-update:semver-major
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: "08:20"
+      timezone: Europe/Rome
     open-pull-requests-limit: 2
     labels:
       - dependencies
+    commit-message:
+      prefix: chore
+      include: scope
+    groups:
+      actions-minor-and-patch:
+        applies-to: version-updates
+        update-types:
+          - minor
+          - patch
