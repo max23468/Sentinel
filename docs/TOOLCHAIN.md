@@ -91,6 +91,13 @@ stati vuoti/errore/loading quando il diff li può alterare.
   completa di `pubblica` significa anche pulire branch/worktree locali e remoti
   assorbiti al termine.
 - La Codex feedback inbox è gestita dal workflow `Codex PR comments`.
+- Le PR verso `main` girano il workflow `CI` (typecheck + build CLI/web + test):
+  è il gate che rende sicuro l'auto-merge.
+- Aggiornamenti dipendenze: Dependabot settimanale (npm + github-actions),
+  minor/patch raggruppati; il workflow `Dependabot auto-merge` abilita l'auto-merge
+  squash per patch/minor, che attende comunque i check richiesti. I major restano
+  manuali; `typescript` e `@types/node` major sono ignorati (vincoli TS 7.1 / Node 24).
+  L'auto-merge richiede `Allow auto-merge` attivo e almeno un check obbligatorio su `main`.
 - Il deploy operativo MVP passa da GitHub Actions su `main`.
 - Il deploy della dashboard web passa da Vercel CLI e non richiede GitHub
   Actions.
