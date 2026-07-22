@@ -75,7 +75,7 @@ ignoredIssues:
 
 ## Email
 
-Le password SMTP non vanno committate. Usa variabili d'ambiente, Doppler,
+Le password SMTP non vanno committate. Usa variabili d'ambiente,
 GitHub Secrets o Portachiavi macOS.
 
 Variabili previste:
@@ -90,7 +90,7 @@ SENTINEL_ICLOUD_APP_PASSWORD=
 ```
 
 Per il workflow GitHub Actions attuale, che usa il profilo `gmail`, queste
-variabili devono arrivare da Doppler o, come fallback, da repository secrets:
+variabili devono arrivare da repository secrets:
 
 ```bash
 SENTINEL_EMAIL_TO
@@ -99,8 +99,8 @@ SENTINEL_GMAIL_USER
 SENTINEL_GMAIL_APP_PASSWORD
 ```
 
-Se uno di questi valori manca dopo l'iniezione Doppler e il fallback GitHub
-Secrets, il workflow fallisce subito prima di installare dipendenze, eseguire
+Se uno di questi valori manca nei GitHub Secrets, il workflow fallisce subito
+prima di installare dipendenze, eseguire
 test, build o scan.
 
 Su macOS, se la password non è in env, Sentinel prova a leggere dal Portachiavi i servizi `sentinel-gmail` o `sentinel-icloud`.
