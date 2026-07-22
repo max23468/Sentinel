@@ -35,6 +35,33 @@ jobs:
           fi
           echo "should_run=$should_run" >> "$GITHUB_OUTPUT"
 
+      - name: Checkout
+        if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
+        uses: actions/checkout@v7
+
+      - name: Setup Node
+        if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install
+        if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
+        run: npm ci --ignore-scripts
+
+      - name: Enable esbuild
+        if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
+        run: npm rebuild esbuild
+
+      - name: Test
+        if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
+        run: npm test
+
+      - name: Build
+        if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
+        run: npm run build
+
       - name: Apply GitHub email secret fallback
         if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
         env:
@@ -80,29 +107,6 @@ jobs:
             echo "Configura i secret Gmail prima di avviare la scansione Sentinel."
             exit 1
           fi
-
-      - name: Checkout
-        if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
-        uses: actions/checkout@v7
-
-      - name: Setup Node
-        if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
-        uses: actions/setup-node@v7
-        with:
-          node-version: 24
-          cache: npm
-
-      - name: Install
-        if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
-        run: npm ci
-
-      - name: Test
-        if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
-        run: npm test
-
-      - name: Build
-        if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
-        run: npm run build
 
       - name: Scan
         id: scan

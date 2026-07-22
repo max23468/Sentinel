@@ -20,8 +20,8 @@
     "sentinel": "tsx src/index.ts",
     "test": "vitest run test",
     "test:coverage": "vitest run test --coverage",
-    "doctor": "npx --yes react-doctor@latest --scope full --fail-on error .",
-    "quality:react-doctor": "npx --yes react-doctor@latest --scope full --fail-on error ."
+    "doctor": "npx --yes react-doctor@latest --scope full --blocking error .",
+    "quality:react-doctor": "npx --yes react-doctor@latest --scope full --blocking error ."
   },
   "dependencies": {
     "@vercel/blob": "^2.6.1",
