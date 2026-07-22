@@ -16,8 +16,6 @@ jobs:
   scan:
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    env:
-      DOPPLER_TOKEN_PRESENT: ${{ secrets.DOPPLER_TOKEN != '' }}
     steps:
       - name: Check Europe/Rome schedule
         id: schedule
@@ -36,31 +34,6 @@ jobs:
             echo "Cron $sched con offset $offset fuori dalla finestra 09:00 Europe/Rome, skip."
           fi
           echo "should_run=$should_run" >> "$GITHUB_OUTPUT"
-
-      - name: Verifica variabili Doppler
-        if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
-        env:
-          DOPPLER_PROJECT: ${{ vars.DOPPLER_PROJECT }}
-          DOPPLER_CONFIG: ${{ vars.DOPPLER_CONFIG }}
-        run: |
-          if [ -z "${DOPPLER_PROJECT:-}" ]; then
-            echo "::warning::DOPPLER_PROJECT non impostato"
-          fi
-          if [ -z "${DOPPLER_CONFIG:-}" ]; then
-            echo "::warning::DOPPLER_CONFIG non impostata"
-          fi
-          if [ "${DOPPLER_TOKEN_PRESENT}" != "true" ]; then
-            echo "::notice::DOPPLER_TOKEN assente: il fetch non verrà eseguito."
-          fi
-
-      - name: Fetch secrets from Doppler
-        if: ${{ env.DOPPLER_TOKEN_PRESENT == 'true' && vars.DOPPLER_PROJECT != '' && vars.DOPPLER_CONFIG != '' && (github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true') }}
-        uses: dopplerhq/secrets-fetch-action@v2.0.0
-        with:
-          doppler-token: ${{ secrets.DOPPLER_TOKEN }}
-          doppler-project: ${{ vars.DOPPLER_PROJECT }}
-          doppler-config: ${{ vars.DOPPLER_CONFIG }}
-          inject-env-vars: true
 
       - name: Apply GitHub email secret fallback
         if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'

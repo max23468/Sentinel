@@ -33,12 +33,10 @@ Sentinel usa la root per ingresso operativo, configurazione e codice. Usa
 - `.github/workflows/sentinel.yml`: workflow operativo schedulato e manuale.
 - `.github/workflows/codex-pr-comments.yml`: sincronizzazione della Codex feedback inbox.
 - `.github/workflows/pr-title.yml`: controllo titolo PR.
-- `.github/workflows/doppler-check.yml`: verifica integrazione Doppler e segreti CI.
 - `.github/PULL_REQUEST_TEMPLATE.md`: template PR.
 - `.github/ISSUE_TEMPLATE/`: template issue.
 - `.github/dependabot.yml`: manutenzione dipendenze npm e GitHub Actions.
 - `data/`, `snapshots/`, `reports/`: output applicativi tracciabili.
-- `docs/doppler-setup.md`: configurazione Doppler e stato GitHub verificato.
 
 ## Regole di manutenzione
 
