@@ -8,6 +8,7 @@ Questo indice raccoglie le decisioni stabili della repo.
 - [0002 - Dashboard dinamica su Vercel](decisions/0002-dashboard-vercel-dinamica.md): accettata (framework web aggiornato da 0004).
 - [0003 - Tag e GitHub Release](decisions/0003-tag-e-github-release.md): accettata.
 - [0004 - Dashboard su Vite invece di Next.js](decisions/0004-dashboard-vite-invece-di-next.md): accettata.
+- [0005 - Niente ruleset CI obbligatoria su main](decisions/0005-niente-ruleset-ci-su-main.md): accettata.
 
 ## Decisioni sostituite o superate
 

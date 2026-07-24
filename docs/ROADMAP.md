@@ -38,9 +38,10 @@ non ancora scelte stanno in `docs/BACKLOG.md`.
 
 - Configurato workflow GitHub Actions schedulato e manuale.
 - Configurati i monitor Ortix, San Carlo Sviluppo e Impresa Cogeb.
-- Il commit degli output dello scan passa da una PR con auto-merge: la ruleset
-  `main - richiede CI` rifiuta il push diretto del `GITHUB_TOKEN` e il bypass per
-  l'app GitHub Actions non è configurabile su un repo personale.
+- Rimossa la ruleset `main - richiede CI`, che bloccava il commit degli output
+  dello scan e non vincolava l'owner: il workflow torna al push diretto e
+  l'auto-merge Dependabot è stato rimosso, secondo ADR
+  `docs/decisions/0005-niente-ruleset-ci-su-main.md`.
 - Pubblicati output applicativi in `data/`, `snapshots/` e `reports/`.
 - Risolto il run rosso iniziale legato ai secret email mancanti; i run manuali
   successivi sono verdi.

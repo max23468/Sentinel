@@ -27,6 +27,8 @@ Sentinel usa la root per ingresso operativo, configurazione e codice. Usa
 - `docs/decisions/0001-github-actions-runtime-operativo.md`: GitHub Actions come runtime operativo MVP.
 - `docs/decisions/0002-dashboard-vercel-dinamica.md`: dashboard online dinamica su Vercel.
 - `docs/decisions/0003-tag-e-github-release.md`: policy tag e GitHub Release.
+- `docs/decisions/0004-dashboard-vite-invece-di-next.md`: dashboard su Vite invece di Next.js.
+- `docs/decisions/0005-niente-ruleset-ci-su-main.md`: niente ruleset CI obbligatoria su `main`.
 
 ## Pubblicazione e operatività
 

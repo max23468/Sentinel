@@ -92,12 +92,14 @@ stati vuoti/errore/loading quando il diff li può alterare.
   assorbiti al termine.
 - La Codex feedback inbox è gestita dal workflow `Codex PR comments`.
 - Le PR verso `main` girano il workflow `CI` (typecheck + build CLI/web + test):
-  è il gate che rende sicuro l'auto-merge.
+  è segnale, non gate. Su `main` non ci sono check obbligatori né ruleset,
+  secondo ADR `docs/decisions/0005-niente-ruleset-ci-su-main.md`: controlla i
+  check prima di mergiare, GitHub non li impone.
 - Aggiornamenti dipendenze: Dependabot settimanale (npm + github-actions),
-  minor/patch raggruppati; il workflow `Dependabot auto-merge` abilita l'auto-merge
-  squash per patch/minor, che attende comunque i check richiesti. I major restano
-  manuali; `typescript` e `@types/node` major sono ignorati (vincoli TS 7.1 / Node 24).
-  L'auto-merge richiede `Allow auto-merge` attivo e almeno un check obbligatorio su `main`.
+  minor/patch raggruppati. Le PR si mergiano a mano dopo aver controllato la CI:
+  l'auto-merge richiede almeno un check obbligatorio su `main` e non è più
+  disponibile. I major restano manuali; `typescript` e `@types/node` major sono
+  ignorati (vincoli TS 7.1 / Node 24).
 - Il deploy operativo MVP passa da GitHub Actions su `main`.
 - Il deploy della dashboard web passa da Vercel CLI e non richiede GitHub
   Actions.
@@ -105,10 +107,7 @@ stati vuoti/errore/loading quando il diff li può alterare.
 - Tag Git `vX.Y.Z` e GitHub Release sono obbligatori per release del tool o della dashboard
   secondo ADR `docs/decisions/0003-tag-e-github-release.md`.
 - Il workflow esegue scan, genera `reports/dashboard.html` e può committare
-  `data/`, `snapshots/` e `reports/`. Il commit non va diretto su `main`: il
-  workflow apre una PR `chore: update sentinel outputs` da un branch
-  `sentinel/outputs-<run_id>` e abilita l'auto-merge squash. Se un check
-  richiesto fallisce, gli output restano in una PR aperta invece di andare persi.
+  `data/`, `snapshots/` e `reports/` con un push diretto su `main`.
 - Nel workflow operativo i valori email arrivano dai repository secrets `SENTINEL_*`.
 - Il workflow deve fallire se c'è un errore tecnico o se un'email necessaria non
   parte.
