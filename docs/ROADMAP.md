@@ -5,8 +5,8 @@ non ancora scelte stanno in `docs/BACKLOG.md`.
 
 ## Ora
 
-- Mantenere Sentinel come monitor operativo GitHub Actions per Ortix e San Carlo
-  Sviluppo.
+- Mantenere Sentinel come monitor operativo GitHub Actions per Ortix, San Carlo
+  Sviluppo e Impresa Cogeb.
 - Usare i run GitHub Actions come segnale primario di salute: test, build, scan,
   commit output e invio email quando necessario.
 - Preservare `data/`, `snapshots/` e `reports/` come output applicativi
@@ -37,7 +37,10 @@ non ancora scelte stanno in `docs/BACKLOG.md`.
 ## Fatto recente
 
 - Configurato workflow GitHub Actions schedulato e manuale.
-- Configurati i monitor Ortix e San Carlo Sviluppo.
+- Configurati i monitor Ortix, San Carlo Sviluppo e Impresa Cogeb.
+- Il commit degli output dello scan passa da una PR con auto-merge: la ruleset
+  `main - richiede CI` rifiuta il push diretto del `GITHUB_TOKEN` e il bypass per
+  l'app GitHub Actions non è configurabile su un repo personale.
 - Pubblicati output applicativi in `data/`, `snapshots/` e `reports/`.
 - Risolto il run rosso iniziale legato ai secret email mancanti; i run manuali
   successivi sono verdi.

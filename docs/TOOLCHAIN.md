@@ -105,7 +105,10 @@ stati vuoti/errore/loading quando il diff li può alterare.
 - Tag Git `vX.Y.Z` e GitHub Release sono obbligatori per release del tool o della dashboard
   secondo ADR `docs/decisions/0003-tag-e-github-release.md`.
 - Il workflow esegue scan, genera `reports/dashboard.html` e può committare
-  `data/`, `snapshots/` e `reports/`.
+  `data/`, `snapshots/` e `reports/`. Il commit non va diretto su `main`: il
+  workflow apre una PR `chore: update sentinel outputs` da un branch
+  `sentinel/outputs-<run_id>` e abilita l'auto-merge squash. Se un check
+  richiesto fallisce, gli output restano in una PR aperta invece di andare persi.
 - Nel workflow operativo i valori email arrivano dai repository secrets `SENTINEL_*`.
 - Il workflow deve fallire se c'è un errore tecnico o se un'email necessaria non
   parte.
