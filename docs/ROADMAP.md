@@ -38,6 +38,8 @@ non ancora scelte stanno in `docs/BACKLOG.md`.
 
 - Configurato workflow GitHub Actions schedulato e manuale.
 - Configurati i monitor Ortix, San Carlo Sviluppo e Impresa Cogeb.
+- Lo scan tollera `robots.txt` 4xx e sitemap illeggibile senza fallire, e non
+  deduce rimozioni quando il sito blocca la scansione.
 - Rimossa la ruleset `main - richiede CI`, che bloccava il commit degli output
   dello scan e non vincolava l'owner: il workflow torna al push diretto e
   l'auto-merge Dependabot è stato rimosso, secondo ADR
