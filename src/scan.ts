@@ -5,7 +5,8 @@ import type {
   ScanIssue,
   ScanResult,
   SentinelConfig,
-  SiteConfig
+  SiteConfig,
+  SiteState
 } from "./types.js";
 import { sendScanEmail } from "./email.js";
 import { fetchResource } from "./fetch-resource.js";
@@ -48,16 +49,7 @@ export async function scanSite(config: SentinelConfig, site: SiteConfig, options
   await crawlQueue(site, guard, queue, seenUrls, issues, resources, changes, siteState, baseline, counters);
 
   if (!baseline && !hasFatalIssues(issues)) {
-    for (const previousUrl of Object.keys(siteState.urls)) {
-      if (seenUrls.has(previousUrl)) continue;
-      changes.push({
-        type: "removed",
-        url: previousUrl,
-        kind: siteState.urls[previousUrl].kind,
-        previousHash: siteState.urls[previousUrl].hash,
-        title: siteState.urls[previousUrl].title
-      });
-    }
+    changes.push(...collectRemovals(siteState, seenUrls, issues, resources));
   }
 
   if (!options.dryRun && !hasFatalIssues(issues)) {
@@ -216,6 +208,39 @@ function errorMessage(error: unknown): string {
 
 function hasFatalIssues(issues: ScanIssue[]): boolean {
   return issues.some((issue) => issue.fatal);
+}
+
+/**
+ * Deduce le rimozioni confrontando lo stato precedente con quanto visto ora.
+ * "Non l'ho visto" non significa "non c'è più": un blocco lato sito produce
+ * pagine non raggiunte, non pagine rimosse. Senza queste due guardie un WAF che
+ * risponde 4xx cancellerebbe la baseline e manderebbe un'email di rimozione
+ * totale.
+ */
+export function collectRemovals(
+  siteState: SiteState,
+  seenUrls: Set<string>,
+  issues: ScanIssue[],
+  resources: FetchedResource[]
+): ScanChange[] {
+  const knownUrls = Object.keys(siteState.urls);
+  if (resources.length === 0 && knownUrls.length > 0) return [];
+
+  const failedUrls = new Set(issues.map((issue) => issue.url));
+  const removals: ScanChange[] = [];
+
+  for (const previousUrl of knownUrls) {
+    if (seenUrls.has(previousUrl) || failedUrls.has(previousUrl)) continue;
+    removals.push({
+      type: "removed",
+      url: previousUrl,
+      kind: siteState.urls[previousUrl].kind,
+      previousHash: siteState.urls[previousUrl].hash,
+      title: siteState.urls[previousUrl].title
+    });
+  }
+
+  return removals;
 }
 
 async function crawlQueue(
