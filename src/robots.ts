@@ -41,7 +41,10 @@ export class RobotsGuard {
       signal: AbortSignal.timeout(this.site.crawl.timeoutMs)
     });
 
-    if (response.status === 404) return robotsParser(robotsUrl, "");
+    // RFC 9309 §2.3.1: robots.txt "unavailable" (4xx) significa nessuna
+    // restrizione; "unreachable" (5xx o errore di rete) resta fail closed e
+    // ferma la scansione. Alcuni WAF rispondono 403/415 invece di 404.
+    if (response.status >= 400 && response.status < 500) return robotsParser(robotsUrl, "");
     if (!response.ok) {
       throw new Error(`robots.txt non leggibile (${response.status}) per ${origin}`);
     }

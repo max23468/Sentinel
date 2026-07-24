@@ -1,5 +1,5 @@
 import { XMLParser } from "fast-xml-parser";
-import type { QueuedUrl, SiteConfig } from "./types.js";
+import type { QueuedUrl, ScanIssue, SiteConfig } from "./types.js";
 import { isIncludedFile, isSameSite, looksLikeHtmlPage, normalizeUrl } from "./url.js";
 
 const parser = new XMLParser({
@@ -7,12 +7,16 @@ const parser = new XMLParser({
   trimValues: true
 });
 
-export async function discoverFromSitemaps(site: SiteConfig, sitemapUrls: string[]): Promise<QueuedUrl[]> {
+export async function discoverFromSitemaps(
+  site: SiteConfig,
+  sitemapUrls: string[],
+  issues: ScanIssue[]
+): Promise<QueuedUrl[]> {
   const discovered = new Map<string, QueuedUrl>();
   const seenSitemaps = new Set<string>();
   const queue = [...sitemapUrls];
 
-  await processSitemapQueue(site, queue, seenSitemaps, discovered);
+  await processSitemapQueue(site, queue, seenSitemaps, discovered, issues);
 
   return [...discovered.values()];
 }
@@ -21,29 +25,28 @@ async function processSitemapQueue(
   site: SiteConfig,
   queue: string[],
   seenSitemaps: Set<string>,
-  discovered: Map<string, QueuedUrl>
+  discovered: Map<string, QueuedUrl>,
+  issues: ScanIssue[]
 ): Promise<void> {
   if (discovered.size >= site.crawl.maxUrls) return;
 
   const sitemapUrl = queue.shift();
   if (!sitemapUrl) return;
   if (seenSitemaps.has(sitemapUrl)) {
-    await processSitemapQueue(site, queue, seenSitemaps, discovered);
+    await processSitemapQueue(site, queue, seenSitemaps, discovered, issues);
     return;
   }
 
   seenSitemaps.add(sitemapUrl);
-  const response = await fetch(sitemapUrl, {
-    headers: {
-      accept: "application/xml,text/xml,*/*;q=0.8",
-      "user-agent": site.crawl.userAgent
-    },
-    signal: AbortSignal.timeout(site.crawl.timeoutMs)
-  });
+  // Una sitemap illeggibile non ferma la scansione: il crawling dai roots resta
+  // la fonte principale, la sitemap aggiunge le pagine non linkate.
+  const body = await readSitemap(site, sitemapUrl, issues);
+  if (body === undefined) {
+    await processSitemapQueue(site, queue, seenSitemaps, discovered, issues);
+    return;
+  }
 
-  if (!response.ok) throw new Error(`Sitemap non leggibile (${response.status}): ${sitemapUrl}`);
-
-  const parsed = parser.parse(await response.text()) as SitemapDocument;
+  const parsed = parser.parse(body) as SitemapDocument;
   for (const child of toArray(parsed.sitemapindex?.sitemap)) {
     const loc = textValue(child.loc);
     if (loc) queue.push(loc);
@@ -58,7 +61,38 @@ async function processSitemapQueue(
     if (discovered.size >= site.crawl.maxUrls) return;
   }
 
-  await processSitemapQueue(site, queue, seenSitemaps, discovered);
+  await processSitemapQueue(site, queue, seenSitemaps, discovered, issues);
+}
+
+async function readSitemap(
+  site: SiteConfig,
+  sitemapUrl: string,
+  issues: ScanIssue[]
+): Promise<string | undefined> {
+  try {
+    const response = await fetch(sitemapUrl, {
+      headers: {
+        accept: "application/xml,text/xml,*/*;q=0.8",
+        "user-agent": site.crawl.userAgent
+      },
+      signal: AbortSignal.timeout(site.crawl.timeoutMs)
+    });
+
+    if (!response.ok) {
+      issues.push({
+        url: sitemapUrl,
+        message: `Sitemap non leggibile (${response.status}): ${sitemapUrl}`,
+        fatal: false
+      });
+      return undefined;
+    }
+
+    return await response.text();
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    issues.push({ url: sitemapUrl, message: `Sitemap non leggibile: ${message}`, fatal: false });
+    return undefined;
+  }
 }
 
 interface SitemapDocument {
