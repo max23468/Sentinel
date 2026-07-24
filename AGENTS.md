@@ -2,211 +2,122 @@ Rispondi sempre in italiano, in modo pratico, diretto e operativo.
 
 # Sentinel
 
-Sentinel è un tool custom generico per monitorare cambiamenti su siti web pubblici.
-Il primo monitor configurato è Ortix.
+Sentinel è una CLI Node.js/TypeScript che monitora cambiamenti su siti web
+pubblici e produce output tracciabili in `data/`, `snapshots/` e `reports/`.
+La prima scansione di un monitor è una baseline silenziosa: il report esce
+sempre, l'email solo se ci sono cambiamenti o problemi.
 
-Priorità: istruzioni di sistema/developer, eventuali `AGENTS.md` più profondi
-che prevalgono per il loro scope, questo `AGENTS.md`, documenti canonici
-della repo, richiesta utente, convenzioni reali di codice/test/configurazione e
-assunzioni solo marginali.
+Non è una piattaforma di crawling generalista, non è un archivio integrale di
+siti terzi e non diventa un servizio multi-user senza decisione esplicita.
 
-Sentinel non è una piattaforma di crawling generalista, non è un archivio
-integrale di siti terzi e non deve diventare una dashboard o servizio multi-user
-senza decisione esplicita.
+Fase: runtime MVP con scan schedulato su GitHub Actions e dashboard React/Vite
+su Vercel. Runtime operativo, release del tool e deploy dashboard sono canali
+distinti.
 
-Fase operativa: runtime MVP con scan GitHub Actions e dashboard separata; release
-tool/dashboard, deploy operativo e pubblicazione dashboard restano canali distinti.
+## Dove sta il resto
 
-Brand e glossario prodotto non hanno ancora un documento dedicato. Fino a nuova
-decisione, il naming resta descrittivo e operativo: `Sentinel` per il tool,
-nomi dei monitor come profili configurati, dashboard come superficie di
-controllo. Evita copy promozionale, claim di crawling generalista o nomi che
-facciano sembrare i siti monitorati partner/prodotti di Sentinel.
+Qui stanno i vincoli. I dettagli vivono altrove e vanno letti quando il lavoro
+li tocca, non prima:
 
-## Stack
+- `sentinel.config.yml` è la fonte autoritativa su monitor, limiti di crawling,
+  estensioni e profili email: leggila invece di fidarti di una spec a mano.
+- `docs/TOOLCHAIN.md`: versioni, comandi reali, verifiche per scope, guardrail.
+- `docs/INDEX.md`: catalogo documentale canonico, con il resto della governance.
+- `docs/DECISIONS.md` e `docs/decisions/`: un ADR vince su un'abitudine.
 
-- Runtime: Node.js + TypeScript.
-- Package manager: npm.
-- CLI: `sentinel`.
-- Configurazione: YAML.
-- Test: Vitest.
+`reports/` e `snapshots/` sono evidenze prodotte dal monitor, non governance:
+non spostarli in `docs/` e non usarli come source of truth.
 
-## Regole operative
+## Guardrail
 
-- Prima di modifiche non banali controlla sempre `git status --short`.
-- Prima di modifiche documentali o operative leggi anche `README.md`,
-  `docs/INDEX.md`, `docs/CONTEXT.md`, `docs/ROADMAP.md`, `docs/BACKLOG.md`,
-  `docs/TOOLCHAIN.md`, `docs/DECISIONS.md`, `docs/DECISIONS_PENDING.md` e
-  `docs/decisions/`.
-- Il catalogo documentale canonico è `docs/INDEX.md`: la root resta per
-  ingresso, configurazione, codice e output applicativi dichiarati; `docs/`
-  conserva governance, roadmap, backlog, contesto, toolchain, decisioni e guide.
-- `docs/ROADMAP.md` resta per direzione, priorità e prossimi passi correnti:
-  aggiornarla quando cambiano monitor, frequenza, output, canali email,
-  runtime o backlog; non usarla come changelog o archivio di run completati.
-- Mantieni scope piccolo e coerente con la richiesta.
-- Non sovrascrivere modifiche non tue.
-- Per lavori non banali usa branch `codex/<tema>` e PR verso `main`; il commit diretto su `main` resta solo per micro docs-only a basso rischio.
-- Se il worktree contiene modifiche non tue, usa un branch/worktree separato o lavora solo su file non sovrapposti dichiarandolo nel riepilogo.
-- Per lavori paralleli o ripresi da una nuova chat, mantieni ownership chiara su file/moduli, evita sovrapposizioni e lascia un handoff sintetico nella PR o nella risposta finale quando serve a coordinare il seguito.
-- Non usare comandi distruttivi senza conferma.
-- Rispetta sempre `robots.txt`.
-- Non committare segreti, password SMTP, file `.env` o cache locali.
-- Le password email devono arrivare solo da variabili d'ambiente, GitHub Secrets o Portachiavi.
-- Valuta impatto su documentazione, changelog, versione, release e deploy prima di chiudere, anche quando il risultato è `N/A`.
-- Usa Conventional Commit coerenti con l'impatto reale. Non aggiungere workflow,
-  bot, release flow, deploy automation o branch protection senza decisione
-  esplicita. Usa PR template, issue template, PR title check o controllo
-  equivalente quando lavori via GitHub.
-- Quando Codex crea una PR, non usare il nome branch `codex/<tema>` come titolo:
-  passa sempre un titolo PR Conventional Commit esplicito, per esempio
-  `gh pr create --title "docs: update Sentinel governance"`, oppure correggi
-  subito una PR già aperta con `gh pr edit --title "docs: ..."` prima di
-  dichiararla pronta o pubblicata.
-- Dopo merge/pubblicazione controlla `git branch -vv` e `git worktree list`, poi
-  pulisci branch/worktree non più necessari o dichiara cosa resta aperto.
-- Usa le skill Superpowers pertinenti per lavori non banali: pianificazione,
-  debugging sistematico, worktree, esecuzione di piani, review e verifica
-  finale. Le skill non sostituiscono robots.txt, policy dati, runtime Actions,
-  release/deploy o fonti primarie di Sentinel.
-- Usa o proponi `grill-me` quando serve stressare architetture, refactor
-  trasversali, monitor/runtime, dashboard, deploy, sicurezza, roadmap o scope
-  ambiguo. Non renderla obbligatoria per refusi, docs-only a basso rischio,
-  cleanup o modifiche meccaniche già determinate.
+Non negoziabili senza una nuova decisione esplicita:
 
-## Policy dati
+- Rispetta `robots.txt`.
+- Segreti — password SMTP, token Blob, credenziali dashboard — solo da variabili
+  d'ambiente, GitHub Secrets o Portachiavi. Mai in repo, nei log o nei riepiloghi.
+- Snapshot: solo hash, metadati e testo pubblico normalizzato, al massimo 3 per
+  URL. Mai HTML completo, contenuti dietro autenticazione, risposte di form o
+  dati raccolti fuori dal crawling pubblico dichiarato.
+- `data/`, `snapshots/` e `reports/` sono output applicativi committabili dal
+  workflow, non cache da ripulire.
+- Niente nuovi workflow, bot, release automation o branch protection senza
+  decisione esplicita: ADR 0005 documenta come una ruleset CI su `main` abbia
+  rotto il commit degli output.
+- Su siti pubblici, provider email, prezzi, limiti o policy variabili verifica
+  la fonte ufficiale corrente e distingui fatto, fonte e assunzione.
 
-- `data/`, `snapshots/` e `reports/` sono output applicativi e possono essere committati dal workflow.
-- I report Markdown in `reports/` e gli snapshot non sono governance di
-  progetto: sono evidenze/output del monitor. Non spostarli in `docs/` e non
-  usarli come source of truth se contraddicono `AGENTS.md`, `docs/INDEX.md` o
-  le decisioni.
-- La prima scansione crea baseline silenziosa: report sempre generato, email no se non ci sono cambiamenti o errori.
-- HTML: salva hash, metadati e testo normalizzato; non salvare HTML completo.
-- File pubblici: salva hash binario e metadati.
-- Mantieni al massimo gli ultimi 3 snapshot testuali per URL.
-- Gli snapshot possono contenere testo pubblico normalizzato, inclusi contatti
-  pubblicati dal sito monitorato; non devono includere input privati, contenuti
-  dietro autenticazione, risposte di form, segreti o dati acquisiti fuori dal
-  crawling pubblico dichiarato.
-- Non committare cache, log, dump, export, screenshot sensibili, `.DS_Store` o
-  altri file temporanei non previsti. Durante migrazioni, rinomini o merge
-  documentali non perdere contenuti utili: aggiorna link e indici, preserva ciò
-  che resta valido e dichiara nel riepilogo ciò che viene rimosso perché superato.
-- Per siti pubblici, provider email, API, prezzi, limiti o policy variabili,
-  verifica fonti ufficiali correnti e distingui fatto, fonte, assunzione e
-  decisione interna.
+## Autonomia
 
-## Ortix MVP
+Procedi senza chiedere: leggere e modificare codice e documentazione, eseguire
+test e build, `scan --dry-run`, creare branch, commit e PR.
 
-- URL iniziale: `https://www.ortix.it/sitemap_index.xml`.
-- Scansione settimanale: sabato 09:00 Europe/Rome.
-- Discovery: sitemap + crawling link interni.
-- Crawling: stesso dominio, profondità 3, massimo 500 URL.
-- URL: rimuovi parametri tracking, considera equivalente lo slash finale, segui redirect e salva URL finale canonica.
-- File monitorati: `pdf`, `doc`, `docx`, `xls`, `xlsx`, `csv`, `zip`, immagini comuni.
-- Quando aggiungi o rinomini un monitor, aggiorna configurazione e
-  documentazione usando il nome reale del sito come profilo operativo, senza
-  inventare brand o categorie di prodotto non approvate.
+Chiedi prima: comandi distruttivi, scan reali fuori dallo schedule, invio email,
+cambio di schedule o provider, aggiunta o rimozione di monitor, deploy, tag e
+release, e qualsiasi scrittura fuori dalla repo.
 
-## Dashboard e tono
+Se il worktree contiene modifiche non tue, non sovrascriverle: usa un branch
+separato o lavora solo su file non sovrapposti, dichiarandolo.
 
-- UI e report devono restare in italiano operativo, con stati chiari e prossimo
-  passo evidente.
-- Usa termini come `monitor`, `scan`, `dashboard`, `avviso`, `problema`,
-  `cambiamento`, `Avvisi noti` e `output applicativi` in modo coerente.
-- Evita termini che promettono archivio integrale, crawling illimitato,
-  sorveglianza generalista o partnership con i siti monitorati.
-- Se una decisione cambia naming, tono dashboard, posizionamento o lessico
-  stabile, aggiorna `docs/CONTEXT.md`, `docs/INDEX.md` o crea un ADR mirato.
+Delega a un subagent solo per indagini ampie e davvero parallelizzabili, non per
+lavoro che chiudi in pochi tool call e non per ricontrollare te stesso.
 
-## Comandi previsti
+## Flusso di lavoro
 
-```bash
-sentinel scan
-sentinel scan --dry-run
-sentinel report
-sentinel test-email --profile gmail
-sentinel test-email --profile icloud
-```
+- Lavori non banali: branch `codex/<tema>` e PR verso `main`. Commit diretto su
+  `main` solo per micro docs-only a basso rischio.
+- Conventional Commit coerenti con l'impatto reale, titolo PR incluso: il
+  workflow `pr-title.yml` lo controlla e un nome di branch non è un titolo
+  valido (`gh pr create --title "docs: ..."`).
+- Prima di PR ready, merge, pubblicazione, deploy o release non banali controlla
+  la issue `Codex feedback inbox` (label `codex-feedback-inbox`).
+- Dopo il merge pulisci branch e worktree creati per il flusso, o dichiara cosa
+  resta aperto.
 
 ## Verifiche
 
-Prima di chiudere modifiche al codice esegui, se pertinenti:
+`npm test` e `npm run build` prima di chiudere modifiche al codice. La tabella
+verifiche-per-scope in `docs/TOOLCHAIN.md` calibra il resto, dalla sola review
+documentale per i docs-only al gate completo per runtime schedulato, dati,
+provider email, deploy e release.
 
-```bash
-npm test
-npm run build
-```
+Toccando `index.html`, `web/`, `api/`, `middleware.ts` o altre superfici UI
+aggiungi `npm run quality:react-doctor` e controlli proporzionati su route,
+viewport e stati vuoto/errore/loading. React Doctor serve anche prima di
+chiudere una release major/minor.
 
-Usa la corsia `veloce` per docs/governance a basso rischio, `standard` per codice/config ordinari e `completa` per runtime schedulato, dati/output, sicurezza, release o deploy.
+Se un controllo fallisce o non è eseguibile, dichiaralo con impatto e prossimo
+passo invece di lasciarlo implicito.
 
-Mappa il rischio prima dei comandi:
+## Publish, release e deploy
 
-- sola analisi o nessuna modifica: nessun test applicativo, dichiarare fonti e
-  limiti;
-- docs-only: review documentale e `git diff --check` quando utile;
-- documenti operativi critici, workflow o config: review mirata del runbook o
-  workflow modificato;
-- test-only, runtime piccolo o UI localizzata: `npm test`, `npm run build` o
-  check mirati in base al diff;
-- runtime schedulato condiviso, dati/output, provider email, deploy/config,
-  release/versioning o UI dashboard sostanziale: gate completo proporzionato,
-  smoke/manual run quando serve e React Doctor nei casi previsti.
+Non c'è VPS e non ci sono domini a pagamento. `pubblica` significa: PR/merge su
+`main`, controllo inbox, verifica finale e cleanup del checkout.
 
-Se un controllo fallisce o non è eseguibile, dichiaralo esplicitamente con impatto e prossimo passo.
+Il deploy operativo è lo scan schedulato su GitHub Actions (ADR 0001), che
+committa gli output e fallisce solo su errore tecnico o email necessaria non
+partita. Il deploy della dashboard passa da Vercel CLI ed è indipendente.
 
-## Release e deploy
+Tag `vX.Y.Z` e GitHub Release solo per release del tool o della dashboard, mai
+per scan, report, snapshot o aggiornamenti data-only (ADR 0003). Release Please
+non è adottato.
 
-Non c'è VPS e non ci sono domini a pagamento.
-La pubblicazione codice passa da commit, push e PR/merge su GitHub; la chiusura operativa richiede anche cleanup del checkout (branch/worktree locali e remoti) quando creati per il flusso.
-Quando dici `pubblica`, il flusso completo include PR/merge o flusso equivalente su `main`, verifica finale, controllo inbox e cleanup. Release e deploy vanno valutati insieme quando entrambi sono applicabili; se non servono, dichiarali `N/A`.
-Il deploy operativo MVP passa da GitHub Actions:
+## Tono e output
 
-- `schedule` + `workflow_dispatch`;
-- commit di `data/`, `snapshots/` e `reports/`;
-- successo anche se vengono trovati cambiamenti;
-- fallimento se c'è un errore tecnico o se un'email necessaria non parte.
+Dashboard, report ed email restano in italiano operativo, con stato chiaro e
+prossimo passo evidente. Il lessico stabile è `monitor`, `scan`, `avviso`,
+`problema`, `cambiamento`, `Avvisi noti`, `output applicativi`; un monitor si
+chiama come il sito reale. Evita copy che prometta archivio integrale,
+sorveglianza generalista o partnership con i siti monitorati.
 
-Tag Git `vX.Y.Z` e GitHub Release sono obbligatori per release del tool o della dashboard
-secondo `docs/decisions/0003-tag-e-github-release.md`. Non crearli per semplici
-scan, report, snapshot o aggiornamenti data-only.
+Adatta la lunghezza dei documenti che scrivi su disco a quello che il lavoro
+richiede, senza sezioni di riempimento né riepiloghi ridondanti. Se una
+decisione cambia naming, tono o posizionamento, aggiorna `docs/CONTEXT.md` o
+scrivi un ADR invece di lasciarla solo in chat.
 
-Release Please non è adottato: non delegare changelog, versioni, tag o GitHub
-Release a bot automatici senza nuova decisione esplicita.
+## Chiusura
 
-La issue GitHub `Codex feedback inbox` è il canale operativo per i commenti
-Codex sulle PR, è marcata dalla label `codex-feedback-inbox` ed è aggiornata
-dal workflow `Codex PR comments`. Controllala prima di PR ready, merge,
-pubblicazione, deploy o release non banali.
-
-Sentinel ha una dashboard React su Vite documentata in
-`docs/decisions/0002-dashboard-vercel-dinamica.md` e
-`docs/decisions/0004-dashboard-vite-invece-di-next.md`. Se tocchi `index.html`,
-`web/main.tsx`, `web/dashboard-client.tsx`, `api/dashboard.ts`,
-`api/reports/[name].ts`, `middleware.ts` o superfici UI
-collegate, esegui `npm run quality:react-doctor` e aggiungi verifiche browser,
-responsive, accessibilità e stati vuoti/errore/loading proporzionati prima di
-considerarla completa. Per cambi layout/flusso usa `npm run dev` o il deploy
-pertinente, controlla la dashboard dietro Basic Auth senza esporre credenziali e
-dichiara quali route, viewport e stati hai verificato.
-
-React Doctor è obbligatorio anche prima di considerare chiusa una release
-major/minor del tool o della dashboard, cioè quando cambia `X` o `Y` nello
-schema `X.Y.Z`; non è richiesto per semplici scan/report o patch senza modifiche
-React trasversali.
-
-## Risposta finale e completamento
-
-Chiudi con cosa è cambiato o scoperto, file principali se utili, verifiche
-eseguite o non eseguite con motivo, stato publish, release e deploy, branch/worktree
-coinvolti, rischi residui e prossimo passo reale. Un lavoro è completo solo se
-scope, verifiche proporzionate, inbox, output applicativi, publish/release/deploy
-e cleanup sono gestiti o dichiarati non applicabili.
-Publish, release e deploy devono essere completati oppure dichiarati non
-applicabili con motivo.
-
-Definizione di completamento: un lavoro è completo quando chiude la richiesta
-senza allargare inutilmente lo scope e gestisce esplicitamente verifiche,
-inbox, segreti e dati, output applicativi, publish, release e deploy, cleanup e
-rischi residui.
+Chiudi con cosa è cambiato, verifiche eseguite o saltate con motivo, stato di
+publish/release/deploy (anche solo `N/A` con la ragione), branch coinvolti e
+prossimo passo reale. Un lavoro è completo quando chiude la richiesta al suo
+scope senza lasciare in sospeso verifiche, output applicativi, cleanup o rischi
+non dichiarati.
