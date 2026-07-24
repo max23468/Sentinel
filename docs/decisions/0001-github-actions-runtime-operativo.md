@@ -31,7 +31,11 @@ fallisce solo per errori tecnici o email necessarie non inviate.
 - Prodotto: Sentinel resta leggero e operativo senza infrastruttura dedicata.
 - Tecnico: GitHub Actions diventa il canale di deploy operativo.
 - Dati/privacy: non si salvano HTML completi; gli output tracciati restano nel
-  repository privato.
+  repository. Quando questa ADR è stata scritta il repository era privato; al
+  controllo del 2026-07-24 risulta pubblico, quindi `data/`, `snapshots/` e
+  `reports/` sono leggibili da chiunque. La decisione sul runtime resta valida,
+  ma l'assunzione di riservatezza degli output no: vedi la voce aperta in
+  `docs/BACKLOG.md`.
 - Deploy/release: non servono VPS, tag o release per far girare il monitor;
   eventuali tag/GitHub Release riguardano solo release del tool o della
   dashboard secondo ADR 0003.
