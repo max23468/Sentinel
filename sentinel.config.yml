@@ -80,3 +80,17 @@ sites:
     roots:
       - https://sancarlosviluppo.com/
     emailProfile: gmail
+  - id: impresa-cogeb
+    name: Impresa Cogeb
+    enabled: true
+    sitemapUrls:
+      - https://www.impresacogeb.it/sitemap.xml
+    roots:
+      # Il sito risponde su entrambi gli host: link interni con www, sitemap senza www.
+      # Servono entrambi i root: 7 pagine della sitemap non sono linkate da nessuna pagina.
+      - https://www.impresacogeb.it/
+      - https://impresacogeb.it/
+    emailProfile: gmail
+    crawl:
+      # I due host raddoppiano gli URL: 345 nella prima scansione, margine sul default 500.
+      maxUrls: 800
