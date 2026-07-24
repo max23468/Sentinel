@@ -52,6 +52,17 @@ export async function scanSite(config: SentinelConfig, site: SiteConfig, options
     changes.push(...collectRemovals(siteState, seenUrls, issues, resources));
   }
 
+  // Un monitor con baseline che non raccoglie nulla è un blackout, non un sito
+  // vuoto: senza avviso resterebbe un run verde con zero risorse.
+  const blackout = !baseline && isScanBlackout(siteState, resources);
+  if (blackout) {
+    issues.push({
+      url: site.roots[0] ?? site.id,
+      message: "Nessuna risorsa raccolta: sito irraggiungibile o scansione bloccata.",
+      fatal: false
+    });
+  }
+
   if (!options.dryRun && !hasFatalIssues(issues)) {
     await persistResources(config, site, siteState, resources);
     for (const change of changes) {
@@ -61,7 +72,8 @@ export async function scanSite(config: SentinelConfig, site: SiteConfig, options
     await saveState(config, state);
   }
 
-  const emailRequired = !options.dryRun && (hasFatalIssues(issues) || (!baseline && changes.length > 0));
+  const emailRequired =
+    !options.dryRun && (hasFatalIssues(issues) || blackout || (!baseline && changes.length > 0));
   const result: ScanResult = {
     siteId: site.id,
     siteName: site.name,
@@ -211,6 +223,14 @@ function hasFatalIssues(issues: ScanIssue[]): boolean {
 }
 
 /**
+ * Vero quando un monitor che aveva già una baseline non raccoglie più nulla:
+ * blocco lato sito, DNS o rete, mai un sito realmente svuotato.
+ */
+export function isScanBlackout(siteState: SiteState, resources: FetchedResource[]): boolean {
+  return resources.length === 0 && Object.keys(siteState.urls).length > 0;
+}
+
+/**
  * Deduce le rimozioni confrontando lo stato precedente con quanto visto ora.
  * "Non l'ho visto" non significa "non c'è più": un blocco lato sito produce
  * pagine non raggiunte, non pagine rimosse. Senza queste due guardie un WAF che
@@ -223,9 +243,9 @@ export function collectRemovals(
   issues: ScanIssue[],
   resources: FetchedResource[]
 ): ScanChange[] {
-  const knownUrls = Object.keys(siteState.urls);
-  if (resources.length === 0 && knownUrls.length > 0) return [];
+  if (isScanBlackout(siteState, resources)) return [];
 
+  const knownUrls = Object.keys(siteState.urls);
   const failedUrls = new Set(issues.map((issue) => issue.url));
   const removals: ScanChange[] = [];
 
