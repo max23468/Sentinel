@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { collectRemovals } from "../src/scan.js";
+import { collectRemovals, isScanBlackout } from "../src/scan.js";
 import type { FetchedResource, ScanIssue, SiteState, UrlState } from "../src/types.js";
 
 function urlState(url: string): UrlState {
@@ -22,6 +22,20 @@ function stateWith(urls: string[]): SiteState {
 }
 
 const resource = { url: "https://example.com/a" } as FetchedResource;
+
+describe("isScanBlackout", () => {
+  it("riconosce un monitor con baseline che non raccoglie più nulla", () => {
+    expect(isScanBlackout(stateWith(["https://example.com/a"]), [])).toBe(true);
+  });
+
+  it("non è blackout se qualcosa è stato raccolto", () => {
+    expect(isScanBlackout(stateWith(["https://example.com/a"]), [resource])).toBe(false);
+  });
+
+  it("non è blackout se lo stato precedente era vuoto", () => {
+    expect(isScanBlackout(stateWith([]), [])).toBe(false);
+  });
+});
 
 describe("collectRemovals", () => {
   it("segnala come rimossa una pagina non più raggiunta", () => {
