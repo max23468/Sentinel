@@ -6,6 +6,7 @@ Monitor configurati:
 
 - Ortix
 - San Carlo Sviluppo
+- Impresa Cogeb
 
 ## Comandi
 

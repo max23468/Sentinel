@@ -30,7 +30,8 @@
 ## Ultimo contesto utile
 
 Sentinel monitora siti pubblici e salva output applicativi tracciabili. Il primo
-profilo era Ortix; ora sono configurati Ortix e San Carlo Sviluppo.
+profilo era Ortix; ora sono configurati Ortix, San Carlo Sviluppo e Impresa
+Cogeb.
 
 Il run rosso storico del 2026-05-24 era legato a configurazione email incompleta
 o scan errors già corretti lato workflow/secrets. Al controllo del 2026-05-24 gli
