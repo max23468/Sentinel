@@ -153,13 +153,9 @@ async function buildInitialQueue(site: SiteConfig, guard: RobotsGuard, issues: S
     for (const sitemapUrl of result.sitemapUrls) sitemapUrls.add(sitemapUrl);
   }
 
-  try {
-    for (const item of await discoverFromSitemaps(site, [...sitemapUrls])) {
-      queue.set(item.url, item);
-      if (queue.size >= site.crawl.maxUrls) break;
-    }
-  } catch (error) {
-    issues.push({ url: "sitemap", message: errorMessage(error), fatal: true });
+  for (const item of await discoverFromSitemaps(site, [...sitemapUrls], issues)) {
+    queue.set(item.url, item);
+    if (queue.size >= site.crawl.maxUrls) break;
   }
 
   return [...queue.values()];
