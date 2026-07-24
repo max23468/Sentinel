@@ -38,7 +38,7 @@ BLOB_READ_WRITE_TOKEN
 
 ## Alternative considerate
 
-- GitHub Pages: scartata perché la repo è privata e la dashboard deve essere
+- GitHub Pages: scartata perché la repo era privata e la dashboard deve essere
   dinamica e protetta.
 - Solo Vercel Deployment Protection: scartata come unica protezione perché la
   protezione completa del dominio production dipende dal piano/add-on.

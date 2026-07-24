@@ -9,7 +9,9 @@
 - Ultimo deploy operativo: GitHub Actions su branch `main`.
 - Dashboard web: app React su Vite pubblicabile su Vercel da CLI, con dati dinamici su
   Vercel Blob privato.
-- GitHub: repository privata `https://github.com/max23468/Sentinel`.
+- GitHub: repository pubblica `https://github.com/max23468/Sentinel`. Gli output
+  applicativi committati (`data/`, `snapshots/`, `reports/`) sono quindi
+  leggibili da chiunque.
 
 ## Fonte di verità
 
@@ -84,6 +86,8 @@ Prima di procedere:
 - Far crescere `snapshots/` e `reports/` senza una policy di retention se il
   numero di monitor aumenta.
 - Pubblicare la dashboard online senza Basic Auth o con Blob pubblico.
+- Dimenticare che il repository è pubblico quando si valuta cosa committare in
+  `data/`, `snapshots/` e `reports/`: decisione aperta in `docs/BACKLOG.md`.
 
 ## Prossimo passo
 

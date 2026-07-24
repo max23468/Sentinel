@@ -35,6 +35,12 @@ roadmap. Una voce nel backlog non è scope approvato.
 
 - Se mantenere solo Gmail come profilo operativo del workflow o promuovere iCloud
   a fallback documentato.
+- Se continuare a committare snapshot in chiaro ora che il repository è pubblico.
+  La policy dati ammette testo pubblico normalizzato inclusi i contatti
+  pubblicati dai siti monitorati: era una scelta a basso rischio con repo
+  privata, mentre ora quei contatti sono ripubblicati e indicizzabili. Opzioni:
+  lasciare com'è, filtrare i contatti dal testo normalizzato prima del salvataggio,
+  o tornare privati. Tocca il runtime, quindi va decisa prima di implementarla.
 
 ## Attività operative ricorrenti
 
