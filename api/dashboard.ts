@@ -1,5 +1,5 @@
-import { loadDashboardModel } from "../src/dashboard-publish";
-import { requireDashboardAuth } from "../web/auth";
+import { loadDashboardModel } from "../src/dashboard-publish.js";
+import { requireDashboardAuth } from "../web/auth.js";
 
 export async function GET(request: Request): Promise<Response> {
   const authResponse = requireDashboardAuth(request);
