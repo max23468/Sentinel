@@ -46,7 +46,16 @@ async function processSitemapQueue(
     return;
   }
 
-  const parsed = parser.parse(body) as SitemapDocument;
+  let parsed: SitemapDocument;
+  try {
+    parsed = parser.parse(body) as SitemapDocument;
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    issues.push({ url: sitemapUrl, message: `Sitemap non valida: ${message}`, fatal: false });
+    await processSitemapQueue(site, queue, seenSitemaps, discovered, issues);
+    return;
+  }
+
   for (const child of toArray(parsed.sitemapindex?.sitemap)) {
     const loc = textValue(child.loc);
     if (loc) queue.push(loc);

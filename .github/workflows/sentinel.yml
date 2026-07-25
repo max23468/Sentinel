@@ -3,7 +3,8 @@ name: Sentinel
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 7,8 * * 6"
+    - cron: "0 7 * * 6"
+    - cron: "0 8 * * 6"
 
 permissions:
   contents: write

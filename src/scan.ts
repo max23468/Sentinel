@@ -243,14 +243,13 @@ export function collectRemovals(
   issues: ScanIssue[],
   resources: FetchedResource[]
 ): ScanChange[] {
-  if (isScanBlackout(siteState, resources)) return [];
+  if (issues.length > 0 || isScanBlackout(siteState, resources)) return [];
 
   const knownUrls = Object.keys(siteState.urls);
-  const failedUrls = new Set(issues.map((issue) => issue.url));
   const removals: ScanChange[] = [];
 
   for (const previousUrl of knownUrls) {
-    if (seenUrls.has(previousUrl) || failedUrls.has(previousUrl)) continue;
+    if (seenUrls.has(previousUrl)) continue;
     removals.push({
       type: "removed",
       url: previousUrl,
