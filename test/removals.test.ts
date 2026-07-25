@@ -78,4 +78,15 @@ describe("collectRemovals", () => {
 
     expect(removals).toEqual([]);
   });
+
+  it("deduce le rimozioni quando restano solo avvisi ignorati", () => {
+    const removals = collectRemovals(
+      stateWith(["https://example.com/a", "https://example.com/vecchia"]),
+      new Set(["https://example.com/a"]),
+      [{ url: "https://example.com/legacy", message: "HTTP 404", fatal: false, ignored: true }],
+      [resource]
+    );
+
+    expect(removals.map((change) => change.url)).toEqual(["https://example.com/vecchia"]);
+  });
 });

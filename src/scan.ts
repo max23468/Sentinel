@@ -73,7 +73,7 @@ export async function scanSite(config: SentinelConfig, site: SiteConfig, options
   }
 
   const emailRequired =
-    !options.dryRun && (hasFatalIssues(issues) || blackout || (!baseline && changes.length > 0));
+    !options.dryRun && (hasActiveIssues(issues) || blackout || (!baseline && changes.length > 0));
   const result: ScanResult = {
     siteId: site.id,
     siteName: site.name,
@@ -222,6 +222,10 @@ function hasFatalIssues(issues: ScanIssue[]): boolean {
   return issues.some((issue) => issue.fatal);
 }
 
+function hasActiveIssues(issues: ScanIssue[]): boolean {
+  return issues.some((issue) => !issue.ignored);
+}
+
 /**
  * Vero quando un monitor che aveva già una baseline non raccoglie più nulla:
  * blocco lato sito, DNS o rete, mai un sito realmente svuotato.
@@ -243,7 +247,7 @@ export function collectRemovals(
   issues: ScanIssue[],
   resources: FetchedResource[]
 ): ScanChange[] {
-  if (issues.length > 0 || isScanBlackout(siteState, resources)) return [];
+  if (hasActiveIssues(issues) || isScanBlackout(siteState, resources)) return [];
 
   const knownUrls = Object.keys(siteState.urls);
   const removals: ScanChange[] = [];
