@@ -101,6 +101,15 @@ describe("scan report", () => {
     expect(report).toContain("- Rimosso: https://example.com/c");
   });
 
+  it("allinea la sintesi baseline all'email inviata per un problema", () => {
+    const report = renderScanReport(
+      baseResult({ baseline: true, emailRequired: true, emailSent: true })
+    );
+
+    expect(report).toContain("Baseline iniziale creata. Email inviata per i problemi rilevati.");
+    expect(report).not.toContain("Nessuna email inviata per policy.");
+  });
+
   it("riporta lo stato stabile quando non ci sono cambiamenti o problemi", () => {
     const report = renderScanReport(baseResult({}));
 
