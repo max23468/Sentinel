@@ -45,8 +45,9 @@ npm run sentinel -- dashboard
 ```
 
 La dashboard web dinamica gira su Vercel come app React su Vite protetta da Basic Auth
-applicativa. Legge a runtime un payload JSON da Vercel Blob privato, quindi i
-dati possono essere aggiornati senza redeploy e senza GitHub Actions:
+applicativa, all'indirizzo <https://sentinel-guard.vercel.app>. Legge a runtime
+un payload JSON da Vercel Blob privato, quindi i dati possono essere aggiornati
+senza redeploy e senza GitHub Actions:
 
 ```bash
 npm run sentinel -- publish-dashboard
