@@ -45,7 +45,7 @@ Questa pagina descrive runtime, comandi e guardrail effettivi di Sentinel.
 - install/setup: `npm install` o `npm ci`.
 - build: `npm run build`.
 - test: `npm test`.
-- coverage core Atlas: `npm run test:coverage`.
+- coverage core: `npm run test:coverage`.
 - gate PR quality automatico: non presente finché manca una decisione esplicita
   per reintrodurre un workflow test/coverage/build su `pull_request`.
 - Codex comments dry-run: workflow `Codex PR comments` con input `dry_run=true`.
@@ -64,7 +64,7 @@ Questa pagina descrive runtime, comandi e guardrail effettivi di Sentinel.
 
 ## Coverage core
 
-- La coverage Vitest ufficiale per l'audit Atlas gira con `npm run test:coverage`.
+- La coverage Vitest ufficiale per l'audit gira con `npm run test:coverage`.
 - Il perimetro core corrente è dichiarato in `vitest.config.ts`.
 - Le soglie minime correnti sul perimetro core sono `75%` linee e `65%` branch.
 - La coverage non sostituisce `npm test` e `npm run build`: è un gate aggiuntivo

@@ -117,7 +117,7 @@ Su macOS, se la password non è in env, Sentinel prova a leggere dal Portachiavi
 
 ## Coverage core
 
-Per l'audit Atlas la coverage Vitest ufficiale passa da:
+Per l'audit la coverage Vitest ufficiale passa da:
 
 ```bash
 npm run test:coverage
