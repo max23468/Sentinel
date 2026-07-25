@@ -81,4 +81,27 @@ describe("discoverFromSitemaps", () => {
     expect(issues[0].url).toBe("https://example.com/rotta.xml");
     expect(issues[0].fatal).toBe(false);
   });
+
+  it("continua con le altre sitemap quando una contiene XML malformato", async () => {
+    const buona = `<?xml version="1.0"?><urlset>
+      <url><loc>https://example.com/pagina</loc></url>
+    </urlset>`;
+
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async (url: string) => new Response(url.endsWith("buona.xml") ? buona : "<", { status: 200 }))
+    );
+
+    const issues: ScanIssue[] = [];
+    const discovered = await discoverFromSitemaps(
+      site,
+      ["https://example.com/rotta.xml", "https://example.com/buona.xml"],
+      issues
+    );
+
+    expect(discovered.map((item) => item.url)).toEqual(["https://example.com/pagina"]);
+    expect(issues).toMatchObject([
+      { url: "https://example.com/rotta.xml", fatal: false }
+    ]);
+  });
 });

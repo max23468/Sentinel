@@ -64,14 +64,14 @@ describe("collectRemovals", () => {
     expect(removals).toEqual([]);
   });
 
-  it("non segnala come rimossa una pagina che ha dato errore in questo scan", () => {
+  it("non deduce rimozioni da una scansione riuscita solo in parte", () => {
     const issues: ScanIssue[] = [
-      { url: "https://example.com/instabile", message: "503", fatal: false }
+      { url: "https://example.com/ramo-bloccato", message: "503", fatal: false }
     ];
 
     const removals = collectRemovals(
-      stateWith(["https://example.com/a", "https://example.com/instabile"]),
-      new Set(["https://example.com/a"]),
+      stateWith(["https://example.com/a", "https://example.com/vecchio-figlio"]),
+      new Set(["https://example.com/a", "https://example.com/ramo-bloccato"]),
       issues,
       [resource]
     );
