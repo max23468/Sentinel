@@ -1,9 +1,9 @@
 import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
 import { get } from "@vercel/blob";
-import { dashboardReportBlobPath } from "../../src/dashboard-publish";
-import { resolveFromCwd } from "../../src/fs";
-import { requireDashboardAuth } from "../../web/auth";
+import { dashboardReportBlobPath } from "../../src/dashboard-publish.js";
+import { resolveFromCwd } from "../../src/fs.js";
+import { requireDashboardAuth } from "../../web/auth.js";
 
 const localReportsPromise = loadLocalReports();
 

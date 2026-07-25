@@ -1,5 +1,5 @@
 import { next } from "@vercel/functions";
-import { requireDashboardAuth } from "./web/auth";
+import { requireDashboardAuth } from "./web/auth.js";
 
 export const config = {
   matcher: ["/((?!assets/|favicon.svg|favicon.ico).*)"]
