@@ -55,8 +55,16 @@ describe("scan summary", () => {
       })
     );
 
-    expect(lines[1]).toBe("Baseline iniziale: email non inviata.");
+    expect(lines[1]).toBe("Baseline iniziale: email non inviata per policy.");
     expect(lines[2]).toBe("Report: /tmp/reports/ortix.md");
     expect(lines.at(-1)).toBe("- Altri problemi: 3");
+  });
+
+  it("allinea la baseline all'email inviata per un problema", () => {
+    const lines = formatScanSummary(
+      baseResult({ baseline: true, emailRequired: true, emailSent: true })
+    );
+
+    expect(lines[1]).toBe("Baseline iniziale: email inviata per i problemi rilevati.");
   });
 });

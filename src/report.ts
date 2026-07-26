@@ -42,7 +42,12 @@ export function renderScanReport(result: ScanResult): string {
   ];
 
   if (result.baseline) {
-    lines.push("## Sintesi", "", "Baseline iniziale creata. Nessuna email inviata per policy.", "");
+    const emailSummary = result.emailSent
+      ? "Email inviata per i problemi rilevati."
+      : result.emailRequired
+        ? "Email richiesta ma non inviata."
+        : "Nessuna email inviata per policy.";
+    lines.push("## Sintesi", "", `Baseline iniziale creata. ${emailSummary}`, "");
   } else if (result.changes.length === 0 && activeIssues.length === 0) {
     lines.push("## Sintesi", "", "Nessun cambiamento o problema attivo rilevato.", "");
   }

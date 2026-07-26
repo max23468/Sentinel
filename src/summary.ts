@@ -15,7 +15,15 @@ export function formatScanSummary(result: ScanResult): string[] {
     `${result.siteName}: ${result.scannedCount} URL scansionati, ${result.changes.length} cambiamenti, ${activeIssues.length} problemi attivi, ${ignoredIssues.length} avvisi noti (${fatalIssues.length} fatali).`
   ];
 
-  if (result.baseline) lines.push("Baseline iniziale: email non inviata.");
+  if (result.baseline) {
+    lines.push(
+      result.emailSent
+        ? "Baseline iniziale: email inviata per i problemi rilevati."
+        : result.emailRequired
+          ? "Baseline iniziale: email richiesta ma non inviata."
+          : "Baseline iniziale: email non inviata per policy."
+    );
+  }
   if (result.reportPath) lines.push(`Report: ${result.reportPath}`);
 
   for (const issue of visibleIssues) {
