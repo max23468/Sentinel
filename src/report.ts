@@ -42,7 +42,9 @@ export function renderScanReport(result: ScanResult): string {
   ];
 
   if (result.baseline) {
-    const emailSummary = result.emailSent
+    const emailSummary = result.dryRun
+      ? "Email non inviata in modalità dry-run."
+      : result.emailSent
       ? "Email inviata per i problemi rilevati."
       : result.emailRequired
         ? "Email richiesta ma non inviata."

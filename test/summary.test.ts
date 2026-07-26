@@ -67,4 +67,12 @@ describe("scan summary", () => {
 
     expect(lines[1]).toBe("Baseline iniziale: email inviata per i problemi rilevati.");
   });
+
+  it("attribuisce al dry-run la mancata email della baseline", () => {
+    const lines = formatScanSummary(
+      baseResult({ baseline: true, dryRun: true })
+    );
+
+    expect(lines[1]).toBe("Baseline iniziale: email non inviata in modalità dry-run.");
+  });
 });
