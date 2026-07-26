@@ -110,6 +110,15 @@ describe("scan report", () => {
     expect(report).not.toContain("Nessuna email inviata per policy.");
   });
 
+  it("attribuisce al dry-run la mancata email della baseline", () => {
+    const report = renderScanReport(
+      baseResult({ baseline: true, dryRun: true })
+    );
+
+    expect(report).toContain("Baseline iniziale creata. Email non inviata in modalità dry-run.");
+    expect(report).not.toContain("Nessuna email inviata per policy.");
+  });
+
   it("riporta lo stato stabile quando non ci sono cambiamenti o problemi", () => {
     const report = renderScanReport(baseResult({}));
 

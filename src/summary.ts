@@ -17,7 +17,9 @@ export function formatScanSummary(result: ScanResult): string[] {
 
   if (result.baseline) {
     lines.push(
-      result.emailSent
+      result.dryRun
+        ? "Baseline iniziale: email non inviata in modalità dry-run."
+        : result.emailSent
         ? "Baseline iniziale: email inviata per i problemi rilevati."
         : result.emailRequired
           ? "Baseline iniziale: email richiesta ma non inviata."
