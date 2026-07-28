@@ -11,7 +11,8 @@ Monitor configurati:
 ## Comandi
 
 ```bash
-npm install
+npm install --global npm@12.0.1
+npm ci
 npm run build
 npm test
 npm run test:coverage

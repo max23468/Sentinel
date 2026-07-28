@@ -8,7 +8,7 @@ Questa pagina descrive runtime, comandi e guardrail effettivi di Sentinel.
 | --- | --- | --- |
 | Node.js locale | `24.x`; tipi allineati a Node `24` | `.nvmrc`, `package.json`, `package-lock.json` |
 | Node.js GitHub Actions | `24` | `.github/workflows/sentinel.yml` |
-| npm | `npm@11.14.1` | `package.json`, `package-lock.json` |
+| npm | `npm@12.0.1` | `package.json`, `package-lock.json` |
 | TypeScript | `^6.0.3` | `package.json` |
 | Python | non applicabile | nessun runtime Python |
 
@@ -42,7 +42,8 @@ Questa pagina descrive runtime, comandi e guardrail effettivi di Sentinel.
 
 ## Comandi
 
-- install/setup: `npm install` o `npm ci`.
+- bootstrap locale/worktree: `npm install --global npm@12.0.1`.
+- install/setup canonico: `npm ci`.
 - build: `npm run build`.
 - test: `npm test`.
 - coverage core: `npm run test:coverage`.
@@ -130,7 +131,8 @@ stati vuoti/errore/loading quando il diff li può alterare.
 - Report serviti via Function autenticata `/api/reports/[name]`.
 - `vercel.json` usa `framework: "vite"` e `outputDirectory: "dist-web"`; per lo
   sviluppo full-stack locale (UI + Functions + middleware) usare `vercel dev`,
-  mentre `npm run dev` (Vite) serve la sola UI.
+  mentre `npm run dev` (Vite) serve la sola UI. L'`installCommand` esegue
+  esplicitamente npm 12 perché l'immagine Node 24 del builder può includere npm 11.
 
 ## Eccezioni e guardrail
 
