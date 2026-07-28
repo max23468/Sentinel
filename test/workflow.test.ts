@@ -3,6 +3,17 @@ import { describe, expect, it } from "vitest";
 import YAML from "yaml";
 
 describe("workflow Sentinel", () => {
+  it("approva solo gli install script necessari", async () => {
+    const manifest = JSON.parse(await readFile("package.json", "utf8")) as {
+      allowScripts: Record<string, boolean>;
+    };
+
+    expect(manifest.allowScripts).toEqual({
+      "esbuild@0.28.1": true,
+      fsevents: false
+    });
+  });
+
   it("avvia npm 12 prima dell'installazione delle dipendenze", async () => {
     for (const path of [
       ".github/workflows/ci.yml",
