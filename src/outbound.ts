@@ -15,9 +15,14 @@ const MAX_SCAN_BYTES = 100 * 1024 * 1024;
 const EXTRA_SCAN_REQUESTS = 64;
 const blockedAddresses = createBlockedAddresses();
 
+interface PinnedAddress {
+  address: string;
+  family: 4 | 6;
+}
+
 interface OutboundDependencies {
   fetch?: typeof fetch;
-  resolve?: (hostname: string) => Promise<Array<{ address: string; family: 4 | 6 }>>;
+  resolve?: (hostname: string) => Promise<PinnedAddress[]>;
 }
 
 interface OutboundOptions {
@@ -39,6 +44,11 @@ export class OutboundClient {
   private remainingRequests: number;
   private readonly fetchImpl: typeof fetch;
   private readonly resolve: NonNullable<OutboundDependencies["resolve"]>;
+  // Un dispatcher per insieme di indirizzi fissati: le centinaia di pagine
+  // dello stesso monitor riusano connessioni TCP/TLS invece di rifarle a ogni
+  // richiesta. Il DNS resta risolto una volta sola per host per tutto lo scan.
+  private readonly agents = new Map<string, Agent>();
+  private readonly pinned = new Map<string, Promise<PinnedAddress[]>>();
 
   constructor(
     private readonly site: SiteConfig,
@@ -57,47 +67,55 @@ export class OutboundClient {
         throw new OutboundBudgetError("Budget richieste dello scan esaurito.");
       }
 
-      const addresses = await this.resolvePinnedAddresses(currentUrl);
-      const dispatcher = new Agent({
-        connect: { lookup: pinnedLookup(addresses) }
-      });
+      const response = await this.fetchImpl(currentUrl, {
+        dispatcher: this.dispatcherFor(await this.resolvePinnedAddresses(currentUrl)),
+        headers: options.headers,
+        redirect: "manual",
+        signal: AbortSignal.timeout(this.site.crawl.timeoutMs)
+      } as RequestInit);
 
-      try {
-        const response = await this.fetchImpl(currentUrl, {
-          dispatcher,
-          headers: options.headers,
-          redirect: "manual",
-          signal: AbortSignal.timeout(this.site.crawl.timeoutMs)
-        } as RequestInit);
-
-        const location = response.headers.get("location");
-        if (location && isRedirect(response.status)) {
-          await response.body?.cancel();
-          if (redirects >= MAX_REDIRECTS) throw new Error(`Troppi redirect: ${rawUrl}`);
-          currentUrl = this.authorize(new URL(location, currentUrl).toString());
-          continue;
-        }
-
-        if (response.status < 200 || response.status >= 300) {
-          await response.body?.cancel();
-          return {
-            body: new Uint8Array(),
-            headers: response.headers,
-            status: response.status,
-            url: currentUrl
-          };
-        }
-
-        const maxBytes =
-          typeof options.maxBytes === "function"
-            ? options.maxBytes(currentUrl, response.headers)
-            : options.maxBytes;
-        const body = await this.readBody(response, maxBytes);
-        return { body, headers: response.headers, status: response.status, url: currentUrl };
-      } finally {
-        await dispatcher.close();
+      const location = response.headers.get("location");
+      if (location && isRedirect(response.status)) {
+        await response.body?.cancel();
+        if (redirects >= MAX_REDIRECTS) throw new Error(`Troppi redirect: ${rawUrl}`);
+        currentUrl = this.authorize(new URL(location, currentUrl).toString());
+        continue;
       }
+
+      if (response.status < 200 || response.status >= 300) {
+        await response.body?.cancel();
+        return {
+          body: new Uint8Array(),
+          headers: response.headers,
+          status: response.status,
+          url: currentUrl
+        };
+      }
+
+      const maxBytes =
+        typeof options.maxBytes === "function"
+          ? options.maxBytes(currentUrl, response.headers)
+          : options.maxBytes;
+      const body = await this.readBody(response, maxBytes);
+      return { body, headers: response.headers, status: response.status, url: currentUrl };
     }
+  }
+
+  /** Chiude i pool aperti: senza questo il processo resta appeso a fine scan. */
+  async close(): Promise<void> {
+    const agents = [...this.agents.values()];
+    this.agents.clear();
+    await Promise.all(agents.map((agent) => agent.close()));
+  }
+
+  private dispatcherFor(addresses: PinnedAddress[]): Agent {
+    const key = addresses.map(({ address }) => address).join(",");
+    let agent = this.agents.get(key);
+    if (!agent) {
+      agent = new Agent({ connect: { lookup: pinnedLookup(addresses) } });
+      this.agents.set(key, agent);
+    }
+    return agent;
   }
 
   private authorize(rawUrl: string): string {
@@ -113,15 +131,22 @@ export class OutboundClient {
     return url.toString();
   }
 
-  private async resolvePinnedAddresses(url: string): Promise<Array<{ address: string; family: 4 | 6 }>> {
+  private resolvePinnedAddresses(url: string): Promise<PinnedAddress[]> {
     const rawHostname = new URL(url).hostname;
     const hostname = rawHostname.startsWith("[") ? rawHostname.slice(1, -1) : rawHostname;
-    const addresses = await this.resolve(hostname);
-    if (addresses.length === 0) throw new Error(`DNS senza indirizzi per ${hostname}`);
-    if (addresses.some(({ address, family }) => !isPublicAddress(address, family))) {
-      throw new Error(`Destinazione privata o riservata bloccata: ${hostname}`);
-    }
-    return addresses;
+    const cached = this.pinned.get(hostname);
+    if (cached) return cached;
+
+    const promise = (async () => {
+      const addresses = await this.resolve(hostname);
+      if (addresses.length === 0) throw new Error(`DNS senza indirizzi per ${hostname}`);
+      if (addresses.some(({ address, family }) => !isPublicAddress(address, family))) {
+        throw new Error(`Destinazione privata o riservata bloccata: ${hostname}`);
+      }
+      return addresses;
+    })();
+    this.pinned.set(hostname, promise);
+    return promise;
   }
 
   private async readBody(response: Response, maxBytes: number): Promise<Uint8Array> {
@@ -199,6 +224,7 @@ function createBlockedAddresses(): BlockList {
     ["192.0.2.0", 24],
     ["192.168.0.0", 16],
     ["198.18.0.0", 15],
+    ["192.88.99.0", 24],
     ["198.51.100.0", 24],
     ["203.0.113.0", 24],
     ["224.0.0.0", 4],
@@ -206,13 +232,22 @@ function createBlockedAddresses(): BlockList {
   ] as const) {
     list.addSubnet(network, prefix, "ipv4");
   }
+  // IANA IPv6 Special-Purpose Address Registry: tutto ciò che non è "Global:
+  // True". I prefissi di transizione (NAT64, Teredo, 6to4) restano bloccati
+  // perché incapsulano destinazioni IPv4 che possono essere riservate.
   for (const [network, prefix] of [
     ["::", 128],
     ["::1", 128],
+    ["64:ff9b::", 96],
     ["64:ff9b:1::", 48],
     ["100::", 64],
+    ["2001::", 32],
     ["2001:2::", 48],
+    ["2001:20::", 28],
     ["2001:db8::", 32],
+    ["2002::", 16],
+    ["3fff::", 20],
+    ["5f00::", 16],
     ["fc00::", 7],
     ["fe80::", 10],
     ["ff00::", 8]

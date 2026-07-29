@@ -20,18 +20,29 @@ export async function discoverFromSitemaps(
   client: OutboundClient
 ): Promise<QueuedUrl[]> {
   const discovered = new Map<string, QueuedUrl>();
-  const seenSitemaps = new Set<string>();
-  const queue = sitemapUrls.map((url) => ({ url, depth: 0 }));
+  const queued = new Set<string>();
+  const queue: Array<{ url: string; depth: number }> = [];
+
+  // Il budget conta le sitemap distinte: un indice che ripete lo stesso figlio
+  // non deve esaurire il limite prima delle sitemap ancora da leggere.
+  const enqueue = (url: string, depth: number): boolean => {
+    if (queued.has(url)) return true;
+    if (queued.size >= MAX_SITEMAPS) return false;
+    queued.add(url);
+    queue.push({ url, depth });
+    return true;
+  };
+
+  for (const url of sitemapUrls) {
+    if (enqueue(url, 0)) continue;
+    issues.push({ url, message: `Limite di ${MAX_SITEMAPS} sitemap raggiunto.`, fatal: false });
+    break;
+  }
 
   while (queue.length > 0 && discovered.size < site.crawl.maxUrls) {
     const item = queue.shift();
-    if (!item || seenSitemaps.has(item.url)) continue;
-    if (seenSitemaps.size >= MAX_SITEMAPS) {
-      issues.push({ url: item.url, message: `Limite di ${MAX_SITEMAPS} sitemap raggiunto.`, fatal: false });
-      break;
-    }
+    if (!item) break;
 
-    seenSitemaps.add(item.url);
     // Una sitemap illeggibile non ferma la scansione: il crawling dai roots
     // resta la fonte principale, la sitemap aggiunge le pagine non linkate.
     const body = await readSitemap(site, item.url, issues, client);
@@ -55,12 +66,10 @@ export async function discoverFromSitemaps(
         !normalized ||
         !isSameSite(normalized, site) ||
         item.depth >= MAX_SITEMAP_DEPTH ||
-        queue.length + seenSitemaps.size >= MAX_SITEMAPS
+        !enqueue(normalized, item.depth + 1)
       ) {
         rejectedChild = true;
-        continue;
       }
-      queue.push({ url: normalized, depth: item.depth + 1 });
     }
     if (rejectedChild) {
       issues.push({
