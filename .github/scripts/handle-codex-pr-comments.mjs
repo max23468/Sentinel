@@ -2,10 +2,10 @@
 
 import { readFile } from "node:fs/promises";
 import process from "node:process";
+import { isTrustedCodexAuthor } from "./codex-author.mjs";
 
 const repository = process.env.GITHUB_REPOSITORY;
 const token = process.env.GITHUB_TOKEN;
-const codexLoginPattern = new RegExp(process.env.CODEX_BOT_LOGIN_PATTERN ?? "codex", "i");
 const inboxIssueTitle = process.env.CODEX_INBOX_ISSUE_TITLE ?? "Codex feedback inbox";
 const inboxIssueLabel = process.env.CODEX_INBOX_ISSUE_LABEL ?? "codex-feedback-inbox";
 const repositoryName = repository?.split("/")[1] ?? "repository";
@@ -225,7 +225,14 @@ async function listReviewThreads(prNumber) {
               nodes {
                 id
                 author {
+                  __typename
                   login
+                  ... on Bot {
+                    databaseId
+                  }
+                  ... on User {
+                    databaseId
+                  }
                 }
                 body
                 createdAt
@@ -277,7 +284,14 @@ async function listReviewThreadComments(threadId, cursor) {
           nodes {
             id
             author {
+              __typename
               login
+              ... on Bot {
+                databaseId
+              }
+              ... on User {
+                databaseId
+              }
             }
             body
             createdAt
@@ -304,9 +318,7 @@ async function listReviewThreadComments(threadId, cursor) {
 }
 
 function isCodexThread(thread) {
-  return thread.comments.nodes.some((comment) =>
-    codexLoginPattern.test(comment.author?.login ?? ""),
-  );
+  return thread.comments.nodes.some((comment) => isTrustedCodexAuthor(comment.author));
 }
 
 function isActionableThread(thread) {
@@ -581,7 +593,7 @@ function renderThread(thread) {
   }`;
   const link = threadUrl ? ` ([thread](${threadUrl}))` : "";
 
-  return `\`${location}\` - ${summary} (${state})${link}`;
+  return `\`${location}\` - ${summary} (autore @${firstCodexComment.author.login}; ${state})${link}`;
 }
 
 function renderThreadLocation(thread) {
@@ -591,9 +603,7 @@ function renderThreadLocation(thread) {
 }
 
 function getFirstCodexComment(thread) {
-  return thread.comments.nodes.find((comment) =>
-    codexLoginPattern.test(comment.author?.login ?? ""),
-  );
+  return thread.comments.nodes.find((comment) => isTrustedCodexAuthor(comment.author));
 }
 
 function stripTags(line) {

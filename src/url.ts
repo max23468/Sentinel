@@ -40,10 +40,7 @@ export function normalizeFinalUrl(rawUrl: string, site: SiteConfig): string | un
 
 export function isSameSite(url: string, site: SiteConfig): boolean {
   const target = new URL(url);
-  return site.roots.some((root) => {
-    const rootUrl = new URL(root);
-    return target.protocol === rootUrl.protocol && target.hostname === rootUrl.hostname;
-  });
+  return site.roots.some((root) => target.origin === new URL(root).origin);
 }
 
 export function getExtension(url: string): string | undefined {

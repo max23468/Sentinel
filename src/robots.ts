@@ -1,4 +1,5 @@
 import { createRequire } from "node:module";
+import { MAX_ROBOTS_BYTES, type OutboundClient } from "./outbound.js";
 import type { SiteConfig } from "./types.js";
 
 interface RobotRules {
@@ -12,7 +13,10 @@ const robotsParser = require("robots-parser") as (url: string, robotstxt: string
 export class RobotsGuard {
   private readonly cache = new Map<string, Promise<RobotRules>>();
 
-  constructor(private readonly site: SiteConfig) {}
+  constructor(
+    private readonly site: SiteConfig,
+    private readonly client: OutboundClient
+  ) {}
 
   async canFetch(url: string): Promise<boolean> {
     const rules = await this.rulesFor(url);
@@ -36,19 +40,19 @@ export class RobotsGuard {
 
   private async fetchRules(origin: string): Promise<RobotRules> {
     const robotsUrl = `${origin}/robots.txt`;
-    const response = await fetch(robotsUrl, {
+    const response = await this.client.get(robotsUrl, {
       headers: { "user-agent": this.site.crawl.userAgent },
-      signal: AbortSignal.timeout(this.site.crawl.timeoutMs)
+      maxBytes: MAX_ROBOTS_BYTES
     });
 
     // RFC 9309 §2.3.1: robots.txt "unavailable" (4xx) significa nessuna
     // restrizione; "unreachable" (5xx o errore di rete) resta fail closed e
     // ferma la scansione. Alcuni WAF rispondono 403/415 invece di 404.
     if (response.status >= 400 && response.status < 500) return robotsParser(robotsUrl, "");
-    if (!response.ok) {
+    if (response.status < 200 || response.status >= 300) {
       throw new Error(`robots.txt non leggibile (${response.status}) per ${origin}`);
     }
 
-    return robotsParser(robotsUrl, await response.text());
+    return robotsParser(response.url, new TextDecoder().decode(response.body));
   }
 }
