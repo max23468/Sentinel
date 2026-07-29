@@ -78,6 +78,16 @@ export class OutboundClient {
           continue;
         }
 
+        if (response.status < 200 || response.status >= 300) {
+          await response.body?.cancel();
+          return {
+            body: new Uint8Array(),
+            headers: response.headers,
+            status: response.status,
+            url: currentUrl
+          };
+        }
+
         const maxBytes =
           typeof options.maxBytes === "function"
             ? options.maxBytes(currentUrl, response.headers)
@@ -104,7 +114,8 @@ export class OutboundClient {
   }
 
   private async resolvePinnedAddresses(url: string): Promise<Array<{ address: string; family: 4 | 6 }>> {
-    const hostname = new URL(url).hostname;
+    const rawHostname = new URL(url).hostname;
+    const hostname = rawHostname.startsWith("[") ? rawHostname.slice(1, -1) : rawHostname;
     const addresses = await this.resolve(hostname);
     if (addresses.length === 0) throw new Error(`DNS senza indirizzi per ${hostname}`);
     if (addresses.some(({ address, family }) => !isPublicAddress(address, family))) {

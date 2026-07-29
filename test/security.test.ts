@@ -71,4 +71,22 @@ describe("hardening input remoti", () => {
       "Risposta oltre il limite"
     );
   });
+
+  it("risolve gli host IPv6 letterali senza parentesi", async () => {
+    const ipv6Site = {
+      ...site,
+      roots: ["https://[2606:4700:4700::1111]/"]
+    };
+    const resolve = vi.fn(async () => [
+      { address: "2606:4700:4700::1111", family: 6 as const }
+    ]);
+    const client = new OutboundClient(ipv6Site, {
+      fetch: async () => new Response("ok"),
+      resolve
+    });
+
+    await client.get(ipv6Site.roots[0], { maxBytes: 10 });
+
+    expect(resolve).toHaveBeenCalledWith("2606:4700:4700::1111");
+  });
 });

@@ -27,7 +27,12 @@ afterEach(() => {
 
 describe("RobotsGuard", () => {
   it("tratta robots.txt 4xx come assenza di restrizioni", async () => {
-    vi.stubGlobal("fetch", vi.fn(async () => new Response("", { status: 415 })));
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async () =>
+        new Response(null, { headers: { "content-length": "999999" }, status: 415 })
+      )
+    );
 
     const guard = new RobotsGuard(site, testOutboundClient(site, fetch));
 
