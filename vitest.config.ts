@@ -9,6 +9,7 @@ export default defineConfig({
         "src/dashboard.ts",
         "src/fetch-resource.ts",
         "src/fs.ts",
+        "src/outbound.ts",
         "src/report.ts",
         "src/storage.ts",
         "src/summary.ts",

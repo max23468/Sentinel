@@ -22,11 +22,19 @@ permissions:
 
 concurrency:
   group: codex-pr-comments
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   codex-pr-comments:
     name: Sync Codex feedback inbox
+    if: >-
+      github.event_name == 'schedule' ||
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'issue_comment' &&
+       github.event.issue.title == 'Codex feedback inbox' &&
+       contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.comment.author_association)) ||
+      (github.event_name == 'pull_request_target' &&
+       contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.pull_request.author_association))
     runs-on: ubuntu-latest
     timeout-minutes: 75
 

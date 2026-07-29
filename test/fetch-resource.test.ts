@@ -1,6 +1,7 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { fetchResource } from "../src/fetch-resource.js";
 import type { SiteConfig } from "../src/types.js";
+import { testOutboundClient } from "./outbound-fixture.js";
 
 const site: SiteConfig = {
   id: "test",
@@ -32,7 +33,12 @@ describe("fetchResource", () => {
       }))
     );
 
-    const resource = await fetchResource("https://example.com/download", site, 0);
+    const resource = await fetchResource(
+      "https://example.com/download",
+      site,
+      0,
+      testOutboundClient(site, fetch)
+    );
 
     expect(resource.kind).toBe("file");
     expect(resource.normalizedText).toBeUndefined();
@@ -60,7 +66,13 @@ describe("fetchResource", () => {
       ))
     );
 
-    const resource = await fetchResource("https://example.com/prodotti", site, 1, "https://example.com/");
+    const resource = await fetchResource(
+      "https://example.com/prodotti",
+      site,
+      1,
+      testOutboundClient(site, fetch),
+      "https://example.com/"
+    );
 
     expect(resource.kind).toBe("html");
     expect(resource.title).toBe("Test");
@@ -80,7 +92,12 @@ describe("fetchResource", () => {
       }))
     );
 
-    const resource = await fetchResource("https://example.com/mancante", site, 0);
+    const resource = await fetchResource(
+      "https://example.com/mancante",
+      site,
+      0,
+      testOutboundClient(site, fetch)
+    );
 
     expect(resource.kind).toBe("html");
     expect(resource.status).toBe(404);
@@ -91,17 +108,18 @@ describe("fetchResource", () => {
   it("fallisce quando un redirect porta fuori dominio", async () => {
     vi.stubGlobal(
       "fetch",
-      vi.fn(async () => ({
-        url: "https://evil.example.net/landing",
-        ok: true,
-        status: 200,
-        headers: new Headers({ "content-type": "text/html" }),
-        text: async () => "<html><body>evil</body></html>"
-      }))
+      vi.fn(async () =>
+        new Response(null, {
+          headers: { location: "https://evil.example.net/landing" },
+          status: 302
+        })
+      )
     );
 
-    await expect(fetchResource("https://example.com/login", site, 0)).rejects.toThrow(
-      "Redirect fuori dominio: https://example.com/login -> https://evil.example.net/landing"
+    await expect(
+      fetchResource("https://example.com/login", site, 0, testOutboundClient(site, fetch))
+    ).rejects.toThrow(
+      "Destinazione non autorizzata: https://evil.example.net/landing"
     );
   });
 });

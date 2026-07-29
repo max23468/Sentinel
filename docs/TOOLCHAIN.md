@@ -137,6 +137,14 @@ stati vuoti/errore/loading quando il diff li può alterare.
 ## Eccezioni e guardrail
 
 - Non salvare HTML completo.
+- Tutte le richieste del crawler passano dal client outbound condiviso: origine
+  e porta devono coincidere con un root configurato, ogni redirect viene
+  rivalidato e la connessione usa solo indirizzi DNS pubblici risolti e fissati
+  prima del collegamento.
+- Limiti runtime per singola risposta: `512 KiB` per `robots.txt`, `5 MiB` per
+  HTML e sitemap, `25 MiB` per file; ogni scan ha inoltre un budget aggregato
+  di `100 MiB`, massimo 32 sitemap e profondità sitemap 4. L'XML sitemap
+  rifiuta `DOCTYPE`, oltre 50.000 tag o profondità strutturale superiore a 32.
 - Non committare `.env`, password SMTP, token o cache locali.
 - Gli output committabili possono includere solo hash, metadati, report e testo
   normalizzato da pagine pubbliche monitorate; non acquisire contenuti dietro

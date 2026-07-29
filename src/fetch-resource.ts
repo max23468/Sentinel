@@ -1,23 +1,29 @@
 import type { FetchedResource, SiteConfig } from "./types.js";
 import { sha256 } from "./hash.js";
+import { MAX_FILE_BYTES, MAX_HTML_BYTES, type OutboundClient } from "./outbound.js";
 import { extractNormalizedText } from "./text.js";
 import { isIncludedFile, isSameSite, normalizeFinalUrl, normalizeUrl } from "./url.js";
 
-export async function fetchResource(rawUrl: string, site: SiteConfig, depth: number, sourceUrl?: string): Promise<FetchedResource> {
-  const response = await fetch(rawUrl, {
-    redirect: "follow",
+export async function fetchResource(
+  rawUrl: string,
+  site: SiteConfig,
+  depth: number,
+  client: OutboundClient,
+  sourceUrl?: string
+): Promise<FetchedResource> {
+  const response = await client.get(rawUrl, {
     headers: {
       accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
       "user-agent": site.crawl.userAgent
     },
-    signal: AbortSignal.timeout(site.crawl.timeoutMs)
+    maxBytes: (url, headers) =>
+      isHtmlResponse(url, headers.get("content-type") ?? undefined, site)
+        ? MAX_HTML_BYTES
+        : MAX_FILE_BYTES
   });
 
-  const responseUrl = response.url || rawUrl;
-  const finalUrl = normalizeFinalUrl(responseUrl, site);
-  if (!finalUrl || !isSameSite(finalUrl, site)) {
-    throw new Error(`Redirect fuori dominio: ${rawUrl} -> ${responseUrl}`);
-  }
+  const finalUrl = normalizeFinalUrl(response.url, site);
+  if (!finalUrl) throw new Error(`URL finale non valido: ${response.url}`);
 
   const contentType = response.headers.get("content-type") ?? undefined;
   const contentLengthHeader = response.headers.get("content-length");
@@ -34,7 +40,7 @@ export async function fetchResource(rawUrl: string, site: SiteConfig, depth: num
     fetchedAt: new Date().toISOString()
   };
 
-  if (!response.ok) {
+  if (response.status < 200 || response.status >= 300) {
     return {
       ...base,
       kind: isIncludedFile(finalUrl, site) ? "file" : "html",
@@ -44,7 +50,7 @@ export async function fetchResource(rawUrl: string, site: SiteConfig, depth: num
   }
 
   if (isHtmlResponse(finalUrl, contentType, site)) {
-    const html = await response.text();
+    const html = new TextDecoder().decode(response.body);
     const extracted = extractNormalizedText(html);
     const discoveredUrls = new Set<string>();
     for (const candidateUrl of [...extracted.links, ...extracted.assets]) {
@@ -63,11 +69,10 @@ export async function fetchResource(rawUrl: string, site: SiteConfig, depth: num
     };
   }
 
-  const bytes = new Uint8Array(await response.arrayBuffer());
   return {
     ...base,
     kind: "file",
-    hash: sha256(bytes),
+    hash: sha256(response.body),
     discoveredUrls: []
   };
 }

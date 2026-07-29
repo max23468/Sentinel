@@ -4,6 +4,7 @@ import path from "node:path";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { scanSite } from "../src/scan.js";
 import type { SentinelConfig, SiteConfig } from "../src/types.js";
+import { testOutboundClient } from "./outbound-fixture.js";
 
 const { sendScanEmail } = vi.hoisted(() => ({ sendScanEmail: vi.fn() }));
 
@@ -64,7 +65,12 @@ describe("scanSite", () => {
       })
     );
 
-    const result = await scanSite(config, site, { dryRun: false });
+    const result = await scanSite(
+      config,
+      site,
+      { dryRun: false },
+      testOutboundClient(site, fetch)
+    );
 
     expect(result.issues).toMatchObject([{ url: "https://example.com/sitemap.xml", fatal: false }]);
     expect(result.emailRequired).toBe(true);

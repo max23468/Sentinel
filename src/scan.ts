@@ -10,6 +10,7 @@ import type {
 } from "./types.js";
 import { sendScanEmail } from "./email.js";
 import { fetchResource } from "./fetch-resource.js";
+import { OutboundBudgetError, OutboundClient } from "./outbound.js";
 import { discoverFromSitemaps } from "./sitemap.js";
 import {
   getOrCreateSiteState,
@@ -33,7 +34,12 @@ interface CrawlCounters {
   skippedCount: number;
 }
 
-export async function scanSite(config: SentinelConfig, site: SiteConfig, options: ScanOptions): Promise<ScanResult> {
+export async function scanSite(
+  config: SentinelConfig,
+  site: SiteConfig,
+  options: ScanOptions,
+  client = new OutboundClient(site)
+): Promise<ScanResult> {
   const scannedAt = new Date().toISOString();
   const state = await loadState(config);
   const siteState = getOrCreateSiteState(state, site);
@@ -42,11 +48,11 @@ export async function scanSite(config: SentinelConfig, site: SiteConfig, options
   const changes: ScanChange[] = [];
   const resources: FetchedResource[] = [];
   const seenUrls = new Set<string>();
-  const guard = new RobotsGuard(site);
+  const guard = new RobotsGuard(site, client);
 
-  const queue = await buildInitialQueue(site, guard, issues);
+  const queue = await buildInitialQueue(site, guard, issues, client);
   const counters: CrawlCounters = { scannedCount: 0, skippedCount: 0 };
-  await crawlQueue(site, guard, queue, seenUrls, issues, resources, changes, siteState, baseline, counters);
+  await crawlQueue(site, guard, client, queue, seenUrls, issues, resources, changes, siteState, baseline, counters);
 
   if (!baseline && !hasFatalIssues(issues)) {
     changes.push(...collectRemovals(siteState, seenUrls, issues, resources));
@@ -133,7 +139,12 @@ async function persistResources(
   }));
 }
 
-async function buildInitialQueue(site: SiteConfig, guard: RobotsGuard, issues: ScanIssue[]): Promise<QueuedUrl[]> {
+async function buildInitialQueue(
+  site: SiteConfig,
+  guard: RobotsGuard,
+  issues: ScanIssue[],
+  client: OutboundClient
+): Promise<QueuedUrl[]> {
   const queue = new Map<string, QueuedUrl>();
   const sitemapUrls = new Set(site.sitemapUrls);
 
@@ -157,7 +168,7 @@ async function buildInitialQueue(site: SiteConfig, guard: RobotsGuard, issues: S
     for (const sitemapUrl of result.sitemapUrls) sitemapUrls.add(sitemapUrl);
   }
 
-  for (const item of await discoverFromSitemaps(site, [...sitemapUrls], issues)) {
+  for (const item of await discoverFromSitemaps(site, [...sitemapUrls], issues, client)) {
     queue.set(item.url, item);
     if (queue.size >= site.crawl.maxUrls) break;
   }
@@ -174,11 +185,16 @@ async function canFetch(guard: RobotsGuard, url: string, issues: ScanIssue[]): P
   }
 }
 
-async function fetchUrl(item: QueuedUrl, site: SiteConfig, issues: ScanIssue[]): Promise<FetchedResource | undefined> {
+async function fetchUrl(
+  item: QueuedUrl,
+  site: SiteConfig,
+  issues: ScanIssue[],
+  client: OutboundClient
+): Promise<FetchedResource | undefined> {
   try {
-    return await fetchResource(item.url, site, item.depth, item.sourceUrl);
+    return await fetchResource(item.url, site, item.depth, client, item.sourceUrl);
   } catch (error) {
-    issues.push({ url: item.url, message: errorMessage(error), fatal: false });
+    issues.push({ url: item.url, message: errorMessage(error), fatal: error instanceof OutboundBudgetError });
     return undefined;
   }
 }
@@ -269,6 +285,7 @@ export function collectRemovals(
 async function crawlQueue(
   site: SiteConfig,
   guard: RobotsGuard,
+  client: OutboundClient,
   queue: QueuedUrl[],
   seenUrls: Set<string>,
   issues: ScanIssue[],
@@ -282,28 +299,28 @@ async function crawlQueue(
 
   const item = queue.shift();
   if (!item || seenUrls.has(item.url)) {
-    await crawlQueue(site, guard, queue, seenUrls, issues, resources, changes, siteState, baseline, counters);
+    await crawlQueue(site, guard, client, queue, seenUrls, issues, resources, changes, siteState, baseline, counters);
     return;
   }
 
   if (!(await canFetch(guard, item.url, issues))) {
     counters.skippedCount += 1;
     seenUrls.add(item.url);
-    await crawlQueue(site, guard, queue, seenUrls, issues, resources, changes, siteState, baseline, counters);
+    await crawlQueue(site, guard, client, queue, seenUrls, issues, resources, changes, siteState, baseline, counters);
     return;
   }
 
   seenUrls.add(item.url);
-  const resource = await fetchUrl(item, site, issues);
+  const resource = await fetchUrl(item, site, issues, client);
   if (!resource) {
-    await crawlQueue(site, guard, queue, seenUrls, issues, resources, changes, siteState, baseline, counters);
+    await crawlQueue(site, guard, client, queue, seenUrls, issues, resources, changes, siteState, baseline, counters);
     return;
   }
 
   const alreadySeenFinalUrl = resource.url !== item.url && seenUrls.has(resource.url);
   seenUrls.add(resource.url);
   if (alreadySeenFinalUrl) {
-    await crawlQueue(site, guard, queue, seenUrls, issues, resources, changes, siteState, baseline, counters);
+    await crawlQueue(site, guard, client, queue, seenUrls, issues, resources, changes, siteState, baseline, counters);
     return;
   }
 
@@ -311,7 +328,7 @@ async function crawlQueue(
 
   if (resource.status >= 400) {
     issues.push(buildHttpIssue(site, resource));
-    await crawlQueue(site, guard, queue, seenUrls, issues, resources, changes, siteState, baseline, counters);
+    await crawlQueue(site, guard, client, queue, seenUrls, issues, resources, changes, siteState, baseline, counters);
     return;
   }
 
@@ -333,5 +350,5 @@ async function crawlQueue(
 
   resources.push(resource);
   enqueueDiscovered(queue, seenUrls, site, resource);
-  await crawlQueue(site, guard, queue, seenUrls, issues, resources, changes, siteState, baseline, counters);
+  await crawlQueue(site, guard, client, queue, seenUrls, issues, resources, changes, siteState, baseline, counters);
 }

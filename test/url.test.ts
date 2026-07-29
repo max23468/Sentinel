@@ -34,6 +34,7 @@ describe("URL normalization", () => {
 
   it("riconosce dominio e file inclusi", () => {
     expect(isSameSite("https://www.ortix.it/a", site)).toBe(true);
+    expect(isSameSite("https://www.ortix.it:8443/a", site)).toBe(false);
     expect(isSameSite("https://example.com/a", site)).toBe(false);
     expect(isIncludedFile("https://www.ortix.it/file.PDF", site)).toBe(true);
   });

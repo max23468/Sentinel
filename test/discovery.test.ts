@@ -2,6 +2,7 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import { RobotsGuard } from "../src/robots.js";
 import { discoverFromSitemaps } from "../src/sitemap.js";
 import type { ScanIssue, SiteConfig } from "../src/types.js";
+import { testOutboundClient } from "./outbound-fixture.js";
 
 const site: SiteConfig = {
   id: "test",
@@ -26,9 +27,14 @@ afterEach(() => {
 
 describe("RobotsGuard", () => {
   it("tratta robots.txt 4xx come assenza di restrizioni", async () => {
-    vi.stubGlobal("fetch", vi.fn(async () => new Response("", { status: 415 })));
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async () =>
+        new Response(null, { headers: { "content-length": "999999" }, status: 415 })
+      )
+    );
 
-    const guard = new RobotsGuard(site);
+    const guard = new RobotsGuard(site, testOutboundClient(site, fetch));
 
     await expect(guard.canFetch("https://example.com/pagina")).resolves.toBe(true);
   });
@@ -36,7 +42,7 @@ describe("RobotsGuard", () => {
   it("resta fail closed su robots.txt 5xx", async () => {
     vi.stubGlobal("fetch", vi.fn(async () => new Response("", { status: 503 })));
 
-    const guard = new RobotsGuard(site);
+    const guard = new RobotsGuard(site, testOutboundClient(site, fetch));
 
     await expect(guard.canFetch("https://example.com/pagina")).rejects.toThrow("robots.txt non leggibile (503)");
   });
@@ -47,7 +53,12 @@ describe("discoverFromSitemaps", () => {
     vi.stubGlobal("fetch", vi.fn(async () => new Response("", { status: 415 })));
 
     const issues: ScanIssue[] = [];
-    const discovered = await discoverFromSitemaps(site, ["https://example.com/sitemap.xml"], issues);
+    const discovered = await discoverFromSitemaps(
+      site,
+      ["https://example.com/sitemap.xml"],
+      issues,
+      testOutboundClient(site, fetch)
+    );
 
     expect(discovered).toEqual([]);
     expect(issues).toHaveLength(1);
@@ -74,7 +85,12 @@ describe("discoverFromSitemaps", () => {
     );
 
     const issues: ScanIssue[] = [];
-    const discovered = await discoverFromSitemaps(site, ["https://example.com/indice.xml"], issues);
+    const discovered = await discoverFromSitemaps(
+      site,
+      ["https://example.com/indice.xml"],
+      issues,
+      testOutboundClient(site, fetch)
+    );
 
     expect(discovered.map((item) => item.url)).toEqual(["https://example.com/pagina"]);
     expect(issues).toHaveLength(1);
@@ -96,12 +112,52 @@ describe("discoverFromSitemaps", () => {
     const discovered = await discoverFromSitemaps(
       site,
       ["https://example.com/rotta.xml", "https://example.com/buona.xml"],
-      issues
+      issues,
+      testOutboundClient(site, fetch)
     );
 
     expect(discovered.map((item) => item.url)).toEqual(["https://example.com/pagina"]);
     expect(issues).toMatchObject([
       { url: "https://example.com/rotta.xml", fatal: false }
     ]);
+  });
+
+  it("rifiuta XML troppo profondo prima del parser", async () => {
+    const xml = `${"<a>".repeat(33)}${"</a>".repeat(33)}`;
+    vi.stubGlobal("fetch", vi.fn(async () => new Response(xml, { status: 200 })));
+
+    const issues: ScanIssue[] = [];
+    await discoverFromSitemaps(
+      site,
+      ["https://example.com/sitemap.xml"],
+      issues,
+      testOutboundClient(site, fetch)
+    );
+
+    expect(issues[0].message).toContain("profondità XML oltre 32");
+  });
+
+  it("ferma un grafo sitemap oltre la profondità consentita", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async (url: string) => {
+        const depth = Number(new URL(url).pathname.match(/\d+/)?.[0] ?? 0);
+        return new Response(
+          `<sitemapindex><sitemap><loc>https://example.com/sitemap-${depth + 1}.xml</loc></sitemap></sitemapindex>`,
+          { status: 200 }
+        );
+      })
+    );
+
+    const issues: ScanIssue[] = [];
+    await discoverFromSitemaps(
+      site,
+      ["https://example.com/sitemap-0.xml"],
+      issues,
+      testOutboundClient(site, fetch)
+    );
+
+    expect(fetch).toHaveBeenCalledTimes(5);
+    expect(issues[0].message).toContain("oltre budget");
   });
 });
