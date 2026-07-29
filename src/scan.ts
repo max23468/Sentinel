@@ -50,9 +50,15 @@ export async function scanSite(
   const seenUrls = new Set<string>();
   const guard = new RobotsGuard(site, client);
 
-  const queue = await buildInitialQueue(site, guard, issues, client);
   const counters: CrawlCounters = { scannedCount: 0, skippedCount: 0 };
-  await crawlQueue(site, guard, client, queue, seenUrls, issues, resources, changes, siteState, baseline, counters);
+  try {
+    const queue = await buildInitialQueue(site, guard, issues, client);
+    await crawlQueue(site, guard, client, queue, seenUrls, issues, resources, changes, siteState, baseline, counters);
+  } finally {
+    // Le connessioni riusate durante il crawling vanno chiuse qui, o il
+    // processo resta appeso anche quando lo scan è finito.
+    await client.close();
+  }
 
   if (!baseline && !hasFatalIssues(issues)) {
     changes.push(...collectRemovals(siteState, seenUrls, issues, resources));

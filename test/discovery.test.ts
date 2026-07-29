@@ -160,4 +160,34 @@ describe("discoverFromSitemaps", () => {
     expect(fetch).toHaveBeenCalledTimes(5);
     expect(issues[0].message).toContain("oltre budget");
   });
+
+  it("non consuma il budget con sitemap duplicate nello stesso indice", async () => {
+    const index = `<?xml version="1.0"?><sitemapindex>
+      ${'<sitemap><loc>https://example.com/doppia.xml</loc></sitemap>'.repeat(40)}
+      <sitemap><loc>https://example.com/unica.xml</loc></sitemap>
+    </sitemapindex>`;
+    const unica = `<?xml version="1.0"?><urlset>
+      <url><loc>https://example.com/pagina</loc></url>
+    </urlset>`;
+
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async (url: string) => {
+        if (url.endsWith("indice.xml")) return new Response(index, { status: 200 });
+        if (url.endsWith("unica.xml")) return new Response(unica, { status: 200 });
+        return new Response("<urlset></urlset>", { status: 200 });
+      })
+    );
+
+    const issues: ScanIssue[] = [];
+    const discovered = await discoverFromSitemaps(
+      site,
+      ["https://example.com/indice.xml"],
+      issues,
+      testOutboundClient(site, fetch)
+    );
+
+    expect(discovered.map((item) => item.url)).toEqual(["https://example.com/pagina"]);
+    expect(issues).toEqual([]);
+  });
 });

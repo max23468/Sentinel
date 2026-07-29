@@ -89,4 +89,32 @@ describe("hardening input remoti", () => {
 
     expect(resolve).toHaveBeenCalledWith("2606:4700:4700::1111");
   });
+
+  it("blocca i prefissi IPv6 non globali e di transizione", () => {
+    expect(isPublicAddress("2606:4700:4700::1111", 6)).toBe(true);
+    expect(isPublicAddress("2001::1", 6)).toBe(false);
+    expect(isPublicAddress("2002:7f00:1::1", 6)).toBe(false);
+    expect(isPublicAddress("64:ff9b::a9fe:a9fe", 6)).toBe(false);
+    expect(isPublicAddress("3fff::1", 6)).toBe(false);
+    expect(isPublicAddress("192.88.99.1", 4)).toBe(false);
+  });
+
+  it("riusa lo stesso pool per gli indirizzi già fissati", async () => {
+    const resolve = vi.fn(async () => [{ address: "93.184.216.34", family: 4 as const }]);
+    const dispatchers = new Set<unknown>();
+    const client = new OutboundClient(site, {
+      fetch: async (_url, init) => {
+        dispatchers.add((init as { dispatcher?: unknown }).dispatcher);
+        return new Response("ok");
+      },
+      resolve
+    });
+
+    await client.get("https://example.com/a", { maxBytes: 10 });
+    await client.get("https://example.com/b", { maxBytes: 10 });
+    await client.close();
+
+    expect(dispatchers.size).toBe(1);
+    expect(resolve).toHaveBeenCalledOnce();
+  });
 });
