@@ -21,18 +21,18 @@ describe("workflow Sentinel", () => {
     ]) {
       const source = await readFile(path, "utf8");
 
-      expect(source.indexOf("npm install --global npm@12.0.1")).toBeGreaterThan(
+      expect(source.indexOf("npm install --global npm@12.0.2")).toBeGreaterThan(
         source.indexOf("actions/setup-node@")
       );
       expect(source.indexOf("npm ci")).toBeGreaterThan(
-        source.indexOf("npm install --global npm@12.0.1")
+        source.indexOf("npm install --global npm@12.0.2")
       );
     }
 
     const vercel = JSON.parse(await readFile("vercel.json", "utf8")) as {
       installCommand: string;
     };
-    expect(vercel.installCommand).toBe("npx --yes npm@12.0.1 install");
+    expect(vercel.installCommand).toBe("npx --yes npm@12.0.2 install");
   });
 
   it("espone al guard i due cron distinti per l'ora italiana", async () => {

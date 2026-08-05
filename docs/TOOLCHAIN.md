@@ -8,7 +8,7 @@ Questa pagina descrive runtime, comandi e guardrail effettivi di Sentinel.
 | --- | --- | --- |
 | Node.js locale | `24.x`; tipi allineati a Node `24` | `.nvmrc`, `package.json`, `package-lock.json` |
 | Node.js GitHub Actions | `24` | `.github/workflows/sentinel.yml` |
-| npm | `npm@12.0.1` | `package.json`, `package-lock.json` |
+| npm | `npm@12.0.2` | `package.json`, `package-lock.json` |
 | TypeScript | `^6.0.3` | `package.json` |
 | Python | non applicabile | nessun runtime Python |
 
@@ -42,7 +42,7 @@ Questa pagina descrive runtime, comandi e guardrail effettivi di Sentinel.
 
 ## Comandi
 
-- bootstrap locale/worktree: `npm install --global npm@12.0.1`.
+- bootstrap locale/worktree: `npm install --global npm@12.0.2`.
 - install/setup canonico: `npm ci`.
 - build: `npm run build`.
 - test: `npm test`.

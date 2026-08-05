@@ -49,7 +49,7 @@ jobs:
 
       - name: Bootstrap npm 12
         if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
-        run: npm install --global npm@12.0.1
+        run: npm install --global npm@12.0.2
 
       - name: Install
         if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
