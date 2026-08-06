@@ -1,0 +1,4844 @@
+{
+  "createdAt": "2026-08-06T15:24:49.214Z",
+  "sites": [
+    {
+      "id": "ortix",
+      "name": "Ortix",
+      "enabled": true,
+      "lastScanAt": "2026-08-01T09:00:44.756Z",
+      "totalUrls": 189,
+      "htmlUrls": 46,
+      "fileUrls": 143,
+      "okUrls": 189,
+      "warningUrls": 0,
+      "errorUrls": 0,
+      "snapshotCount": 207,
+      "latestReport": {
+        "siteId": "ortix",
+        "siteName": "Ortix",
+        "filePath": "/Users/Matteo/Progetti/Sentinel/.worktrees/output-model-bootstrap/reports/ortix-20260801T090044Z.md",
+        "linkHref": "ortix-20260801T090044Z.md",
+        "scanLabel": "1 ago 2026, 11:00",
+        "mode": "operativa",
+        "baseline": false,
+        "scannedCount": 222,
+        "skippedCount": 0,
+        "changesCount": 1,
+        "issuesCount": 0,
+        "knownIssuesCount": 33,
+        "emailRequired": true,
+        "emailSent": true,
+        "fatalCount": 0,
+        "issues": [],
+        "knownIssues": [
+          {
+            "siteName": "ortix",
+            "severity": "known",
+            "url": "https://www.ortix.it/wp-content/uploads/2021/08/wd-blog-9.jpg",
+            "message": "HTTP 404",
+            "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+          },
+          {
+            "siteName": "ortix",
+            "severity": "known",
+            "url": "https://www.ortix.it/wp-content/uploads/2021/08/wd-blog-8.jpg",
+            "message": "HTTP 404",
+            "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+          },
+          {
+            "siteName": "ortix",
+            "severity": "known",
+            "url": "https://www.ortix.it/wp-content/uploads/2021/07/wd-blog-4.jpg",
+            "message": "HTTP 404",
+            "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+          },
+          {
+            "siteName": "ortix",
+            "severity": "known",
+            "url": "https://www.ortix.it/wp-content/uploads/2021/08/wd-blog-5.jpg",
+            "message": "HTTP 404",
+            "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+          },
+          {
+            "siteName": "ortix",
+            "severity": "known",
+            "url": "https://www.ortix.it/?p=361%2F",
+            "message": "HTTP 404",
+            "reason": "URL legacy WordPress già noti"
+          },
+          {
+            "siteName": "ortix",
+            "severity": "known",
+            "url": "https://www.ortix.it/?p=344%2F",
+            "message": "HTTP 404",
+            "reason": "URL legacy WordPress già noti"
+          },
+          {
+            "siteName": "ortix",
+            "severity": "known",
+            "url": "https://www.ortix.it/?p=334%2F",
+            "message": "HTTP 404",
+            "reason": "URL legacy WordPress già noti"
+          },
+          {
+            "siteName": "ortix",
+            "severity": "known",
+            "url": "https://www.ortix.it/wp-content/uploads/2021/10/brand-Rosenthal-blog.png",
+            "message": "HTTP 404",
+            "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+          },
+          {
+            "siteName": "ortix",
+            "severity": "known",
+            "url": "https://www.ortix.it/wp-content/uploads/2021/08/post-1-image-1.jpg",
+            "message": "HTTP 404",
+            "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+          },
+          {
+            "siteName": "ortix",
+            "severity": "known",
+            "url": "https://www.ortix.it/wp-content/uploads/2021/08/post-1-img-1.jpg",
+            "message": "HTTP 404",
+            "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+          },
+          {
+            "siteName": "ortix",
+            "severity": "known",
+            "url": "https://www.ortix.it/wp-content/uploads/2021/08/post-1-img-3.jpg",
+            "message": "HTTP 404",
+            "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+          },
+          {
+            "siteName": "ortix",
+            "severity": "known",
+            "url": "https://www.ortix.it/wp-content/uploads/2021/08/post-1-img-2.jpg",
+            "message": "HTTP 404",
+            "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+          },
+          {
+            "siteName": "ortix",
+            "severity": "known",
+            "url": "https://www.ortix.it/wp-content/uploads/2021/08/post-1-img-4.jpg",
+            "message": "HTTP 404",
+            "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+          },
+          {
+            "siteName": "ortix",
+            "severity": "known",
+            "url": "https://www.ortix.it/wp-content/uploads/2021/08/post-1-image-2.jpg",
+            "message": "HTTP 404",
+            "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+          },
+          {
+            "siteName": "ortix",
+            "severity": "known",
+            "url": "https://www.ortix.it/wp-content/uploads/2021/08/post-1-gallery-1.jpg",
+            "message": "HTTP 404",
+            "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+          },
+          {
+            "siteName": "ortix",
+            "severity": "known",
+            "url": "https://www.ortix.it/wp-content/uploads/2021/08/post-1-gallery-2.jpg",
+            "message": "HTTP 404",
+            "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+          },
+          {
+            "siteName": "ortix",
+            "severity": "known",
+            "url": "https://www.ortix.it/wp-content/uploads/2021/08/post-1-gallery-3.jpg",
+            "message": "HTTP 404",
+            "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+          },
+          {
+            "siteName": "ortix",
+            "severity": "known",
+            "url": "https://www.ortix.it/wp-content/uploads/2021/08/post-1-gallery-4.jpg",
+            "message": "HTTP 404",
+            "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+          },
+          {
+            "siteName": "ortix",
+            "severity": "known",
+            "url": "https://www.ortix.it/wp-content/uploads/2021/08/post-1-gallery-5.jpg",
+            "message": "HTTP 404",
+            "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+          },
+          {
+            "siteName": "ortix",
+            "severity": "known",
+            "url": "https://www.ortix.it/wp-content/uploads/2021/08/post-1-gallery-6.jpg",
+            "message": "HTTP 404",
+            "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+          },
+          {
+            "siteName": "ortix",
+            "severity": "known",
+            "url": "https://www.ortix.it/wp-content/uploads/2021/08/post-1-gallery-7.jpg",
+            "message": "HTTP 404",
+            "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+          },
+          {
+            "siteName": "ortix",
+            "severity": "known",
+            "url": "https://www.ortix.it/wp-content/uploads/2021/08/post-1-gallery-8.jpg",
+            "message": "HTTP 404",
+            "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+          },
+          {
+            "siteName": "ortix",
+            "severity": "known",
+            "url": "https://www.ortix.it/wp-content/uploads/2021/08/post-1-image-3.jpg",
+            "message": "HTTP 404",
+            "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+          },
+          {
+            "siteName": "ortix",
+            "severity": "known",
+            "url": "https://www.ortix.it/wp-content/uploads/2021/08/post-1-image-4.jpg",
+            "message": "HTTP 404",
+            "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+          },
+          {
+            "siteName": "ortix",
+            "severity": "known",
+            "url": "https://www.ortix.it/wp-content/uploads/2021/08/post-1-image-5.jpg",
+            "message": "HTTP 404",
+            "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+          },
+          {
+            "siteName": "ortix",
+            "severity": "known",
+            "url": "https://www.ortix.it/wp-content/uploads/2021/08/post-1-image-6.jpg",
+            "message": "HTTP 404",
+            "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+          },
+          {
+            "siteName": "ortix",
+            "severity": "known",
+            "url": "https://www.ortix.it/wp-content/uploads/2021/08/wd-blog-7.jpg",
+            "message": "HTTP 404",
+            "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+          },
+          {
+            "siteName": "ortix",
+            "severity": "known",
+            "url": "https://www.ortix.it/wp-content/uploads/2021/08/post-example-1-image-1.jpg",
+            "message": "HTTP 404",
+            "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+          },
+          {
+            "siteName": "ortix",
+            "severity": "known",
+            "url": "https://www.ortix.it/wp-content/uploads/2021/08/post-example-1-image-2.jpg",
+            "message": "HTTP 404",
+            "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+          },
+          {
+            "siteName": "ortix",
+            "severity": "known",
+            "url": "https://www.ortix.it/wp-content/uploads/2021/08/post-example-1-image-3.jpg",
+            "message": "HTTP 404",
+            "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+          },
+          {
+            "siteName": "ortix",
+            "severity": "known",
+            "url": "https://www.ortix.it/wp-content/uploads/2021/08/post-example-1-image-4.jpg",
+            "message": "HTTP 404",
+            "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+          },
+          {
+            "siteName": "ortix",
+            "severity": "known",
+            "url": "https://www.ortix.it/wp-content/uploads/2021/08/portfolio-1.jpg",
+            "message": "HTTP 404",
+            "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+          },
+          {
+            "siteName": "ortix",
+            "severity": "known",
+            "url": "https://www.ortix.it/wp-content/uploads/2021/08/portfolio-3.jpg",
+            "message": "HTTP 404",
+            "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+          }
+        ],
+        "changes": [
+          {
+            "siteName": "ortix",
+            "type": "Modificato",
+            "url": "https://www.ortix.it/residenze",
+            "title": "Residenze - Ortix - Milano - Ortica"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sancarlo-sviluppo",
+      "name": "San Carlo Sviluppo",
+      "enabled": true,
+      "lastScanAt": "2026-08-01T09:02:39.600Z",
+      "totalUrls": 41,
+      "htmlUrls": 14,
+      "fileUrls": 27,
+      "okUrls": 41,
+      "warningUrls": 0,
+      "errorUrls": 0,
+      "snapshotCount": 42,
+      "latestReport": {
+        "siteId": "sancarlo-sviluppo",
+        "siteName": "San Carlo Sviluppo",
+        "filePath": "/Users/Matteo/Progetti/Sentinel/.worktrees/output-model-bootstrap/reports/sancarlo-sviluppo-20260801T090239Z.md",
+        "linkHref": "sancarlo-sviluppo-20260801T090239Z.md",
+        "scanLabel": "1 ago 2026, 11:02",
+        "mode": "operativa",
+        "baseline": false,
+        "scannedCount": 41,
+        "skippedCount": 0,
+        "changesCount": 0,
+        "issuesCount": 0,
+        "knownIssuesCount": 0,
+        "emailRequired": false,
+        "emailSent": false,
+        "fatalCount": 0,
+        "issues": [],
+        "knownIssues": [],
+        "changes": []
+      }
+    },
+    {
+      "id": "impresa-cogeb",
+      "name": "Impresa Cogeb",
+      "enabled": true,
+      "lastScanAt": "2026-08-01T09:03:48.299Z",
+      "totalUrls": 345,
+      "htmlUrls": 77,
+      "fileUrls": 268,
+      "okUrls": 345,
+      "warningUrls": 0,
+      "errorUrls": 0,
+      "snapshotCount": 345,
+      "latestReport": {
+        "siteId": "impresa-cogeb",
+        "siteName": "Impresa Cogeb",
+        "filePath": "/Users/Matteo/Progetti/Sentinel/.worktrees/output-model-bootstrap/reports/impresa-cogeb-20260801T090348Z.md",
+        "linkHref": "impresa-cogeb-20260801T090348Z.md",
+        "scanLabel": "1 ago 2026, 11:03",
+        "mode": "operativa",
+        "baseline": false,
+        "scannedCount": 345,
+        "skippedCount": 0,
+        "changesCount": 0,
+        "issuesCount": 0,
+        "knownIssuesCount": 0,
+        "emailRequired": false,
+        "emailSent": false,
+        "fatalCount": 0,
+        "issues": [],
+        "knownIssues": [],
+        "changes": []
+      }
+    }
+  ],
+  "resources": [
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1651840680_4.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:05:04.019Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1651840595_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:05:03.874Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1651840527_2.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:05:03.730Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1651840375_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:05:03.585Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1651840311_2.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:05:03.442Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1660228139_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:05:03.295Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1651840177_2.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:05:03.154Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1651840114_1.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:05:03.008Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1651840057_2.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:05:02.864Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1702553122_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:05:02.715Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1660226272_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:05:02.569Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1719495804_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:05:02.288Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1762419288_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:05:02.145Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1660229241_1.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:05:02.002Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1660227992_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:05:01.857Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1721375142_1.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:05:01.453Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1721377294_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:05:01.183Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1719562543_1.png",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:05:00.651Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1701945650_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:59.073Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1659597684_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:58.539Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/opere-realizzate/23",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:58.252Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/opere-realizzate/22",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:58.084Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/opere-realizzate/21",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:57.929Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/opere-realizzate/20",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:57.766Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/opere-realizzate/19",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:57.602Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/opere-realizzate/18",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:57.440Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/opere-realizzate/17",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:57.281Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/opere-realizzate/16",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:57.120Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/opere-realizzate/15",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:56.968Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/opere-realizzate/10",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:56.809Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/opere-realizzate/12",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:56.653Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/opere-realizzate/9",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:56.500Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/opere-realizzate/8",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:56.342Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/opere-realizzate/6",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:56.187Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/opere-realizzate/5",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:56.025Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/opere-realizzate/31",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:55.864Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/opere-realizzate/1",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:55.696Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/opere-realizzate/30",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:55.535Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/opere-realizzate/27",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:55.383Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/opere-realizzate/26",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:55.223Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1763477245_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:55.057Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1763476826_3.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:54.769Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1763474641_1.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:54.488Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1721376062_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:54.081Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1763473076_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:53.271Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/opere-in-corso/33",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:52.859Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/opere-in-corso/35",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:52.697Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/opere-in-corso/34",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:52.536Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/opere-in-corso/32",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:52.374Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/opere-in-corso/29",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:52.213Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1702560405_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:51.773Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1702553412_4.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:51.617Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1702553411_3.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:51.462Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1702553409_2.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:51.306Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1702553407_1.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:51.155Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1702553404_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:51.002Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1719496152_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:50.848Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1719496044_1.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:50.693Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1719495977_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:50.537Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1719495584_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:50.383Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1762419219_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:50.224Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1762419303_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:50.067Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1762419275_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:49.907Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1762419244_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:49.751Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1660227992_1.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:49.599Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1721375143_4.webp",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:49.444Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1721375143_3.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:49.277Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1721375143_2.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:49.121Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1721375142_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:48.973Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1721377295_4.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:48.821Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1721377295_3.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:48.664Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1721377294_2.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:48.514Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1721377294_1.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:48.360Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1719563046_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:48.203Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1719563037_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:47.916Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1719563028_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:47.762Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1719562514_0.png",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:47.473Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1660229946_0.gif",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:46.783Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1701945664_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:46.223Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1701945624_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:46.071Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1701945683_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:45.922Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1727363428_1.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:45.765Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1727363429_4.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:45.605Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1727363428_2.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:45.455Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1727363428_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:45.304Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1763476826_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:45.152Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1763476826_2.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:45.002Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1763476826_1.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:44.857Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1763476827_4.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:44.702Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1763724309_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:44.548Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1763474639_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:44.393Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1763474641_2.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:44.115Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1721376063_4.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:43.829Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1721376063_3.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:43.549Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1721376063_2.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:43.388Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1721376062_1.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:43.235Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1763473077_4.jpeg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:43.081Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1763473077_3.jpeg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:42.786Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1763473076_2.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:42.631Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1763473076_1.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:42.474Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1679655820_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:42.318Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1762419814_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:42.030Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1762419796_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:41.479Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1679655692_2.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:40.532Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1651840768_1.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:39.715Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1651840768_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:39.568Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1651840759_3.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:39.418Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1651840759_2.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:39.272Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1651840758_1.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:39.121Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1651840758_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:38.970Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1651839986_1.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:38.826Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1651839986_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:38.681Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1651839986_2.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:38.529Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1651839918_1.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:38.378Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1651839918_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:38.228Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1651839906_4.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:38.074Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1651839906_2.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:37.915Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1651839905_1.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:37.764Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1651839905_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:37.613Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1651839763_2.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:37.467Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1651839763_1.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:37.324Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1651839763_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:37.182Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1679655820_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:37.035Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1762419814_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:36.884Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1762419796_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:36.731Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1679655692_2.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:36.576Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1650456657.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:36.422Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1650456647.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:36.275Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1650456637.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:36.125Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1650456627.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:35.982Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1650456611.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:35.828Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/assets/img/down.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:35.682Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/certificazioni/bollino.png",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:35.529Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/certificazioni/Attestato-STC-3212-IMPRESA-COGEB.pdf",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:35.373Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/certificazioni/IMPRESA%20CO.GE.B.pdf",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:35.226Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/certificazioni/ICIM-9001-005162-05_IMPRESA_CO.GE.B_S.R.L.pdf",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:34.946Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/certificazioni/ICIM-45001-050089-00%20IMPRESA-CO.GE.B-S.R.L._25-11-2022_IQNET.pdf",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:34.146Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/certificazioni/CERT_S_128_COGEB_SRL.pdf",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:33.614Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/certificazioni/ICIM-14001-050162-00-IMPRESA-CO.GE.B-S.R.L._25%2001%202023_IQNET.pdf",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:33.066Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/certificazioni/CERT_A_102_25_COGEB_SRL_14001.pdf",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:31.989Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/assets/img/arrowreddown.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:31.433Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/opere-realizzate",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:31.276Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/opere-in-corso",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:31.098Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840679_3.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:30.676Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840679_2.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:30.523Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840679_1.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:30.376Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840679_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:30.224Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840651_4.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:30.073Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840650_1.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:29.923Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840651_3.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:29.765Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840650_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:29.619Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840651_2.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:29.469Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840596_4.JPG",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:29.320Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840596_3.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:29.169Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840595_2.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:29.024Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840595_1.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:28.874Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840527_3.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:28.723Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840527_1.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:28.566Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840526_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:28.419Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840501_4.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:28.265Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840501_3.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:28.112Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840500_2.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:27.962Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840500_1.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:27.816Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840500_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:27.665Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840464_4.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:27.511Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840464_2.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:27.357Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840464_1.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:27.208Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840463_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:27.062Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840376_3.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:26.904Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840376_2.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:26.751Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840375_1.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:26.597Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840311_3.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:26.449Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840311_1.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:26.296Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840310_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:26.141Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1660228139_3.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:25.989Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1660228139_2.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:25.826Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1660228139_1.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:25.676Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840177_4.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:25.524Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840177_3.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:25.373Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840177_1.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:25.220Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840176_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:25.069Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840115_4.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:24.914Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840115_3.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:24.765Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840114_2.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:24.615Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840114_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:24.465Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840058_4.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:24.318Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840058_3.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:24.165Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840057_1.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:23.996Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840057_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:23.845Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1660226273_4.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:23.693Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1660226273_3.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:23.539Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1660226273_2.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:23.386Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1660226272_1.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:23.232Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1660229241_2.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:23.076Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1659597685_1.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:22.927Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840680_4.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:22.779Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840595_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:22.630Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840527_2.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:22.477Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840375_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:22.325Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840311_2.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:22.182Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1660228139_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:22.028Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840177_2.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:21.876Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840114_1.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:21.594Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840057_2.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:21.308Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1702553122_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:21.165Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1660226272_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:20.606Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1719495804_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:18.884Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1762419288_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:18.732Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1660229241_1.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:18.579Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1660227992_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:18.426Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1721375142_1.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:18.153Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1721377294_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:18.004Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1719562543_1.png",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:17.592Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1701945650_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:17.059Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1659597684_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:16.532Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/opere-realizzate/10",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:16.385Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/opere-realizzate/9",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:16.226Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/opere-realizzate/8",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:16.062Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/opere-realizzate/5",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:15.907Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/opere-realizzate/31",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:15.753Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/opere-realizzate/1",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:15.604Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/opere-realizzate/30",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:15.449Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/opere-realizzate/27",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:15.301Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1763477245_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:15.152Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1763476826_3.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:14.993Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1763474641_1.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:14.851Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1721376062_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:14.703Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1763473076_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:14.415Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/opere-in-corso/33",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:14.268Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/opere-in-corso/35",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:14.113Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/opere-in-corso/34",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:13.953Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/opere-in-corso/32",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:13.791Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/opere-in-corso/29",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:13.643Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840768_1.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:13.490Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840768_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:13.342Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840759_3.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:13.192Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840759_2.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:13.039Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840758_1.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:12.885Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840758_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:12.740Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651839986_1.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:12.588Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651839986_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:12.436Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651839986_2.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:12.284Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651839918_1.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:12.138Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651839918_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:11.985Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651839906_4.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:11.839Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651839906_2.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:11.695Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651839905_1.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:11.548Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651839905_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:11.394Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651839763_2.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:11.247Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651839763_1.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:11.101Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651839763_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:10.954Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1650456657.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:10.814Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1650456647.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:10.671Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1650456637.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:10.532Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1650456627.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:10.386Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1650456611.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:10.242Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/assets/img/down.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:10.098Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/certificazioni/bollino.png",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:09.953Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/certificazioni/Attestato-STC-3212-IMPRESA-COGEB.pdf",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:09.811Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/certificazioni/IMPRESA%20CO.GE.B.pdf",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:09.666Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/certificazioni/ICIM-9001-005162-05_IMPRESA_CO.GE.B_S.R.L.pdf",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:09.521Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/certificazioni/ICIM-45001-050089-00%20IMPRESA-CO.GE.B-S.R.L._25-11-2022_IQNET.pdf",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:09.122Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/certificazioni/CERT_S_128_COGEB_SRL.pdf",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:08.847Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/certificazioni/ICIM-14001-050162-00-IMPRESA-CO.GE.B-S.R.L._25%2001%202023_IQNET.pdf",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:08.575Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/certificazioni/CERT_A_102_25_COGEB_SRL_14001.pdf",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:08.179Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/assets/img/arrowreddown.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:07.902Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/assets/img/top.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:07.755Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/assets/img/to_fff.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:07.606Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651840759_4.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:07.459Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651839986_3.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:07.317Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651839906_3.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:07.174Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1651839763_3.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:07.027Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1762419778_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:06.756Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/public/gallery/images/1650456671.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:06.484Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/assets/img/arrowred.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:06.218Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/assets/img/t_fff.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:06.081Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/assets/img/scritta.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:05.936Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/assets/img/slide4.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:05.792Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/assets/img/slide3.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:05.515Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/assets/img/slide2.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:05.000Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/assets/img/slide1.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:04.113Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/assets/img/t_red.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:03.592Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/assets/img/menu.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:03.448Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/assets/img/mail.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:03.311Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/assets/img/tel.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:03.169Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/assets/img/close.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:03.027Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/assets/img/logo.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:02.884Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/opere-realizzate/28",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:02.735Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/assets/img/top.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:02.337Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/assets/img/to_fff.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:02.196Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1651840759_4.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:02.052Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1651839986_3.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:01.908Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1651839906_3.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:01.764Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1651839763_3.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:01.619Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1762419778_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:01.349Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1650456671.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:00.940Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/assets/img/arrowred.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:00.661Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/assets/img/t_fff.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:00.523Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/assets/img/scritta.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:00.380Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/assets/img/slide4.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:04:00.231Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/assets/img/slide3.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:59.959Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/assets/img/slide2.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:59.568Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/assets/img/slide1.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:59.041Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/assets/img/t_red.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:58.529Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/assets/img/menu.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:58.383Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/assets/img/mail.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:58.241Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/assets/img/tel.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:58.097Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/assets/img/close.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:57.953Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/assets/img/logo.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:57.806Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/opere-realizzate/24",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:57.661Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/opere-realizzate/14",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:57.505Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/opere-realizzate/13",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:57.351Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/opere-realizzate/11",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:57.190Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/opere-realizzate/28",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:57.040Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/opere-realizzate/4",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:56.883Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/contatti",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:56.726Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/certificazioni",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:56.573Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/realizzazioni",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:56.031Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/chi-siamo",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:55.883Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/opere-realizzate/23",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:55.477Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/opere-realizzate/22",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:55.324Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/opere-realizzate/21",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:55.182Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/opere-realizzate/20",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:55.026Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/opere-realizzate/19",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:54.870Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/opere-realizzate/18",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:54.708Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/opere-realizzate/17",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:54.553Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/opere-realizzate/16",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:54.396Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/opere-realizzate/15",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:54.244Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/opere-realizzate/12",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:54.088Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/opere-realizzate/6",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:53.933Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/opere-realizzate/26",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:53.774Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/opere-realizzate",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:51.833Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/opere-in-corso",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:51.659Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/chi-siamo/consulenza.html",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:51.502Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/opere-realizzate/24",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:51.354Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/opere-realizzate/14",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:51.200Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/opere-realizzate/13",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:51.055Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/opere-realizzate/11",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:50.904Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/opere-realizzate/4",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:50.754Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/contatti",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:50.601Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/certificazioni",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:50.454Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/realizzazioni",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:49.894Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/chi-siamo",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:49.736Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://impresacogeb.it/",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:49.582Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:49.416Z",
+      "title": "Impresa CO.GE.B. srl Costruzioni Generali"
+    },
+    {
+      "siteName": "San Carlo Sviluppo",
+      "url": "https://sancarlosviluppo.com/wp-content/uploads/2026/05/2025_12_08-Vista_01_Via-Bordoni_BRD.webp",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:48.293Z"
+    },
+    {
+      "siteName": "San Carlo Sviluppo",
+      "url": "https://sancarlosviluppo.com/wp-content/uploads/2026/05/2026_02_20-Vista-Gioia-sud_MUZ.webp",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:47.695Z"
+    },
+    {
+      "siteName": "San Carlo Sviluppo",
+      "url": "https://sancarlosviluppo.com/wp-content/uploads/2023/02/vista_03-scaled-1.webp",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:47.091Z"
+    },
+    {
+      "siteName": "San Carlo Sviluppo",
+      "url": "https://sancarlosviluppo.com/wp-content/uploads/2023/02/TRENTA5.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:46.249Z"
+    },
+    {
+      "siteName": "San Carlo Sviluppo",
+      "url": "https://sancarlosviluppo.com/wp-content/uploads/2023/02/Trentacoste_vista-12-diurna-3500px-scaled-1.webp",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:45.526Z"
+    },
+    {
+      "siteName": "San Carlo Sviluppo",
+      "url": "https://sancarlosviluppo.com/wp-content/uploads/2023/02/VITTORPISANI2.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:44.548Z"
+    },
+    {
+      "siteName": "San Carlo Sviluppo",
+      "url": "https://sancarlosviluppo.com/wp-content/uploads/2023/02/VITTORPISANI1.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:43.576Z"
+    },
+    {
+      "siteName": "San Carlo Sviluppo",
+      "url": "https://sancarlosviluppo.com/wp-content/uploads/2020/04/Settimo-terminato-6.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:42.571Z"
+    },
+    {
+      "siteName": "San Carlo Sviluppo",
+      "url": "https://sancarlosviluppo.com/wp-content/uploads/2020/04/Settimo-terminato-9.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:41.748Z"
+    },
+    {
+      "siteName": "San Carlo Sviluppo",
+      "url": "https://sancarlosviluppo.com/wp-content/uploads/2020/04/Settimo-terminato-8.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:40.913Z"
+    },
+    {
+      "siteName": "San Carlo Sviluppo",
+      "url": "https://sancarlosviluppo.com/wp-content/uploads/2020/02/Via-Mola-7-scaled.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:39.997Z"
+    },
+    {
+      "siteName": "San Carlo Sviluppo",
+      "url": "https://sancarlosviluppo.com/wp-content/uploads/2020/02/Via-Mola-3-scaled.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:38.944Z"
+    },
+    {
+      "siteName": "San Carlo Sviluppo",
+      "url": "https://sancarlosviluppo.com/wp-content/uploads/2020/02/Via-Mola-1-scaled.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:37.749Z"
+    },
+    {
+      "siteName": "San Carlo Sviluppo",
+      "url": "https://sancarlosviluppo.com/wp-content/uploads/2020/02/Valparaiso7_esterna04_rev01_mod-scaled.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:36.766Z"
+    },
+    {
+      "siteName": "San Carlo Sviluppo",
+      "url": "https://sancarlosviluppo.com/wp-content/uploads/2020/02/Valparaiso7_esterna03_rev00_mod-scaled.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:35.701Z"
+    },
+    {
+      "siteName": "San Carlo Sviluppo",
+      "url": "https://sancarlosviluppo.com/wp-content/uploads/2020/02/Valparaiso7_esterna01_rev02-scaled.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:34.529Z"
+    },
+    {
+      "siteName": "San Carlo Sviluppo",
+      "url": "https://sancarlosviluppo.com/wp-content/uploads/2020/02/contact.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:33.353Z"
+    },
+    {
+      "siteName": "San Carlo Sviluppo",
+      "url": "https://sancarlosviluppo.com/wp-content/uploads/2020/02/phone.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:32.998Z"
+    },
+    {
+      "siteName": "San Carlo Sviluppo",
+      "url": "https://sancarlosviluppo.com/wp-content/uploads/2020/02/pin-info.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:32.627Z"
+    },
+    {
+      "siteName": "San Carlo Sviluppo",
+      "url": "https://sancarlosviluppo.com/wp-content/themes/sancarlo/dist/images/icons/zoom.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:32.270Z"
+    },
+    {
+      "siteName": "San Carlo Sviluppo",
+      "url": "https://sancarlosviluppo.com/wp-content/uploads/2020/02/law.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:31.899Z"
+    },
+    {
+      "siteName": "San Carlo Sviluppo",
+      "url": "https://sancarlosviluppo.com/wp-content/uploads/2020/02/buildings-not-sold.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:31.549Z"
+    },
+    {
+      "siteName": "San Carlo Sviluppo",
+      "url": "https://sancarlosviluppo.com/wp-content/uploads/2020/02/buildings.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:31.172Z"
+    },
+    {
+      "siteName": "San Carlo Sviluppo",
+      "url": "https://sancarlosviluppo.com/wp-content/uploads/2020/02/promotion.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:30.794Z"
+    },
+    {
+      "siteName": "San Carlo Sviluppo",
+      "url": "https://sancarlosviluppo.com/wp-content/themes/sancarlo/dist/images/icons/close.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:30.424Z"
+    },
+    {
+      "siteName": "San Carlo Sviluppo",
+      "url": "https://sancarlosviluppo.com/wp-content/themes/sancarlo/dist/images/icons/menu.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:30.058Z"
+    },
+    {
+      "siteName": "San Carlo Sviluppo",
+      "url": "https://sancarlosviluppo.com/wp-content/themes/sancarlo/dist/images/logo.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:29.688Z"
+    },
+    {
+      "siteName": "San Carlo Sviluppo",
+      "url": "https://sancarlosviluppo.com/progetti/milano-bordoni",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:27.034Z",
+      "title": "MILANO BORDONI - San Carlo"
+    },
+    {
+      "siteName": "San Carlo Sviluppo",
+      "url": "https://sancarlosviluppo.com/progetti/milano-gioia",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:23.990Z",
+      "title": "MILANO GIOIA - San Carlo"
+    },
+    {
+      "siteName": "San Carlo Sviluppo",
+      "url": "https://sancarlosviluppo.com/progetti/milano-trentacoste",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:21.006Z",
+      "title": "Milano Trentacoste: avanguardia del rinnovamento urbano"
+    },
+    {
+      "siteName": "San Carlo Sviluppo",
+      "url": "https://sancarlosviluppo.com/progetti/milano-vittor-pisani",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:18.047Z",
+      "title": "Milano Vittor Pisani: nuovi spazi di verde inedito"
+    },
+    {
+      "siteName": "San Carlo Sviluppo",
+      "url": "https://sancarlosviluppo.com/progetti/residenza-leopardi",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:14.851Z",
+      "title": "Residenza Leopardi: una nuova direzione"
+    },
+    {
+      "siteName": "San Carlo Sviluppo",
+      "url": "https://sancarlosviluppo.com/progetti/milano-mola-nuvolone",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:11.907Z",
+      "title": "Milano Mola Nuvolone: innovazione certificata"
+    },
+    {
+      "siteName": "San Carlo Sviluppo",
+      "url": "https://sancarlosviluppo.com/progetti/milano-salaino",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:08.931Z",
+      "title": "Milano Salaino: un nuovo benessere abitativo"
+    },
+    {
+      "siteName": "San Carlo Sviluppo",
+      "url": "https://sancarlosviluppo.com/san-carlo-sviluppo-immobiliare",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:05.834Z",
+      "title": "San Carlo Sviluppo Immobiliare: una moderna società di sviluppo di interventi immobiliari residenziali a Monza."
+    },
+    {
+      "siteName": "San Carlo Sviluppo",
+      "url": "https://sancarlosviluppo.com/contatti",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:03:02.853Z",
+      "title": "San Carlo Sviluppo Immobiliare: contattaci per richiedere informazioni."
+    },
+    {
+      "siteName": "San Carlo Sviluppo",
+      "url": "https://sancarlosviluppo.com/privacy-policy",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:59.906Z",
+      "title": "San Carlo Sviluppo Immobiliare: la nostra privacy policy"
+    },
+    {
+      "siteName": "San Carlo Sviluppo",
+      "url": "https://sancarlosviluppo.com/cookie-policy",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:56.876Z",
+      "title": "San Carlo Sviluppo Immobiliare: la nostra cookie policy"
+    },
+    {
+      "siteName": "San Carlo Sviluppo",
+      "url": "https://sancarlosviluppo.com/sviluppo-immobiliare",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:53.915Z",
+      "title": "San Carlo Sviluppo Immobiliare: premium experience."
+    },
+    {
+      "siteName": "San Carlo Sviluppo",
+      "url": "https://sancarlosviluppo.com/progetti-immobiliari-milano",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:50.888Z",
+      "title": "San Carlo Sviluppo Immobiliare: realizziamo progetti immobiliari a milano con design urbano contemporaneo."
+    },
+    {
+      "siteName": "San Carlo Sviluppo",
+      "url": "https://sancarlosviluppo.com/",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:47.920Z",
+      "title": "San Carlo Sviluppo Immobiliare: Cinquant’anni di esperienza al servizio dell’innovazione."
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/portfolio/page/2?woo_ajax=1",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:36.451Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/AdobeStock_140221951-500x500.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:35.672Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/AdobeStock_140221951-150x150.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:35.541Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Cameretta_250123_zaino-1536x1024.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:35.407Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Cameretta_250123_zaino-768x512.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:35.270Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Cameretta_250123_zaino-1200x800.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:35.135Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Cameretta_250123_zaino-400x267.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:35.000Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_vista8_giardino-privato_REV03-1536x1024.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:34.865Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_vista8_giardino-privato_REV03-768x512.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:34.714Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_vista8_giardino-privato_REV03-1200x800.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:34.579Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_vista8_giardino-privato_REV03-400x267.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:34.443Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_living_PT-1536x1024.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:34.307Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_living_PT-768x512.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:34.171Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_living_PT-1200x800.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:34.035Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_living_PT-400x267.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:33.898Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Bedroom-appartamento-9_02_madia-magnolia-1536x1024.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:33.762Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Bedroom-appartamento-9_02_madia-magnolia-768x512.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:33.622Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Bedroom-appartamento-9_02_madia-magnolia-1200x800.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:33.484Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Bedroom-appartamento-9_02_madia-magnolia-400x267.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:33.350Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/AdobeStock_140221951-600x600.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:33.214Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/Living-Now.gif",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:33.082Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Cameretta_250123_zaino.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:32.822Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_vista8_giardino-privato_REV03.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:32.565Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Bedroom-appartamento-9_02_madia-magnolia.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:32.300Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/vt-icon_active-1.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:32.046Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/3098-9-3loc-page-00002.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:31.911Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_living_PT.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:31.779Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/10/04a.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:31.512Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Terrace_02_hanging-520x680.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:31.378Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_vista8_giardino-privato_REV03-520x680.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:31.183Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Living-ultimo-piano_07-copia-2-520x680.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:31.050Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/tablet-pc-with-smart-home-settings-screen-768x531.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:30.915Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/AdobeStock_223531792-768x512.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:30.784Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/12/area-book-crossing-768x512.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:30.650Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/12/Biblioteca-degli-attrezzi-1-768x512.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:30.517Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/close-up-man-holding-his-white-bicycle-768x512.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:30.382Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/view-from-business-startup-teamwork-concept-startup-partners-sitting-coworking-space-talking-about-future-project-looking-through-examples-work-laptop-digital-tablet-768x512.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:30.249Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/smiling-classmates-sitting-row-playground-768x512.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:30.113Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/AdobeStock_133149645-768x512.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:29.980Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/man-with-keys-new-car-with-blurred-car-background-buying-new-car-credit-acquisition-new-modern-car-768x512.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:29.830Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/AdobeStock_216466951-768x512.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:29.698Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/AdobeStock_638346730-768x512.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:29.564Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/AdobeStock_140221951-500x450.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:29.432Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/AdobeStock_638346730-500x450.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:29.296Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/04/pallino.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:29.164Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/04/noun-hand-shake-7584668.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:29.033Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/04/noun-sale-223671.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:28.901Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/04/heart.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:28.769Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/04/universita.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:28.608Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/04/plane.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:28.477Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/04/highway.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:28.346Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/04/noun-metro-7442026.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:28.214Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Cameretta_250123_zaino-150x150.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:28.078Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Bedroom-appartamento-9_02_madia-magnolia-150x150.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:27.945Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/11/02-1741x2048.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:27.811Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/11/02-1305x1536.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:27.548Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/11/02-768x904.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:27.403Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/11/02-680x800.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:27.264Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/11/02-255x300.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:27.128Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Cameretta_250123_zaino-800x800.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:26.994Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/Trentacoste_Bedroom-appartamento-9_02_madia-magnolia-800x800.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:26.860Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/11/02.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:26.725Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/Koine_Trentacoste_Vista-10_Frontale_rev00-150x150.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:26.459Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/11/01-1741x2048.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:26.326Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/11/01-1305x1536.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:26.060Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/11/01-768x904.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:25.921Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/11/01-680x800.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:25.783Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/11/01-255x300.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:25.649Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/01-768x496.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:25.513Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/01-400x258.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:25.378Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/AdobeStock_218496887-1536x1025.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:25.242Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/AdobeStock_218496887-768x512.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:24.979Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/AdobeStock_218496887-1199x800.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:24.840Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/AdobeStock_218496887-400x267.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:24.581Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/ristoranti-1536x821.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:24.439Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/ristoranti-768x410.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:24.302Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/ristoranti-1300x695.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:24.166Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/ristoranti-400x214.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:24.025Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/supermarket-1536x821.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:23.890Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/supermarket-768x410.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:23.751Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/supermarket-1300x695.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:23.616Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/supermarket-400x214.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:23.478Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/farmacie-e-ospedali-1536x821.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:23.341Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/farmacie-e-ospedali-768x410.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:23.206Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/farmacie-e-ospedali-1300x695.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:23.063Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/farmacie-e-ospedali-400x214.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:22.931Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/scuole-e-sport-1000x534.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:22.796Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/scuole-e-sport-100x53.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:22.656Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/scuole-e-sport-1536x821.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:22.521Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/scuole-e-sport-768x410.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:22.386Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/scuole-e-sport-1300x695.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:22.249Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/scuole-e-sport-400x214.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:22.114Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/trasporti22-1000x534.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:21.980Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/trasporti22-100x53.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:21.849Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/trasporti22-1536x821.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:21.715Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/trasporti22-768x410.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:21.557Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/trasporti22-1300x695.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:21.421Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/trasporti22-400x214.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:21.285Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/Koine_Trentacoste_Vista-10_Frontale_rev00-500x500.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:21.148Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/11/01.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:21.014Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/01.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:20.744Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/AdobeStock_218496887.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:20.486Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/ristoranti.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:19.841Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/supermarket.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:19.564Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/farmacie-e-ospedali.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:19.297Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/scuole-e-sport.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:18.915Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/trasporti22.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:18.272Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/ristoranti.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:17.887Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/supermarket.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:17.755Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/farmacie.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:17.623Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/scuole.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:17.493Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/trasporti.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:17.362Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/logo-adviser-768x177.png",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:17.230Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/logo-adviser-400x92.png",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:16.961Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/logo-adviser.png",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:02:16.454Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/ortix_logo_white_DEF-2048x1617.png",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:52.424Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/ortix_logo_white_DEF-1536x1212.png",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:52.300Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/ortix_logo_white_DEF-768x606.png",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:52.168Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/ortix_logo_white_DEF-300x237.png",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:52.045Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/logototalwhite-1-768x188.png",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:51.914Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/logototalwhite-1-400x98.png",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:51.790Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/Koine_Trentacoste_Vista-10_Frontale_rev00-1.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:51.654Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/Koine_Trentacoste_Vista-10_Frontale_rev00-1-1741x2048.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:51.407Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/Koine_Trentacoste_Vista-10_Frontale_rev00-1-1305x1536.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:51.148Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/Koine_Trentacoste_Vista-10_Frontale_rev00-1-768x904.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:51.020Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/Koine_Trentacoste_Vista-10_Frontale_rev00-1-255x300.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:50.885Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2024/11/Logo_AbitareCo_advisor-broker_negativo.svg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:50.760Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/ortix_logo_white_DEF-1024x808.png",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:50.635Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/09/1-2loc.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:50.504Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/09/19-2loc.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:50.375Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2026/04/30V-3loc.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:50.241Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/09/7-3loc.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:50.113Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/09/84-4loc.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:49.978Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/12/35-4loc-var.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:49.737Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/logototalwhite-1.png",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:49.603Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/portrait-young-attractive-couple-500x400.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:49.480Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/AdobeStock_499890148-500x400.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:49.348Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/10/01-scaled.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:49.223Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/10/02-scaled.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:48.714Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/Koine_Trentacoste_Vista-10_Frontale_rev00-1-680x800.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:48.118Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2025/01/ortixlogow.png",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:47.985Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2024/11/Abitareco_Informativa-2024_siti-cantiere-Contitolarita.pdf",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:47.626Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/wp-content/uploads/2024/11/Abitareco_Privacy-Policy-2024_siti-cantiere-Co-titolarita.pdf",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:46.743Z"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/author/wp_4850431",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:46.351Z",
+      "title": "wp_4850431, Autore presso Ortix - Milano - Ortica"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/project-cat/lighting",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:45.162Z",
+      "title": "Lighting Archivi - Ortix - Milano - Ortica"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/project-cat/kitchen",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:44.039Z",
+      "title": "Kitchen Archivi - Ortix - Milano - Ortica"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/project-cat/furniture",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:42.914Z",
+      "title": "Furniture Archivi - Ortix - Milano - Ortica"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/project-cat/decor",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:41.805Z",
+      "title": "Decor Archivi - Ortix - Milano - Ortica"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/project-cat/accessories",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:40.553Z",
+      "title": "Accessories Archivi - Ortix - Milano - Ortica"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/woodmart_slider/books-slider",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:39.336Z",
+      "title": "Books slider Archivi - Ortix - Milano - Ortica"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/tag/trends",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:38.213Z",
+      "title": "Trends Archivi - Ortix - Milano - Ortica"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/tag/table",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:37.091Z",
+      "title": "Table Archivi - Ortix - Milano - Ortica"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/tag/style",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:35.981Z",
+      "title": "Style Archivi - Ortix - Milano - Ortica"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/tag/sofa",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:34.930Z",
+      "title": "Sofa Archivi - Ortix - Milano - Ortica"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/tag/news",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:33.843Z",
+      "title": "News Archivi - Ortix - Milano - Ortica"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/tag/inspiratio",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:32.660Z",
+      "title": "Inspiratio Archivi - Ortix - Milano - Ortica"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/tag/guide",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:31.441Z",
+      "title": "Guide Archivi - Ortix - Milano - Ortica"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/tag/furniture",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:30.368Z",
+      "title": "Furniture Archivi - Ortix - Milano - Ortica"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/tag/chair",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:29.281Z",
+      "title": "Chair Archivi - Ortix - Milano - Ortica"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/category/inspiration",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:28.101Z",
+      "title": "Inspiration Archivi - Ortix - Milano - Ortica"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/category/furniture",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:26.987Z",
+      "title": "Furniture Archivi - Ortix - Milano - Ortica"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/category/design-trends",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:25.889Z",
+      "title": "Design trends Archivi - Ortix - Milano - Ortica"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/category/decoration",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:24.610Z",
+      "title": "Decoration Archivi - Ortix - Milano - Ortica"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/portfolio/suspendisse-quam-at-vestibulum",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:23.431Z",
+      "title": "Suspendisse quam at vestibulum - Ortix - Milano - Ortica"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/portfolio/netus-eu-mollis-hac-dignis",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:22.237Z",
+      "title": "Netus eu mollis hac dignis - Ortix - Milano - Ortica"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/portfolio/et-vestibulum-quis-a-suspendisse",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:20.962Z",
+      "title": "Et vestibulum quis a suspendisse - Ortix - Milano - Ortica"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/portfolio/imperdiet-mauris-a-nontin",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:19.797Z",
+      "title": "Imperdiet mauris a nontin - Ortix - Milano - Ortica"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/portfolio/venenatis-nam-phasellus",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:18.599Z",
+      "title": "Venenatis nam phasellus - Ortix - Milano - Ortica"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/portfolio/leo-uteu-ullamcorper",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:17.419Z",
+      "title": "Leo uteu ullamcorper - Ortix - Milano - Ortica"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/portfolio/a-lacus-bibendum-pulvinar",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:16.099Z",
+      "title": "A lacus bibendum pulvinar - Ortix - Milano - Ortica"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/portfolio/rhoncus-quisque-sollicitudin",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:14.642Z",
+      "title": "Rhoncus quisque sollicitudin - Ortix - Milano - Ortica"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/portfolio/potenti-parturient-parturie",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:13.444Z",
+      "title": "Potenti parturient parturie - Ortix - Milano - Ortica"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/portfolio",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:11.910Z",
+      "title": "Archivi Portfolio - Ortix - Milano - Ortica"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/residenze",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:10.881Z",
+      "title": "Residenze - Ortix - Milano - Ortica"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/plus-e-dotazioni",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:09.719Z",
+      "title": "Plus e Dotazioni - Ortix - Milano - Ortica"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/investitori",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:08.530Z",
+      "title": "Investitori - Ortix - Milano - Ortica"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/progetto",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:07.332Z",
+      "title": "Progetto - Ortix - Milano - Ortica"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/location",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:06.071Z",
+      "title": "Location - Ortix - Milano - Ortica"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/thankyou",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:04.722Z",
+      "title": "Thankyou - Ortix - Milano - Ortica"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/contatti",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:03.479Z",
+      "title": "Contatti - Ortix - Milano - Ortica"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/2021/08/27/exploring-atlantas-modern-homes",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:02.286Z",
+      "title": "Exploring Atlanta’s modern homes - Ortix - Milano - Ortica"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/2021/08/27/green-interior-design-inspiration",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:01:00.973Z",
+      "title": "Green interior design inspiration - Ortix - Milano - Ortica"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/2021/08/27/collar-brings-back-coffee-brewing-ritual",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:00:59.587Z",
+      "title": "Collar brings back coffee brewing ritual - Ortix - Milano - Ortica"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/2021/08/27/reinterprets-the-classic-bookshelf",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:00:58.017Z",
+      "title": "Reinterprets the classic bookshelf - Ortix - Milano - Ortica"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/2021/08/27/creative-water-features-and-exterior",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:00:56.692Z",
+      "title": "Creative water features and exterior - Ortix - Milano - Ortica"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/2021/08/26/minimalist-japanese-inspired-furniture",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:00:55.199Z",
+      "title": "Minimalist Japanese-inspired furniture - Ortix - Milano - Ortica"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/2021/08/26/new-home-decor-from-john-doerson",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:00:53.854Z",
+      "title": "New home decor from John Doerson - Ortix - Milano - Ortica"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/2021/08/26/the-big-design-wall-likes-pictures",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:00:52.560Z",
+      "title": "The big design: Wall likes pictures - Ortix - Milano - Ortica"
+    },
+    {
+      "siteName": "Ortix",
+      "url": "https://www.ortix.it/",
+      "kind": "html",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:00:50.742Z",
+      "title": "Home - Ortix - Milano - Ortica"
+    }
+  ],
+  "recentResources": [
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1651840680_4.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:05:04.019Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1651840595_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:05:03.874Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1651840527_2.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:05:03.730Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1651840375_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:05:03.585Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1651840311_2.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:05:03.442Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1660228139_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:05:03.295Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1651840177_2.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:05:03.154Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1651840114_1.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:05:03.008Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1651840057_2.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:05:02.864Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1702553122_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:05:02.715Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1660226272_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:05:02.569Z"
+    },
+    {
+      "siteName": "Impresa Cogeb",
+      "url": "https://www.impresacogeb.it/public/gallery/images/1719495804_0.jpg",
+      "kind": "file",
+      "status": 200,
+      "lastSeenAt": "2026-08-01T09:05:02.288Z"
+    }
+  ],
+  "issues": [],
+  "knownIssues": [
+    {
+      "siteName": "ortix",
+      "severity": "known",
+      "url": "https://www.ortix.it/wp-content/uploads/2021/08/wd-blog-9.jpg",
+      "message": "HTTP 404",
+      "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+    },
+    {
+      "siteName": "ortix",
+      "severity": "known",
+      "url": "https://www.ortix.it/wp-content/uploads/2021/08/wd-blog-8.jpg",
+      "message": "HTTP 404",
+      "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+    },
+    {
+      "siteName": "ortix",
+      "severity": "known",
+      "url": "https://www.ortix.it/wp-content/uploads/2021/07/wd-blog-4.jpg",
+      "message": "HTTP 404",
+      "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+    },
+    {
+      "siteName": "ortix",
+      "severity": "known",
+      "url": "https://www.ortix.it/wp-content/uploads/2021/08/wd-blog-5.jpg",
+      "message": "HTTP 404",
+      "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+    },
+    {
+      "siteName": "ortix",
+      "severity": "known",
+      "url": "https://www.ortix.it/?p=361%2F",
+      "message": "HTTP 404",
+      "reason": "URL legacy WordPress già noti"
+    },
+    {
+      "siteName": "ortix",
+      "severity": "known",
+      "url": "https://www.ortix.it/?p=344%2F",
+      "message": "HTTP 404",
+      "reason": "URL legacy WordPress già noti"
+    },
+    {
+      "siteName": "ortix",
+      "severity": "known",
+      "url": "https://www.ortix.it/?p=334%2F",
+      "message": "HTTP 404",
+      "reason": "URL legacy WordPress già noti"
+    },
+    {
+      "siteName": "ortix",
+      "severity": "known",
+      "url": "https://www.ortix.it/wp-content/uploads/2021/10/brand-Rosenthal-blog.png",
+      "message": "HTTP 404",
+      "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+    },
+    {
+      "siteName": "ortix",
+      "severity": "known",
+      "url": "https://www.ortix.it/wp-content/uploads/2021/08/post-1-image-1.jpg",
+      "message": "HTTP 404",
+      "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+    },
+    {
+      "siteName": "ortix",
+      "severity": "known",
+      "url": "https://www.ortix.it/wp-content/uploads/2021/08/post-1-img-1.jpg",
+      "message": "HTTP 404",
+      "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+    },
+    {
+      "siteName": "ortix",
+      "severity": "known",
+      "url": "https://www.ortix.it/wp-content/uploads/2021/08/post-1-img-3.jpg",
+      "message": "HTTP 404",
+      "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+    },
+    {
+      "siteName": "ortix",
+      "severity": "known",
+      "url": "https://www.ortix.it/wp-content/uploads/2021/08/post-1-img-2.jpg",
+      "message": "HTTP 404",
+      "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+    },
+    {
+      "siteName": "ortix",
+      "severity": "known",
+      "url": "https://www.ortix.it/wp-content/uploads/2021/08/post-1-img-4.jpg",
+      "message": "HTTP 404",
+      "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+    },
+    {
+      "siteName": "ortix",
+      "severity": "known",
+      "url": "https://www.ortix.it/wp-content/uploads/2021/08/post-1-image-2.jpg",
+      "message": "HTTP 404",
+      "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+    },
+    {
+      "siteName": "ortix",
+      "severity": "known",
+      "url": "https://www.ortix.it/wp-content/uploads/2021/08/post-1-gallery-1.jpg",
+      "message": "HTTP 404",
+      "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+    },
+    {
+      "siteName": "ortix",
+      "severity": "known",
+      "url": "https://www.ortix.it/wp-content/uploads/2021/08/post-1-gallery-2.jpg",
+      "message": "HTTP 404",
+      "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+    },
+    {
+      "siteName": "ortix",
+      "severity": "known",
+      "url": "https://www.ortix.it/wp-content/uploads/2021/08/post-1-gallery-3.jpg",
+      "message": "HTTP 404",
+      "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+    },
+    {
+      "siteName": "ortix",
+      "severity": "known",
+      "url": "https://www.ortix.it/wp-content/uploads/2021/08/post-1-gallery-4.jpg",
+      "message": "HTTP 404",
+      "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+    },
+    {
+      "siteName": "ortix",
+      "severity": "known",
+      "url": "https://www.ortix.it/wp-content/uploads/2021/08/post-1-gallery-5.jpg",
+      "message": "HTTP 404",
+      "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+    },
+    {
+      "siteName": "ortix",
+      "severity": "known",
+      "url": "https://www.ortix.it/wp-content/uploads/2021/08/post-1-gallery-6.jpg",
+      "message": "HTTP 404",
+      "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+    },
+    {
+      "siteName": "ortix",
+      "severity": "known",
+      "url": "https://www.ortix.it/wp-content/uploads/2021/08/post-1-gallery-7.jpg",
+      "message": "HTTP 404",
+      "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+    },
+    {
+      "siteName": "ortix",
+      "severity": "known",
+      "url": "https://www.ortix.it/wp-content/uploads/2021/08/post-1-gallery-8.jpg",
+      "message": "HTTP 404",
+      "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+    },
+    {
+      "siteName": "ortix",
+      "severity": "known",
+      "url": "https://www.ortix.it/wp-content/uploads/2021/08/post-1-image-3.jpg",
+      "message": "HTTP 404",
+      "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+    },
+    {
+      "siteName": "ortix",
+      "severity": "known",
+      "url": "https://www.ortix.it/wp-content/uploads/2021/08/post-1-image-4.jpg",
+      "message": "HTTP 404",
+      "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+    },
+    {
+      "siteName": "ortix",
+      "severity": "known",
+      "url": "https://www.ortix.it/wp-content/uploads/2021/08/post-1-image-5.jpg",
+      "message": "HTTP 404",
+      "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+    },
+    {
+      "siteName": "ortix",
+      "severity": "known",
+      "url": "https://www.ortix.it/wp-content/uploads/2021/08/post-1-image-6.jpg",
+      "message": "HTTP 404",
+      "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+    },
+    {
+      "siteName": "ortix",
+      "severity": "known",
+      "url": "https://www.ortix.it/wp-content/uploads/2021/08/wd-blog-7.jpg",
+      "message": "HTTP 404",
+      "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+    },
+    {
+      "siteName": "ortix",
+      "severity": "known",
+      "url": "https://www.ortix.it/wp-content/uploads/2021/08/post-example-1-image-1.jpg",
+      "message": "HTTP 404",
+      "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+    },
+    {
+      "siteName": "ortix",
+      "severity": "known",
+      "url": "https://www.ortix.it/wp-content/uploads/2021/08/post-example-1-image-2.jpg",
+      "message": "HTTP 404",
+      "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+    },
+    {
+      "siteName": "ortix",
+      "severity": "known",
+      "url": "https://www.ortix.it/wp-content/uploads/2021/08/post-example-1-image-3.jpg",
+      "message": "HTTP 404",
+      "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+    },
+    {
+      "siteName": "ortix",
+      "severity": "known",
+      "url": "https://www.ortix.it/wp-content/uploads/2021/08/post-example-1-image-4.jpg",
+      "message": "HTTP 404",
+      "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+    },
+    {
+      "siteName": "ortix",
+      "severity": "known",
+      "url": "https://www.ortix.it/wp-content/uploads/2021/08/portfolio-1.jpg",
+      "message": "HTTP 404",
+      "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+    },
+    {
+      "siteName": "ortix",
+      "severity": "known",
+      "url": "https://www.ortix.it/wp-content/uploads/2021/08/portfolio-3.jpg",
+      "message": "HTTP 404",
+      "reason": "Asset WordPress storici non rilevanti per il monitor operativo"
+    }
+  ],
+  "changes": [
+    {
+      "siteName": "ortix",
+      "type": "Modificato",
+      "url": "https://www.ortix.it/residenze",
+      "title": "Residenze - Ortix - Milano - Ortica"
+    }
+  ],
+  "totals": {
+    "enabledSites": 3,
+    "urls": 575,
+    "htmlUrls": 137,
+    "fileUrls": 438,
+    "changes": 1,
+    "issues": 0,
+    "knownIssues": 33
+  }
+}
