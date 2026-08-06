@@ -2,9 +2,12 @@
 
 Data: 2026-08-06
 
-Stato: Accettata
+Stato: Superata da 0008
 
 ## Contesto
+
+> ADR 0008 sostituisce il canale di commit degli output e amplia il Ruleset con
+> `codex-review`; questa ADR resta come traccia della configurazione precedente.
 
 React Doctor deve bloccare warning ed errori sia nel workflow dedicato sia nel
 gate generale. ADR 0005 aveva rimosso i required check perché il `GITHUB_TOKEN`

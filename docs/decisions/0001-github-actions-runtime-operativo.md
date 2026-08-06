@@ -15,8 +15,9 @@ invio email quando necessario e commit degli output.
 
 Usare GitHub Actions come runtime operativo MVP.
 
-Il workflow su `main` esegue test, build, scan, commit degli output applicativi e
-fallisce solo per errori tecnici o email necessarie non inviate.
+Il workflow definito su `main` esegue test, build e scan, conserva gli output
+applicativi sul branch `sentinel-outputs` secondo ADR 0008 e fallisce solo per
+errori tecnici o email necessarie non inviate.
 
 ## Alternative considerate
 

@@ -31,6 +31,7 @@ Sentinel usa la root per ingresso operativo, configurazione e codice. Usa
 - `docs/decisions/0005-niente-ruleset-ci-su-main.md`: niente ruleset CI obbligatoria su `main`.
 - `docs/decisions/0006-gate-codex-review-exact-head.md`: gate Codex exact-HEAD e bootstrap.
 - `docs/decisions/0007-gate-ci-obbligatorio-su-main.md`: required check CI e compatibilità con gli output schedulati.
+- `docs/decisions/0008-output-operativi-su-branch-dedicato.md`: output schedulati su branch dedicato e gate Codex obbligatorio.
 
 ## Pubblicazione e operatività
 
@@ -42,7 +43,7 @@ Sentinel usa la root per ingresso operativo, configurazione e codice. Usa
 - `.github/PULL_REQUEST_TEMPLATE.md`: template PR.
 - `.github/ISSUE_TEMPLATE/`: template issue.
 - `.github/dependabot.yml`: manutenzione dipendenze npm e GitHub Actions.
-- `data/`, `snapshots/`, `reports/`: output applicativi tracciabili.
+- Branch `sentinel-outputs`: contiene esclusivamente `data/`, `snapshots/` e `reports/` come output applicativi tracciabili.
 
 ## Regole di manutenzione
 

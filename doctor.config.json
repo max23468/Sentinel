@@ -2,7 +2,7 @@
   "blocking": "warning",
   "scope": "full",
   "ignore": {
-    "files": ["dist-web/**", ".worktrees/**"],
+    "files": ["dist-web/**", "reports/**", ".worktrees/**"],
     "overrides": [
       {
         "files": ["src/scan.ts"],

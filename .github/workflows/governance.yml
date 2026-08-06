@@ -27,6 +27,7 @@ jobs:
           ruleset="$(curl --fail --silent --show-error "$ruleset_url")"
           test "$(jq -r '.target == "branch" and .conditions.ref_name.include == ["refs/heads/main"] and (.conditions.ref_name.exclude | length == 0)' <<< "$ruleset")" = true
           test "$(jq -r '.rules[] | select(.type == "required_status_checks") | .parameters.strict_required_status_checks_policy' <<< "$ruleset")" = true
-          test "$(jq -r '[.rules[] | select(.type == "required_status_checks") | .parameters.required_status_checks[] | "\(.context):\(.integration_id)"] | sort | join(",")' <<< "$ruleset")" = react-doctor:15368,verify:15368
+          test "$(jq -r '[.rules[] | select(.type == "required_status_checks") | .parameters.required_status_checks[] | "\(.context):\(.integration_id)"] | sort | join(",")' <<< "$ruleset")" = codex-review:15368,react-doctor:15368,verify:15368
           test "$(curl --fail --silent --show-error "$api/actions/workflows/react-doctor.yml" | jq -r .state)" = active
           test "$(curl --fail --silent --show-error "$api/actions/workflows/ci.yml" | jq -r .state)" = active
+          test "$(curl --fail --silent --show-error "$api/actions/workflows/codex-review-gate.yml" | jq -r .state)" = active

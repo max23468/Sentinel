@@ -39,10 +39,10 @@ Non negoziabili senza una nuova decisione esplicita:
   URL. Mai HTML completo, contenuti dietro autenticazione, risposte di form o
   dati raccolti fuori dal crawling pubblico dichiarato.
 - `data/`, `snapshots/` e `reports/` sono output applicativi committabili dal
-  workflow, non cache da ripulire.
+  workflow sul branch `sentinel-outputs`, non cache da ripulire.
 - Niente nuovi workflow, bot, release automation o branch protection senza
-  decisione esplicita: ADR 0005 documenta come una ruleset CI su `main` abbia
-  rotto il commit degli output.
+  decisione esplicita: ADR 0008 documenta la configurazione corrente del
+  Ruleset e del branch operativo.
 - Su siti pubblici, provider email, prezzi, limiti o policy variabili verifica
   la fonte ufficiale corrente e distingui fatto, fonte e assunzione.
 
