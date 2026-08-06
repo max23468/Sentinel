@@ -1,3 +1,5 @@
+import { once } from "node:events";
+import { createServer } from "node:http";
 import { describe, expect, it, vi } from "vitest";
 import { isPublicAddress, OutboundClient, pinnedLookup } from "../src/outbound.js";
 import type { SiteConfig } from "../src/types.js";
@@ -98,5 +100,31 @@ describe("hardening input remoti", () => {
 
     expect(dispatchers.size).toBe(1);
     expect(resolve).toHaveBeenCalledOnce();
+  });
+
+  it("usa un fetch compatibile con il dispatcher installato", async () => {
+    const server = createServer((_request, response) => response.end("ok"));
+    server.listen(0, "127.0.0.1");
+    await once(server, "listening");
+    const address = server.address();
+    if (!address || typeof address === "string") throw new Error("Fixture HTTP non disponibile.");
+
+    const localSite = {
+      ...site,
+      roots: [`http://example.test:${address.port}/`]
+    };
+    const client = new OutboundClient(localSite);
+    Object.defineProperty(client, "resolvePinnedAddresses", {
+      value: async () => [{ address: "127.0.0.1", family: 4 }]
+    });
+
+    try {
+      const response = await client.get(localSite.roots[0], { maxBytes: 10 });
+      expect(new TextDecoder().decode(response.body)).toBe("ok");
+    } finally {
+      await client.close();
+      server.close();
+      await once(server, "close");
+    }
   });
 });
