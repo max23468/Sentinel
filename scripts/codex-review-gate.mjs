@@ -305,23 +305,29 @@ async function main() {
           comment.pull_request_review_id === event.review.id &&
           isCurrentCodexFinding({ comment }, headSha),
       );
-      await setStatus(
-        repository,
-        headSha,
-        finding ? "failure" : "success",
-        finding
-          ? "Codex ha trovato problemi nell'ultimo commit"
-          : "Codex ha approvato l'ultimo commit",
-      );
-    } else if (finding) {
-      await setStatus(
-        repository,
-        headSha,
-        "failure",
-        "Codex ha trovato problemi nell'ultimo commit",
-      );
+      if (finding) {
+        await setStatus(
+          repository,
+          headSha,
+          "failure",
+          "Codex ha trovato problemi nell'ultimo commit",
+        );
+        return;
+      }
+      const statuses = await all(`/repos/${repository}/commits/${headSha}/statuses`);
+      const currentStatus = statuses.find((status) => status.context === "codex-review");
+      if (currentStatus && currentStatus.state !== "pending") return;
+    } else {
+      if (finding) {
+        await setStatus(
+          repository,
+          headSha,
+          "failure",
+          "Codex ha trovato problemi nell'ultimo commit",
+        );
+      }
+      return;
     }
-    return;
   }
   const reusesExistingReview =
     process.env.GITHUB_EVENT_NAME === "workflow_dispatch" || event.action === "reopened";

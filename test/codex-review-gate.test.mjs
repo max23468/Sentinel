@@ -451,4 +451,5 @@ test("un doppio errore API non lascia verde il job senza status", async () => {
   assert.match(source, /catch \(statusError\)[\s\S]*process\.exitCode = 1/);
   assert.match(source, /if \(!pullRequest\) \{\s*process\.exitCode = 1/);
   assert.match(source, /comment\.pull_request_review_id === event\.review\.id/);
+  assert.match(source, /currentStatus && currentStatus\.state !== "pending"/);
 });
