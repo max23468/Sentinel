@@ -1,7 +1,7 @@
 import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
 import { get } from "@vercel/blob";
-import { dashboardReportBlobPath } from "../../src/dashboard-publish.js";
+import { dashboardReportBlobPath, dashboardReportOutputUrl } from "../../src/dashboard-publish.js";
 import { resolveFromCwd } from "../../src/fs.js";
 import { requireDashboardAuth } from "../../web/auth.js";
 
@@ -22,18 +22,35 @@ export async function GET(request: Request): Promise<Response> {
 
   const localReports = await localReportsPromise;
   const content = localReports.get(fileName);
-  if (!content) return new Response("Report non trovato.", { status: 404 });
-  return markdownResponse(content);
+  if (content) return markdownResponse(content);
+
+  const outputResponse = await tryReadReportFromOutputs(fileName);
+  return outputResponse ?? new Response("Report non trovato.", { status: 404 });
+}
+
+async function tryReadReportFromOutputs(fileName: string): Promise<Response | undefined> {
+  try {
+    const response = await fetch(dashboardReportOutputUrl(fileName));
+    if (!response.ok) return undefined;
+    return markdownResponse(await response.text());
+  } catch {
+    return undefined;
+  }
 }
 
 async function tryReadReportFromBlob(fileName: string, ifNoneMatch: string | null): Promise<Response | undefined> {
   if (!process.env.BLOB_READ_WRITE_TOKEN) return undefined;
 
-  const result = await get(dashboardReportBlobPath(fileName), {
-    access: "private",
-    ifNoneMatch: ifNoneMatch ?? undefined,
-    useCache: false
-  });
+  let result;
+  try {
+    result = await get(dashboardReportBlobPath(fileName), {
+      access: "private",
+      ifNoneMatch: ifNoneMatch ?? undefined,
+      useCache: false
+    });
+  } catch {
+    return undefined;
+  }
 
   if (!result) return undefined;
 

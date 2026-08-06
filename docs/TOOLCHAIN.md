@@ -94,9 +94,8 @@ stati vuoti/errore/loading quando il diff li può alterare.
   assorbiti al termine.
 - Le PR verso `main` girano `CI` con il job obbligatorio `verify` e il workflow
   dedicato con il job obbligatorio `react-doctor`. La ruleset `main governance`
-  richiede entrambi con strict checking; `Governance` ne controlla mensilmente
-  la deriva. Il gate separato `codex-review` pubblica uno status exact-HEAD ma
-  non è ancora richiesto dal ruleset.
+  richiede entrambi e `codex-review` con strict checking; `Governance` ne
+  controlla mensilmente la deriva. Non sono configurati bypass.
 - Aggiornamenti dipendenze: Dependabot settimanale (npm + github-actions),
   minor/patch raggruppati. Le PR si mergiano a mano dopo aver controllato la CI:
   l'auto-merge richiede almeno un check obbligatorio su `main` e non è più
@@ -108,10 +107,10 @@ stati vuoti/errore/loading quando il diff li può alterare.
 - Non esiste VPS.
 - Tag Git `vX.Y.Z` e GitHub Release sono obbligatori per release del tool o della dashboard
   secondo ADR `docs/decisions/0003-tag-e-github-release.md`.
-- Il workflow esegue il gate completo, lo scan, genera `reports/dashboard.html`
-  e può committare `data/`, `snapshots/` e `reports/`. Prima del push diretto su
-  `main`, pubblica lo stesso SHA sul branch temporaneo `sentinel-output-check` e
-  vi attesta `react-doctor` e `verify`, poi rimuove il branch.
+- Il workflow esegue il gate completo, ripristina dal branch operativo
+  `sentinel-outputs`, esegue lo scan, genera `reports/dashboard.html` e committa
+  sullo stesso branch esclusivamente `data/`, `snapshots/` e `reports/`. Non
+  esegue codice dal branch operativo e non effettua push diretti su `main`.
 - Nel workflow operativo i valori email arrivano dai repository secrets `SENTINEL_*`.
 - Il workflow deve fallire se c'è un errore tecnico o se un'email necessaria non
   parte.

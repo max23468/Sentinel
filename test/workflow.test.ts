@@ -141,7 +141,7 @@ describe("workflow Sentinel", () => {
       blocking: "warning",
       scope: "full",
       ignore: {
-        files: ["dist-web/**", ".worktrees/**"],
+        files: ["dist-web/**", "reports/**", ".worktrees/**"],
         overrides: [
           {
             files: ["src/scan.ts"],
@@ -153,10 +153,20 @@ describe("workflow Sentinel", () => {
     expect(ciSource).toContain("name: verify");
     expect(ciSource).toContain("run: npm run check");
     expect(sentinelSource).toContain("run: npm run check");
-    expect(sentinelSource).toContain("for context in react-doctor verify");
+    expect(sentinelSource).toContain('output_branch="sentinel-outputs"');
+    expect(sentinelSource).toContain('output_remote_ref="refs/heads/$output_branch"');
+    expect(sentinelSource).toContain("git restore --source=\"$output_ref\"");
+    expect(sentinelSource).toContain('GIT_INDEX_FILE="$output_index" git read-tree --empty');
+    expect(sentinelSource).toContain('git push origin "${output_commit}:refs/heads/${output_branch}"');
+    expect(sentinelSource).not.toContain("statuses: write");
+    expect(sentinelSource).not.toContain("sentinel-output-check");
+    expect(sentinelSource).not.toContain("git push origin HEAD:main");
     expect(governanceSource).not.toContain("GH_TOKEN:");
     expect(governanceSource).toContain("curl --fail --silent --show-error");
     expect(governanceSource).toContain("strict_required_status_checks_policy");
-    expect(governanceSource).toContain("react-doctor:15368,verify:15368");
+    expect(governanceSource).toContain(
+      "codex-review:15368,react-doctor:15368,verify:15368"
+    );
+    expect(governanceSource).toContain("codex-review-gate.yml");
   });
 });

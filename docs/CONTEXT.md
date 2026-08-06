@@ -10,7 +10,8 @@
 - Dashboard web: app React su Vite pubblicabile su Vercel da CLI, con dati dinamici su
   Vercel Blob privato.
 - GitHub: repository pubblica `https://github.com/max23468/Sentinel`. Gli output
-  applicativi committati (`data/`, `snapshots/`, `reports/`) sono quindi
+  applicativi committati sul branch `sentinel-outputs` (`data/`, `snapshots/`,
+  `reports/`) sono quindi
   leggibili da chiunque.
 
 ## Fonte di verità

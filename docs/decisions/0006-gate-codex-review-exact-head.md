@@ -29,15 +29,14 @@ con dispatch solo dopo il merge.
 
 ## Interazione con ADR 0005
 
-ADR 0007 supera il divieto generale di ADR 0005 e rende obbligatori i gate CI
-compatibili con il commit schedulato degli output. `codex-review` resta escluso
-dal ruleset finché il workflow operativo non può produrne un esito automatico
-senza indebolire la semantica exact-HEAD.
+ADR 0007 supera il divieto generale di ADR 0005 e rende obbligatori i gate CI.
+ADR 0008 sposta gli output schedulati sul branch operativo dedicato e rende
+quindi `codex-review` obbligatorio su `main` senza bypass.
 
 ## Impatti
 
 - Sicurezza: il workflow non esegue codice della PR e usa permessi minimi.
-- Merge: lo status è exact-HEAD; senza un Ruleset resta informativo.
+- Merge: lo status exact-HEAD è richiesto dal Ruleset di `main`.
 - Runtime, deploy e release: invariati.
 
 ## Verifiche

@@ -8,7 +8,6 @@ on:
 
 permissions:
   contents: write
-  statuses: write
 
 concurrency:
   group: sentinel-scan
@@ -40,6 +39,15 @@ jobs:
       - name: Checkout
         if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
         uses: actions/checkout@v7
+
+      - name: Restore application outputs
+        if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
+        run: |
+          output_branch="sentinel-outputs"
+          output_remote_ref="refs/heads/$output_branch"
+          output_ref="refs/remotes/origin/$output_branch"
+          git fetch origin "$output_remote_ref:$output_ref"
+          git restore --source="$output_ref" --worktree -- data snapshots reports
 
       - name: Setup Node
         if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
@@ -137,30 +145,28 @@ jobs:
 
       - name: Commit application outputs
         if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           mkdir -p data snapshots reports
-          git add data snapshots reports
-          if git diff --cached --quiet; then
+          output_branch="sentinel-outputs"
+          output_remote_ref="refs/heads/$output_branch"
+          output_ref="refs/remotes/origin/$output_branch"
+          git fetch origin "$output_remote_ref:$output_ref"
+          output_dir="$(mktemp -d)"
+          output_index="$output_dir/index"
+          trap 'unlink "$output_index" 2>/dev/null || true; rmdir "$output_dir" 2>/dev/null || true' EXIT
+          GIT_INDEX_FILE="$output_index" git read-tree --empty
+          GIT_INDEX_FILE="$output_index" git add -- data snapshots reports
+          output_tree="$(GIT_INDEX_FILE="$output_index" git write-tree)"
+          previous_commit="$(git rev-parse "$output_ref")"
+          previous_tree="$(git rev-parse "$output_ref^{tree}")"
+          if [ "$output_tree" = "$previous_tree" ]; then
             echo "Nessun output da committare."
             exit 0
           fi
-          git commit -m "chore: update sentinel outputs"
-          candidate_branch="sentinel-output-check"
-          git push --force origin "HEAD:refs/heads/$candidate_branch"
-          trap 'git push origin --delete "$candidate_branch" >/dev/null 2>&1 || true' EXIT
-          sha="$(git rev-parse HEAD)"
-          for context in react-doctor verify; do
-            gh api --method POST "repos/$GITHUB_REPOSITORY/statuses/$sha" \
-              -f state=success \
-              -f context="$context" \
-              -f description="Gate completo eseguito dal workflow Sentinel" \
-              -f target_url="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" >/dev/null
-          done
-          git push origin HEAD:main
+          output_commit="$(printf '%s\n' 'chore: update sentinel outputs' | git commit-tree "$output_tree" -p "$previous_commit")"
+          git push origin "${output_commit}:refs/heads/${output_branch}"
 
       - name: Fail on scan errors
         if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'

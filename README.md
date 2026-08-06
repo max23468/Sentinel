@@ -27,7 +27,9 @@ npm run sentinel -- test-email --profile gmail
 ## Configurazione
 
 La configurazione principale è [sentinel.config.yml](/Users/Matteo/Progetti/Sentinel/sentinel.config.yml).
-Gli output applicativi sono:
+Sul repository gli output schedulati vivono nel branch operativo
+`sentinel-outputs`; `main` contiene codice e governance. Gli output applicativi
+sono:
 
 - `data/state.json`
 - `snapshots/`

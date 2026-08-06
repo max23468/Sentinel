@@ -10,12 +10,15 @@ Questo indice raccoglie le decisioni stabili della repo.
 - [0004 - Dashboard su Vite invece di Next.js](decisions/0004-dashboard-vite-invece-di-next.md): accettata.
 - [0005 - Niente ruleset CI obbligatoria su main](decisions/0005-niente-ruleset-ci-su-main.md): superata da 0007.
 - [0006 - Gate Codex review exact-HEAD](decisions/0006-gate-codex-review-exact-head.md): accettata.
-- [0007 - Gate CI obbligatorio su main](decisions/0007-gate-ci-obbligatorio-su-main.md): accettata.
+- [0007 - Gate CI obbligatorio su main](decisions/0007-gate-ci-obbligatorio-su-main.md): superata da 0008.
+- [0008 - Output operativi su branch dedicato](decisions/0008-output-operativi-su-branch-dedicato.md): accettata.
 
 ## Decisioni sostituite o superate
 
 - La scelta di framework di 0002 (Next.js) è superata da 0004 (Vite); il resto di
   0002 resta valido.
+- Il push diretto degli output e il Ruleset a due check di 0007 sono superati da
+  0008.
 
 ## Regole
 
