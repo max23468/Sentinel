@@ -3,6 +3,10 @@ name: Codex review gate
 on:
   pull_request_target:
     types: [opened, synchronize, reopened, ready_for_review]
+  pull_request_review:
+    types: [submitted]
+  pull_request_review_comment:
+    types: [created]
   workflow_dispatch:
     inputs:
       pull_request:
@@ -17,7 +21,7 @@ permissions:
   statuses: write
 
 concurrency:
-  group: codex-review-${{ github.event.pull_request.number || inputs.pull_request }}
+  group: codex-review-${{ github.event.pull_request.number || inputs.pull_request }}-${{ startsWith(github.event_name, 'pull_request_review') && (github.event.review.user.login || github.event.comment.user.login) != 'chatgpt-codex-connector[bot]' && github.run_id || 'gate' }}
   cancel-in-progress: true
 
 jobs:

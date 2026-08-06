@@ -17,15 +17,25 @@ export function classifyCodexReview({
   now = Date.now(),
   comments,
   exactReactions = [],
+  attemptStartedAt = requestedAt,
   reactions,
   progressReactions = reactions,
   requiresReviewedCommit = false,
   reviews = [],
   reviewComments,
+  unambiguousAttempt = false,
 }) {
   const completions = [];
   const cleanComments = [];
   const latestEyesAt = progressReactions
+    .filter(
+      (reaction) =>
+        reaction.user?.login === CODEX_BOT &&
+        reaction.content === "eyes" &&
+        timestamp(reaction.created_at) >= timestamp(requestedAt),
+    )
+    .reduce((latest, reaction) => Math.max(latest, timestamp(reaction.created_at)), 0);
+  const exactEyesAt = exactReactions
     .filter(
       (reaction) =>
         reaction.user?.login === CODEX_BOT &&
@@ -87,11 +97,16 @@ export function classifyCodexReview({
     if (
       (commit
         ? headSha.startsWith(commit)
-        : !requiresReviewedCommit && timestamp(requestedAt) > 0) &&
+        : unambiguousAttempt) &&
       timestamp(requestedAt) > 0 &&
       timestamp(comment.created_at) >= timestamp(requestedAt) &&
       now - timestamp(requestedAt) >= 30_000 &&
-      timestamp(comment.created_at) >= latestEyesAt &&
+      timestamp(comment.created_at) >=
+        (commit
+          ? timestamp(requestedAt)
+          : requiresReviewedCommit
+            ? exactEyesAt || timestamp(attemptStartedAt)
+            : latestEyesAt || timestamp(attemptStartedAt)) &&
       /reached your Codex usage limits|could not complete|unable to review|something went wrong|unknown error/i.test(
         comment.body,
       )
@@ -175,7 +190,7 @@ export function classifyCodexReview({
 export const hasSuccessfulCodexStatus = (statuses) =>
   statuses.find((status) => status.context === "codex-review")?.state === "success";
 
-export const latestCodexInvocation = (comments, requestedAt) =>
+export const codexInvocations = (comments, requestedAt) =>
   comments
     .filter(
       (comment) =>
@@ -184,7 +199,10 @@ export const latestCodexInvocation = (comments, requestedAt) =>
         /@codex\s+review\b/i.test(comment.body) &&
         timestamp(comment.created_at) >= timestamp(requestedAt),
     )
-    .sort((left, right) => timestamp(right.created_at) - timestamp(left.created_at))[0];
+    .sort((left, right) => timestamp(right.created_at) - timestamp(left.created_at));
+
+export const latestCodexInvocation = (comments, requestedAt) =>
+  codexInvocations(comments, requestedAt)[0];
 
 export function pullRequestNumber(event, input) {
   const number = String(event.pull_request?.number ?? input);
@@ -194,6 +212,15 @@ export function pullRequestNumber(event, input) {
 
 export const isRetryableGitHubResponse = (status, remaining) =>
   status === 429 || status >= 500 || (status === 403 && remaining === "0");
+
+export const isCurrentCodexFinding = (event, headSha) => {
+  const signal = event.review ?? event.comment;
+  return (
+    signal?.user?.login === CODEX_BOT &&
+    (signal.original_commit_id ?? signal.commit_id) === headSha &&
+    /\bP[0-3]\b/.test(signal.body ?? "")
+  );
+};
 
 async function request(path, options = {}) {
   const response = await fetch(`https://api.github.com${path}`, {
@@ -246,7 +273,8 @@ async function reviewSignals(repository, number, requestedAt) {
     all(`/repos/${repository}/pulls/${number}/reviews`),
     all(`/repos/${repository}/pulls/${number}/comments`),
   ]);
-  const invocation = latestCodexInvocation(comments, requestedAt);
+  const invocations = codexInvocations(comments, requestedAt);
+  const invocation = invocations[0];
   const invocationReactions = invocation
     ? await all(`/repos/${repository}/issues/comments/${invocation.id}/reactions`)
     : [];
@@ -256,6 +284,8 @@ async function reviewSignals(repository, number, requestedAt) {
     reviews,
     reviewComments,
     invocationReactions,
+    invocations.length,
+    invocation?.created_at ?? requestedAt,
   ];
 }
 
@@ -269,6 +299,42 @@ async function main() {
     event.pull_request ?? (await request(`/repos/${repository}/pulls/${requestedNumber}`));
   const number = pullRequest.number;
   const headSha = pullRequest.head.sha;
+  if (process.env.GITHUB_EVENT_NAME.startsWith("pull_request_review")) {
+    const signal = event.review ?? event.comment;
+    if (signal?.user?.login !== CODEX_BOT) return;
+
+    let finding = isCurrentCodexFinding(event, headSha);
+    if (event.review && event.review.commit_id === headSha) {
+      const reviewComments = await all(`/repos/${repository}/pulls/${number}/comments`);
+      finding ||= reviewComments.some(
+        (comment) =>
+          comment.pull_request_review_id === event.review.id &&
+          isCurrentCodexFinding({ comment }, headSha),
+      );
+      if (finding) {
+        await setStatus(
+          repository,
+          headSha,
+          "failure",
+          "Codex ha trovato problemi nell'ultimo commit",
+        );
+        return;
+      }
+      const statuses = await all(`/repos/${repository}/commits/${headSha}/statuses`);
+      const currentStatus = statuses.find((status) => status.context === "codex-review");
+      if (currentStatus && currentStatus.state !== "pending") return;
+    } else {
+      if (finding) {
+        await setStatus(
+          repository,
+          headSha,
+          "failure",
+          "Codex ha trovato problemi nell'ultimo commit",
+        );
+      }
+      return;
+    }
+  }
   const reusesExistingReview =
     process.env.GITHUB_EVENT_NAME === "workflow_dispatch" || event.action === "reopened";
 
@@ -303,16 +369,26 @@ async function main() {
       await new Promise((resolve) => setTimeout(resolve, CODEX_REVIEW_POLLING.intervalMs));
       continue;
     }
-    const [comments, reactions, reviews, reviewComments, exactReactions] = signals;
+    const [
+      comments,
+      reactions,
+      reviews,
+      reviewComments,
+      exactReactions,
+      invocationCount,
+      attemptStartedAt,
+    ] = signals;
     const result = classifyCodexReview({
       headSha,
       requestedAt,
       comments,
       exactReactions,
+      attemptStartedAt,
       reactions,
       requiresReviewedCommit: !freshReview,
       reviews,
       reviewComments,
+      unambiguousAttempt: freshReview ? invocationCount === 0 : invocationCount === 1,
     });
     if (result.state !== "pending") {
       await setStatus(repository, headSha, result.state, result.description);

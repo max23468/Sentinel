@@ -138,7 +138,3 @@ La dashboard web online è pubblicabile su Vercel da CLI, senza dipendere
 unicamente da GitHub Actions. In questo scenario la scansione resta locale/manuale
 o affidata al workflow quando la pipeline è operativa; l'aggiornamento online
 dei dati passa da `publish-dashboard`.
-
-La issue GitHub `Codex feedback inbox` raccoglie i commenti Codex sulle PR; il
-workflow `Codex PR comments` la mantiene sincronizzata e la marca con la label
-`codex-feedback-inbox`.

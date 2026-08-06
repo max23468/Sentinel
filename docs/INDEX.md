@@ -35,7 +35,6 @@ Sentinel usa la root per ingresso operativo, configurazione e codice. Usa
 ## Pubblicazione e operatività
 
 - `.github/workflows/sentinel.yml`: workflow operativo schedulato e manuale.
-- `.github/workflows/codex-pr-comments.yml`: sincronizzazione della Codex feedback inbox.
 - `.github/workflows/codex-review-gate.yml`: gate Codex exact-HEAD sulle PR.
 - `.github/workflows/react-doctor.yml`: gate React Doctor dedicato.
 - `.github/workflows/governance.yml`: controllo periodico di ruleset e workflow obbligatori.

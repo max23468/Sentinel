@@ -49,15 +49,6 @@ describe("workflow Sentinel", () => {
     expect(source).toContain('[ "$sched" = "0 8 * * 6" ]');
   });
 
-  it("limita e coalesce gli eventi pubblici della inbox Codex", async () => {
-    const source = await readFile(".github/workflows/codex-pr-comments.yml", "utf8");
-
-    expect(source).toContain("cancel-in-progress: true");
-    expect(source).toContain("github.event.issue.title == 'Codex feedback inbox'");
-    expect(source).toContain("github.event.comment.author_association");
-    expect(source).toContain("github.event.pull_request.author_association");
-  });
-
   it("esegue il gate Codex sul codice fidato del branch predefinito", async () => {
     const source = await readFile(
       ".github/workflows/codex-review-gate.yml",
@@ -68,6 +59,8 @@ describe("workflow Sentinel", () => {
     expect(source).toContain(
       "types: [opened, synchronize, reopened, ready_for_review]"
     );
+    expect(source).toContain("pull_request_review:");
+    expect(source).toContain("pull_request_review_comment:");
     expect(source).toContain("workflow_dispatch:");
     expect(source).toContain("contents: read");
     expect(source).toContain("issues: read");

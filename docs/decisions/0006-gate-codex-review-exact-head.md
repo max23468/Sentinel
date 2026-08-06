@@ -6,9 +6,9 @@ Stato: Accettata
 
 ## Contesto
 
-Le review Codex non erano un gate: la repository manteneva soltanto una inbox
-dei thread e GitHub poteva riusare segnali appartenenti a commit o tentativi
-precedenti. Serve uno status distinto che rappresenti esclusivamente la review
+Le review Codex non erano un gate: la repository manteneva una inbox legacy dei
+thread e GitHub poteva riusare segnali appartenenti a commit o tentativi
+precedenti. Serve un solo status che rappresenti esclusivamente la review
 dell'HEAD corrente della PR.
 
 ## Decisione
@@ -21,7 +21,7 @@ Adottare un solo workflow `Codex review gate`, allineato a SyncBay, che:
 - pubblica `codex-review` sull'HEAD esatto e invalida ogni prova al nuovo SHA;
 - accetta soltanto segnali di `chatgpt-codex-connector[bot]` legati al tentativo
   corrente; finding P0-P3 correnti prevalgono sempre;
-- resta separato dalla workflow `Codex PR comments`, che mantiene la inbox.
+- sostituisce la workflow e la issue legacy `Codex feedback inbox`.
 
 La PR di bootstrap non può eseguire il workflow nuovo perché
 `pull_request_target` usa la versione già presente su `main`: il gate va provato

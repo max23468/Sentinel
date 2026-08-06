@@ -5,6 +5,7 @@ import {
   CODEX_REVIEW_POLLING,
   classifyCodexReview,
   hasSuccessfulCodexStatus,
+  isCurrentCodexFinding,
   isRetryableGitHubResponse,
   latestCodexInvocation,
   pullRequestNumber,
@@ -98,6 +99,17 @@ test("non riusa approvazioni o reazioni di SHA e tentativi precedenti", () => {
     classify({
       requiresReviewedCommit: true,
       comments: [
+        { user: bot, created_at: "2026-08-04T12:00:03Z", body: "Unknown error" },
+      ],
+      attemptStartedAt: "2026-08-04T12:00:02Z",
+      unambiguousAttempt: true,
+    }).state,
+    "failure",
+  );
+  assert.equal(
+    classify({
+      requiresReviewedCommit: true,
+      comments: [
         {
           user: bot,
           created_at: "2026-08-04T12:00:01Z",
@@ -167,6 +179,36 @@ test("un finding P0-P3 corrente prevale sempre sull'approvazione", () => {
   );
 });
 
+test("riattiva il gate soltanto per finding Codex exact-HEAD", () => {
+  assert.equal(
+    isCurrentCodexFinding(
+      { review: { user: bot, commit_id: headSha, body: "**P2** Finding tardivo" } },
+      headSha,
+    ),
+    true,
+  );
+  assert.equal(
+    isCurrentCodexFinding(
+      {
+        comment: {
+          user: bot,
+          original_commit_id: "abcdef0123456789abcdef0123456789abcdef01",
+          body: "**P1** Finding vecchio",
+        },
+      },
+      headSha,
+    ),
+    false,
+  );
+  assert.equal(
+    isCurrentCodexFinding(
+      { comment: { user: { login: "utente" }, commit_id: headSha, body: "**P0** Falso" } },
+      headSha,
+    ),
+    false,
+  );
+});
+
 test("rebase e nuovo commit invalidano finding e approvazioni precedenti", () => {
   assert.equal(
     classify({
@@ -227,7 +269,10 @@ test("usage limit e unknown error falliscono il tentativo corrente", () => {
     "Codex Review: Something went wrong. Try again later. Unknown error",
   ]) {
     assert.equal(
-      classify({ comments: [{ user: bot, created_at: "2026-08-04T12:00:01Z", body }] }).state,
+      classify({
+        comments: [{ user: bot, created_at: "2026-08-04T12:00:01Z", body }],
+        unambiguousAttempt: true,
+      }).state,
       "failure",
     );
   }
@@ -281,8 +326,56 @@ test("eyes mantiene pending finché non arriva un errore successivo", () => {
         { user: bot, created_at: "2026-08-04T12:00:03Z", body: "Codex could not complete" },
       ],
       progressReactions,
+      unambiguousAttempt: true,
     }).state,
     "failure",
+  );
+  assert.equal(
+    classify({
+      requiresReviewedCommit: true,
+      comments: [
+        { user: bot, created_at: "2026-08-04T12:00:03Z", body: "Codex could not complete" },
+      ],
+      progressReactions: [
+        { user: bot, content: "eyes", created_at: "2026-08-04T12:00:02Z" },
+      ],
+    }).state,
+    "pending",
+  );
+  const exactEyes = { user: bot, content: "eyes", created_at: "2026-08-04T12:00:02Z" };
+  assert.equal(
+    classify({
+      requiresReviewedCommit: true,
+      comments: [
+        { user: bot, created_at: "2026-08-04T12:00:03Z", body: "Codex could not complete" },
+      ],
+      exactReactions: [exactEyes],
+      progressReactions: [exactEyes],
+      unambiguousAttempt: true,
+    }).state,
+    "failure",
+  );
+  assert.equal(
+    classify({
+      requiresReviewedCommit: true,
+      comments: [
+        { user: bot, created_at: "2026-08-04T12:00:03Z", body: "Codex could not complete" },
+      ],
+      exactReactions: [exactEyes],
+      progressReactions: [exactEyes],
+      unambiguousAttempt: false,
+    }).state,
+    "pending",
+  );
+  assert.equal(
+    classify({
+      comments: [
+        { user: bot, created_at: "2026-08-04T12:00:03Z", body: "Codex could not complete" },
+      ],
+      progressReactions: [exactEyes],
+      unambiguousAttempt: false,
+    }).state,
+    "pending",
   );
 });
 
@@ -368,4 +461,6 @@ test("un doppio errore API non lascia verde il job senza status", async () => {
 
   assert.match(source, /catch \(statusError\)[\s\S]*process\.exitCode = 1/);
   assert.match(source, /if \(!pullRequest\) \{\s*process\.exitCode = 1/);
+  assert.match(source, /comment\.pull_request_review_id === event\.review\.id/);
+  assert.match(source, /currentStatus && currentStatus\.state !== "pending"/);
 });
