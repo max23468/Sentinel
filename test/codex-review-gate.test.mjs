@@ -96,6 +96,19 @@ test("non riusa approvazioni o reazioni di SHA e tentativi precedenti", () => {
   );
   assert.equal(
     classify({
+      requiresReviewedCommit: true,
+      comments: [
+        {
+          user: bot,
+          created_at: "2026-08-04T12:00:01Z",
+          body: "**P2** Finding tardivo del commit precedente",
+        },
+      ],
+    }).state,
+    "pending",
+  );
+  assert.equal(
+    classify({
       requestedAt: 0,
       exactReactions: [{ ...oldReaction, created_at: "2026-08-04T12:00:01Z" }],
       reactions: [{ ...oldReaction, created_at: "2026-08-04T12:00:01Z" }],
@@ -325,4 +338,5 @@ test("un doppio errore API non lascia verde il job senza status", async () => {
   );
 
   assert.match(source, /catch \(statusError\)[\s\S]*process\.exitCode = 1/);
+  assert.match(source, /if \(!pullRequest\) \{\s*process\.exitCode = 1/);
 });

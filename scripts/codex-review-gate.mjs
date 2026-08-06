@@ -58,7 +58,9 @@ export function classifyCodexReview({
 
     const commit = reviewedCommit(comment.body);
     if (
-      (commit ? headSha.startsWith(commit) : timestamp(requestedAt) > 0) &&
+      (commit
+        ? headSha.startsWith(commit)
+        : !requiresReviewedCommit && timestamp(requestedAt) > 0) &&
       timestamp(comment.created_at) >= timestamp(requestedAt) &&
       /\bP[0-3]\b/.test(comment.body)
     ) {
@@ -329,6 +331,7 @@ if (process.env.GITHUB_ACTIONS === "true" && isDirectExecution) {
     try {
       requestedNumber = pullRequestNumber(event, process.env.PULL_REQUEST_NUMBER);
     } catch {
+      process.exitCode = 1;
       return;
     }
     const pullRequest =
@@ -336,7 +339,10 @@ if (process.env.GITHUB_ACTIONS === "true" && isDirectExecution) {
       (await request(`/repos/${process.env.GITHUB_REPOSITORY}/pulls/${requestedNumber}`).catch(
         () => null,
       ));
-    if (!pullRequest) return;
+    if (!pullRequest) {
+      process.exitCode = 1;
+      return;
+    }
     try {
       await setStatus(
         process.env.GITHUB_REPOSITORY,
