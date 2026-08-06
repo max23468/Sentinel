@@ -305,8 +305,21 @@ test("eyes mantiene pending finché non arriva un errore successivo", () => {
       ],
       exactReactions: [exactEyes],
       progressReactions: [exactEyes],
+      unambiguousInvocation: true,
     }).state,
     "failure",
+  );
+  assert.equal(
+    classify({
+      requiresReviewedCommit: true,
+      comments: [
+        { user: bot, created_at: "2026-08-04T12:00:03Z", body: "Codex could not complete" },
+      ],
+      exactReactions: [exactEyes],
+      progressReactions: [exactEyes],
+      unambiguousInvocation: false,
+    }).state,
+    "pending",
   );
 });
 

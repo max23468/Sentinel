@@ -22,6 +22,7 @@ export function classifyCodexReview({
   requiresReviewedCommit = false,
   reviews = [],
   reviewComments,
+  unambiguousInvocation = false,
 }) {
   const completions = [];
   const cleanComments = [];
@@ -95,7 +96,7 @@ export function classifyCodexReview({
     if (
       (commit
         ? headSha.startsWith(commit)
-        : !requiresReviewedCommit || exactEyesAt > 0) &&
+        : !requiresReviewedCommit || (unambiguousInvocation && exactEyesAt > 0)) &&
       timestamp(requestedAt) > 0 &&
       timestamp(comment.created_at) >= timestamp(requestedAt) &&
       now - timestamp(requestedAt) >= 30_000 &&
@@ -184,7 +185,7 @@ export function classifyCodexReview({
 export const hasSuccessfulCodexStatus = (statuses) =>
   statuses.find((status) => status.context === "codex-review")?.state === "success";
 
-export const latestCodexInvocation = (comments, requestedAt) =>
+export const codexInvocations = (comments, requestedAt) =>
   comments
     .filter(
       (comment) =>
@@ -193,7 +194,10 @@ export const latestCodexInvocation = (comments, requestedAt) =>
         /@codex\s+review\b/i.test(comment.body) &&
         timestamp(comment.created_at) >= timestamp(requestedAt),
     )
-    .sort((left, right) => timestamp(right.created_at) - timestamp(left.created_at))[0];
+    .sort((left, right) => timestamp(right.created_at) - timestamp(left.created_at));
+
+export const latestCodexInvocation = (comments, requestedAt) =>
+  codexInvocations(comments, requestedAt)[0];
 
 export function pullRequestNumber(event, input) {
   const number = String(event.pull_request?.number ?? input);
@@ -255,7 +259,8 @@ async function reviewSignals(repository, number, requestedAt) {
     all(`/repos/${repository}/pulls/${number}/reviews`),
     all(`/repos/${repository}/pulls/${number}/comments`),
   ]);
-  const invocation = latestCodexInvocation(comments, requestedAt);
+  const invocations = codexInvocations(comments, requestedAt);
+  const invocation = invocations[0];
   const invocationReactions = invocation
     ? await all(`/repos/${repository}/issues/comments/${invocation.id}/reactions`)
     : [];
@@ -265,6 +270,7 @@ async function reviewSignals(repository, number, requestedAt) {
     reviews,
     reviewComments,
     invocationReactions,
+    invocations.length === 1,
   ];
 }
 
@@ -312,7 +318,14 @@ async function main() {
       await new Promise((resolve) => setTimeout(resolve, CODEX_REVIEW_POLLING.intervalMs));
       continue;
     }
-    const [comments, reactions, reviews, reviewComments, exactReactions] = signals;
+    const [
+      comments,
+      reactions,
+      reviews,
+      reviewComments,
+      exactReactions,
+      unambiguousInvocation,
+    ] = signals;
     const result = classifyCodexReview({
       headSha,
       requestedAt,
@@ -322,6 +335,7 @@ async function main() {
       requiresReviewedCommit: !freshReview,
       reviews,
       reviewComments,
+      unambiguousInvocation,
     });
     if (result.state !== "pending") {
       await setStatus(repository, headSha, result.state, result.description);
