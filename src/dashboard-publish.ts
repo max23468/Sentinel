@@ -128,10 +128,15 @@ export async function publishDashboardData(config: SentinelConfig, state: Sentin
 async function tryLoadDashboardModelFromBlob(): Promise<DashboardModel | undefined> {
   if (!process.env.BLOB_READ_WRITE_TOKEN) return undefined;
 
-  const result = await get(dashboardModelBlobPath(), {
-    access: "private",
-    useCache: false
-  });
+  let result;
+  try {
+    result = await get(dashboardModelBlobPath(), {
+      access: "private",
+      useCache: false
+    });
+  } catch {
+    return undefined;
+  }
 
   if (!result || result.statusCode !== 200) return undefined;
 

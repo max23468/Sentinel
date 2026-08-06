@@ -1,6 +1,7 @@
 import { mkdir, mkdtemp, writeFile } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
+import { get } from "@vercel/blob";
 import { describe, expect, it, vi } from "vitest";
 import { GET as getReport } from "../api/reports/[name].js";
 import { buildDashboardModel, parseScanReportSummary, readLatestReportSummaries, renderDashboardHtml } from "../src/dashboard.js";
@@ -10,9 +11,12 @@ import {
   dashboardModelOutputUrl,
   dashboardReportBlobPath,
   dashboardReportOutputUrl,
+  loadDashboardModel,
   tryLoadDashboardModelFromOutputs
 } from "../src/dashboard-publish.js";
 import type { SentinelConfig, SentinelState } from "../src/types.js";
+
+vi.mock("@vercel/blob", () => ({ get: vi.fn(), put: vi.fn() }));
 
 const config: SentinelConfig = {
   version: 1,
@@ -354,11 +358,31 @@ describe("dashboard", () => {
     }
   });
 
+  it("raggiunge il fallback del modello quando Vercel Blob fallisce", async () => {
+    const previousToken = process.env.BLOB_READ_WRITE_TOKEN;
+    process.env.BLOB_READ_WRITE_TOKEN = "token-non-valido";
+    const expected = buildDashboardModel(config, state, [], "2026-05-26T09:00:00.000Z");
+    vi.mocked(get).mockRejectedValueOnce(new Error("Blob non raggiungibile"));
+    vi.stubGlobal("fetch", vi.fn(async () => new Response(JSON.stringify(expected))));
+
+    try {
+      await expect(loadDashboardModel()).resolves.toEqual(expected);
+    } finally {
+      vi.unstubAllGlobals();
+      vi.mocked(get).mockReset();
+      if (previousToken === undefined) delete process.env.BLOB_READ_WRITE_TOKEN;
+      else process.env.BLOB_READ_WRITE_TOKEN = previousToken;
+    }
+  });
+
   it("serve il report dal branch output quando Blob e file locali non sono disponibili", async () => {
     const previousUser = process.env.SENTINEL_DASHBOARD_USER;
     const previousPassword = process.env.SENTINEL_DASHBOARD_PASSWORD;
+    const previousToken = process.env.BLOB_READ_WRITE_TOKEN;
     process.env.SENTINEL_DASHBOARD_USER = "sentinel";
     process.env.SENTINEL_DASHBOARD_PASSWORD = "segreto";
+    process.env.BLOB_READ_WRITE_TOKEN = "token-non-valido";
+    vi.mocked(get).mockRejectedValueOnce(new Error("Blob non raggiungibile"));
     const fetchMock = vi.fn(async () => new Response("# Report remoto\n"));
     vi.stubGlobal("fetch", fetchMock);
 
@@ -372,10 +396,13 @@ describe("dashboard", () => {
       expect(fetchMock).toHaveBeenCalledWith(dashboardReportOutputUrl("fallback-remoto.md"));
     } finally {
       vi.unstubAllGlobals();
+      vi.mocked(get).mockReset();
       if (previousUser === undefined) delete process.env.SENTINEL_DASHBOARD_USER;
       else process.env.SENTINEL_DASHBOARD_USER = previousUser;
       if (previousPassword === undefined) delete process.env.SENTINEL_DASHBOARD_PASSWORD;
       else process.env.SENTINEL_DASHBOARD_PASSWORD = previousPassword;
+      if (previousToken === undefined) delete process.env.BLOB_READ_WRITE_TOKEN;
+      else process.env.BLOB_READ_WRITE_TOKEN = previousToken;
     }
   });
 

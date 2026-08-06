@@ -41,11 +41,16 @@ async function tryReadReportFromOutputs(fileName: string): Promise<Response | un
 async function tryReadReportFromBlob(fileName: string, ifNoneMatch: string | null): Promise<Response | undefined> {
   if (!process.env.BLOB_READ_WRITE_TOKEN) return undefined;
 
-  const result = await get(dashboardReportBlobPath(fileName), {
-    access: "private",
-    ifNoneMatch: ifNoneMatch ?? undefined,
-    useCache: false
-  });
+  let result;
+  try {
+    result = await get(dashboardReportBlobPath(fileName), {
+      access: "private",
+      ifNoneMatch: ifNoneMatch ?? undefined,
+      useCache: false
+    });
+  } catch {
+    return undefined;
+  }
 
   if (!result) return undefined;
 
