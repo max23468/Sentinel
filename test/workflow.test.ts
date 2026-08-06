@@ -161,7 +161,9 @@ describe("workflow Sentinel", () => {
     expect(ciSource).toContain("run: npm run check");
     expect(sentinelSource).toContain("run: npm run check");
     expect(sentinelSource).toContain("for context in react-doctor verify");
+    expect(governanceSource).not.toContain("GH_TOKEN:");
+    expect(governanceSource).toContain("curl --fail --silent --show-error");
     expect(governanceSource).toContain("strict_required_status_checks_policy");
-    expect(governanceSource).toContain("react-doctor,verify");
+    expect(governanceSource).toContain("react-doctor:15368,verify:15368");
   });
 });

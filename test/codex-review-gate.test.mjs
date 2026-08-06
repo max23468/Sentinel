@@ -233,6 +233,35 @@ test("usage limit e unknown error falliscono il tentativo corrente", () => {
   }
 });
 
+test("ignora errori tardivi non associati all'HEAD dopo synchronize", () => {
+  assert.equal(
+    classify({
+      requiresReviewedCommit: true,
+      comments: [
+        {
+          user: bot,
+          created_at: "2026-08-04T12:00:01Z",
+          body: "Codex could not complete the review",
+        },
+      ],
+    }).state,
+    "pending",
+  );
+  assert.equal(
+    classify({
+      requiresReviewedCommit: true,
+      comments: [
+        {
+          user: bot,
+          created_at: "2026-08-04T12:00:01Z",
+          body: `Codex could not complete the review\n\n**Reviewed commit:** \`${headSha.slice(0, 10)}\``,
+        },
+      ],
+    }).state,
+    "failure",
+  );
+});
+
 test("eyes mantiene pending finché non arriva un errore successivo", () => {
   const progressReactions = [
     { user: bot, content: "eyes", created_at: "2026-08-04T12:00:02Z" },

@@ -85,6 +85,9 @@ export function classifyCodexReview({
     }
 
     if (
+      (commit
+        ? headSha.startsWith(commit)
+        : !requiresReviewedCommit && timestamp(requestedAt) > 0) &&
       timestamp(requestedAt) > 0 &&
       timestamp(comment.created_at) >= timestamp(requestedAt) &&
       now - timestamp(requestedAt) >= 30_000 &&
