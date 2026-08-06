@@ -1,5 +1,4 @@
 import { describe, expect, it, vi } from "vitest";
-import { isTrustedCodexAuthor } from "../.github/scripts/codex-author.mjs";
 import { isPublicAddress, OutboundClient, pinnedLookup } from "../src/outbound.js";
 import type { SiteConfig } from "../src/types.js";
 
@@ -16,23 +15,6 @@ const site: SiteConfig = {
 };
 
 describe("hardening input remoti", () => {
-  it("accetta solo l'identità immutabile del bot Codex", () => {
-    expect(
-      isTrustedCodexAuthor({
-        __typename: "Bot",
-        databaseId: 199175422,
-        login: "chatgpt-codex-connector"
-      })
-    ).toBe(true);
-    expect(
-      isTrustedCodexAuthor({
-        __typename: "User",
-        databaseId: 1,
-        login: "my-codex-lookalike"
-      })
-    ).toBe(false);
-  });
-
   it("blocca reti private e redirect fuori origine prima della seconda richiesta", async () => {
     expect(isPublicAddress("8.8.8.8", 4)).toBe(true);
     expect(isPublicAddress("127.0.0.1", 4)).toBe(false);

@@ -17,9 +17,6 @@ non ancora scelte stanno in `docs/BACKLOG.md`.
 - Osservare il prossimo run schedulato del sabato alle 09:00 Europe/Rome e
   distinguere errori tecnici, cambiamenti reali dei siti e rumore di crawling.
 - Raffinare soglie, report o filtri solo dopo evidenza nei report generati.
-- Mantenere la Codex feedback inbox come controllo prima di PR ready, merge,
-  pubblicazione, deploy o release.
-
 ## Più avanti
 
 - Valutare nuovi siti monitorati solo con una decisione esplicita su utilità,

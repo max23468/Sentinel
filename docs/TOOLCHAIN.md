@@ -49,7 +49,6 @@ Questa pagina descrive runtime, comandi e guardrail effettivi di Sentinel.
 - coverage core: `npm run test:coverage`.
 - gate PR quality automatico: non presente finché manca una decisione esplicita
   per reintrodurre un workflow test/coverage/build su `pull_request`.
-- Codex comments dry-run: workflow `Codex PR comments` con input `dry_run=true`.
 - Codex review gate: workflow `Codex review gate`, status `codex-review`
   associato all'HEAD esatto della PR; il codice eseguito arriva sempre da `main`.
 - scan: `npm run sentinel -- scan`.
@@ -93,7 +92,6 @@ stati vuoti/errore/loading quando il diff li può alterare.
 - La pubblicazione codice passa da commit, push e PR/merge su GitHub; su richiesta
   completa di `pubblica` significa anche pulire branch/worktree locali e remoti
   assorbiti al termine.
-- La Codex feedback inbox è gestita dal workflow `Codex PR comments`.
 - Le PR verso `main` girano il workflow `CI` (typecheck + build CLI/web + test),
   che resta un segnale. Il gate separato `codex-review` pubblica invece uno
   status exact-HEAD; ADR `docs/decisions/0005-niente-ruleset-ci-su-main.md`

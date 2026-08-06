@@ -68,8 +68,6 @@ lavoro che chiudi in pochi tool call e non per ricontrollare te stesso.
 - Conventional Commit coerenti con l'impatto reale, titolo PR incluso: il
   workflow `pr-title.yml` lo controlla e un nome di branch non è un titolo
   valido (`gh pr create --title "docs: ..."`).
-- Prima di PR ready, merge, pubblicazione, deploy o release non banali controlla
-  la issue `Codex feedback inbox` (label `codex-feedback-inbox`).
 - Dopo il merge pulisci branch e worktree creati per il flusso, o dichiara cosa
   resta aperto.
 
@@ -91,7 +89,7 @@ passo invece di lasciarlo implicito.
 ## Publish, release e deploy
 
 Non c'è VPS e non ci sono domini a pagamento. `pubblica` significa: PR/merge su
-`main`, controllo inbox, verifica finale e cleanup del checkout.
+`main`, verifica finale e cleanup del checkout.
 
 Il deploy operativo è lo scan schedulato su GitHub Actions (ADR 0001), che
 committa gli output e fallisce solo su errore tecnico o email necessaria non
