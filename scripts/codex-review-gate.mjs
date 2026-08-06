@@ -93,12 +93,14 @@ export function classifyCodexReview({
     }
 
     if (
+      (commit
+        ? headSha.startsWith(commit)
+        : !requiresReviewedCommit || exactEyesAt > 0) &&
       timestamp(requestedAt) > 0 &&
       timestamp(comment.created_at) >= timestamp(requestedAt) &&
       now - timestamp(requestedAt) >= 30_000 &&
-      (!requiresReviewedCommit || exactEyesAt > 0) &&
       timestamp(comment.created_at) >=
-        (requiresReviewedCommit ? exactEyesAt : latestEyesAt) &&
+        (commit ? timestamp(requestedAt) : requiresReviewedCommit ? exactEyesAt : latestEyesAt) &&
       /reached your Codex usage limits|could not complete|unable to review|something went wrong|unknown error/i.test(
         comment.body,
       )

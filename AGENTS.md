@@ -79,7 +79,7 @@ documentale per i docs-only al gate completo per runtime schedulato, dati,
 provider email, deploy e release.
 
 Toccando `index.html`, `web/`, `api/`, `middleware.ts` o altre superfici UI
-aggiungi `npm run quality:react-doctor` e controlli proporzionati su route,
+aggiungi `npm run doctor` e controlli proporzionati su route,
 viewport e stati vuoto/errore/loading. React Doctor serve anche prima di
 chiudere una release major/minor.
 

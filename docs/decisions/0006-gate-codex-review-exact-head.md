@@ -29,11 +29,10 @@ con dispatch solo dopo il merge.
 
 ## Interazione con ADR 0005
 
-ADR 0005 continua a proteggere il push diretto di `data/`, `snapshots/` e
-`reports/` prodotto dal workflow schedulato. Un required status applicato a
-`main` blocca anche i push diretti privi dello status; quindi l'enforcement di
-`codex-review` non deve essere attivato con bypass né rompere lo scan. Prima
-dell'attivazione serve una decisione compatibile sul canale degli output.
+ADR 0007 supera il divieto generale di ADR 0005 e rende obbligatori i gate CI
+compatibili con il commit schedulato degli output. `codex-review` resta escluso
+dal ruleset finché il workflow operativo non può produrne un esito automatico
+senza indebolire la semantica exact-HEAD.
 
 ## Impatti
 
@@ -50,4 +49,5 @@ dell'attivazione serve una decisione compatibile sul canale degli output.
 ## Collegamenti
 
 - [0005 - Niente ruleset CI obbligatoria su main](0005-niente-ruleset-ci-su-main.md)
+- [0007 - Gate CI obbligatorio su main](0007-gate-ci-obbligatorio-su-main.md)
 - Toolchain: `docs/TOOLCHAIN.md`

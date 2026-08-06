@@ -37,10 +37,9 @@ non ancora scelte stanno in `docs/BACKLOG.md`.
 - Configurati i monitor Ortix, San Carlo Sviluppo e Impresa Cogeb.
 - Lo scan tollera `robots.txt` 4xx e sitemap illeggibile senza fallire, e non
   deduce rimozioni quando il sito blocca la scansione.
-- Rimossa la ruleset `main - richiede CI`, che bloccava il commit degli output
-  dello scan e non vincolava l'owner: il workflow torna al push diretto e
-  l'auto-merge Dependabot è stato rimosso, secondo ADR
-  `docs/decisions/0005-niente-ruleset-ci-su-main.md`.
+- Attivata la ruleset `main governance` con i required check strict
+  `react-doctor` e `verify`; il workflow Sentinel attesta gli stessi gate sullo
+  SHA degli output prima del push diretto, secondo ADR 0007.
 - Pubblicati output applicativi in `data/`, `snapshots/` e `reports/`.
 - Risolto il run rosso iniziale legato ai secret email mancanti; i run manuali
   successivi sono verdi.

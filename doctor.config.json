@@ -1,18 +1,12 @@
 {
+  "blocking": "warning",
+  "scope": "full",
   "ignore": {
-    "files": ["dist-web/**"],
+    "files": ["dist-web/**", ".worktrees/**"],
     "overrides": [
-      {
-        "files": ["api/**"],
-        "rules": ["deslop/unused-file"]
-      },
       {
         "files": ["src/scan.ts"],
         "rules": ["react-doctor/js-set-map-lookups"]
-      },
-      {
-        "files": ["web/dashboard-client.tsx"],
-        "rules": ["react-doctor/no-array-index-as-key"]
       }
     ]
   }

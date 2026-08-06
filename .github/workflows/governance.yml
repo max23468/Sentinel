@@ -1,0 +1,32 @@
+name: Governance
+
+on:
+  schedule:
+    - cron: "23 6 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: governance
+  cancel-in-progress: false
+
+jobs:
+  ruleset:
+    name: Verifica ruleset e workflow
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Verifica protezione GitHub
+        run: |
+          api="$GITHUB_API_URL/repos/$GITHUB_REPOSITORY"
+          test "$(curl --fail --silent --show-error "$api" | jq -r .default_branch)" = main
+          ruleset_url="$(curl --fail --silent --show-error "$api/rulesets" | jq -r '.[] | select(.name == "main governance" and .enforcement == "active") | ._links.self.href')"
+          test -n "$ruleset_url"
+          ruleset="$(curl --fail --silent --show-error "$ruleset_url")"
+          test "$(jq -r '.target == "branch" and .conditions.ref_name.include == ["refs/heads/main"] and (.conditions.ref_name.exclude | length == 0)' <<< "$ruleset")" = true
+          test "$(jq -r '.rules[] | select(.type == "required_status_checks") | .parameters.strict_required_status_checks_policy' <<< "$ruleset")" = true
+          test "$(jq -r '[.rules[] | select(.type == "required_status_checks") | .parameters.required_status_checks[] | "\(.context):\(.integration_id)"] | sort | join(",")' <<< "$ruleset")" = react-doctor:15368,verify:15368
+          test "$(curl --fail --silent --show-error "$api/actions/workflows/react-doctor.yml" | jq -r .state)" = active
+          test "$(curl --fail --silent --show-error "$api/actions/workflows/ci.yml" | jq -r .state)" = active
