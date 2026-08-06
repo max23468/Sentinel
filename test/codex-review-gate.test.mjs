@@ -255,6 +255,30 @@ test("eyes mantiene pending finché non arriva un errore successivo", () => {
     }).state,
     "failure",
   );
+  assert.equal(
+    classify({
+      requiresReviewedCommit: true,
+      comments: [
+        { user: bot, created_at: "2026-08-04T12:00:03Z", body: "Codex could not complete" },
+      ],
+      progressReactions: [
+        { user: bot, content: "eyes", created_at: "2026-08-04T12:00:02Z" },
+      ],
+    }).state,
+    "pending",
+  );
+  const exactEyes = { user: bot, content: "eyes", created_at: "2026-08-04T12:00:02Z" };
+  assert.equal(
+    classify({
+      requiresReviewedCommit: true,
+      comments: [
+        { user: bot, created_at: "2026-08-04T12:00:03Z", body: "Codex could not complete" },
+      ],
+      exactReactions: [exactEyes],
+      progressReactions: [exactEyes],
+    }).state,
+    "failure",
+  );
 });
 
 test("trova solo l'ultima invocazione umana del tentativo corrente", () => {

@@ -33,6 +33,14 @@ export function classifyCodexReview({
         timestamp(reaction.created_at) >= timestamp(requestedAt),
     )
     .reduce((latest, reaction) => Math.max(latest, timestamp(reaction.created_at)), 0);
+  const exactEyesAt = exactReactions
+    .filter(
+      (reaction) =>
+        reaction.user?.login === CODEX_BOT &&
+        reaction.content === "eyes" &&
+        timestamp(reaction.created_at) >= timestamp(requestedAt),
+    )
+    .reduce((latest, reaction) => Math.max(latest, timestamp(reaction.created_at)), 0);
 
   for (const comment of reviewComments) {
     if (
@@ -88,7 +96,9 @@ export function classifyCodexReview({
       timestamp(requestedAt) > 0 &&
       timestamp(comment.created_at) >= timestamp(requestedAt) &&
       now - timestamp(requestedAt) >= 30_000 &&
-      timestamp(comment.created_at) >= latestEyesAt &&
+      (!requiresReviewedCommit || exactEyesAt > 0) &&
+      timestamp(comment.created_at) >=
+        (requiresReviewedCommit ? exactEyesAt : latestEyesAt) &&
       /reached your Codex usage limits|could not complete|unable to review|something went wrong|unknown error/i.test(
         comment.body,
       )
