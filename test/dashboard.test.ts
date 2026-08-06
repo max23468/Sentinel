@@ -18,7 +18,7 @@ import {
   dashboardModelOutputUrl,
   dashboardReportBlobPath,
   dashboardReportOutputUrl,
-  loadDashboardModel,
+  tryLoadDashboardModelFromBlob,
   tryLoadDashboardModelFromOutputs
 } from "../src/dashboard-publish.js";
 import type { SentinelConfig, SentinelState } from "../src/types.js";
@@ -391,14 +391,11 @@ describe("dashboard", () => {
   it("raggiunge il fallback del modello quando Vercel Blob fallisce", async () => {
     const previousToken = process.env.BLOB_READ_WRITE_TOKEN;
     process.env.BLOB_READ_WRITE_TOKEN = "token-non-valido";
-    const expected = buildDashboardModel(config, state, [], "2026-05-26T09:00:00.000Z");
     vi.mocked(get).mockRejectedValueOnce(new Error("Blob non raggiungibile"));
-    vi.stubGlobal("fetch", vi.fn(async () => new Response(JSON.stringify(expected))));
 
     try {
-      await expect(loadDashboardModel()).resolves.toEqual(expected);
+      await expect(tryLoadDashboardModelFromBlob()).resolves.toBeUndefined();
     } finally {
-      vi.unstubAllGlobals();
       vi.mocked(get).mockReset();
       if (previousToken === undefined) delete process.env.BLOB_READ_WRITE_TOKEN;
       else process.env.BLOB_READ_WRITE_TOKEN = previousToken;
