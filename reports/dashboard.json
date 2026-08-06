@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-08-06T15:24:49.214Z",
+  "createdAt": "2026-08-06T15:34:56.240Z",
   "sites": [
     {
       "id": "ortix",
@@ -16,8 +16,8 @@
       "latestReport": {
         "siteId": "ortix",
         "siteName": "Ortix",
-        "filePath": "/Users/Matteo/Progetti/Sentinel/.worktrees/output-model-bootstrap/reports/ortix-20260801T090044Z.md",
-        "linkHref": "ortix-20260801T090044Z.md",
+        "filePath": "ortix-20260801T090044Z.md",
+        "linkHref": "/api/reports/ortix-20260801T090044Z.md",
         "scanLabel": "1 ago 2026, 11:00",
         "mode": "operativa",
         "baseline": false,
@@ -288,8 +288,8 @@
       "latestReport": {
         "siteId": "sancarlo-sviluppo",
         "siteName": "San Carlo Sviluppo",
-        "filePath": "/Users/Matteo/Progetti/Sentinel/.worktrees/output-model-bootstrap/reports/sancarlo-sviluppo-20260801T090239Z.md",
-        "linkHref": "sancarlo-sviluppo-20260801T090239Z.md",
+        "filePath": "sancarlo-sviluppo-20260801T090239Z.md",
+        "linkHref": "/api/reports/sancarlo-sviluppo-20260801T090239Z.md",
         "scanLabel": "1 ago 2026, 11:02",
         "mode": "operativa",
         "baseline": false,
@@ -321,8 +321,8 @@
       "latestReport": {
         "siteId": "impresa-cogeb",
         "siteName": "Impresa Cogeb",
-        "filePath": "/Users/Matteo/Progetti/Sentinel/.worktrees/output-model-bootstrap/reports/impresa-cogeb-20260801T090348Z.md",
-        "linkHref": "impresa-cogeb-20260801T090348Z.md",
+        "filePath": "impresa-cogeb-20260801T090348Z.md",
+        "linkHref": "/api/reports/impresa-cogeb-20260801T090348Z.md",
         "scanLabel": "1 ago 2026, 11:03",
         "mode": "operativa",
         "baseline": false,
