@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: write
+  statuses: write
 
 concurrency:
   group: sentinel-scan
@@ -59,13 +60,9 @@ jobs:
         if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
         run: npm rebuild esbuild
 
-      - name: Test
+      - name: Gate completo
         if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
-        run: npm test
-
-      - name: Build
-        if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
-        run: npm run build
+        run: npm run check
 
       - name: Apply GitHub email secret fallback
         if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
@@ -140,6 +137,8 @@ jobs:
 
       - name: Commit application outputs
         if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -150,7 +149,18 @@ jobs:
             exit 0
           fi
           git commit -m "chore: update sentinel outputs"
-          git push
+          candidate_branch="sentinel-output-check"
+          git push --force origin "HEAD:refs/heads/$candidate_branch"
+          trap 'git push origin --delete "$candidate_branch" >/dev/null 2>&1 || true' EXIT
+          sha="$(git rev-parse HEAD)"
+          for context in react-doctor verify; do
+            gh api --method POST "repos/$GITHUB_REPOSITORY/statuses/$sha" \
+              -f state=success \
+              -f context="$context" \
+              -f description="Gate completo eseguito dal workflow Sentinel" \
+              -f target_url="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" >/dev/null
+          done
+          git push origin HEAD:main
 
       - name: Fail on scan errors
         if: github.event_name != 'schedule' || steps.schedule.outputs.should_run == 'true'

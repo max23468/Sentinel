@@ -47,8 +47,7 @@ Questa pagina descrive runtime, comandi e guardrail effettivi di Sentinel.
 - build: `npm run build`.
 - test: `npm test`.
 - coverage core: `npm run test:coverage`.
-- gate PR quality automatico: non presente finché manca una decisione esplicita
-  per reintrodurre un workflow test/coverage/build su `pull_request`.
+- gate completo locale e CI: `npm run check` (React Doctor, typecheck, build e test).
 - Codex comments dry-run: workflow `Codex PR comments` con input `dry_run=true`.
 - Codex review gate: workflow `Codex review gate`, status `codex-review`
   associato all'HEAD esatto della PR; il codice eseguito arriva sempre da `main`.
@@ -59,7 +58,8 @@ Questa pagina descrive runtime, comandi e guardrail effettivi di Sentinel.
 - dashboard web dinamica: `npm run dev`.
 - build CLI: `npm run build:cli`.
 - build web: `npm run build:web`.
-- React Doctor: `npm run quality:react-doctor`, basato su `npx --yes react-doctor@latest`.
+- React Doctor: `npm run doctor`, versione esatta `0.9.5`, scope full e blocco
+  su warning da `doctor.config.json`.
 - build completa: `npm run build`.
 - pubblicazione payload dashboard: `npm run sentinel -- publish-dashboard`.
 - test email Gmail: `npm run sentinel -- test-email --profile gmail`.
@@ -79,7 +79,7 @@ Questa pagina descrive runtime, comandi e guardrail effettivi di Sentinel.
 | --- | --- | --- |
 | Sola analisi | veloce | Nessun test applicativo; dichiarare fonti e limiti |
 | Docs-only | veloce | Review documentale e `git diff --check` quando utile |
-| Workflow/config o documenti operativi critici | standard | Review mirata e comando collegato al file modificato |
+| Workflow/config o documenti operativi critici | standard | `npm run check` e review mirata del file modificato |
 | Test-only, CLI o dashboard piccola | standard | `npm test`, `npm run build` o test mirati |
 | Audit test/coverage o quality bar moduli core | standard | `npm test`, `npm run test:coverage`, `npm run build` |
 | Runtime schedulato, dati/output, provider email, deploy/config, release/versioning o UI sostanziale | completa | Gate completo proporzionato, smoke/manual run quando serve, React Doctor se applicabile |
@@ -94,11 +94,11 @@ stati vuoti/errore/loading quando il diff li può alterare.
   completa di `pubblica` significa anche pulire branch/worktree locali e remoti
   assorbiti al termine.
 - La Codex feedback inbox è gestita dal workflow `Codex PR comments`.
-- Le PR verso `main` girano il workflow `CI` (typecheck + build CLI/web + test),
-  che resta un segnale. Il gate separato `codex-review` pubblica invece uno
-  status exact-HEAD; ADR `docs/decisions/0005-niente-ruleset-ci-su-main.md`
-  continua a vietare un ruleset che blocchi il push diretto degli output dello
-  scan schedulato.
+- Le PR verso `main` girano `CI` con il job obbligatorio `verify` e il workflow
+  dedicato con il job obbligatorio `react-doctor`. La ruleset `main governance`
+  richiede entrambi con strict checking; `Governance` ne controlla mensilmente
+  la deriva. Il gate separato `codex-review` pubblica uno status exact-HEAD ma
+  non è ancora richiesto dal ruleset.
 - Aggiornamenti dipendenze: Dependabot settimanale (npm + github-actions),
   minor/patch raggruppati. Le PR si mergiano a mano dopo aver controllato la CI:
   l'auto-merge richiede almeno un check obbligatorio su `main` e non è più
@@ -110,8 +110,10 @@ stati vuoti/errore/loading quando il diff li può alterare.
 - Non esiste VPS.
 - Tag Git `vX.Y.Z` e GitHub Release sono obbligatori per release del tool o della dashboard
   secondo ADR `docs/decisions/0003-tag-e-github-release.md`.
-- Il workflow esegue scan, genera `reports/dashboard.html` e può committare
-  `data/`, `snapshots/` e `reports/` con un push diretto su `main`.
+- Il workflow esegue il gate completo, lo scan, genera `reports/dashboard.html`
+  e può committare `data/`, `snapshots/` e `reports/`. Prima del push diretto su
+  `main`, pubblica lo stesso SHA sul branch temporaneo `sentinel-output-check` e
+  vi attesta `react-doctor` e `verify`, poi rimuove il branch.
 - Nel workflow operativo i valori email arrivano dai repository secrets `SENTINEL_*`.
 - Il workflow deve fallire se c'è un errore tecnico o se un'email necessaria non
   parte.
@@ -149,6 +151,11 @@ stati vuoti/errore/loading quando il diff li può alterare.
   di `100 MiB`, massimo 32 sitemap e profondità sitemap 4. L'XML sitemap
   rifiuta `DOCTYPE`, oltre 50.000 tag o profondità strutturale superiore a 32.
 - Non committare `.env`, password SMTP, token o cache locali.
+- Le sole esclusioni React Doctor ammesse sono `dist-web/**`, bundle Vite
+  generato, e il matcher `ignoredIssues` in `src/scan.ts`: le due regole
+  correnti combinano status, messaggio, sottostringa e regex, quindi non
+  rappresentano un lookup sostituibile correttamente con `Set`/`Map`. Rivalutare
+  l'indice se il numero di regole cresce materialmente.
 - Gli output committabili possono includere solo hash, metadati, report e testo
   normalizzato da pagine pubbliche monitorate; non acquisire contenuti dietro
   autenticazione, risposte di form, input privati o segreti.

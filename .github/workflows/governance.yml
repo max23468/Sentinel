@@ -1,0 +1,33 @@
+name: Governance
+
+on:
+  schedule:
+    - cron: "23 6 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: governance
+  cancel-in-progress: false
+
+jobs:
+  ruleset:
+    name: Verifica ruleset e workflow
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Verifica protezione GitHub
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          test "$(gh api "repos/$GITHUB_REPOSITORY" --jq .default_branch)" = main
+          ruleset_url="$(gh api "repos/$GITHUB_REPOSITORY/rulesets" --jq '.[] | select(.name == "main governance" and .enforcement == "active") | ._links.self.href')"
+          test -n "$ruleset_url"
+          ruleset="$(gh api "${ruleset_url#https://api.github.com/}")"
+          test "$(jq -r '.target == "branch" and .conditions.ref_name.include == ["refs/heads/main"] and (.conditions.ref_name.exclude | length == 0)' <<< "$ruleset")" = true
+          test "$(jq -r '.rules[] | select(.type == "required_status_checks") | .parameters.strict_required_status_checks_policy' <<< "$ruleset")" = true
+          test "$(jq -r '[.rules[] | select(.type == "required_status_checks") | .parameters.required_status_checks[].context] | sort | join(",")' <<< "$ruleset")" = react-doctor,verify
+          test "$(gh api "repos/$GITHUB_REPOSITORY/actions/workflows/react-doctor.yml" --jq .state)" = active
+          test "$(gh api "repos/$GITHUB_REPOSITORY/actions/workflows/ci.yml" --jq .state)" = active

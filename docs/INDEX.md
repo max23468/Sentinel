@@ -30,12 +30,15 @@ Sentinel usa la root per ingresso operativo, configurazione e codice. Usa
 - `docs/decisions/0004-dashboard-vite-invece-di-next.md`: dashboard su Vite invece di Next.js.
 - `docs/decisions/0005-niente-ruleset-ci-su-main.md`: niente ruleset CI obbligatoria su `main`.
 - `docs/decisions/0006-gate-codex-review-exact-head.md`: gate Codex exact-HEAD e bootstrap.
+- `docs/decisions/0007-gate-ci-obbligatorio-su-main.md`: required check CI e compatibilità con gli output schedulati.
 
 ## Pubblicazione e operatività
 
 - `.github/workflows/sentinel.yml`: workflow operativo schedulato e manuale.
 - `.github/workflows/codex-pr-comments.yml`: sincronizzazione della Codex feedback inbox.
 - `.github/workflows/codex-review-gate.yml`: gate Codex exact-HEAD sulle PR.
+- `.github/workflows/react-doctor.yml`: gate React Doctor dedicato.
+- `.github/workflows/governance.yml`: controllo periodico di ruleset e workflow obbligatori.
 - `.github/workflows/pr-title.yml`: controllo titolo PR.
 - `.github/PULL_REQUEST_TEMPLATE.md`: template PR.
 - `.github/ISSUE_TEMPLATE/`: template issue.

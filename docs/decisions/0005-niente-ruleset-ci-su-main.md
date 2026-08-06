@@ -2,7 +2,7 @@
 
 Data: 2026-07-24
 
-Stato: Accettata
+Stato: Superata da [0007](0007-gate-ci-obbligatorio-su-main.md)
 
 ## Contesto
 
@@ -70,3 +70,4 @@ Il workflow `CI` continua a girare su PR e push: resta segnale, non gate.
 - PR/issue: PR #64 (introduzione CI su PR e auto-merge Dependabot)
 - Documenti collegati: `docs/decisions/0001-github-actions-runtime-operativo.md`,
   `docs/TOOLCHAIN.md`
+- Decisione successiva: [0007 - Gate CI obbligatorio su main](0007-gate-ci-obbligatorio-su-main.md)

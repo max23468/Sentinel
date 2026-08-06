@@ -56,7 +56,7 @@ Struttura:
 ## Verifiche
 
 - `npm test` (37/37), `npm run build` (cli + web), `tsc --noEmit`.
-- `npm run quality:react-doctor` (gate `--fail-on error` verde).
+- `npm run doctor` (gate React Doctor verde).
 - Deploy preview Vercel: pagina, Basic Auth (401/200) e `/api/dashboard`.
 
 ## Collegamenti
