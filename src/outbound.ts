@@ -1,7 +1,7 @@
 import { lookup } from "node:dns/promises";
 import { BlockList, isIP } from "node:net";
 import type { LookupFunction } from "node:net";
-import { Agent } from "undici";
+import { Agent, fetch as undiciFetch } from "undici";
 import type { SiteConfig } from "./types.js";
 import { isSameSite } from "./url.js";
 
@@ -55,7 +55,7 @@ export class OutboundClient {
     dependencies: OutboundDependencies = {}
   ) {
     this.remainingRequests = site.crawl.maxUrls + EXTRA_SCAN_REQUESTS;
-    this.fetchImpl = dependencies.fetch ?? fetch;
+    this.fetchImpl = dependencies.fetch ?? (undiciFetch as unknown as typeof fetch);
     this.resolve = dependencies.resolve ?? resolveAddresses;
   }
 
