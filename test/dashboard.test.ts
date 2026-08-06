@@ -1,9 +1,17 @@
 import { mkdir, mkdtemp, writeFile } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
+import { GET as getReport } from "../api/reports/[name].js";
 import { buildDashboardModel, parseScanReportSummary, readLatestReportSummaries, renderDashboardHtml } from "../src/dashboard.js";
-import { dashboardBlobPrefix, dashboardModelBlobPath, dashboardReportBlobPath } from "../src/dashboard-publish.js";
+import {
+  dashboardBlobPrefix,
+  dashboardModelBlobPath,
+  dashboardModelOutputUrl,
+  dashboardReportBlobPath,
+  dashboardReportOutputUrl,
+  tryLoadDashboardModelFromOutputs
+} from "../src/dashboard-publish.js";
 import type { SentinelConfig, SentinelState } from "../src/types.js";
 
 const config: SentinelConfig = {
@@ -318,12 +326,56 @@ describe("dashboard", () => {
       expect(dashboardBlobPrefix()).toBe("sentinel/test");
       expect(dashboardModelBlobPath()).toBe("sentinel/test/model.json");
       expect(dashboardReportBlobPath("../ortix-20260526T094354Z.md")).toBe("sentinel/test/reports/ortix-20260526T094354Z.md");
+      expect(dashboardModelOutputUrl()).toBe(
+        "https://raw.githubusercontent.com/max23468/Sentinel/sentinel-outputs/reports/dashboard.json"
+      );
+      expect(dashboardReportOutputUrl("../report con spazi.md")).toBe(
+        "https://raw.githubusercontent.com/max23468/Sentinel/sentinel-outputs/reports/report%20con%20spazi.md"
+      );
     } finally {
       if (previousPrefix === undefined) {
         delete process.env.SENTINEL_DASHBOARD_BLOB_PREFIX;
       } else {
         process.env.SENTINEL_DASHBOARD_BLOB_PREFIX = previousPrefix;
       }
+    }
+  });
+
+  it("carica il modello dal branch output quando il fallback locale non è disponibile", async () => {
+    const expected = buildDashboardModel(config, state, [], "2026-05-26T09:00:00.000Z");
+    const fetchMock = vi.fn(async () => new Response(JSON.stringify(expected)));
+    vi.stubGlobal("fetch", fetchMock);
+
+    try {
+      await expect(tryLoadDashboardModelFromOutputs()).resolves.toEqual(expected);
+      expect(fetchMock).toHaveBeenCalledWith(dashboardModelOutputUrl());
+    } finally {
+      vi.unstubAllGlobals();
+    }
+  });
+
+  it("serve il report dal branch output quando Blob e file locali non sono disponibili", async () => {
+    const previousUser = process.env.SENTINEL_DASHBOARD_USER;
+    const previousPassword = process.env.SENTINEL_DASHBOARD_PASSWORD;
+    process.env.SENTINEL_DASHBOARD_USER = "sentinel";
+    process.env.SENTINEL_DASHBOARD_PASSWORD = "segreto";
+    const fetchMock = vi.fn(async () => new Response("# Report remoto\n"));
+    vi.stubGlobal("fetch", fetchMock);
+
+    try {
+      const response = await getReport(
+        new Request("https://sentinel.example/api/reports/fallback-remoto.md", {
+          headers: { Authorization: `Basic ${btoa("sentinel:segreto")}` }
+        })
+      );
+      await expect(response.text()).resolves.toBe("# Report remoto\n");
+      expect(fetchMock).toHaveBeenCalledWith(dashboardReportOutputUrl("fallback-remoto.md"));
+    } finally {
+      vi.unstubAllGlobals();
+      if (previousUser === undefined) delete process.env.SENTINEL_DASHBOARD_USER;
+      else process.env.SENTINEL_DASHBOARD_USER = previousUser;
+      if (previousPassword === undefined) delete process.env.SENTINEL_DASHBOARD_PASSWORD;
+      else process.env.SENTINEL_DASHBOARD_PASSWORD = previousPassword;
     }
   });
 

@@ -92,6 +92,7 @@ export interface DashboardModel {
 }
 
 const DEFAULT_DASHBOARD_FILE = "dashboard.html";
+const DASHBOARD_MODEL_FILE = "dashboard.json";
 const RECENT_RESOURCE_LIMIT = 12;
 
 export async function writeDashboard(
@@ -105,7 +106,10 @@ export async function writeDashboard(
   const html = renderDashboardHtml(model);
 
   await ensureDir(path.dirname(outputPath));
-  await writeFile(outputPath, html, "utf8");
+  await Promise.all([
+    writeFile(outputPath, html, "utf8"),
+    writeFile(path.join(path.dirname(outputPath), DASHBOARD_MODEL_FILE), `${JSON.stringify(model, null, 2)}\n`, "utf8")
+  ]);
 
   return outputPath;
 }

@@ -19,6 +19,10 @@ continua a partire dal codice fidato di `main`, ripristina gli output dal branch
 operativo prima dello scan e pubblica sullo stesso branch un commit costruito da
 un indice Git separato. Non esegue codice proveniente da `sentinel-outputs`.
 
+Il comando `dashboard` salva anche `reports/dashboard.json`. Quando Vercel Blob
+o i file locali non sono disponibili, le API autenticate della dashboard usano
+quel modello e i singoli report dal branch pubblico `sentinel-outputs`.
+
 Il Ruleset `main governance` richiede senza bypass `codex-review`,
 `react-doctor` e `verify`, tutti prodotti dall'integrazione GitHub Actions. Il
 workflow Governance controlla mensilmente i tre contesti e i relativi workflow.

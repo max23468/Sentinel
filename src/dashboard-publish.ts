@@ -1,14 +1,15 @@
-import { readFile } from "node:fs/promises";
+import { access, readFile } from "node:fs/promises";
 import path from "node:path";
 import { get, put } from "@vercel/blob";
 import { buildDashboardModel, readLatestReportSummaries, type DashboardModel, type DashboardReportSummary } from "./dashboard.js";
 import { loadConfig } from "./config.js";
 import { resolveFromCwd } from "./fs.js";
-import { loadState } from "./storage.js";
+import { loadState, statePath } from "./storage.js";
 import type { SentinelConfig, SentinelState } from "./types.js";
 
 const DEFAULT_BLOB_PREFIX = "sentinel-dashboard";
 const DASHBOARD_FILE = "dashboard.html";
+const OUTPUT_BASE_URL = "https://raw.githubusercontent.com/max23468/Sentinel/sentinel-outputs";
 
 export interface DashboardBundle {
   model: DashboardModel;
@@ -32,6 +33,14 @@ export function dashboardModelBlobPath(prefix = dashboardBlobPrefix()): string {
 
 export function dashboardReportBlobPath(fileName: string, prefix = dashboardBlobPrefix()): string {
   return `${prefix}/reports/${path.basename(fileName)}`;
+}
+
+export function dashboardModelOutputUrl(): string {
+  return `${OUTPUT_BASE_URL}/reports/dashboard.json`;
+}
+
+export function dashboardReportOutputUrl(fileName: string): string {
+  return `${OUTPUT_BASE_URL}/reports/${encodeURIComponent(path.basename(fileName))}`;
 }
 
 export async function buildDashboardBundle(
@@ -59,8 +68,24 @@ export async function loadDashboardModel(): Promise<DashboardModel> {
   if (blobModel) return blobModel;
 
   const config = await loadConfig("sentinel.config.yml");
+  try {
+    await access(statePath(config));
+  } catch {
+    const outputModel = await tryLoadDashboardModelFromOutputs();
+    if (outputModel) return outputModel;
+  }
   const state = await loadState(config);
   return (await buildDashboardBundle(config, state)).model;
+}
+
+export async function tryLoadDashboardModelFromOutputs(): Promise<DashboardModel | undefined> {
+  try {
+    const response = await fetch(dashboardModelOutputUrl());
+    if (!response.ok) return undefined;
+    return (await response.json()) as DashboardModel;
+  } catch {
+    return undefined;
+  }
 }
 
 export async function publishDashboardData(config: SentinelConfig, state: SentinelState): Promise<PublishDashboardResult> {
