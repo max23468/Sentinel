@@ -57,4 +57,113 @@ describe("workflow Sentinel", () => {
     expect(source).toContain("github.event.comment.author_association");
     expect(source).toContain("github.event.pull_request.author_association");
   });
+
+  it("esegue il gate Codex sul codice fidato del branch predefinito", async () => {
+    const source = await readFile(
+      ".github/workflows/codex-review-gate.yml",
+      "utf8"
+    );
+
+    expect(source).toContain("pull_request_target:");
+    expect(source).toContain(
+      "types: [opened, synchronize, reopened, ready_for_review]"
+    );
+    expect(source).toContain("workflow_dispatch:");
+    expect(source).toContain("contents: read");
+    expect(source).toContain("issues: read");
+    expect(source).toContain("pull-requests: read");
+    expect(source).toContain("statuses: write");
+    expect(source).toMatch(/actions\/checkout@[0-9a-f]{40}/);
+    expect(source).toContain(
+      "ref: ${{ github.event.repository.default_branch }}"
+    );
+    expect(source).toContain("timeout-minutes: 310");
+    expect(source).toContain("cancel-in-progress: true");
+    expect(source).toContain("node scripts/codex-review-gate.mjs");
+  });
+
+  it("blocca React Doctor sui warning nel workflow dedicato e nel gate generale", async () => {
+    const [doctorSource, ciSource, governanceSource, sentinelSource, manifestSource, configSource] =
+      await Promise.all([
+        readFile(".github/workflows/react-doctor.yml", "utf8"),
+        readFile(".github/workflows/ci.yml", "utf8"),
+        readFile(".github/workflows/governance.yml", "utf8"),
+        readFile(".github/workflows/sentinel.yml", "utf8"),
+        readFile("package.json", "utf8"),
+        readFile("doctor.config.json", "utf8")
+      ]);
+    const workflow = YAML.parse(doctorSource) as {
+      on: {
+        pull_request: { types: string[] };
+        push: { branches: string[] };
+      };
+      permissions: Record<string, string>;
+      concurrency: { "cancel-in-progress": boolean };
+      jobs: {
+        "react-doctor": {
+          "timeout-minutes": number;
+          steps: Array<{ uses?: string; with?: Record<string, string | number | boolean> }>;
+        };
+      };
+    };
+    const manifest = JSON.parse(manifestSource) as {
+      scripts: Record<string, string>;
+      devDependencies: Record<string, string>;
+    };
+    const config = JSON.parse(configSource) as {
+      blocking: string;
+      scope: string;
+      ignore: { files: string[]; overrides: Array<{ files: string[]; rules: string[] }> };
+    };
+    const steps = workflow.jobs["react-doctor"].steps;
+    const checkout = steps.find(({ uses }) => uses?.startsWith("actions/checkout@"));
+    const doctor = steps.find(({ uses }) => uses?.startsWith("millionco/react-doctor@"));
+
+    expect(workflow.on.pull_request.types).toEqual([
+      "opened",
+      "synchronize",
+      "reopened",
+      "ready_for_review"
+    ]);
+    expect(workflow.on.push.branches).toEqual(["main"]);
+    expect(workflow.permissions).toEqual({ contents: "read", "pull-requests": "write" });
+    expect(workflow.concurrency["cancel-in-progress"]).toBe(true);
+    expect(workflow.jobs["react-doctor"]["timeout-minutes"]).toBe(10);
+    expect(checkout?.uses).toMatch(/actions\/checkout@[0-9a-f]{40}$/);
+    expect(checkout?.with).toMatchObject({ "fetch-depth": 0, "persist-credentials": false });
+    expect(doctor?.uses).toMatch(/millionco\/react-doctor@[0-9a-f]{40}$/);
+    expect(doctor?.with).toMatchObject({
+      version: "0.9.5",
+      scope: "${{ github.event_name == 'pull_request' && 'changed' || 'full' }}",
+      blocking: "warning",
+      "review-comments": "true"
+    });
+    expect(manifest.devDependencies["react-doctor"]).toBe("0.9.5");
+    expect(Object.keys(manifest.scripts).filter((name) => name.includes("doctor"))).toEqual([
+      "doctor"
+    ]);
+    expect(manifest.scripts.doctor).toBe("react-doctor .");
+    expect(manifest.scripts.check).toContain("npm run doctor");
+    expect(config).toEqual({
+      blocking: "warning",
+      scope: "full",
+      ignore: {
+        files: ["dist-web/**"],
+        overrides: [
+          {
+            files: ["src/scan.ts"],
+            rules: ["react-doctor/js-set-map-lookups"]
+          }
+        ]
+      }
+    });
+    expect(ciSource).toContain("name: verify");
+    expect(ciSource).toContain("run: npm run check");
+    expect(sentinelSource).toContain("run: npm run check");
+    expect(sentinelSource).toContain("for context in react-doctor verify");
+    expect(governanceSource).not.toContain("GH_TOKEN:");
+    expect(governanceSource).toContain("curl --fail --silent --show-error");
+    expect(governanceSource).toContain("strict_required_status_checks_policy");
+    expect(governanceSource).toContain("react-doctor:15368,verify:15368");
+  });
 });

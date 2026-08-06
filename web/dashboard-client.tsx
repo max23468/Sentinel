@@ -257,8 +257,8 @@ function IssueList({ issues }: { issues: DashboardIssue[] }): React.ReactElement
 
   return (
     <div className="result-list">
-      {issues.map((issue, index) => (
-        <article className="result-item" key={`${issue.siteName}-${issue.url ?? issue.message}-${index}`}>
+      {issues.map((issue) => (
+        <article className="result-item" key={`${issue.siteName}-${issue.severity}-${issue.url ?? "tecnico"}-${issue.message}-${issue.reason ?? ""}-${issue.count ?? ""}`}>
           <strong>{issue.siteName} · {issueLabel(issue)}</strong>
           <div>
             {issue.url ? <a href={issue.url} rel="noreferrer" target="_blank">{issue.url}</a> : <span>Risorsa tecnica</span>}
