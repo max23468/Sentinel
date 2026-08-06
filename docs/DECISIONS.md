@@ -9,6 +9,7 @@ Questo indice raccoglie le decisioni stabili della repo.
 - [0003 - Tag e GitHub Release](decisions/0003-tag-e-github-release.md): accettata.
 - [0004 - Dashboard su Vite invece di Next.js](decisions/0004-dashboard-vite-invece-di-next.md): accettata.
 - [0005 - Niente ruleset CI obbligatoria su main](decisions/0005-niente-ruleset-ci-su-main.md): accettata.
+- [0006 - Gate Codex review exact-HEAD](decisions/0006-gate-codex-review-exact-head.md): accettata.
 
 ## Decisioni sostituite o superate
 

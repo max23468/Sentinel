@@ -29,6 +29,7 @@ Sentinel usa la root per ingresso operativo, configurazione e codice. Usa
 - `docs/decisions/0003-tag-e-github-release.md`: policy tag e GitHub Release.
 - `docs/decisions/0004-dashboard-vite-invece-di-next.md`: dashboard su Vite invece di Next.js.
 - `docs/decisions/0005-niente-ruleset-ci-su-main.md`: niente ruleset CI obbligatoria su `main`.
+- `docs/decisions/0006-gate-codex-review-exact-head.md`: gate Codex exact-HEAD e bootstrap.
 
 ## Pubblicazione e operatività
 

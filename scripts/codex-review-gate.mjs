@@ -326,11 +326,16 @@ if (process.env.GITHUB_ACTIONS === "true" && isDirectExecution) {
         () => null,
       ));
     if (!pullRequest) return;
-    await setStatus(
-      process.env.GITHUB_REPOSITORY,
-      pullRequest.head.sha,
-      "error",
-      "Impossibile verificare la review Codex",
-    ).catch(console.error);
+    try {
+      await setStatus(
+        process.env.GITHUB_REPOSITORY,
+        pullRequest.head.sha,
+        "error",
+        "Impossibile verificare la review Codex",
+      );
+    } catch (statusError) {
+      console.error(statusError);
+      process.exitCode = 1;
+    }
   });
 }

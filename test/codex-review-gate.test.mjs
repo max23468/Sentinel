@@ -304,3 +304,11 @@ test("l'import in GitHub Actions non avvia la CLI", () => {
   );
   assert.equal(result.status, 0, result.stderr);
 });
+
+test("un doppio errore API non lascia verde il job senza status", async () => {
+  const source = await import("node:fs/promises").then((fs) =>
+    fs.readFile(new URL("../scripts/codex-review-gate.mjs", import.meta.url), "utf8"),
+  );
+
+  assert.match(source, /catch \(statusError\)[\s\S]*process\.exitCode = 1/);
+});
