@@ -152,8 +152,9 @@ stati vuoti/errore/loading quando il diff li può alterare.
   rifiuta `DOCTYPE`, oltre 50.000 tag o profondità strutturale superiore a 32.
 - Non committare `.env`, password SMTP, token o cache locali.
 - Le sole esclusioni React Doctor ammesse sono `dist-web/**`, bundle Vite
-  generato, e il matcher `ignoredIssues` in `src/scan.ts`: le due regole
-  correnti combinano status, messaggio, sottostringa e regex, quindi non
+  generato, `.worktrees/**`, checkout Git separati che non appartengono alla
+  working tree analizzata, e il matcher `ignoredIssues` in `src/scan.ts`: le
+  due regole correnti combinano status, messaggio, sottostringa e regex, quindi non
   rappresentano un lookup sostituibile correttamente con `Set`/`Map`. Rivalutare
   l'indice se il numero di regole cresce materialmente.
 - Gli output committabili possono includere solo hash, metadati, report e testo

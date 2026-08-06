@@ -148,7 +148,7 @@ describe("workflow Sentinel", () => {
       blocking: "warning",
       scope: "full",
       ignore: {
-        files: ["dist-web/**"],
+        files: ["dist-web/**", ".worktrees/**"],
         overrides: [
           {
             files: ["src/scan.ts"],
