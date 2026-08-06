@@ -1,7 +1,13 @@
 import { access, readFile } from "node:fs/promises";
 import path from "node:path";
 import { get, put } from "@vercel/blob";
-import { buildDashboardModel, readLatestReportSummaries, type DashboardModel, type DashboardReportSummary } from "./dashboard.js";
+import {
+  buildDashboardModel,
+  normalizeDashboardReportsForWeb,
+  readLatestReportSummaries,
+  type DashboardModel,
+  type DashboardReportSummary
+} from "./dashboard.js";
 import { loadConfig } from "./config.js";
 import { resolveFromCwd } from "./fs.js";
 import { loadState, statePath } from "./storage.js";
@@ -52,13 +58,9 @@ export async function buildDashboardBundle(
   const reports = await readLatestReportSummaries(config, outputPath, {
     linkHrefFor: (fileName) => `/api/reports/${encodeURIComponent(fileName)}`
   });
-  const webReports = reports.map((report) => ({
-    ...report,
-    filePath: path.basename(report.filePath)
-  }));
 
   return {
-    model: buildDashboardModel(config, state, webReports, createdAt),
+    model: buildDashboardModel(config, state, normalizeDashboardReportsForWeb(reports), createdAt),
     reports
   };
 }

@@ -1,10 +1,17 @@
-import { mkdir, mkdtemp, writeFile } from "node:fs/promises";
+import { mkdir, mkdtemp, readFile, writeFile } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
 import { get } from "@vercel/blob";
 import { describe, expect, it, vi } from "vitest";
 import { GET as getReport } from "../api/reports/[name].js";
-import { buildDashboardModel, parseScanReportSummary, readLatestReportSummaries, renderDashboardHtml } from "../src/dashboard.js";
+import {
+  buildDashboardModel,
+  parseScanReportSummary,
+  readLatestReportSummaries,
+  renderDashboardHtml,
+  type DashboardModel,
+  writeDashboard
+} from "../src/dashboard.js";
 import {
   dashboardBlobPrefix,
   dashboardModelBlobPath,
@@ -356,6 +363,29 @@ describe("dashboard", () => {
     } finally {
       vi.unstubAllGlobals();
     }
+  });
+
+  it("scrive nel modello operativo collegamenti alle API autenticate", async () => {
+    const tempDir = await mkdtemp(path.join(os.tmpdir(), "sentinel-dashboard-model-"));
+    const reportsDir = path.join(tempDir, "reports");
+    await mkdir(reportsDir);
+    await writeFile(
+      path.join(reportsDir, "ortix-20260524T185555Z.md"),
+      `# Report Sentinel - Ortix\n\n- Scansione: 24 mag 2026, 20:55\n`,
+      "utf8"
+    );
+
+    await writeDashboard(
+      { ...config, storage: { ...config.storage, reportsDir } },
+      state,
+      { outputPath: path.join(reportsDir, "dashboard.html"), createdAt: "2026-05-26T09:00:00.000Z" }
+    );
+    const model = JSON.parse(await readFile(path.join(reportsDir, "dashboard.json"), "utf8")) as DashboardModel;
+
+    expect(model.sites[0]?.latestReport).toMatchObject({
+      filePath: "ortix-20260524T185555Z.md",
+      linkHref: "/api/reports/ortix-20260524T185555Z.md"
+    });
   });
 
   it("raggiunge il fallback del modello quando Vercel Blob fallisce", async () => {

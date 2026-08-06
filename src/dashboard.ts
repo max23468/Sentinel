@@ -102,16 +102,29 @@ export async function writeDashboard(
 ): Promise<string> {
   const outputPath = resolveDashboardPath(config, options.outputPath);
   const reports = await readLatestReportSummaries(config, outputPath);
-  const model = buildDashboardModel(config, state, reports, options.createdAt ?? new Date().toISOString());
+  const createdAt = options.createdAt ?? new Date().toISOString();
+  const model = buildDashboardModel(config, state, reports, createdAt);
+  const webModel = buildDashboardModel(config, state, normalizeDashboardReportsForWeb(reports), createdAt);
   const html = renderDashboardHtml(model);
 
   await ensureDir(path.dirname(outputPath));
   await Promise.all([
     writeFile(outputPath, html, "utf8"),
-    writeFile(path.join(path.dirname(outputPath), DASHBOARD_MODEL_FILE), `${JSON.stringify(model, null, 2)}\n`, "utf8")
+    writeFile(path.join(path.dirname(outputPath), DASHBOARD_MODEL_FILE), `${JSON.stringify(webModel, null, 2)}\n`, "utf8")
   ]);
 
   return outputPath;
+}
+
+export function normalizeDashboardReportsForWeb(reports: DashboardReportSummary[]): DashboardReportSummary[] {
+  return reports.map((report) => {
+    const fileName = path.basename(report.filePath);
+    return {
+      ...report,
+      filePath: fileName,
+      linkHref: `/api/reports/${encodeURIComponent(fileName)}`
+    };
+  });
 }
 
 export function buildDashboardModel(
