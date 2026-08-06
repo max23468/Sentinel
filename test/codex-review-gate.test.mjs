@@ -227,7 +227,10 @@ test("usage limit e unknown error falliscono il tentativo corrente", () => {
     "Codex Review: Something went wrong. Try again later. Unknown error",
   ]) {
     assert.equal(
-      classify({ comments: [{ user: bot, created_at: "2026-08-04T12:00:01Z", body }] }).state,
+      classify({
+        comments: [{ user: bot, created_at: "2026-08-04T12:00:01Z", body }],
+        unambiguousAttempt: true,
+      }).state,
       "failure",
     );
   }
@@ -281,6 +284,7 @@ test("eyes mantiene pending finché non arriva un errore successivo", () => {
         { user: bot, created_at: "2026-08-04T12:00:03Z", body: "Codex could not complete" },
       ],
       progressReactions,
+      unambiguousAttempt: true,
     }).state,
     "failure",
   );
@@ -305,7 +309,7 @@ test("eyes mantiene pending finché non arriva un errore successivo", () => {
       ],
       exactReactions: [exactEyes],
       progressReactions: [exactEyes],
-      unambiguousInvocation: true,
+      unambiguousAttempt: true,
     }).state,
     "failure",
   );
@@ -317,7 +321,17 @@ test("eyes mantiene pending finché non arriva un errore successivo", () => {
       ],
       exactReactions: [exactEyes],
       progressReactions: [exactEyes],
-      unambiguousInvocation: false,
+      unambiguousAttempt: false,
+    }).state,
+    "pending",
+  );
+  assert.equal(
+    classify({
+      comments: [
+        { user: bot, created_at: "2026-08-04T12:00:03Z", body: "Codex could not complete" },
+      ],
+      progressReactions: [exactEyes],
+      unambiguousAttempt: false,
     }).state,
     "pending",
   );

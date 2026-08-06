@@ -22,7 +22,7 @@ export function classifyCodexReview({
   requiresReviewedCommit = false,
   reviews = [],
   reviewComments,
-  unambiguousInvocation = false,
+  unambiguousAttempt = false,
 }) {
   const completions = [];
   const cleanComments = [];
@@ -96,7 +96,7 @@ export function classifyCodexReview({
     if (
       (commit
         ? headSha.startsWith(commit)
-        : !requiresReviewedCommit || (unambiguousInvocation && exactEyesAt > 0)) &&
+        : unambiguousAttempt && (!requiresReviewedCommit || exactEyesAt > 0)) &&
       timestamp(requestedAt) > 0 &&
       timestamp(comment.created_at) >= timestamp(requestedAt) &&
       now - timestamp(requestedAt) >= 30_000 &&
@@ -270,7 +270,7 @@ async function reviewSignals(repository, number, requestedAt) {
     reviews,
     reviewComments,
     invocationReactions,
-    invocations.length === 1,
+    invocations.length,
   ];
 }
 
@@ -324,7 +324,7 @@ async function main() {
       reviews,
       reviewComments,
       exactReactions,
-      unambiguousInvocation,
+      invocationCount,
     ] = signals;
     const result = classifyCodexReview({
       headSha,
@@ -335,7 +335,7 @@ async function main() {
       requiresReviewedCommit: !freshReview,
       reviews,
       reviewComments,
-      unambiguousInvocation,
+      unambiguousAttempt: freshReview ? invocationCount === 0 : invocationCount === 1,
     });
     if (result.state !== "pending") {
       await setStatus(repository, headSha, result.state, result.description);
