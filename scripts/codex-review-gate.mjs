@@ -294,7 +294,26 @@ async function main() {
   const number = pullRequest.number;
   const headSha = pullRequest.head.sha;
   if (process.env.GITHUB_EVENT_NAME.startsWith("pull_request_review")) {
-    if (isCurrentCodexFinding(event, headSha)) {
+    const signal = event.review ?? event.comment;
+    if (signal?.user?.login !== CODEX_BOT) return;
+
+    let finding = isCurrentCodexFinding(event, headSha);
+    if (event.review && event.review.commit_id === headSha) {
+      const reviewComments = await all(`/repos/${repository}/pulls/${number}/comments`);
+      finding ||= reviewComments.some(
+        (comment) =>
+          comment.pull_request_review_id === event.review.id &&
+          isCurrentCodexFinding({ comment }, headSha),
+      );
+      await setStatus(
+        repository,
+        headSha,
+        finding ? "failure" : "success",
+        finding
+          ? "Codex ha trovato problemi nell'ultimo commit"
+          : "Codex ha approvato l'ultimo commit",
+      );
+    } else if (finding) {
       await setStatus(
         repository,
         headSha,

@@ -21,7 +21,7 @@ permissions:
   statuses: write
 
 concurrency:
-  group: codex-review-${{ github.event.pull_request.number || inputs.pull_request }}-${{ startsWith(github.event_name, 'pull_request_review') && github.run_id || 'poll' }}
+  group: codex-review-${{ github.event.pull_request.number || inputs.pull_request }}-${{ startsWith(github.event_name, 'pull_request_review') && (github.event.review.user.login || github.event.comment.user.login) != 'chatgpt-codex-connector[bot]' && github.run_id || 'gate' }}
   cancel-in-progress: true
 
 jobs:
