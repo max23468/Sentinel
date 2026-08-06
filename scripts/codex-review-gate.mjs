@@ -112,9 +112,20 @@ export function classifyCodexReview({
       headSha.startsWith(commit) &&
       timestamp(review.submitted_at) >= timestamp(requestedAt)
     ) {
-      cleanComments.push(timestamp(review.submitted_at));
+      if (/\bP[0-3]\b/.test(review.body)) {
+        completions.push({
+          state: "failure",
+          at: timestamp(review.submitted_at),
+          description: "Codex ha trovato problemi nell'ultimo commit",
+        });
+      } else {
+        cleanComments.push(timestamp(review.submitted_at));
+      }
     }
   }
+
+  const reviewFailure = completions.find((completion) => completion.state === "failure");
+  if (reviewFailure) return reviewFailure;
 
   const thumbsUpAt = reactions
     .filter(

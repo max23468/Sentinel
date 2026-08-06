@@ -138,6 +138,20 @@ test("un finding P0-P3 corrente prevale sempre sull'approvazione", () => {
     }).state,
     "failure",
   );
+  assert.equal(
+    classify({
+      reviews: [
+        {
+          user: bot,
+          commit_id: headSha,
+          submitted_at: "2026-08-04T12:00:01Z",
+          body: "**P2** Finding nel corpo della review",
+        },
+      ],
+      reactions: [{ user: bot, content: "+1", created_at: "2026-08-04T12:00:02Z" }],
+    }).state,
+    "failure",
+  );
 });
 
 test("rebase e nuovo commit invalidano finding e approvazioni precedenti", () => {
