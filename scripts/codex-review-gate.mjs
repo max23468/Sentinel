@@ -17,6 +17,7 @@ export function classifyCodexReview({
   now = Date.now(),
   comments,
   exactReactions = [],
+  attemptStartedAt = requestedAt,
   reactions,
   progressReactions = reactions,
   requiresReviewedCommit = false,
@@ -96,12 +97,16 @@ export function classifyCodexReview({
     if (
       (commit
         ? headSha.startsWith(commit)
-        : unambiguousAttempt && (!requiresReviewedCommit || exactEyesAt > 0)) &&
+        : unambiguousAttempt) &&
       timestamp(requestedAt) > 0 &&
       timestamp(comment.created_at) >= timestamp(requestedAt) &&
       now - timestamp(requestedAt) >= 30_000 &&
       timestamp(comment.created_at) >=
-        (commit ? timestamp(requestedAt) : requiresReviewedCommit ? exactEyesAt : latestEyesAt) &&
+        (commit
+          ? timestamp(requestedAt)
+          : requiresReviewedCommit
+            ? exactEyesAt || timestamp(attemptStartedAt)
+            : latestEyesAt || timestamp(attemptStartedAt)) &&
       /reached your Codex usage limits|could not complete|unable to review|something went wrong|unknown error/i.test(
         comment.body,
       )
@@ -280,6 +285,7 @@ async function reviewSignals(repository, number, requestedAt) {
     reviewComments,
     invocationReactions,
     invocations.length,
+    invocation?.created_at ?? requestedAt,
   ];
 }
 
@@ -370,12 +376,14 @@ async function main() {
       reviewComments,
       exactReactions,
       invocationCount,
+      attemptStartedAt,
     ] = signals;
     const result = classifyCodexReview({
       headSha,
       requestedAt,
       comments,
       exactReactions,
+      attemptStartedAt,
       reactions,
       requiresReviewedCommit: !freshReview,
       reviews,

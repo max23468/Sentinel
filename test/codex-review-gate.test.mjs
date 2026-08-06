@@ -99,6 +99,17 @@ test("non riusa approvazioni o reazioni di SHA e tentativi precedenti", () => {
     classify({
       requiresReviewedCommit: true,
       comments: [
+        { user: bot, created_at: "2026-08-04T12:00:03Z", body: "Unknown error" },
+      ],
+      attemptStartedAt: "2026-08-04T12:00:02Z",
+      unambiguousAttempt: true,
+    }).state,
+    "failure",
+  );
+  assert.equal(
+    classify({
+      requiresReviewedCommit: true,
+      comments: [
         {
           user: bot,
           created_at: "2026-08-04T12:00:01Z",
