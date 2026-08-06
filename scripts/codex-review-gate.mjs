@@ -208,6 +208,15 @@ export function pullRequestNumber(event, input) {
 export const isRetryableGitHubResponse = (status, remaining) =>
   status === 429 || status >= 500 || (status === 403 && remaining === "0");
 
+export const isCurrentCodexFinding = (event, headSha) => {
+  const signal = event.review ?? event.comment;
+  return (
+    signal?.user?.login === CODEX_BOT &&
+    (signal.original_commit_id ?? signal.commit_id) === headSha &&
+    /\bP[0-3]\b/.test(signal.body ?? "")
+  );
+};
+
 async function request(path, options = {}) {
   const response = await fetch(`https://api.github.com${path}`, {
     ...options,
@@ -284,6 +293,17 @@ async function main() {
     event.pull_request ?? (await request(`/repos/${repository}/pulls/${requestedNumber}`));
   const number = pullRequest.number;
   const headSha = pullRequest.head.sha;
+  if (process.env.GITHUB_EVENT_NAME.startsWith("pull_request_review")) {
+    if (isCurrentCodexFinding(event, headSha)) {
+      await setStatus(
+        repository,
+        headSha,
+        "failure",
+        "Codex ha trovato problemi nell'ultimo commit",
+      );
+    }
+    return;
+  }
   const reusesExistingReview =
     process.env.GITHUB_EVENT_NAME === "workflow_dispatch" || event.action === "reopened";
 

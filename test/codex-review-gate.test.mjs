@@ -5,6 +5,7 @@ import {
   CODEX_REVIEW_POLLING,
   classifyCodexReview,
   hasSuccessfulCodexStatus,
+  isCurrentCodexFinding,
   isRetryableGitHubResponse,
   latestCodexInvocation,
   pullRequestNumber,
@@ -164,6 +165,36 @@ test("un finding P0-P3 corrente prevale sempre sull'approvazione", () => {
       reactions: [{ user: bot, content: "+1", created_at: "2026-08-04T12:00:02Z" }],
     }).state,
     "failure",
+  );
+});
+
+test("riattiva il gate soltanto per finding Codex exact-HEAD", () => {
+  assert.equal(
+    isCurrentCodexFinding(
+      { review: { user: bot, commit_id: headSha, body: "**P2** Finding tardivo" } },
+      headSha,
+    ),
+    true,
+  );
+  assert.equal(
+    isCurrentCodexFinding(
+      {
+        comment: {
+          user: bot,
+          original_commit_id: "abcdef0123456789abcdef0123456789abcdef01",
+          body: "**P1** Finding vecchio",
+        },
+      },
+      headSha,
+    ),
+    false,
+  );
+  assert.equal(
+    isCurrentCodexFinding(
+      { comment: { user: { login: "utente" }, commit_id: headSha, body: "**P0** Falso" } },
+      headSha,
+    ),
+    false,
   );
 });
 
