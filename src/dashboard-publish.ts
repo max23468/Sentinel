@@ -127,7 +127,7 @@ export async function publishDashboardData(config: SentinelConfig, state: Sentin
   };
 }
 
-async function tryLoadDashboardModelFromBlob(): Promise<DashboardModel | undefined> {
+export async function tryLoadDashboardModelFromBlob(): Promise<DashboardModel | undefined> {
   if (!process.env.BLOB_READ_WRITE_TOKEN) return undefined;
 
   let result;
