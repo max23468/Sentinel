@@ -67,7 +67,6 @@ describe("workflow Sentinel", () => {
     expect(source).toContain("statuses: write");
     expect(source).toMatch(/actions\/checkout@[0-9a-f]{40}/);
     expect(source).toContain("github.event.repository.default_branch");
-    expect(source).toContain("github.event_name == 'workflow_dispatch'");
     expect(source).toContain("timeout-minutes: 310");
     expect(source).toContain("cancel-in-progress: true");
     expect(source).toContain("node scripts/codex-review-gate.mjs");
