@@ -18,7 +18,7 @@
     "dev": "vite",
     "dev:cli": "tsx src/index.ts",
     "sentinel": "tsx src/index.ts",
-    "test": "vitest run test",
+    "test": "vitest run test && node --test scripts/codex-review-gate.test.mjs",
     "test:coverage": "vitest run test --coverage",
     "doctor": "react-doctor --scope full --blocking warning .",
     "check": "npm run doctor && npx tsc -p tsconfig.json --noEmit && npm run build && npm test"
