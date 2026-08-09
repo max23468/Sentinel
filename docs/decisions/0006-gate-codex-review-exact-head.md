@@ -20,7 +20,7 @@ Adottare un solo workflow `Codex review gate`, allineato a SyncBay, che:
   scrittura;
 - pubblica `codex-review` sull'HEAD esatto e invalida ogni prova al nuovo SHA;
 - accetta soltanto segnali di `chatgpt-codex-connector[bot]` legati al tentativo
-  corrente; finding P0-P3 correnti prevalgono sempre;
+  corrente; i finding P0/P1 correnti bloccano, mentre P2/P3 restano advisory;
 - sostituisce la workflow e la issue legacy `Codex feedback inbox`.
 
 La PR di bootstrap non può eseguire il workflow nuovo perché

@@ -130,7 +130,7 @@ test("non riusa approvazioni o reazioni di SHA e tentativi precedenti", () => {
   );
 });
 
-test("un finding P0-P3 corrente prevale sempre sull'approvazione", () => {
+test("un finding P0/P1 corrente prevale sempre sull'approvazione", () => {
   assert.equal(
     classify({
       reviewComments: [
@@ -152,7 +152,7 @@ test("un finding P0-P3 corrente prevale sempre sull'approvazione", () => {
         {
           user: bot,
           created_at: "2026-08-04T12:00:01Z",
-          body: `**P3** Problema.\n\n**Reviewed commit:** \`${headSha.slice(0, 10)}\``,
+          body: `**P0** Problema.\n\n**Reviewed commit:** \`${headSha.slice(0, 10)}\``,
         },
         {
           user: bot,
@@ -170,7 +170,7 @@ test("un finding P0-P3 corrente prevale sempre sull'approvazione", () => {
           user: bot,
           commit_id: headSha,
           submitted_at: "2026-08-04T12:00:01Z",
-          body: "**P2** Finding nel corpo della review",
+          body: "**P1** Finding nel corpo della review",
         },
       ],
       reactions: [{ user: bot, content: "+1", created_at: "2026-08-04T12:00:02Z" }],
@@ -179,10 +179,34 @@ test("un finding P0-P3 corrente prevale sempre sull'approvazione", () => {
   );
 });
 
+test("i finding P2/P3 correnti restano advisory", () => {
+  assert.equal(
+    classify({
+      reviews: [
+        {
+          user: bot,
+          commit_id: headSha,
+          submitted_at: "2026-08-04T12:00:01Z",
+          body: "**P2** Finding advisory",
+        },
+      ],
+      reactions: [{ user: bot, content: "+1", created_at: "2026-08-04T12:00:02Z" }],
+    }).state,
+    "success",
+  );
+  assert.equal(
+    isCurrentCodexFinding(
+      { review: { user: bot, commit_id: headSha, body: "**P3** Finding advisory" } },
+      headSha,
+    ),
+    false,
+  );
+});
+
 test("riattiva il gate soltanto per finding Codex exact-HEAD", () => {
   assert.equal(
     isCurrentCodexFinding(
-      { review: { user: bot, commit_id: headSha, body: "**P2** Finding tardivo" } },
+      { review: { user: bot, commit_id: headSha, body: "**P1** Finding tardivo" } },
       headSha,
     ),
     true,

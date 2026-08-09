@@ -20,7 +20,7 @@
     "sentinel": "tsx src/index.ts",
     "test": "vitest run test",
     "test:coverage": "vitest run test --coverage",
-    "doctor": "react-doctor .",
+    "doctor": "react-doctor --scope full --blocking warning .",
     "check": "npm run doctor && npx tsc -p tsconfig.json --noEmit && npm run build && npm test"
   },
   "dependencies": {
@@ -43,7 +43,7 @@
     "@types/react-dom": "^19.2.4",
     "@vitejs/plugin-react": "^6.0.5",
     "@vitest/coverage-v8": "^4.1.10",
-    "react-doctor": "0.9.5",
+    "react-doctor": "0.9.11",
     "tsx": "^4.23.8",
     "typescript": "^6.0.3",
     "vite": "^8.2.0",
