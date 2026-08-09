@@ -23,6 +23,10 @@ Adottare un solo workflow `Codex review gate`, allineato a SyncBay, che:
   corrente; i finding P0/P1 correnti bloccano, mentre P2/P3 restano advisory;
 - sostituisce la workflow e la issue legacy `Codex feedback inbox`.
 
+All'apertura o al passaggio da draft a ready la review parte automaticamente;
+dopo un nuovo commit o per un retry l'agente pubblica una sola riga
+`@codex review`. Il workflow non pubblica richieste.
+
 La PR di bootstrap non può eseguire il workflow nuovo perché
 `pull_request_target` usa la versione già presente su `main`: il gate va provato
 con dispatch solo dopo il merge.

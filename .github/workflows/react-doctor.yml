@@ -26,13 +26,13 @@ jobs:
       - id: doctor
         uses: millionco/react-doctor@736abc183ac491b4e954fc6bedec3a9a1b73d38b # v2.2.8
         with:
-          version: "0.9.11"
+          version: latest
           scope: ${{ github.event_name == 'pull_request' && 'changed' || 'full' }}
           blocking: warning
           comment: "false"
           review-comments: "true"
           commit-status: "false"
-      - name: Blocca warning ed errori anche sul push
+      - name: Blocca warning ed errori
         if: always()
         env:
           ERRORS: ${{ steps.doctor.outputs.error-count }}

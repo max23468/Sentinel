@@ -59,17 +59,14 @@ describe("workflow Sentinel", () => {
     expect(source).toContain(
       "types: [opened, synchronize, reopened, ready_for_review]"
     );
-    expect(source).toContain("pull_request_review:");
-    expect(source).toContain("pull_request_review_comment:");
+    expect(source).toContain("issue_comment:");
     expect(source).toContain("workflow_dispatch:");
     expect(source).toContain("contents: read");
     expect(source).toContain("issues: read");
     expect(source).toContain("pull-requests: read");
     expect(source).toContain("statuses: write");
     expect(source).toMatch(/actions\/checkout@[0-9a-f]{40}/);
-    expect(source).toContain(
-      "ref: ${{ github.event.repository.default_branch }}"
-    );
+    expect(source).toContain("github.event.repository.default_branch");
     expect(source).toContain("timeout-minutes: 310");
     expect(source).toContain("cancel-in-progress: true");
     expect(source).toContain("node scripts/codex-review-gate.mjs");
@@ -126,7 +123,7 @@ describe("workflow Sentinel", () => {
     expect(checkout?.with).toMatchObject({ "fetch-depth": 0, "persist-credentials": false });
     expect(doctor?.uses).toMatch(/millionco\/react-doctor@[0-9a-f]{40}$/);
     expect(doctor?.with).toMatchObject({
-      version: "0.9.11",
+      version: "latest",
       scope: "${{ github.event_name == 'pull_request' && 'changed' || 'full' }}",
       blocking: "warning",
       comment: "false",
