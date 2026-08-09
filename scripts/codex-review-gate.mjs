@@ -49,7 +49,7 @@ export function classifyCodexReview({
       comment.user?.login === CODEX_BOT &&
       (comment.original_commit_id ?? comment.commit_id) === headSha &&
       timestamp(comment.created_at) >= timestamp(requestedAt) &&
-      /\bP[0-3]\b/.test(comment.body)
+      /\bP[01]\b/.test(comment.body)
     ) {
       completions.push({
         state: "failure",
@@ -72,7 +72,7 @@ export function classifyCodexReview({
         ? headSha.startsWith(commit)
         : !requiresReviewedCommit && timestamp(requestedAt) > 0) &&
       timestamp(comment.created_at) >= timestamp(requestedAt) &&
-      /\bP[0-3]\b/.test(comment.body)
+      /\bP[01]\b/.test(comment.body)
     ) {
       completions.push({
         state: "failure",
@@ -132,7 +132,7 @@ export function classifyCodexReview({
       headSha.startsWith(commit) &&
       timestamp(review.submitted_at) >= timestamp(requestedAt)
     ) {
-      if (/\bP[0-3]\b/.test(review.body)) {
+      if (/\bP[01]\b/.test(review.body)) {
         completions.push({
           state: "failure",
           at: timestamp(review.submitted_at),
@@ -218,7 +218,7 @@ export const isCurrentCodexFinding = (event, headSha) => {
   return (
     signal?.user?.login === CODEX_BOT &&
     (signal.original_commit_id ?? signal.commit_id) === headSha &&
-    /\bP[0-3]\b/.test(signal.body ?? "")
+    /\bP[01]\b/.test(signal.body ?? "")
   );
 };
 

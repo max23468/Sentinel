@@ -126,16 +126,18 @@ describe("workflow Sentinel", () => {
     expect(checkout?.with).toMatchObject({ "fetch-depth": 0, "persist-credentials": false });
     expect(doctor?.uses).toMatch(/millionco\/react-doctor@[0-9a-f]{40}$/);
     expect(doctor?.with).toMatchObject({
-      version: "0.9.5",
+      version: "0.9.11",
       scope: "${{ github.event_name == 'pull_request' && 'changed' || 'full' }}",
       blocking: "warning",
-      "review-comments": "true"
+      comment: "false",
+      "review-comments": "true",
+      "commit-status": "false"
     });
-    expect(manifest.devDependencies["react-doctor"]).toBe("0.9.5");
+    expect(manifest.devDependencies["react-doctor"]).toBe("0.9.11");
     expect(Object.keys(manifest.scripts).filter((name) => name.includes("doctor"))).toEqual([
       "doctor"
     ]);
-    expect(manifest.scripts.doctor).toBe("react-doctor .");
+    expect(manifest.scripts.doctor).toBe("react-doctor --scope full --blocking warning .");
     expect(manifest.scripts.check).toContain("npm run doctor");
     expect(config).toEqual({
       blocking: "warning",

@@ -57,8 +57,10 @@ Questa pagina descrive runtime, comandi e guardrail effettivi di Sentinel.
 - dashboard web dinamica: `npm run dev`.
 - build CLI: `npm run build:cli`.
 - build web: `npm run build:web`.
-- React Doctor: `npm run doctor`, versione esatta `0.9.5`, scope full e blocco
-  su warning da `doctor.config.json`.
+- React Doctor: `npm run doctor`, versione esatta `0.9.11`, scope full e blocco
+  su warning da `doctor.config.json`. Le PR senza finding restano silenziose; un
+  falso positivo va notificato nella PR e soppresso nel modo nativo più stretto,
+  con motivazione committata e riesecuzione verde, senza bypass.
 - build completa: `npm run build`.
 - pubblicazione payload dashboard: `npm run sentinel -- publish-dashboard`.
 - test email Gmail: `npm run sentinel -- test-email --profile gmail`.
