@@ -51,9 +51,10 @@ Non negoziabili senza una nuova decisione esplicita:
 Procedi senza chiedere: leggere e modificare codice e documentazione, eseguire
 test e build, `scan --dry-run`, creare branch, commit e PR.
 
-Chiedi prima: comandi distruttivi, scan reali fuori dallo schedule, invio email,
-cambio di schedule o provider, aggiunta o rimozione di monitor, deploy, tag e
-release, e qualsiasi scrittura fuori dalla repo.
+Chiedi prima per comandi distruttivi, scan reali fuori dallo schedule, invio
+email, cambio di schedule o provider e aggiunta o rimozione di monitor. Per
+deploy, tag e release la richiesta di pubblicazione vale come autorizzazione;
+ogni altra scrittura fuori dalla repo richiede una richiesta separata.
 
 Se il worktree contiene modifiche non tue, non sovrascriverle: usa un branch
 separato o lavora solo su file non sovrapposti, dichiarandolo.
@@ -86,10 +87,34 @@ chiudere una release major/minor.
 Se un controllo fallisce o non è eseguibile, dichiaralo con impatto e prossimo
 passo invece di lasciarlo implicito.
 
+## Significato di `Pubblica`
+
+Quando il proprietario, riferendosi alla repository o alla modifica corrente,
+dice `Pubblica` o chiede in modo affermativo e inequivocabile di pubblicare,
+autorizza l'intero ciclo tecnico applicabile. Domande, ipotesi, pianificazioni e
+negazioni non costituiscono autorizzazione. L'agente non si ferma a stati
+intermedi e completa tutti i passaggi applicabili: preparazione e verifiche,
+branch e commit, versione e changelog quando richiesti, push, PR, soli gate
+bloccanti, merge, tag e GitHub Release quando previsti, deploy o promozione
+tecnica e verifica live. La sequenza concreta, in particolare tra versionamento,
+merge, deploy e release, è quella definita dalla policy della repository.
+
+La pulizia finale rimuove soltanto branch e worktree temporanei creati nel ciclo
+corrente e già assorbiti; controlla stash e altri residui senza alterare elementi
+preesistenti o estranei alla pubblicazione. Se un passaggio non è applicabile, lo
+dichiara e prosegue con gli altri. La richiesta affermativa di pubblicazione
+vale come autorizzazione a PR, merge, deploy tecnico e release previsti dal
+ciclo, senza una seconda conferma. Non autorizza pubblicazione di temi Shopify
+live, submission Shopify App Store, billing o nuove attivazioni produttive,
+TestFlight o App Store, invii Aruba, email o scansioni reali, né aggiornamenti
+Notion: queste azioni richiedono una richiesta esplicita separata. Una richiesta
+riferita soltanto a una di queste azioni non avvia la pubblicazione della
+repository. Non dichiarare `pubblicato` finché il ciclo applicabile e la
+rilettura finale di PR, check, deploy, release e stato Git non sono completi.
+
 ## Publish, release e deploy
 
-Non c'è VPS e non ci sono domini a pagamento. `pubblica` significa: PR/merge su
-`main`, verifica finale e cleanup del checkout.
+Non c'è VPS e non ci sono domini a pagamento.
 
 Il deploy operativo è lo scan schedulato su GitHub Actions (ADR 0001), che
 committa gli output e fallisce solo su errore tecnico o email necessaria non
