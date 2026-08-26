@@ -17,6 +17,7 @@ Sentinel usa la root per ingresso operativo, configurazione e codice. Usa
 - `docs/BACKLOG.md`: idee, debiti, bug e attività non ancora promosse.
 - `docs/CONTEXT.md`: handoff per nuove chat e lavoro continuativo.
 - `docs/TOOLCHAIN.md`: runtime, package manager, workflow e verifiche.
+- `CHANGELOG.md`: release versionate del tool e della dashboard.
 
 ## Decisioni
 

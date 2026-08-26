@@ -9,7 +9,8 @@ Questa pagina descrive runtime, comandi e guardrail effettivi di Sentinel.
 | Node.js locale | `24.x`; tipi allineati a Node `24` | `.nvmrc`, `package.json`, `package-lock.json` |
 | Node.js GitHub Actions | `24` | `.github/workflows/sentinel.yml` |
 | npm | `npm@12.0.2` | `package.json`, `package-lock.json` |
-| TypeScript | `^6.0.3` | `package.json` |
+| TypeScript primario | `@typescript/native` alias di `typescript@7.0.2` | `package.json` |
+| Bridge Vercel Functions | `typescript` alias di `@typescript/typescript6@6.0.2` | `package.json` |
 | Python | non applicabile | nessun runtime Python |
 
 ## Package manager e lockfile
@@ -102,8 +103,11 @@ stati vuoti/errore/loading quando il diff li può alterare.
 - Aggiornamenti dipendenze: Dependabot settimanale (npm + github-actions),
   minor/patch raggruppati. Le PR si mergiano a mano dopo aver controllato la CI:
   l'auto-merge richiede almeno un check obbligatorio su `main` e non è più
-  disponibile. I major restano manuali; `typescript` e `@types/node` major sono
-  ignorati (vincoli TS 7.1 / Node 24).
+  disponibile. I major restano manuali; `@types/node` resta allineato a Node 24.
+  Il typecheck e il build CLI invocano esplicitamente TypeScript nativo 7;
+  l'alias `typescript` fornisce temporaneamente la sola API JavaScript richiesta
+  dal builder delle Vercel Functions, che non supporta ancora il compilatore
+  nativo. Entrambe le corsie sono verificate dal gate locale e dal build Vercel.
 - Il deploy operativo MVP passa da GitHub Actions su `main`.
 - Il deploy della dashboard web passa da Vercel CLI e non richiede GitHub
   Actions.

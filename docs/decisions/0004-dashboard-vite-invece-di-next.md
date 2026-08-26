@@ -47,7 +47,9 @@ Struttura:
 
 - Prodotto: nessuna variazione funzionale della dashboard.
 - Tecnico: rimossa la dipendenza `next` e il suo build worker; stack web
-  allineato agli altri progetti.
+  allineato agli altri progetti. Il codice locale usa TypeScript nativo 7;
+  finché il builder delle Functions non lo supporta, l'alias `typescript`
+  fornisce al solo provider l'API JavaScript della linea 6.
 - Deploy/release: deploy Vercel invariato nel flusso; cambia solo il preset e
   l'output directory (`dist-web`).
 - Documentazione: aggiornati `README.md`, `docs/TOOLCHAIN.md`, `docs/CONTEXT.md`
