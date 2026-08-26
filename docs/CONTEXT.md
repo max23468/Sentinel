@@ -3,8 +3,8 @@
 ## Stato progetto
 
 - Fase: runtime operativo MVP.
-- Ultima versione/release: `0.1.0` in `package.json`; nessuna release GitHub
-  pubblicata.
+- Ultima versione: `0.1.1` in `package.json`; release GitHub pubblicata secondo
+  ADR 0003.
 - Runtime Node.js target: `24.x`.
 - Ultimo deploy operativo: GitHub Actions su branch `main`.
 - Dashboard web: app React su Vite pubblicabile su Vercel da CLI, con dati dinamici su
@@ -21,6 +21,7 @@
 - Roadmap: `docs/ROADMAP.md`.
 - Backlog: `docs/BACKLOG.md`.
 - Toolchain: `docs/TOOLCHAIN.md`.
+- Changelog: `CHANGELOG.md`.
 - Decisioni: `docs/DECISIONS.md`, `docs/DECISIONS_PENDING.md` e ADR in
   `docs/decisions/`.
 - Workflow operativo: `.github/workflows/sentinel.yml`.

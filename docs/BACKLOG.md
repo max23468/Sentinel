@@ -26,8 +26,8 @@ roadmap. Una voce nel backlog non è scope approvato.
 
 ## Debiti
 
-- La policy release resta minimale: `package.json` indica `0.1.0`; tag e GitHub
-  Release sono definiti da ADR 0003 solo per release del tool o della dashboard.
+- La policy release resta minimale: `package.json` e `CHANGELOG.md` indicano le
+  release del tool; tag e GitHub Release seguono ADR 0003.
 - Non esiste ancora un runbook esteso per diagnosi SMTP oltre ai secret GitHub e
   al Portachiavi macOS.
 

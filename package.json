@@ -1,6 +1,6 @@
 {
   "name": "sentinel",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "type": "module",
   "engines": {
@@ -13,7 +13,7 @@
   },
   "scripts": {
     "build": "npm run build:cli && npm run build:web",
-    "build:cli": "tsc -p tsconfig.cli.json && chmod +x dist/index.js",
+    "build:cli": "node node_modules/@typescript/native/bin/tsc -p tsconfig.cli.json && chmod +x dist/index.js",
     "build:web": "vite build",
     "dev": "vite",
     "dev:cli": "tsx src/index.ts",
@@ -21,7 +21,7 @@
     "test": "vitest run test && node --test scripts/codex-review-gate.test.mjs",
     "test:coverage": "vitest run test --coverage",
     "doctor": "react-doctor --scope full --blocking warning .",
-    "check": "npm run doctor && npx tsc -p tsconfig.json --noEmit && npm run build && npm test"
+    "check": "npm run doctor && node node_modules/@typescript/native/bin/tsc -p tsconfig.json --noEmit && npm run build && npm test"
   },
   "dependencies": {
     "@vercel/blob": "^2.8.0",
@@ -45,7 +45,8 @@
     "@vitest/coverage-v8": "^4.1.11",
     "react-doctor": "0.9.12",
     "tsx": "^4.23.12",
-    "typescript": "^6.0.3",
+    "@typescript/native": "npm:typescript@7.0.2",
+    "typescript": "npm:@typescript/typescript6@6.0.2",
     "vite": "^8.2.2",
     "vitest": "^4.1.11"
   },

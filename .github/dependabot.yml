@@ -23,11 +23,10 @@ updates:
         update-types:
           - minor
           - patch
-    # Major bloccati da vincoli reali, non da pigrizia:
-    # - typescript 7.0 ha rimosso l'API programmatica JS (lib/typescript.js);
-    #   il builder delle Vercel Functions (@vercel/node) la carica e crasha.
-    #   L'API torna con TS 7.1 (vercel/next.js discussion #95633). Fino ad
-    #   allora il deploy Vercel fallisce. Vedi ADR 0004.
+    # Major bloccati da vincoli reali:
+    # - `@typescript/native` è il compilatore primario TypeScript 7; l'alias
+    #   `typescript` resta sulla compatibilità JS TypeScript 6 finché il builder
+    #   delle Vercel Functions non supporta il compilatore nativo.
     # - @types/node resta allineato al runtime Node 24 (engines.node: 24.x).
     ignore:
       - dependency-name: typescript
