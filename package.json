@@ -24,12 +24,12 @@
     "check": "npm run doctor && npx tsc -p tsconfig.json --noEmit && npm run build && npm test"
   },
   "dependencies": {
-    "@vercel/blob": "^2.6.1",
-    "@vercel/functions": "^3.8.0",
+    "@vercel/blob": "^2.8.0",
+    "@vercel/functions": "^3.9.5",
     "cheerio": "^1.2.0",
     "commander": "^15.0.0",
-    "fast-xml-parser": "^5.10.1",
-    "nodemailer": "^9.0.4",
+    "fast-xml-parser": "^5.11.0",
+    "nodemailer": "^9.0.5",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "robots-parser": "^3.0.1",
@@ -40,14 +40,14 @@
     "@types/node": "^24.13.3",
     "@types/nodemailer": "^8.0.1",
     "@types/react": "^19.2.18",
-    "@types/react-dom": "^19.2.4",
-    "@vitejs/plugin-react": "^6.0.5",
-    "@vitest/coverage-v8": "^4.1.10",
-    "react-doctor": "0.9.11",
-    "tsx": "^4.23.8",
-    "typescript": "^6.0.3",
-    "vite": "^8.2.0",
-    "vitest": "^4.1.10"
+    "@types/react-dom": "^19.2.5",
+    "@vitejs/plugin-react": "^6.1.0",
+    "@vitest/coverage-v8": "^4.1.11",
+    "react-doctor": "0.9.12",
+    "tsx": "^4.23.12",
+    "typescript": "^7.0.2",
+    "vite": "^8.2.2",
+    "vitest": "^4.1.11"
   },
   "overrides": {
     "encoding-sniffer": "1.0.2"
