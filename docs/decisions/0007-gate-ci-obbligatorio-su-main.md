@@ -6,8 +6,8 @@ Stato: Superata da 0008
 
 ## Contesto
 
-> ADR 0008 sostituisce il canale di commit degli output e amplia il Ruleset con
-> `codex-review`; questa ADR resta come traccia della configurazione precedente.
+> ADR 0008 sostituisce il canale di commit degli output; questa ADR resta come
+> traccia della configurazione precedente.
 
 React Doctor deve bloccare warning ed errori sia nel workflow dedicato sia nel
 gate generale. ADR 0005 aveva rimosso i required check perché il `GITHUB_TOKEN`
@@ -62,5 +62,4 @@ mensile `Governance` verifica che ruleset e workflow restino attivi e coerenti.
 
 - [0001 - GitHub Actions come runtime operativo MVP](0001-github-actions-runtime-operativo.md)
 - [0005 - Niente ruleset CI obbligatoria su main](0005-niente-ruleset-ci-su-main.md)
-- [0006 - Gate Codex review exact-HEAD](0006-gate-codex-review-exact-head.md)
 - Toolchain: `../TOOLCHAIN.md`
