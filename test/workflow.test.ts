@@ -49,29 +49,6 @@ describe("workflow Sentinel", () => {
     expect(source).toContain('[ "$sched" = "0 8 * * 6" ]');
   });
 
-  it("esegue il gate Codex sul codice fidato del branch predefinito", async () => {
-    const source = await readFile(
-      ".github/workflows/codex-review-gate.yml",
-      "utf8"
-    );
-
-    expect(source).toContain("pull_request_target:");
-    expect(source).toContain(
-      "types: [opened, synchronize, reopened, ready_for_review]"
-    );
-    expect(source).toContain("issue_comment:");
-    expect(source).toContain("workflow_dispatch:");
-    expect(source).toContain("contents: read");
-    expect(source).toContain("issues: read");
-    expect(source).toContain("pull-requests: read");
-    expect(source).toContain("statuses: write");
-    expect(source).toMatch(/actions\/checkout@[0-9a-f]{40}/);
-    expect(source).toContain("github.event.repository.default_branch");
-    expect(source).toContain("timeout-minutes: 310");
-    expect(source).toContain("cancel-in-progress: true");
-    expect(source).toContain("node scripts/codex-review-gate.mjs");
-  });
-
   it("blocca React Doctor sui warning nel workflow dedicato e nel gate generale", async () => {
     const [doctorSource, ciSource, governanceSource, sentinelSource, manifestSource, configSource] =
       await Promise.all([
@@ -163,9 +140,6 @@ describe("workflow Sentinel", () => {
     expect(governanceSource).not.toContain("GH_TOKEN:");
     expect(governanceSource).toContain("curl --fail --silent --show-error");
     expect(governanceSource).toContain("strict_required_status_checks_policy");
-    expect(governanceSource).toContain(
-      "codex-review:15368,react-doctor:15368,verify:15368"
-    );
-    expect(governanceSource).toContain("codex-review-gate.yml");
+    expect(governanceSource).toContain("react-doctor:15368,verify:15368");
   });
 });

@@ -6,10 +6,8 @@ Stato: Accettata
 
 ## Contesto
 
-Lo scan Sentinel deve conservare `data/`, `snapshots/` e `reports/`, ma il gate
-exact-HEAD `codex-review` può validare soltanto commit appartenenti a una PR. Se
-fosse richiesto su `main`, il commit diretto degli output descritto dalle ADR
-0001 e 0007 verrebbe bloccato oppure richiederebbe un bypass o uno status finto.
+Lo scan Sentinel deve conservare `data/`, `snapshots/` e `reports/` senza
+mescolare gli output generati al codice applicativo protetto di `main`.
 
 ## Decisione
 
@@ -23,14 +21,12 @@ Il comando `dashboard` salva anche `reports/dashboard.json`. Quando Vercel Blob
 o i file locali non sono disponibili, le API autenticate della dashboard usano
 quel modello e i singoli report dal branch pubblico `sentinel-outputs`.
 
-Il Ruleset `main governance` richiede senza bypass `codex-review`,
-`react-doctor` e `verify`, tutti prodotti dall'integrazione GitHub Actions. Il
-workflow Governance controlla mensilmente i tre contesti e i relativi workflow.
+Il Ruleset `main governance` richiede senza bypass `react-doctor` e `verify`,
+prodotti dall'integrazione GitHub Actions. Il workflow Governance controlla
+mensilmente i due contesti e i relativi workflow.
 
 ## Alternative considerate
 
-- Falso status `codex-review` sui commit automatici: scartato perché non
-  rappresenterebbe una review prodotta da `chatgpt-codex-connector[bot]`.
 - Bypass per GitHub Actions: scartato perché viola il modello di protezione.
 - PR automatica degli output: scartata perché richiederebbe intervento manuale o
   una credenziale persistente per riattivare workflow e review.
@@ -53,6 +49,5 @@ workflow Governance controlla mensilmente i tre contesti e i relativi workflow.
 ## Collegamenti
 
 - [0001 - GitHub Actions come runtime operativo MVP](0001-github-actions-runtime-operativo.md)
-- [0006 - Gate Codex review exact-HEAD](0006-gate-codex-review-exact-head.md)
 - [0007 - Gate CI obbligatorio su main](0007-gate-ci-obbligatorio-su-main.md)
 - Toolchain: `../TOOLCHAIN.md`

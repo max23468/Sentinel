@@ -38,7 +38,7 @@ non ancora scelte stanno in `docs/BACKLOG.md`.
 - Lo scan tollera `robots.txt` 4xx e sitemap illeggibile senza fallire, e non
   deduce rimozioni quando il sito blocca la scansione.
 - Attivata la ruleset `main governance` con i required check strict
-  `codex-review`, `react-doctor` e `verify`, senza bypass; gli output schedulati
+  `react-doctor` e `verify`, senza bypass; gli output schedulati
   vivono su `sentinel-outputs`, secondo ADR 0008.
 - Pubblicati output applicativi in `data/`, `snapshots/` e `reports/`.
 - Risolto il run rosso iniziale legato ai secret email mancanti; i run manuali
