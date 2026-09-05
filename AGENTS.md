@@ -48,6 +48,23 @@ Non negoziabili senza una nuova decisione esplicita:
 
 ## Autonomia
 
+Interpreta le richieste operative come incarichi da completare, usando intento
+e contesto della sessione. Risolvi autonomamente naming, formattazione, default
+e dettagli ordinari con assunzioni ragionevoli. Prima di chiedere un chiarimento,
+verifica le fonti disponibili; chiedi solo se resta una decisione che cambia
+materialmente il risultato.
+
+Prima di una conferma necessaria, completa il lavoro indipendente già autorizzato
+e prepara un risultato concreto da valutare. Sospendi soltanto il passaggio che
+dipende dalla decisione mancante. Non richiedere consensi già concessi per la
+stessa azione e lo stesso perimetro, salvo un checkpoint esplicito del progetto.
+Conserva i confini di pubblicazione, dati e operazioni esterne definiti qui;
+un ordine esplicito di attesa o arresto interrompe il lavoro interessato.
+Il tempo trascorso non costituisce una risposta o un'autorizzazione.
+
+Integra correzioni e nuovi vincoli durante il lavoro; rispondi alle domande
+laterali senza perdere l'obiettivo, salvo annullamento o cambio di scope esplicito.
+
 Procedi senza chiedere: leggere e modificare codice e documentazione, eseguire
 test e build, `scan --dry-run`, creare branch, commit e PR.
 
@@ -56,13 +73,20 @@ email, cambio di schedule o provider e aggiunta o rimozione di monitor. Per
 deploy, tag e release la richiesta di pubblicazione vale come autorizzazione;
 ogni altra scrittura fuori dalla repo richiede una richiesta separata.
 
-Se il worktree contiene modifiche non tue, non sovrascriverle: usa un branch
-separato o lavora solo su file non sovrapposti, dichiarandolo.
-
-Delega a un subagent solo per indagini ampie e davvero parallelizzabili, non per
-lavoro che chiudi in pochi tool call e non per ricontrollare te stesso.
+Se il worktree contiene modifiche non tue, non sovrascriverle: usa un worktree
+pulito o lavora solo su file non sovrapposti, dichiarandolo. Un nuovo branch
+non isola le modifiche non committate. Chiedi soltanto quando è necessario
+incorporare o modificare lavoro altrui o scegliere fra intenti incompatibili.
 
 ## Flusso di lavoro
+
+Evita di creare un numero eccessivo di file di test. Crea un nuovo file di test
+solo se richiesto dalle convenzioni della repository o se nessun file esistente
+è una collocazione adatta. Evita pulizie non pertinenti e complessità non
+necessaria. Riusa le utility esistenti adatte allo scopo. Leggi le istruzioni
+pertinenti della repository ed esamina codice, test, documentazione e CI vicini
+all'area interessata. Segui le convenzioni consolidate. L'obiettivo è ottenere
+codice pulito e pronto per essere integrato.
 
 - Lavori non banali: branch `codex/<tema>` e PR verso `main`. Commit diretto su
   `main` solo per micro docs-only a basso rischio.
@@ -73,6 +97,12 @@ lavoro che chiudi in pochi tool call e non per ricontrollare te stesso.
   resta aperto.
 
 ## Verifiche
+
+Calibra la verifica sul rischio del diff e completa i gate applicabili. Riusa
+i test esistenti; aggiungine solo per un comportamento o rischio concreto, non
+per replicare modifiche banali. Dopo un esito verde ripeti o amplia i controlli
+solo per nuove modifiche, errori o dubbi irrisolti. Verifica il diff effettivo,
+senza trattare il messaggio di successo di uno strumento come prova sufficiente.
 
 `npm test` e `npm run build` prima di chiudere modifiche al codice. La tabella
 verifiche-per-scope in `docs/TOOLCHAIN.md` calibra il resto, dalla sola review
@@ -139,41 +169,33 @@ scrivi un ADR invece di lasciarla solo in chat.
 
 ## Chiusura
 
-Chiudi con cosa è cambiato, verifiche eseguite o saltate con motivo, stato di
-publish/release/deploy (anche solo `N/A` con la ragione), branch coinvolti e
-prossimo passo reale. Un lavoro è completo quando chiude la richiesta al suo
-scope senza lasciare in sospeso verifiche, output applicativi, cleanup o rischi
-non dichiarati.
+Scrivi in italiano semplice, con esito per primo e paragrafi brevi. Usa elenchi
+solo quando aiutano; evita formule ricorrenti, gergo superfluo e aggiornamenti
+che ripetono lo stesso stato. Riporta prove, limiti e prossima azione reale.
 
-## Prompting e conduzione del lavoro con Astra
+Completa l'esito richiesto: analisi, modifica locale o pubblicazione. Distingui
+passaggi completati, non richiesti, non applicabili e bloccati; non dichiarare
+completo ciò che resta bloccato o non verificato. Applica i requisiti di commit
+previsti per l'implementazione e pulisci soltanto risorse proprie e assorbite,
+preservando modifiche e worktree altrui.
 
-- Interpreta le richieste operative come incarichi da completare, usando intento
-  e contesto della sessione. Risolvi i dettagli ordinari con assunzioni ragionevoli;
-  chiedi solo quando la risposta cambia materialmente il risultato.
-- Prima di una conferma necessaria, completa il lavoro indipendente già autorizzato
-  e prepara un risultato concreto da valutare. Non richiedere consensi già concessi;
-  conserva i confini di pubblicazione, dati e operazioni esterne definiti qui.
-  Un ordine esplicito di attesa o arresto interrompe il lavoro interessato.
-- Le istruzioni esplicite dell'utente prevalgono sulle linee guida delle skill,
-  nel rispetto delle istruzioni di sistema e sviluppatore. Verifica pertinenza,
-  gerarchia e conflitti di AGENTS, override e skill prima di dedurne un blocco;
-  non trasformare raccomandazioni generiche in nuovi gate.
-- Se una skill causa una pausa, una richiesta di permesso o lavoro incompleto,
-  cita e collega il preciso `SKILL.md`, riporta l'istruzione rilevante e distingui
-  il requisito esplicito dalla tua interpretazione.
-- Integra correzioni e nuovi vincoli durante il lavoro; rispondi alle domande
-  laterali senza perdere l'obiettivo, salvo annullamento o cambio di scope esplicito.
-- Scrivi in italiano semplice, con esito per primo e paragrafi brevi. Usa elenchi
-  solo quando aiutano; evita formule ricorrenti, gergo superfluo e aggiornamenti
-  che ripetono lo stesso stato. Riporta prove, limiti e prossima azione reale.
-- Calibra la verifica sul rischio del diff e completa i gate applicabili. Riusa
-  test esistenti; aggiungine solo per un comportamento o rischio concreto, non
-  per replicare modifiche banali. Dopo un esito verde ripeti o amplia i controlli
-  solo per nuove modifiche, errori o dubbi irrisolti. Verifica il diff effettivo,
-  senza trattare il messaggio di successo di uno strumento come prova sufficiente.
-- Quando la sessione e le regole del progetto consentono subagent, delega solo
-  filoni consistenti e indipendenti, con ownership disgiunta, risultato atteso e
-  verifiche espliciti. Il coordinatore integra; niente delega per microtask o
-  semplice ricontrollo. Scrivi messaggi leggibili anche tra agenti.
+Riporta stato di publish/release/deploy, branch coinvolti e output applicativi
+quando pertinenti; dichiara i controlli saltati e il motivo.
 
-Esempio e fonti: [prompting con Astra](docs/TOOLCHAIN.md#prompting-con-gpt-6-astra).
+## Skill e delega
+
+Le istruzioni esplicite dell'utente prevalgono sulle linee guida delle Skill,
+nel rispetto delle istruzioni di sistema e sviluppatore. Verifica pertinenza,
+gerarchia e conflitti di AGENTS, override e Skill prima di dedurne un blocco;
+non trasformare raccomandazioni generiche in nuovi gate.
+
+Se una Skill causa una pausa, una richiesta di permesso o lavoro incompleto,
+cita e collega il preciso `SKILL.md`, riporta l'istruzione rilevante e distingui
+il requisito esplicito dalla tua interpretazione.
+
+Quando la sessione e le regole del progetto consentono subagent, delega solo
+filoni consistenti e indipendenti, con ownership disgiunta, risultato atteso e
+verifiche espliciti. Il coordinatore integra; niente delega per microtask o
+semplice ricontrollo. Scrivi messaggi leggibili anche tra agenti.
+
+Esempio e fonti: [preparare un incarico](docs/TOOLCHAIN.md#preparare-un-incarico).
