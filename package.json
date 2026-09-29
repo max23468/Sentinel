@@ -33,7 +33,7 @@
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "robots-parser": "^3.0.1",
-    "undici": "^8.10.0",
+    "undici": "^8.11.2",
     "yaml": "^2.9.0"
   },
   "devDependencies": {
