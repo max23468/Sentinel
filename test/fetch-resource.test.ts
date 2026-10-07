@@ -122,4 +122,38 @@ describe("fetchResource", () => {
       "Destinazione non autorizzata: https://evil.example.net/landing"
     );
   });
+  it.each([
+    ["verification body", {}, '<html><title>One moment, please...</title><body>Please wait while your request is being verified...</body></html>'],
+    ["provider header", { "cf-mitigated": "challenge" }, "ordinary looking body"],
+    ["challenge markup", {}, '<form id="challenge-form">Check</form>']
+  ])("rifiuta la challenge 200 prima di hash e discovery: %s", async (_name, headers, body) => {
+    vi.stubGlobal("fetch", vi.fn(async () => new Response(body, {
+      headers: { "content-type": "text/html", ...headers }, status: 200
+    })));
+    const result = await fetchResource("https://example.com/", site, 0, testOutboundClient(site, fetch));
+    expect(result.challenge).toBe(true);
+    expect(result.hash).toBe("");
+    expect(result.discoveredUrls).toEqual([]);
+    expect(result.normalizedText).toBeUndefined();
+  });
+
+  it("non blocca un articolo che parla di verifiche anti-bot", async () => {
+    vi.stubGlobal("fetch", vi.fn(async () => new Response(
+      '<title>Guida anti-bot</title><body>Please wait while your request is being verified...</body>',
+      { headers: { "content-type": "text/html" } }
+    )));
+    const result = await fetchResource("https://example.com/", site, 0, testOutboundClient(site, fetch));
+    expect(result.challenge).toBeUndefined();
+    expect(result.hash).toHaveLength(64);
+  });
+
+  it("riconosce il segnale provider anche su challenge HTTP 403", async () => {
+    vi.stubGlobal("fetch", vi.fn(async () => new Response("", {
+      status: 403, headers: { "cf-mitigated": "challenge" }
+    })));
+    const result = await fetchResource("https://example.com/", site, 0, testOutboundClient(site, fetch));
+    expect(result.challenge).toBe(true);
+    expect(result.hash).toBe("");
+  });
+
 });
