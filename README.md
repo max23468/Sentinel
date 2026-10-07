@@ -78,6 +78,21 @@ ignoredIssues:
     reason: "Asset WordPress storici non rilevanti per il monitor operativo"
 ```
 
+## Scansioni incomplete
+
+Le pagine di verifica anti-bot non sono contenuto del sito: Sentinel le segnala
+come problemi prima del confronto e non le salva come baseline. Se viene
+rilevata una challenge, il confronto e la persistenza dell'intero monitor
+sono sospesi, anche se altre risorse sono raggiungibili.
+
+La stessa protezione scatta quando un monitor con almeno 10 URL già noti
+raccoglie meno della metà delle risorse precedenti. È una soglia conservativa:
+anche una grande riduzione reale del sito richiede verifica prima di accettare
+una nuova baseline. Il report resta disponibile e indica `scansione incompleta`;
+`lastScanAt` nello stato rimane quello dell'ultima scansione accettata. Una
+baseline già contaminata richiede un ripristino separato da snapshot verificati.
+Non vengono cambiati User-Agent, schedule o regole del sito.
+
 ## Email
 
 Le password SMTP non vanno committate. Usa variabili d'ambiente,

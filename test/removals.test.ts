@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { collectRemovals, isScanBlackout } from "../src/scan.js";
+import { collectRemovals, isScanBlackout, isCoverageCollapse } from "../src/scan.js";
 import type { FetchedResource, ScanIssue, SiteState, UrlState } from "../src/types.js";
 
 function urlState(url: string): UrlState {
@@ -88,5 +88,17 @@ describe("collectRemovals", () => {
     );
 
     expect(removals.map((change) => change.url)).toEqual(["https://example.com/vecchia"]);
+  });
+});
+
+
+describe("isCoverageCollapse", () => {
+  const previous = stateWith(Array.from({ length: 10 }, (_, i) => `https://example.com/${i}`));
+  it("sospende sotto metà delle risorse note, non alla soglia", () => {
+    expect(isCoverageCollapse(previous, Array(4).fill(resource))).toBe(true);
+    expect(isCoverageCollapse(previous, Array(5).fill(resource))).toBe(false);
+  });
+  it("non introduce una soglia relativa sui piccoli monitor", () => {
+    expect(isCoverageCollapse(stateWith(["https://example.com/a"]), [])).toBe(false);
   });
 });
