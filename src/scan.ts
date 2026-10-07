@@ -53,14 +53,35 @@ export async function scanSite(
   const counters: CrawlCounters = { scannedCount: 0, skippedCount: 0 };
   try {
     const queue = await buildInitialQueue(site, guard, issues, client);
-    await crawlQueue(site, guard, client, queue, seenUrls, issues, resources, changes, siteState, baseline, counters);
+    if (!issues.some((issue) => issue.challenge)) {
+      await crawlQueue(site, guard, client, queue, seenUrls, issues, resources, changes, siteState, baseline, counters);
+    }
   } finally {
     // Le connessioni riusate durante il crawling vanno chiuse qui, o il
     // processo resta appeso anche quando lo scan è finito.
     await client.close();
   }
 
-  if (!baseline && !hasFatalIssues(issues)) {
+  const challenged = issues.some((issue) => issue.challenge);
+  const coverageCollapsed = !baseline && isCoverageCollapse(siteState, resources);
+  const incomplete = challenged || coverageCollapsed;
+  if (coverageCollapsed) {
+    issues.push({
+      url: site.roots[0] ?? site.id,
+      message: `Copertura ridotta: ${resources.length} risorse valide su ${Object.keys(siteState.urls).length} URL precedenti.`,
+      fatal: false
+    });
+  }
+  if (incomplete) {
+    changes.length = 0;
+    issues.push({
+      url: site.roots[0] ?? site.id,
+      message: "Scansione incompleta: confronto sospeso e baseline precedente conservata.",
+      fatal: false
+    });
+  }
+
+  if (!incomplete && !baseline && !hasFatalIssues(issues)) {
     changes.push(...collectRemovals(siteState, seenUrls, issues, resources));
   }
 
@@ -75,7 +96,7 @@ export async function scanSite(
     });
   }
 
-  if (!options.dryRun && !hasFatalIssues(issues)) {
+  if (!options.dryRun && !incomplete && !hasFatalIssues(issues)) {
     await persistResources(config, site, siteState, resources);
     for (const change of changes) {
       if (change.type === "removed") delete siteState.urls[change.url];
@@ -87,6 +108,7 @@ export async function scanSite(
   const emailRequired =
     !options.dryRun && (hasActiveIssues(issues) || blackout || (!baseline && changes.length > 0));
   const result: ScanResult = {
+    incomplete,
     siteId: site.id,
     siteName: site.name,
     scannedAt,
@@ -248,10 +270,13 @@ function hasActiveIssues(issues: ScanIssue[]): boolean {
   return issues.some((issue) => !issue.ignored);
 }
 
-/**
- * Vero quando un monitor che aveva già una baseline non raccoglie più nulla:
- * blocco lato sito, DNS o rete, mai un sito realmente svuotato.
- */
+/** Un forte calo richiede verifica prima di aggiornare la baseline o dedurre rimozioni. */
+export function isCoverageCollapse(siteState: SiteState, resources: FetchedResource[]): boolean {
+  const previousCount = Object.keys(siteState.urls).length;
+  return previousCount >= 10 && resources.length < previousCount / 2;
+}
+
+/** Un monitor con baseline che non raccoglie nulla non è un sito vuoto. */
 export function isScanBlackout(siteState: SiteState, resources: FetchedResource[]): boolean {
   return resources.length === 0 && Object.keys(siteState.urls).length > 0;
 }
@@ -331,6 +356,12 @@ async function crawlQueue(
   }
 
   counters.scannedCount += 1;
+
+  if (resource.challenge) {
+    issues.push({ url: resource.url, message: "Scansione bloccata da verifica anti-bot.", fatal: false, challenge: true });
+    // Non continuare a richiedere URL dopo una challenge del monitor.
+    return;
+  }
 
   if (resource.status >= 400) {
     issues.push(buildHttpIssue(site, resource));
