@@ -107,7 +107,7 @@ describe("workflow Sentinel", () => {
       "review-comments": "true",
       "commit-status": "false"
     });
-    expect(manifest.devDependencies["react-doctor"]).toBe("0.9.12");
+    expect(manifest.devDependencies["react-doctor"]).toBe("0.9.14");
     expect(Object.keys(manifest.scripts).filter((name) => name.includes("doctor"))).toEqual([
       "doctor"
     ]);
