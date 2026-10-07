@@ -30,6 +30,7 @@ export function renderScanReport(result: ScanResult): string {
     "",
     `- Scansione: ${formatItalianDateTime(result.scannedAt)}`,
     `- Modalità: ${result.dryRun ? "dry-run" : "operativa"}`,
+    `- Esito: ${result.incomplete ? "scansione incompleta, baseline conservata" : "scansione completata"}`,
     `- Baseline iniziale: ${result.baseline ? "sì" : "no"}`,
     `- URL scansionati: ${result.scannedCount}`,
     `- URL saltati: ${result.skippedCount}`,
@@ -41,7 +42,9 @@ export function renderScanReport(result: ScanResult): string {
     ""
   ];
 
-  if (result.baseline) {
+  if (result.incomplete) {
+    lines.push("## Sintesi", "", "Scansione incompleta: nessun confronto pubblicato e nessuna baseline creata o aggiornata.", "");
+  } else if (result.baseline) {
     const emailSummary = result.dryRun
       ? "Email non inviata in modalità dry-run."
       : result.emailSent

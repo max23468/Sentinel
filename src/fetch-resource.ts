@@ -1,7 +1,7 @@
 import type { FetchedResource, SiteConfig } from "./types.js";
 import { sha256 } from "./hash.js";
 import { MAX_FILE_BYTES, MAX_HTML_BYTES, type OutboundClient } from "./outbound.js";
-import { extractNormalizedText } from "./text.js";
+import { extractNormalizedText, isChallengePage } from "./text.js";
 import { isIncludedFile, isSameSite, normalizeFinalUrl, normalizeUrl } from "./url.js";
 
 export async function fetchResource(
@@ -40,6 +40,10 @@ export async function fetchResource(
     fetchedAt: new Date().toISOString()
   };
 
+  if (response.headers.get("cf-mitigated") === "challenge") {
+    return { ...base, kind: "html", hash: "", discoveredUrls: [], challenge: true };
+  }
+
   if (response.status < 200 || response.status >= 300) {
     return {
       ...base,
@@ -52,6 +56,9 @@ export async function fetchResource(
   if (isHtmlResponse(finalUrl, contentType, site)) {
     const html = new TextDecoder().decode(response.body);
     const extracted = extractNormalizedText(html);
+    if (isChallengePage(extracted.title, extracted.text, html)) {
+      return { ...base, kind: "html", hash: "", discoveredUrls: [], challenge: true };
+    }
     const discoveredUrls = new Set<string>();
     for (const candidateUrl of [...extracted.links, ...extracted.assets]) {
       const normalizedUrl = normalizeUrl(candidateUrl, site, finalUrl);
