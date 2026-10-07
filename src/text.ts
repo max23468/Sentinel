@@ -38,3 +38,11 @@ export function extractNormalizedText(html: string): { title?: string; text: str
 
   return { title, text, links: [...links], assets: [...assets] };
 }
+
+/** Segnali specifici di interstitial, non parole chiave generiche nelle pagine reali. */
+export function isChallengePage(title: string | undefined, text: string, html = ""): boolean {
+  const verificationTitle = /^(?:one moment, please\.{3}|just a moment\.{3}|attention required!?\s*\|\s*cloudflare)$/i.test(title ?? "");
+  const verificationText = /please wait while your request is being verified|verify (?:that )?you are human|checking (?:your browser|if the site connection is secure)/i.test(text);
+  return (verificationTitle && verificationText) ||
+    /(?:id=["']challenge-form["']|\/cdn-cgi\/challenge-platform\/)/i.test(html);
+}

@@ -89,6 +89,7 @@ export interface SentinelState {
 }
 
 export interface FetchedResource {
+  challenge?: boolean;
   url: string;
   sourceUrl?: string;
   depth: number;
@@ -130,6 +131,7 @@ export interface ScanChange {
 }
 
 export interface ScanIssue {
+  challenge?: boolean;
   url: string;
   message: string;
   fatal: boolean;
@@ -138,6 +140,7 @@ export interface ScanIssue {
 }
 
 export interface ScanResult {
+  incomplete?: boolean;
   siteId: string;
   siteName: string;
   scannedAt: string;

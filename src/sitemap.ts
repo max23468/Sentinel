@@ -2,6 +2,7 @@ import { XMLParser } from "fast-xml-parser";
 import { MAX_SITEMAP_BYTES, type OutboundClient } from "./outbound.js";
 import type { QueuedUrl, ScanIssue, SiteConfig } from "./types.js";
 import { isIncludedFile, isSameSite, looksLikeHtmlPage, normalizeUrl } from "./url.js";
+import { extractNormalizedText, isChallengePage } from "./text.js";
 
 const MAX_SITEMAPS = 32;
 const MAX_SITEMAP_DEPTH = 4;
@@ -46,7 +47,10 @@ export async function discoverFromSitemaps(
     // Una sitemap illeggibile non ferma la scansione: il crawling dai roots
     // resta la fonte principale, la sitemap aggiunge le pagine non linkate.
     const body = await readSitemap(site, item.url, issues, client);
-    if (body === undefined) continue;
+    if (body === undefined) {
+      if (issues.some((issue) => issue.challenge)) break;
+      continue;
+    }
 
     let parsed: SitemapDocument;
     try {
@@ -107,6 +111,15 @@ async function readSitemap(
       maxBytes: MAX_SITEMAP_BYTES
     });
 
+    const body = new TextDecoder().decode(response.body);
+    const html = response.headers.get("content-type")?.split(";")[0].trim().toLowerCase() === "text/html";
+    const extracted = html ? extractNormalizedText(body) : undefined;
+    if (response.headers.get("cf-mitigated") === "challenge" ||
+        (extracted && isChallengePage(extracted.title, extracted.text, body))) {
+      issues.push({ url: sitemapUrl, message: "Scansione bloccata da verifica anti-bot della sitemap.", fatal: false, challenge: true });
+      return undefined;
+    }
+
     if (response.status < 200 || response.status >= 300) {
       issues.push({
         url: sitemapUrl,
@@ -116,7 +129,7 @@ async function readSitemap(
       return undefined;
     }
 
-    return new TextDecoder().decode(response.body);
+    return body;
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
     issues.push({ url: sitemapUrl, message: `Sitemap non leggibile: ${message}`, fatal: false });
