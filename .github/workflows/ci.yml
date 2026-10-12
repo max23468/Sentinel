@@ -40,3 +40,6 @@ jobs:
 
       - name: Gate completo
         run: npm run check
+
+      - name: Coverage gate
+        run: npm run test:coverage
